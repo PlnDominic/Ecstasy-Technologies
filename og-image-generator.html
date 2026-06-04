@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OG Image Generator - Ecstasy Technologies</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        .instructions {
+            max-width: 1200px;
+            margin: 0 auto 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .instructions h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .instructions ol {
+            line-height: 1.8;
+        }
+
+        .instructions code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+
+        .og-image-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .og-image {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background pattern */
+        .og-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(88, 81, 219, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .logo-placeholder {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #5851DB 0%, #7C3AED 100%);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 64px;
+            font-weight: 800;
+            color: white;
+            margin: 0 0 20px 0;
+            text-align: center;
+            line-height: 1.1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: 32px;
+            font-weight: 600;
+            color: #a0a0a0;
+            margin: 0 0 40px 0;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .services {
+            display: flex;
+            gap: 30px;
+            margin: 40px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+            color: #d0d0d0;
+            font-weight: 500;
+        }
+
+        .service::before {
+            content: '●';
+            color: #7C3AED;
+            font-size: 24px;
+        }
+
+        .url {
+            font-size: 24px;
+            color: #7C3AED;
+            font-weight: 600;
+            margin-top: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .badge {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            background: rgba(124, 58, 237, 0.2);
+            border: 2px solid #7C3AED;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .controls {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .controls h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .controls label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .controls input, .controls textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        .controls textarea {
+            resize: vertical;
+            min-height: 60px;
+        }
+
+        .button-group {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            background: #7C3AED;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: #6D28D9;
+        }
+
+        button.secondary {
+            background: #4B5563;
+        }
+
+        button.secondary:hover {
+            background: #374151;
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h2>📸 How to Create Your OG Image</h2>
+        <ol>
+            <li><strong>Customize below</strong> (optional) - Edit company name, tagline, services</li>
+            <li><strong>Screenshot the image</strong> - Use Windows Snipping Tool (Win + Shift + S) or any screenshot tool</li>
+            <li><strong>Crop to exact size</strong> - Make sure it's exactly <code>1200 x 630 pixels</code></li>
+            <li><strong>Save as</strong> <code>og-image.png</code></li>
+            <li><strong>Place in</strong> <code>/public/og-image.png</code></li>
+            <li><strong>Deploy to Vercel</strong></li>
+            <li><strong>Test</strong> - Share link on WhatsApp, Facebook, LinkedIn</li>
+        </ol>
+        <p><strong>Tip:</strong> For best results, screenshot just the colored area below (not the instructions).</p>
+    </div>
+
+    <div class="controls">
+        <h3>✏️ Customize Your OG Image</h3>
+        
+        <label for="companyName">Company Name:</label>
+        <input type="text" id="companyName" value="Ecstasy Technologies">
+        
+        <label for="tagline">Tagline:</label>
+        <input type="text" id="tagline" value="Leading Software Development Company in Ghana">
+        
+        <label for="services">Services (comma-separated):</label>
+        <textarea id="services">Web Applications, Mobile Apps, Enterprise Software</textarea>
+        
+        <label for="url">Website URL:</label>
+        <input type="text" id="url" value="ecstasy-geospatial.vercel.app">
+        
+        <label for="badge">Badge Text (top-right):</label>
+        <input type="text" id="badge" value="Est. 2023" placeholder="Leave empty to hide">
+        
+        <div class="button-group">
+            <button onclick="updateImage()">Update Preview</button>
+            <button class="secondary" onclick="resetToDefaults()">Reset to Default</button>
+        </div>
+    </div>
+
+    <div class="og-image-container">
+        <div class="og-image" id="ogImage">
+            <span class="badge" id="badgeElement">Est. 2023</span>
+            <div class="logo-placeholder">E</div>
+            <h1 class="gradient-text" id="companyNameDisplay">Ecstasy Technologies</h1>
+            <div class="tagline" id="taglineDisplay">Leading Software Development Company in Ghana</div>
+            <div class="services" id="servicesDisplay">
+                <div class="service">Web Applications</div>
+                <div class="service">Mobile Apps</div>
+                <div class="service">Enterprise Software</div>
+            </div>
+            <div class="url" id="urlDisplay">ecstasy-geospatial.vercel.app</div>
+        </div>
+    </div>
+
+    <div class="instructions" style="margin-top: 20px;">
+        <h2>✅ Next Steps After Creating Image</h2>
+        <ol>
+            <li><strong>Save the image</strong> to <code>/public/og-image.png</code></li>
+            <li><strong>Commit and deploy:</strong>
+                <pre style="background: #f5f5f5; padding: 10px; border-radius: 4px; overflow-x: auto;">git add public/og-image.png
+git commit -m "Add Open Graph preview image"
+git push</pre>
+            </li>
+            <li><strong>Wait for Vercel to deploy</strong> (1-2 minutes)</li>
+            <li><strong>Test your image:</strong>
+                <ul>
+                    <li>Visit: <code>https://ecstasy-geospatial.vercel.app/og-image.png</code></li>
+                    <li>Facebook Debugger: <a href="https://developers.facebook.com/tools/debug/" target="_blank">https://developers.facebook.com/tools/debug/</a></li>
+                    <li>Share on WhatsApp</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <script>
+        function updateImage() {
+            const companyName = document.getElementById('companyName').value;
+            const tagline = document.getElementById('tagline').value;
+            const services = document.getElementById('services').value;
+            const url = document.getElementById('url').value;
+            const badge = document.getElementById('badge').value;
+
+            // Update company name
+            document.getElementById('companyNameDisplay').textContent = companyName;
+            
+            // Update logo letter (first letter of company name)
+            const logoLetter = companyName.charAt(0).toUpperCase();
+            document.querySelector('.logo-placeholder').textContent = logoLetter;
+            
+            // Update tagline
+            document.getElementById('taglineDisplay').textContent = tagline;
+            
+            // Update services
+            const servicesArray = services.split(',').map(s => s.trim()).filter(s => s);
+            const servicesHtml = servicesArray.map(service => 
+                `<div class="service">${service}</div>`
+            ).join('');
+            document.getElementById('servicesDisplay').innerHTML = servicesHtml;
+            
+            // Update URL
+            document.getElementById('urlDisplay').textContent = url;
+            
+            // Update/hide badge
+            const badgeElement = document.getElementById('badgeElement');
+            if (badge) {
+                badgeElement.textContent = badge;
+                badgeElement.style.display = 'block';
+            } else {
+                badgeElement.style.display = 'none';
+            }
+        }
+
+        function resetToDefaults() {
+            document.getElementById('companyName').value = 'Ecstasy Technologies';
+            document.getElementById('tagline').value = 'Leading Software Development Company in Ghana';
+            document.getElementById('services').value = 'Web Applications, Mobile Apps, Enterprise Software';
+            document.getElementById('url').value = 'ecstasy-geospatial.vercel.app';
+            document.getElementById('badge').value = 'Est. 2023';
+            updateImage();
+        }
+
+        // Auto-update on input change
+        document.querySelectorAll('input, textarea').forEach(input => {
+            input.addEventListener('input', updateImage);
+        });
+    </script>
+</body>
+</html>

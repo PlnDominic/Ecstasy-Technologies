@@ -1,0 +1,68 @@
+# Robots.txt for Ecstasy Technologies
+# This file allows all AI crawlers and search engines to access public pages
+
+# Allow all crawlers by default
+User-agent: *
+Allow: /
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /api/
+Disallow: /client-portal/
+Disallow: /time-tracking/
+
+# OpenAI GPTBot (ChatGPT)
+User-agent: GPTBot
+Allow: /
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /api/
+Disallow: /client-portal/
+Disallow: /time-tracking/
+
+# Google-Extended (Bard/Gemini)
+User-agent: Google-Extended
+Allow: /
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /api/
+Disallow: /client-portal/
+Disallow: /time-tracking/
+
+# Anthropic's Claude
+User-agent: anthropic-ai
+Allow: /
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /api/
+Disallow: /client-portal/
+Disallow: /time-tracking/
+
+# Common Crawl (used by many AI platforms)
+User-agent: CCBot
+Allow: /
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /api/
+Disallow: /client-portal/
+Disallow: /time-tracking/
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /api/
+Disallow: /client-portal/
+Disallow: /time-tracking/
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+Disallow: /dashboard/
+Disallow: /login/
+Disallow: /api/
+Disallow: /client-portal/
+Disallow: /time-tracking/
+
+# Sitemap location
+Sitemap: https://www.ecstasytechnologies.com/sitemap.xml

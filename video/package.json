@@ -1,0 +1,25 @@
+{
+  "name": "ecstasy-promo-video",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion render src/index.ts PromoVideo out/video.mp4",
+    "upgrade": "remotion upgrade"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.417",
+    "@remotion/transitions": "4.0.417",
+    "@remotion/zod-types": "4.0.417",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remotion": "4.0.417",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/web": "^0.0.78",
+    "typescript": "^5.0.0"
+  }
+}

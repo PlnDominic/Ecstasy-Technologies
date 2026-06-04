@@ -1,0 +1,387 @@
+'use client';
+
+import React, { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import SharedLayout from '@/components/SharedLayout';
+import ProjectModal from '@/components/ProjectModal';
+
+// Note: Metadata export not supported in client components
+
+const PROJECTS = [
+  {
+    id: 1,
+    title: 'Lavimac Royal Hotel Website',
+    category: 'Website',
+    description: 'A luxury hotel website with online booking system, room showcasing, and integrated payment processing for an enhanced guest experience.',
+    image: '/Lavimac royal hotel website.png',
+    features: ['Responsive design for all devices', 'Online booking and reservation system', 'High-resolution room gallery', 'Integrated payment processing', 'Customer reviews and testimonials'],
+    technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'Node.js', 'Express', 'MongoDB'],
+    link: 'https://lavimacroyalhotel.com',
+  },
+  {
+    id: 2,
+    title: 'Dynamic Shipping & Logistics',
+    category: 'Web Application',
+    description: 'A comprehensive logistics management system that handles shipment tracking, inventory management, and delivery optimisation.',
+    image: '/Dynamic Shipping and Logistics.png',
+    features: ['Real-time shipment tracking', 'Route optimisation algorithms', 'Inventory management', 'Delivery scheduling', 'Customer notification system', 'Analytics and reporting'],
+    technologies: ['React', 'Redux', 'Node.js', 'Express', 'PostgreSQL', 'Google Maps API', 'Docker'],
+    link: 'https://dynamicshippingandlogistics.com',
+  },
+  {
+    id: 3,
+    title: 'Obotan Credit Union Banking App',
+    category: 'Mobile App',
+    description: 'A secure mobile banking application for credit union members to manage accounts, make transactions, and access financial services.',
+    image: '/Obotan Coorperative Credit  Union Banking App.jpg',
+    features: ['Secure user authentication', 'Account management', 'Fund transfers', 'Bill payments', 'Mobile check deposit', 'Transaction history', 'Financial calculators'],
+    technologies: ['React Native', 'Redux', 'Node.js', 'Express', 'MongoDB', 'JWT Authentication', 'Stripe API'],
+  },
+  {
+    id: 4,
+    title: 'Building Development Manager',
+    category: 'Web Application',
+    description: 'A web application for managing construction projects, tracking progress, resource allocation, and stakeholder communication.',
+    image: '/Building Development Web App.jpg',
+    features: ['Project timeline visualisation', 'Resource management', 'Budget tracking', 'Document management', 'Communication portal', 'Progress reporting', 'Stakeholder access control'],
+    technologies: ['Angular', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'AWS S3', 'Socket.io'],
+  },
+  {
+    id: 5,
+    title: 'Pro Realty Properties Web App',
+    category: 'Web Application',
+    description: 'A real estate platform for property listings, virtual tours, and client management designed for real estate agencies.',
+    image: '/Pro Realty Properties Web App.png',
+    features: ['Property listing management', 'Advanced search filters', 'Virtual property tours', 'Appointment scheduling', 'Client management system', 'Analytics dashboard', 'Email notifications'],
+    technologies: ['React', 'Next.js', 'Tailwind CSS', 'Node.js', 'Express', 'PostgreSQL', 'Twilio API'],
+  },
+  {
+    id: 6,
+    title: 'Emson Hotel Website',
+    category: 'Website',
+    description: 'An elegant website for a boutique hotel, featuring room bookings, amenities showcase, and event planning services.',
+    image: '/Emson hotel website.png',
+    features: ['Mobile-first responsive design', 'Room availability checker', 'Online booking system', 'Event planning services', 'Photo gallery', 'Local attractions guide', 'Customer feedback system'],
+    technologies: ['React', 'Gatsby', 'Styled Components', 'Node.js', 'Express', 'MongoDB', 'Netlify'],
+    link: 'https://emsonhotel.com',
+  },
+  {
+    id: 7,
+    title: 'Dominic Kudom Portfolio',
+    category: 'Website',
+    description: 'A professional portfolio website showcasing skills, projects, and services with a modern and interactive design.',
+    image: '/Dominic Kudom Portfolio.png',
+    features: ['Interactive UI elements', 'Project showcase', 'Skill visualisation', 'Contact form', 'Performance optimisation', 'SEO best practices', 'Dark/Light mode'],
+    technologies: ['React', 'Three.js', 'Framer Motion', 'Tailwind CSS', 'Next.js', 'Vercel'],
+    link: 'https://plndominic.github.io/dominickudom/',
+  },
+  {
+    id: 8,
+    title: 'Hotel Management System',
+    category: 'Web Application',
+    description: 'A comprehensive hotel management software solution streamlining reservations, housekeeping, and financial management.',
+    image: '/Hotel Management System Software Web App.png',
+    features: ['Reservation and booking management', 'Room allocation and availability tracking', 'Guest check-in/check-out automation', 'Housekeeping management', 'Billing and invoicing', 'Reporting and analytics', 'Staff management'],
+    technologies: ['React', 'Next.js', 'TypeScript', 'Node.js', 'Express', 'PostgreSQL', 'Redis', 'Docker'],
+    link: 'https://mikjane-hotel-system-management-software.vercel.app/landing',
+  },
+  {
+    id: 9,
+    title: 'Aaron Freeman Portfolio',
+    category: 'Website',
+    description: 'A professional portfolio for Aaron Freeman, Urban & Environmental Planner, showcasing sustainable city planning projects and innovative environmental solutions.',
+    image: '/Aaron Freeman.png',
+    features: ['Urban & Environment Projects', 'Urban planning project gallery', 'Environmental compliance experience', 'Community & volunteer leadership'],
+    technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript', 'Vercel'],
+    link: 'https://freemanaaron.com',
+  },
+  {
+    id: 10,
+    title: 'Bubbly Kids Academy',
+    category: 'Website',
+    description: "A vibrant website for Bubbly Kids Academy featuring programs, admissions, methodology, and gallery to showcase the school's hands-on learning approach.",
+    image: '/Bubbly kids academy.png',
+    features: ['School programs and curriculum showcase', 'Online admissions and enrollment', 'Photo gallery and activities display', 'Teaching methodology presentation', 'Contact and location information', 'Mobile-responsive design'],
+    technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript', 'Vercel'],
+    link: 'https://bubbly-kids-academy.vercel.app',
+  },
+  {
+    id: 11,
+    title: 'Clems Akinaabi Company Limited',
+    category: 'Web Application',
+    description: 'Complete offline inventory management, order processing, and customer tracking system designed specifically for bag manufacturing.',
+    image: '/Clems Akinaabi Company Limited.png',
+    features: ['Offline inventory management', 'Order processing system', 'Customer tracking and management', 'Product catalog for bags and accessories', 'Dashboard and analytics', 'Professional efficiency tools'],
+    technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'IndexedDB', 'PWA'],
+    link: 'https://clems-akinaabi.vercel.app/',
+  },
+  {
+    id: 12,
+    title: 'Amor De Dios Drilling & Construction',
+    category: 'Website',
+    description: 'A professional website for a drilling and civil construction company, showcasing services, projects, and expertise in infrastructure development.',
+    image: '/Amor De Dios Drilling and Civil Construction.png',
+    features: ['Services showcase', 'Project portfolio', 'Company profile and expertise', 'Contact and inquiry system', 'Mobile-responsive design', 'Service request forms'],
+    technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript', 'Vercel'],
+    link: 'https://www.amordediosdrilling.com/',
+  },
+  {
+    id: 13,
+    title: 'Nevrol Ventures',
+    category: 'Website',
+    description: 'A professional business website for Nevrol Ventures, showcasing company services, portfolio, and business solutions.',
+    image: '/Nevrol Ventures.png',
+    features: ['Company overview', 'Services showcase', 'Portfolio display', 'Contact and inquiry forms', 'Responsive design', 'Modern UI/UX'],
+    technologies: ['React', 'Next.js', 'Tailwind CSS', 'TypeScript', 'Vercel'],
+    link: 'https://nevrol-ventures.vercel.app/',
+  },
+  {
+    id: 14,
+    title: 'Jokran Hotel',
+    category: 'Website',
+    description: 'An elegant hotel website featuring online booking, room showcasing, amenities display, and guest services for a superior hospitality experience.',
+    image: '/Jokran Hotel.png',
+    features: ['Online booking and reservation', 'Room gallery and details', 'Amenities showcase', 'Guest services information', 'Contact and location', 'Responsive design'],
+    technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript'],
+    link: 'https://jokranhotel.com',
+  },
+  {
+    id: 15,
+    title: 'Peravic Lodge',
+    category: 'Website',
+    description: 'A welcoming lodge website featuring accommodations showcase, amenities display, and booking information for a comfortable stay experience.',
+    image: '/Peravic Lodge.png',
+    features: ['Accommodation gallery', 'Amenities and facilities showcase', 'Location and directions', 'Booking information', 'Guest services', 'Responsive design'],
+    technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript'],
+    link: 'https://peraviclodge.com',
+  },
+  {
+    id: 16,
+    title: 'Nhyiraba Hotel',
+    category: 'Web Application',
+    description: 'A modern hotel booking application featuring real-time room availability, MTN Mobile Money payment integration, and seamless guest reservation.',
+    image: '/Nhyiraba Hotel.png',
+    features: ['Real-time room availability', 'Online booking and reservation', 'MTN Mobile Money payment integration', 'Room gallery and details', 'Guest management', 'Responsive mobile-first design'],
+    technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript', 'Supabase', 'Vercel'],
+    link: 'https://www.nhyirabahotel.com/',
+  },
+  {
+    id: 17,
+    title: 'Nhyiraba Hotel Management System',
+    category: 'Web Application',
+    description: 'A full-stack hotel management system with real-time room status, guest management, reservation handling, and comprehensive reporting.',
+    image: '/Nhyiraba HMS.png',
+    features: ['Real-time room status tracking', 'Guest check-in/check-out management', 'Reservation and booking management', 'Housekeeping coordination', 'Billing and invoicing', 'Comprehensive reporting and analytics', 'Staff management'],
+    technologies: ['React', 'Next.js', 'TypeScript', 'Node.js', 'Supabase', 'Tailwind CSS', 'Vercel'],
+    link: 'https://nhyiraba-hms.vercel.app',
+  },
+  {
+    id: 18,
+    title: 'Solani Construction & Engineering',
+    category: 'Website',
+    description: 'A professional website for Solani Construction Limited, premier construction specialists delivering resilient infrastructure across Ghana.',
+    image: '/Solani Construction.png',
+    features: ['Services and expertise showcase', 'Project portfolio gallery', 'Company profile and team', 'Client testimonials', 'Project inquiry and contact forms', 'Mobile-responsive design'],
+    technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript', 'Vercel'],
+    link: 'https://www.solaniconstruction.com/',
+  },
+  {
+    id: 19,
+    title: 'Michelle Mayers Skincare & Spa',
+    category: 'Website',
+    description: 'An elegant luxury website for Michelle Mayers Skincare & Spa, showcasing treatments, products, bookings, and brand story.',
+    image: '/Michelle Mayers Skincare Spa.png',
+    features: ['Services and treatment showcase', 'Online appointment booking', 'Product catalog', 'Before & after gallery', 'Brand story and team profiles', 'Mobile-responsive luxury design'],
+    technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript', 'Vercel'],
+    link: 'https://michelle-mayyers-skincare-spa.vercel.app',
+  },
+  {
+    id: 20,
+    title: 'Mankind Foundation Ghana',
+    category: 'Website',
+    description: "A compelling NGO website communicating Mankind Foundation Ghana's mission, programs, impact stories, and donation opportunities.",
+    image: '/Mankind Foundation Ghana.png',
+    features: ['Mission and vision presentation', 'Programs and initiatives showcase', 'Impact stories and reports', 'Donation and fundraising integration', 'Volunteer sign-up system', 'News and events updates'],
+    technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript', 'Vercel'],
+    link: 'https://www.mankindfoundationgh.org',
+  },
+  {
+    id: 21,
+    title: 'Persis Luxury Beauty World',
+    category: 'Website',
+    description: 'A high-end luxury beauty brand website for Persis, featuring premium products, collections, and an immersive shopping experience.',
+    image: '/Persis Luxury Beauty World.png',
+    features: ['Luxury product catalog', 'Collections and lookbooks', 'Brand story and identity', 'Online shopping experience', 'Beauty tips and editorial content', 'Premium responsive design'],
+    technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript', 'Vercel'],
+    link: 'https://www.persisluxury.com',
+  },
+  {
+    id: 22,
+    title: 'Royal Home Comfort',
+    category: 'Website',
+    description: 'A professional real estate and home comfort services website featuring property listings, interior solutions, and seamless client engagement.',
+    image: '/Royal Home Comfort.png',
+    features: ['Property listings and gallery', 'Home comfort services showcase', 'Client inquiry and contact system', 'Testimonials and reviews', 'About and team section', 'Mobile-responsive design'],
+    technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript', 'Vercel'],
+    link: 'https://www.royalhomecomforthotel.com/',
+  },
+  {
+    id: 23,
+    title: 'Aspee Pharmaceuticals',
+    category: 'Web Application',
+    description: 'A professional pharmaceutical company website showcasing product range, healthcare solutions, company profile, and contact information.',
+    image: '/Aspee.jpg',
+    features: ['Product catalog and portfolio', 'Healthcare solutions showcase', 'Company profile and certifications', 'Research and development section', 'Contact and distribution inquiries', 'Responsive professional design'],
+    technologies: ['Next.js', 'Tailwind CSS', 'TypeScript', 'Vercel'],
+  },
+  {
+    id: 24,
+    title: 'MoldGold School Management System',
+    category: 'Web Application',
+    description: 'A comprehensive school management system streamlining academics, student records, staff management, fee collection, and communications.',
+    image: '/Moldgold School.png',
+    features: ['Student and staff records management', 'Academic scheduling and timetables', 'Fee and payment management', 'Exam and results management', 'Parent and teacher communication portal', 'Attendance tracking', 'Reports and analytics dashboard'],
+    technologies: ['React', 'Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Vercel'],
+    link: 'https://moldgold-school.vercel.app',
+  },
+  {
+    id: 25,
+    title: 'Bauvet Dog Parent',
+    category: 'Web Application',
+    description: 'An AI-powered pet care platform for dog owners, offering personalised care advice, veterinary resources, health tracking, and community features.',
+    image: '/Bauvet Dog Parent.png',
+    features: ['AI-powered pet care assistant', 'Dog health and wellness tracking', 'Veterinary resource library', 'Appointment scheduling', 'Community and social features', 'Breed information database'],
+    technologies: ['React', 'Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS', 'AI Integration', 'Vercel'],
+    link: 'https://bauvet---dog-parent.vercel.app',
+  },
+];
+
+const FILTERS = ['All', 'Website', 'Web Application', 'Mobile App', 'Business Software'];
+
+export default function Projects() {
+  const [activeFilter, setActiveFilter] = useState<string>('All');
+  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+  const filteredProjects = activeFilter === 'All'
+    ? PROJECTS
+    : PROJECTS.filter(p => p.category === activeFilter);
+
+  const handleProjectClick = (project: any) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
+  return (
+    <SharedLayout>
+      <main className="relative z-10">
+        <div className="ip-wrap">
+
+          {/* ── Page header ── */}
+          <div className="ip-page-head">
+            <div style={{ marginBottom: '1rem' }}>
+              <hr className="es-rule" />
+              <span className="es-section-label">ALL WORK</span>
+            </div>
+            <h1 className="ip-heading">
+              32+<br />
+              <span style={{ color: 'var(--accent)' }}>PROJECTS.</span>
+            </h1>
+            <p className="ip-body" style={{ marginTop: '1.5rem' }}>
+              Every project we've built — websites, applications, and enterprise systems for clients across Africa and beyond.
+            </p>
+          </div>
+
+          {/* ── Filters ── */}
+          <div className="ip-filters">
+            {FILTERS.map(filter => (
+              <button
+                key={filter}
+                onClick={() => setActiveFilter(filter)}
+                className={`btn-press ip-filter-btn${activeFilter === filter ? ' active' : ''}`}
+              >
+                {filter}
+              </button>
+            ))}
+          </div>
+
+          {/* ── Project grid ── */}
+          <div className="ip-proj-grid" style={{ marginBottom: 'clamp(3rem, 5vw, 5rem)' }}>
+            {filteredProjects.map(project => (
+              <div
+                key={project.id}
+                className="ip-proj-card"
+                onClick={() => handleProjectClick(project)}
+              >
+                <div className="ip-proj-img-wrap">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover ip-proj-img"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    quality={80}
+                  />
+                </div>
+                <div className="ip-proj-info">
+                  <span className="ip-cat-badge">{project.category}</span>
+                  <h3 className="ip-proj-name">{project.title}</h3>
+                  <p className="ip-proj-desc">{project.description}</p>
+                </div>
+                <div className="ip-proj-foot">
+                  <button className="btn-press ip-proj-details-btn">
+                    View Details →
+                  </button>
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="ip-proj-visit"
+                      onClick={e => e.stopPropagation()}
+                    >
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
+                        <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                          stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      Visit Site
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* ── CTA ── */}
+          <div className="ip-cta">
+            <h2 className="ip-cta-head">
+              YOUR PROJECT<br />
+              <span className="ip-cta-accent">NEXT.</span>
+            </h2>
+            <div className="ip-cta-side">
+              <p className="ip-cta-sub">
+                Join 32+ organisations that trust Ecstasy to build their digital infrastructure.
+              </p>
+              <Link href="/contact" className="btn-press ip-cta-btn">
+                Start a Project
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+
+        </div>
+      </main>
+
+      {selectedProject && (
+        <ProjectModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          project={selectedProject}
+        />
+      )}
+    </SharedLayout>
+  );
+}
