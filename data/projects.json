@@ -1,5 +1,345 @@
 [
   {
+    "image": "",
+    "features": [
+      "District GIS mapping",
+      "Community resources",
+      "Service directory",
+      "Geographic data visualization",
+      "Responsive design"
+    ],
+    "technologies": [
+      "JavaScript",
+      "Python",
+      "HTML5",
+      "GeoJSON"
+    ],
+    "status": "completed",
+    "title": "Bia East District",
+    "category": "GIS",
+    "description": "Digital platform for Bia East District, Ghana, with geographic information mapping, community resource directory, and district service listings.",
+    "year": 2023,
+    "id": 39,
+    "updatedAt": "2026-06-20T15:10:27.998Z"
+  },
+  {
+    "image": "",
+    "features": [
+      "Online reservations",
+      "Event listings",
+      "Venue gallery",
+      "Contact & enquiry form",
+      "Responsive design"
+    ],
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "status": "completed",
+    "title": "Avenu-15",
+    "category": "Website",
+    "description": "Event venue and booking website with an online reservation system, gallery, and event listings for a premium Ghana venue.",
+    "year": 2024,
+    "id": 38,
+    "updatedAt": "2026-06-20T15:10:27.998Z"
+  },
+  {
+    "image": "",
+    "features": [
+      "Product catalogue",
+      "WhatsApp ordering",
+      "Elegant UI",
+      "Mobile-first design",
+      "Responsive layout"
+    ],
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS"
+    ],
+    "status": "completed",
+    "title": "Fine Wine",
+    "category": "Website",
+    "description": "Premium wine retail website with product catalogue, WhatsApp ordering, and elegant design tailored for a Ghanaian wine business.",
+    "year": 2024,
+    "id": 37,
+    "updatedAt": "2026-06-20T15:10:27.998Z"
+  },
+  {
+    "image": "",
+    "features": [
+      "Member directory",
+      "Attendance tracking",
+      "Event management",
+      "Service schedules",
+      "Church administration dashboard"
+    ],
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "PostgreSQL"
+    ],
+    "status": "completed",
+    "title": "Royal Ecclesia Church Management System",
+    "category": "Business Software",
+    "description": "Full-stack church management system for Royal Ecclesia Church covering member records, attendance tracking, event coordination, and church administration.",
+    "year": 2024,
+    "id": 36,
+    "updatedAt": "2026-06-20T15:10:27.998Z"
+  },
+  {
+    "image": "",
+    "features": [
+      "Modern UI/UX",
+      "Responsive design",
+      "Font optimization",
+      "Clean codebase",
+      "ESLint configured"
+    ],
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "CSS",
+      "Geist Font"
+    ],
+    "status": "completed",
+    "title": "Eighteen Cubic",
+    "category": "Website",
+    "description": "Modern business website built with Next.js and TypeScript using Geist font and a clean, professional architecture.",
+    "link": "https://github.com/PlnDominic/Eighteen-Cubic",
+    "year": 2024,
+    "id": 35,
+    "updatedAt": "2026-06-20T15:10:27.998Z"
+  },
+  {
+    "image": "",
+    "features": [
+      "Property listings",
+      "Management dashboard",
+      "Database integration",
+      "User authentication",
+      "Responsive design"
+    ],
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "PLpgSQL"
+    ],
+    "status": "completed",
+    "title": "PM Group",
+    "category": "Web Application",
+    "description": "Property management web application built with Next.js, TypeScript, and PostgreSQL for managing properties, listings, and client interactions.",
+    "link": "https://github.com/PlnDominic/PM-Group",
+    "year": 2024,
+    "id": 34,
+    "updatedAt": "2026-06-20T15:10:27.998Z"
+  },
+  {
+    "image": "",
+    "features": [
+      "Lead scouting dashboard",
+      "Prospect data management",
+      "Detail views",
+      "Cloud deployment-ready",
+      "Data analytics"
+    ],
+    "technologies": [
+      "Python",
+      "Flask",
+      "HTML5",
+      "Heroku"
+    ],
+    "status": "completed",
+    "title": "XScout Lead Platform",
+    "category": "Web Application",
+    "description": "Python-powered web application for lead scouting and data management with a dedicated dashboard for prospect tracking and analysis.",
+    "link": "https://github.com/PlnDominic/XScout",
+    "year": 2023,
+    "id": 33,
+    "updatedAt": "2026-06-20T15:10:27.998Z"
+  },
+  {
+    "image": "",
+    "features": [
+      "Building compliance tracking",
+      "Geospatial map views",
+      "Shapefile & GeoJSON support",
+      "File upload system",
+      "Database migrations",
+      "Test suite"
+    ],
+    "technologies": [
+      "Python",
+      "Flask",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "GeoJSON"
+    ],
+    "status": "completed",
+    "title": "Building Compliance Tracking App",
+    "category": "GIS",
+    "description": "Web application for tracking and assessing building compliance with geospatial mapping support, shapefile and GeoJSON data handling, and a migration-backed database.",
+    "link": "https://github.com/PlnDominic/building-compliance-app",
+    "year": 2023,
+    "id": 32,
+    "updatedAt": "2026-06-20T15:10:27.998Z"
+  },
+  {
+    "image": "",
+    "features": [
+      "Interactive map layers",
+      "Spatial data visualization",
+      "Location display",
+      "Custom data directory",
+      "No-framework deployment"
+    ],
+    "technologies": [
+      "JavaScript",
+      "HTML5",
+      "CSS3"
+    ],
+    "status": "completed",
+    "title": "Interactive GIS Web Map",
+    "category": "GIS",
+    "description": "Web-based interactive mapping application for spatial data visualization, built entirely with vanilla JavaScript and HTML5 for lightweight deployment.",
+    "link": "https://github.com/PlnDominic/InteractiveMap",
+    "year": 2023,
+    "id": 31,
+    "updatedAt": "2026-06-20T15:10:27.998Z"
+  },
+  {
+    "image": "",
+    "features": [
+      "School information pages",
+      "Responsive design",
+      "SEO optimization",
+      "Custom React hooks",
+      "Component-based UI"
+    ],
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "PostCSS"
+    ],
+    "status": "completed",
+    "title": "Bubbly Montessori School Website",
+    "category": "Website",
+    "description": "Clean, professional school website for Bubbly Montessori built with Next.js and Tailwind CSS with SEO optimization and component-based architecture.",
+    "link": "https://github.com/PlnDominic/Bubbly-Montessori",
+    "year": 2024,
+    "id": 30,
+    "updatedAt": "2026-06-20T15:10:27.998Z"
+  },
+  {
+    "image": "",
+    "features": [
+      "User authentication",
+      "Financial transactions",
+      "Work submissions",
+      "Admin reporting dashboard",
+      "Role-based access control",
+      "Database migrations"
+    ],
+    "technologies": [
+      "Python",
+      "Flask",
+      "PostgreSQL",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Gunicorn"
+    ],
+    "status": "completed",
+    "title": "Obotan Co-operative Credit Union System",
+    "category": "Business Software",
+    "description": "Comprehensive web application for managing the Obotan Co-operative Credit Union — covering user management, financial transactions, work submissions, and administrative reporting.",
+    "link": "https://github.com/PlnDominic/Obotan-Cooperative-Credit-Union",
+    "year": 2023,
+    "id": 29,
+    "updatedAt": "2026-06-20T15:10:27.998Z"
+  },
+  {
+    "image": "",
+    "features": [
+      "Responsive design",
+      "Dark/light theme toggle",
+      "Services directory",
+      "Announcements board",
+      "Departments listing",
+      "Contact form"
+    ],
+    "technologies": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Google Fonts"
+    ],
+    "status": "completed",
+    "title": "BABMA Municipal Assembly Website",
+    "category": "Website",
+    "description": "Modern, responsive official website for the BABMA Municipal Assembly with dark/light theme toggle, dynamic content loading, and multi-page structure covering services, departments, and announcements.",
+    "link": "https://github.com/PlnDominic/BABMA02",
+    "year": 2024,
+    "id": 28,
+    "updatedAt": "2026-06-20T15:10:27.998Z"
+  },
+  {
+    "image": "",
+    "features": [
+      "Room occupancy dashboard",
+      "Check-in/checkout workflows",
+      "Reservation system",
+      "Live database sync",
+      "Automated reports"
+    ],
+    "technologies": [
+      "React",
+      "Supabase",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "JavaScript"
+    ],
+    "status": "completed",
+    "title": "Mikjan Hotel Management System",
+    "category": "Business Software",
+    "description": "Full-stack hotel management system built for Mikjan Hotel with live occupancy tracking, guest workflows, reservation system, and automated reporting.",
+    "link": "https://github.com/PlnDominic/mikjan-hotel-management-system-software",
+    "year": 2024,
+    "id": 27,
+    "updatedAt": "2026-06-20T15:10:27.998Z"
+  },
+  {
+    "image": "",
+    "features": [
+      "Real-time room occupancy dashboard",
+      "Guest check-in/checkout",
+      "Reservation management",
+      "Report generation & exports",
+      "Row-level security"
+    ],
+    "technologies": [
+      "React",
+      "Node.js",
+      "Express",
+      "Supabase",
+      "PostgreSQL"
+    ],
+    "status": "completed",
+    "title": "Lavimac Hotel Management System",
+    "category": "Business Software",
+    "description": "Full-stack hotel management system with real-time room status updates, guest check-in/checkout workflows, reservation handling, and comprehensive reporting for Lavimac Hotel, Ghana.",
+    "link": "https://github.com/PlnDominic/Lavimac-HMS",
+    "year": 2024,
+    "id": 26,
+    "updatedAt": "2026-06-20T15:10:27.998Z"
+  },
+  {
     "id": 1,
     "title": "Lavimac Royal Hotel Website",
     "category": "Website",
