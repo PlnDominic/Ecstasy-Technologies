@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import SharedLayout from '@/components/SharedLayout';
 import ProjectModal from '@/components/ProjectModal';
-import projectsData from '../../../../data/projects.json';
+import projectsData from '../../../data/projects.json';
 
 // Note: Metadata export not supported in client components
 
