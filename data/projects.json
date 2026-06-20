@@ -316,7 +316,11 @@
       "TypeScript",
       "Vercel"
     ],
-    "link": "https://nevrol-ventures.vercel.app/"
+    "link": "https://nevrol-ventures.vercel.app/",
+    "year": 2026,
+    "featured": true,
+    "status": "completed",
+    "updatedAt": "2026-06-20T10:04:56.982Z"
   },
   {
     "id": 14,
