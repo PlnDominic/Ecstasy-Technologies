@@ -1,6 +1,6 @@
 [
   {
-    "image": "",
+    "image": "https://suvmsdfclcnuljwptdeq.supabase.co/storage/v1/object/public/project-images/tagett-1781969724443.png",
     "features": [
       "District GIS mapping",
       "Community resources",
@@ -16,11 +16,13 @@
     ],
     "status": "completed",
     "title": "Bia East District",
-    "category": "GIS",
+    "category": "Website",
     "description": "Digital platform for Bia East District, Ghana, with geographic information mapping, community resource directory, and district service listings.",
-    "year": 2023,
+    "year": 2025,
     "id": 39,
-    "updatedAt": "2026-06-20T15:10:27.998Z"
+    "updatedAt": "2026-06-20T15:30:05.519Z",
+    "link": "https://www.biaeastdistrict.org/",
+    "featured": false
   },
   {
     "image": "",
