@@ -441,7 +441,11 @@
       "TypeScript",
       "Vercel"
     ],
-    "link": "https://www.solaniconstruction.com/"
+    "link": "https://www.solaniconstruction.com/",
+    "year": 2026,
+    "featured": true,
+    "status": "completed",
+    "updatedAt": "2026-06-20T10:09:50.823Z"
   },
   {
     "id": 19,
