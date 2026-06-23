@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import SharedLayout from '@/components/SharedLayout';
 import ProjectModal from '@/components/ProjectModal';
 import projectsData from '../../../data/projects.json';
@@ -29,15 +28,13 @@ function ProjectImage({ src, alt }: { src: string; alt: string }) {
       </div>
     )
   }
+  // Plain <img> — bypasses Next.js /_next/image optimizer (avoids Vercel quota)
   return (
-    <Image
+    <img
       src={src}
       alt={alt}
-      fill
-      className="object-cover ip-proj-img"
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-      quality={80}
       onError={() => setFailed(true)}
+      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
     />
   )
 }
