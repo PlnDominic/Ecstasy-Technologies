@@ -80,16 +80,16 @@
     "technologies": [
       "Next.js",
       "TypeScript",
-      "Tailwind CSS",
-      "PostgreSQL"
+      "Tailwind CSS"
     ],
     "status": "completed",
     "title": "Royal Ecclesia Church Management System",
-    "category": "Business Software",
+    "category": "Web Application",
     "description": "Full-stack church management system for Royal Ecclesia Church covering member records, attendance tracking, event coordination, and church administration.",
-    "year": 2024,
+    "year": 2026,
     "id": 36,
-    "updatedAt": "2026-06-20T15:10:27.998Z"
+    "updatedAt": "2026-06-23T12:30:25.020Z",
+    "featured": false
   },
   {
     "image": "",
