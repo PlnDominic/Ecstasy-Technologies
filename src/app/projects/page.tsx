@@ -7,14 +7,40 @@ import SharedLayout from '@/components/SharedLayout';
 import ProjectModal from '@/components/ProjectModal';
 import projectsData from '../../../data/projects.json';
 
-// Note: Metadata export not supported in client components
-
 const PROJECTS = projectsData as Array<{
   id: number; title: string; category: string; description: string;
   image: string; features: string[]; technologies: string[]; link?: string;
 }>;
 
 const FILTERS = ['All', 'Website', 'Web Application', 'Mobile App', 'Business Software'];
+
+function ProjectImage({ src, alt }: { src: string; alt: string }) {
+  const [failed, setFailed] = useState(false)
+  if (!src || failed) {
+    return (
+      <div style={{
+        width: '100%', height: '100%',
+        background: 'linear-gradient(135deg, #111 0%, #1a1a1a 100%)',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+      }}>
+        <span style={{ color: '#333', fontSize: '12px', fontFamily: 'monospace', letterSpacing: '0.05em' }}>
+          [ preview soon ]
+        </span>
+      </div>
+    )
+  }
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      fill
+      className="object-cover ip-proj-img"
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+      quality={80}
+      onError={() => setFailed(true)}
+    />
+  )
+}
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState<string>('All');
@@ -46,7 +72,7 @@ export default function Projects() {
               <span style={{ color: 'var(--accent)' }}>PROJECTS.</span>
             </h1>
             <p className="ip-body" style={{ marginTop: '1.5rem' }}>
-              Every project we've built — websites, applications, and enterprise systems for clients across Africa and beyond.
+              Every project we&#39;ve built &#8212; websites, applications, and enterprise systems for clients across Africa and beyond.
             </p>
           </div>
 
@@ -72,14 +98,7 @@ export default function Projects() {
                 onClick={() => handleProjectClick(project)}
               >
                 <div className="ip-proj-img-wrap">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover ip-proj-img"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    quality={80}
-                  />
+                  <ProjectImage src={project.image} alt={project.title} />
                 </div>
                 <div className="ip-proj-info">
                   <span className="ip-cat-badge">{project.category}</span>
@@ -88,7 +107,7 @@ export default function Projects() {
                 </div>
                 <div className="ip-proj-foot">
                   <button className="btn-press ip-proj-details-btn">
-                    View Details →
+                    View Details &#8594;
                   </button>
                   {project.link && (
                     <a
