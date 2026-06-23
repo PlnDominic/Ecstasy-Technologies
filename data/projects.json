@@ -1,6 +1,6 @@
 [
   {
-    "image": "",
+    "image": "/project-images/tagett-1782224340328.png",
     "features": [
       "Wellness services showcase",
       "Health & lifestyle content",
@@ -16,12 +16,13 @@
     ],
     "status": "completed",
     "title": "Glow Healthy",
-    "category": "Website",
+    "category": "Web Application",
     "description": "Health and wellness website for Glow Healthy — a vibrant, mobile-first platform covering wellness services, healthy lifestyle content, and client booking or enquiry flows.",
-    "link": "https://github.com/PlnDominic/glow-healthy",
-    "year": 2025,
+    "link": "https://www.shopglowhealthy.com",
+    "year": 2026,
     "id": 48,
-    "updatedAt": "2026-06-23T14:15:48.644Z"
+    "updatedAt": "2026-06-23T14:14:25.305Z",
+    "featured": true
   },
   {
     "image": "",
