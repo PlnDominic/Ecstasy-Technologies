@@ -94,31 +94,6 @@
   {
     "image": "",
     "features": [
-      "Property listings",
-      "Management dashboard",
-      "Database integration",
-      "User authentication",
-      "Responsive design"
-    ],
-    "technologies": [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "PostgreSQL",
-      "PLpgSQL"
-    ],
-    "status": "completed",
-    "title": "PM Group",
-    "category": "Web Application",
-    "description": "Property management web application built with Next.js, TypeScript, and PostgreSQL for managing properties, listings, and client interactions.",
-    "link": "https://github.com/PlnDominic/PM-Group",
-    "year": 2024,
-    "id": 34,
-    "updatedAt": "2026-06-20T15:10:27.998Z"
-  },
-  {
-    "image": "",
-    "features": [
       "Lead scouting dashboard",
       "Prospect data management",
       "Detail views",
