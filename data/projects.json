@@ -22,28 +22,6 @@
     "updatedAt": "2026-06-27T14:29:55.552Z"
   },
   {
-    "image": "",
-    "features": [
-      "Product catalogue",
-      "WhatsApp ordering",
-      "Elegant UI",
-      "Mobile-first design",
-      "Responsive layout"
-    ],
-    "technologies": [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS"
-    ],
-    "status": "completed",
-    "title": "Fine Wine",
-    "category": "Website",
-    "description": "Premium wine retail website with product catalogue, WhatsApp ordering, and elegant design tailored for a Ghanaian wine business.",
-    "year": 2024,
-    "id": 59,
-    "updatedAt": "2026-06-27T14:29:55.552Z"
-  },
-  {
     "image": "/project-images/tagett-1782224340328.png",
     "features": [
       "Wellness services showcase",
