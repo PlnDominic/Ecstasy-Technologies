@@ -1,27 +1,5 @@
 [
   {
-    "image": "",
-    "features": [
-      "Online reservations",
-      "Event listings",
-      "Venue gallery",
-      "Contact & enquiry form",
-      "Responsive design"
-    ],
-    "technologies": [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS"
-    ],
-    "status": "completed",
-    "title": "Avenu-15",
-    "category": "Website",
-    "description": "Event venue and booking website with an online reservation system, gallery, and event listings for a premium Ghana venue.",
-    "year": 2024,
-    "id": 60,
-    "updatedAt": "2026-06-27T14:29:55.552Z"
-  },
-  {
     "image": "/project-images/tagett-1782224340328.png",
     "features": [
       "Wellness services showcase",
