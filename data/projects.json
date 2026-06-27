@@ -165,30 +165,6 @@
   {
     "image": "",
     "features": [
-      "Lead scouting dashboard",
-      "Prospect data management",
-      "Detail views",
-      "Cloud deployment-ready",
-      "Data analytics"
-    ],
-    "technologies": [
-      "Python",
-      "Flask",
-      "HTML5",
-      "Heroku"
-    ],
-    "status": "completed",
-    "title": "XScout Lead Platform",
-    "category": "Web Application",
-    "description": "Python-powered web application for lead scouting and data management with a dedicated dashboard for prospect tracking and analysis.",
-    "link": "https://github.com/PlnDominic/XScout",
-    "year": 2023,
-    "id": 56,
-    "updatedAt": "2026-06-27T14:29:55.552Z"
-  },
-  {
-    "image": "",
-    "features": [
       "Interactive map layers",
       "Spatial data visualization",
       "Location display",
