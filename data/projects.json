@@ -63,13 +63,15 @@
       "CSS3"
     ],
     "status": "completed",
-    "title": "Raynelle",
+    "title": "Ms. Raynelle Nana Yaa Boadu Portfolio",
     "category": "Website",
-    "description": "Client website project built with JavaScript — a clean, responsive web presence with a modern layout and tailored brand design.",
-    "link": "https://github.com/PlnDominic/Raynelle",
-    "year": 2025,
+    "description": "Client website project built with JavaScript; a clean, responsive web presence with a modern layout and tailored brand design.",
+    "link": "https://raynelle.vercel.app/",
+    "year": 2026,
     "id": 46,
-    "updatedAt": "2026-06-23T14:15:48.644Z"
+    "updatedAt": "2026-06-27T14:17:57.041Z",
+    "client": "Ms. Raynelle Nana Yaa Boadu Portfolio",
+    "featured": false
   },
   {
     "image": "/project-images/tagett-1782570005106.png",
