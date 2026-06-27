@@ -25,7 +25,7 @@
     "featured": true
   },
   {
-    "image": "",
+    "image": "/project-images/tagett-1782569436979.png",
     "features": [
       "Performance-first architecture",
       "TypeScript codebase",
@@ -39,13 +39,15 @@
       "Next.js"
     ],
     "status": "completed",
-    "title": "Aspee",
+    "title": "Aspee Pharmaceuticals",
     "category": "Web Application",
-    "description": "TypeScript web application for Aspee — a modern, fast-loading platform built with performance-first architecture and clean component-based design.",
+    "description": "TypeScript web application for Aspee Pharmaceuticals; a modern, fast-loading platform built with performance-first architecture and clean component-based design.",
     "link": "https://github.com/PlnDominic/Aspee",
-    "year": 2025,
+    "year": 2026,
     "id": 47,
-    "updatedAt": "2026-06-23T14:15:48.644Z"
+    "updatedAt": "2026-06-27T14:04:26.684Z",
+    "client": "Aspee Pharmaceuticals",
+    "featured": false
   },
   {
     "image": "",
