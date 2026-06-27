@@ -1,5 +1,20 @@
 [
   {
+    "image": "/project-images/tagett-1782571570217.png",
+    "features": [],
+    "technologies": [],
+    "title": "Obuasi Links",
+    "category": "Website",
+    "description": "A professional website for Obuasi Links; an NGO for the Obuasi community",
+    "year": 2026,
+    "link": "https://www.obuasilinks.com/",
+    "client": "Obuasi Links",
+    "featured": false,
+    "status": "completed",
+    "updatedAt": "2026-06-27T14:46:59.746Z",
+    "id": 49
+  },
+  {
     "image": "/project-images/tagett-1782224340328.png",
     "features": [
       "Wellness services showcase",
