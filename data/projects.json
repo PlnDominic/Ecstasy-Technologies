@@ -42,10 +42,10 @@
     "title": "Aspee Pharmaceuticals",
     "category": "Web Application",
     "description": "TypeScript web application for Aspee Pharmaceuticals; a modern, fast-loading platform built with performance-first architecture and clean component-based design.",
-    "link": "https://github.com/PlnDominic/Aspee",
+    "link": "https://aspee-pharma.vercel.app/overview",
     "year": 2026,
     "id": 47,
-    "updatedAt": "2026-06-27T14:04:26.684Z",
+    "updatedAt": "2026-06-27T14:22:11.368Z",
     "client": "Aspee Pharmaceuticals",
     "featured": false
   },
