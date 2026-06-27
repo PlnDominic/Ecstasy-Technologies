@@ -116,31 +116,6 @@
   {
     "image": "",
     "features": [
-      "Room occupancy dashboard",
-      "Check-in/checkout workflows",
-      "Reservation system",
-      "Live database sync",
-      "Automated reports"
-    ],
-    "technologies": [
-      "React",
-      "Supabase",
-      "PostgreSQL",
-      "Tailwind CSS",
-      "JavaScript"
-    ],
-    "status": "completed",
-    "title": "Mikjan Hotel Management System",
-    "category": "Business Software",
-    "description": "Full-stack hotel management system built for Mikjan Hotel with live occupancy tracking, guest workflows, reservation system, and automated reporting.",
-    "link": "https://github.com/PlnDominic/mikjan-hotel-management-system-software",
-    "year": 2024,
-    "id": 50,
-    "updatedAt": "2026-06-27T14:29:55.552Z"
-  },
-  {
-    "image": "",
-    "features": [
       "Real-time room occupancy dashboard",
       "Guest check-in/checkout",
       "Reservation management",
