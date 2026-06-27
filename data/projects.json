@@ -149,7 +149,7 @@
     "client": "Gusty Women Foundation"
   },
   {
-    "image": "",
+    "image": "/project-images/tagett-1782570881710.png",
     "features": [
       "Vehicle catalogue & listings",
       "Enquiry & contact system",
@@ -166,10 +166,11 @@
     "title": "Autosphere Imports",
     "category": "Website",
     "description": "Modern automobile imports website for Autosphere Imports with a full product catalogue, vehicle listings, enquiry system, and elegant design tailored for a Ghana-based car dealership.",
-    "link": "https://github.com/PlnDominic/Autosphere-Imports",
+    "link": "https://oriental-auto-and-maintenance.vercel.app/",
     "year": 2025,
     "id": 43,
-    "updatedAt": "2026-06-23T14:15:48.644Z"
+    "updatedAt": "2026-06-27T14:28:43.221Z",
+    "featured": false
   },
   {
     "image": "/project-images/tagett-1781969724443.png",
