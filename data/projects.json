@@ -114,12 +114,13 @@
     "status": "completed",
     "title": "Gusty Women Foundation",
     "category": "Website",
-    "description": "Next.js website for the Gusty Women Foundation — a platform to showcase the foundation's mission, programs, impact stories, and ways to get involved in empowering women.",
-    "link": "https://github.com/PlnDominic/Gusty-Women-Foundation",
-    "year": 2025,
+    "description": "Next.js website for the Gusty Women Foundation; a platform to showcase the foundation's mission, programs, impact stories, and ways to get involved in empowering women.",
+    "link": "https://www.gustywomenfoundation.org/",
+    "year": 2026,
     "id": 44,
-    "updatedAt": "2026-06-23T14:12:36.676Z",
-    "featured": false
+    "updatedAt": "2026-06-27T14:06:36.332Z",
+    "featured": false,
+    "client": "Gusty Women Foundation"
   },
   {
     "image": "",
