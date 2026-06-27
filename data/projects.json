@@ -173,28 +173,6 @@
   {
     "image": "",
     "features": [
-      "Online reservations",
-      "Event listings",
-      "Venue gallery",
-      "Contact & enquiry form",
-      "Responsive design"
-    ],
-    "technologies": [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS"
-    ],
-    "status": "completed",
-    "title": "Avenu-15",
-    "category": "Website",
-    "description": "Event venue and booking website with an online reservation system, gallery, and event listings for a premium Ghana venue.",
-    "year": 2024,
-    "id": 38,
-    "updatedAt": "2026-06-20T15:10:27.998Z"
-  },
-  {
-    "image": "",
-    "features": [
       "Product catalogue",
       "WhatsApp ordering",
       "Elegant UI",
