@@ -268,31 +268,6 @@
     "updatedAt": "2026-06-20T15:10:27.998Z"
   },
   {
-    "image": "",
-    "features": [
-      "Real-time room occupancy dashboard",
-      "Guest check-in/checkout",
-      "Reservation management",
-      "Report generation & exports",
-      "Row-level security"
-    ],
-    "technologies": [
-      "React",
-      "Node.js",
-      "Express",
-      "Supabase",
-      "PostgreSQL"
-    ],
-    "status": "completed",
-    "title": "Lavimac Hotel Management System",
-    "category": "Business Software",
-    "description": "Full-stack hotel management system with real-time room status updates, guest check-in/checkout workflows, reservation handling, and comprehensive reporting for Lavimac Hotel, Ghana.",
-    "link": "https://github.com/PlnDominic/Lavimac-HMS",
-    "year": 2024,
-    "id": 26,
-    "updatedAt": "2026-06-20T15:10:27.998Z"
-  },
-  {
     "id": 1,
     "title": "Lavimac Royal Hotel Website",
     "category": "Website",
