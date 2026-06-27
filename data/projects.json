@@ -2,29 +2,6 @@
   {
     "image": "",
     "features": [
-      "Performance-first architecture",
-      "TypeScript codebase",
-      "Component-based UI",
-      "Modern design system",
-      "Responsive across devices"
-    ],
-    "technologies": [
-      "TypeScript",
-      "React",
-      "Next.js"
-    ],
-    "status": "completed",
-    "title": "Aspee",
-    "category": "Web Application",
-    "description": "TypeScript web application for Aspee — a modern, fast-loading platform built with performance-first architecture and clean component-based design.",
-    "link": "https://github.com/PlnDominic/Aspee",
-    "year": 2025,
-    "id": 63,
-    "updatedAt": "2026-06-27T14:29:55.552Z"
-  },
-  {
-    "image": "",
-    "features": [
       "Custom brand design",
       "Responsive layout",
       "Modern UI",
