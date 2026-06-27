@@ -72,7 +72,7 @@
     "updatedAt": "2026-06-23T14:15:48.644Z"
   },
   {
-    "image": "",
+    "image": "/project-images/tagett-1782570005106.png",
     "features": [
       "Product storefront & catalogue",
       "Vendor & buyer dashboards",
@@ -88,13 +88,15 @@
       "TypeScript"
     ],
     "status": "completed",
-    "title": "Local Drop Shipping",
+    "title": "Local Drop Shipping GH",
     "category": "Web Application",
-    "description": "Full-featured Next.js marketplace for a local dropshipping platform — covering storefront, product listings, vendor dashboards, order management, and a system documentation simulator.",
-    "link": "https://github.com/PlnDominic/Local-Drop-Shipping",
-    "year": 2025,
+    "description": "Full-featured Next.js marketplace for a local dropshipping platform; covering storefront, product listings, vendor dashboards, order management, and a system documentation simulator.",
+    "link": "https://local-drop-shipping.vercel.app/",
+    "year": 2026,
     "id": 45,
-    "updatedAt": "2026-06-23T14:15:48.644Z"
+    "updatedAt": "2026-06-27T14:14:15.600Z",
+    "client": "Local Drop Shipping GH",
+    "featured": false
   },
   {
     "image": "",
