@@ -116,31 +116,6 @@
   {
     "image": "",
     "features": [
-      "Responsive design",
-      "Dark/light theme toggle",
-      "Services directory",
-      "Announcements board",
-      "Departments listing",
-      "Contact form"
-    ],
-    "technologies": [
-      "HTML5",
-      "CSS3",
-      "JavaScript",
-      "Google Fonts"
-    ],
-    "status": "completed",
-    "title": "BABMA Municipal Assembly Website",
-    "category": "Website",
-    "description": "Modern, responsive official website for the BABMA Municipal Assembly with dark/light theme toggle, dynamic content loading, and multi-page structure covering services, departments, and announcements.",
-    "link": "https://github.com/PlnDominic/BABMA02",
-    "year": 2024,
-    "id": 51,
-    "updatedAt": "2026-06-27T14:29:55.552Z"
-  },
-  {
-    "image": "",
-    "features": [
       "Room occupancy dashboard",
       "Check-in/checkout workflows",
       "Reservation system",
