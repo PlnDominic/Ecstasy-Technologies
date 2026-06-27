@@ -269,34 +269,6 @@
   {
     "image": "",
     "features": [
-      "User authentication",
-      "Financial transactions",
-      "Work submissions",
-      "Admin reporting dashboard",
-      "Role-based access control",
-      "Database migrations"
-    ],
-    "technologies": [
-      "Python",
-      "Flask",
-      "PostgreSQL",
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Gunicorn"
-    ],
-    "status": "completed",
-    "title": "Obotan Co-operative Credit Union System",
-    "category": "Business Software",
-    "description": "Comprehensive web application for managing the Obotan Co-operative Credit Union — covering user management, financial transactions, work submissions, and administrative reporting.",
-    "link": "https://github.com/PlnDominic/Obotan-Cooperative-Credit-Union",
-    "year": 2023,
-    "id": 29,
-    "updatedAt": "2026-06-20T15:10:27.998Z"
-  },
-  {
-    "image": "",
-    "features": [
       "Responsive design",
       "Dark/light theme toggle",
       "Services directory",
