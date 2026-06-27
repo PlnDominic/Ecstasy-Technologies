@@ -808,30 +808,5 @@
       "Vercel"
     ],
     "link": "https://moldgold-school.vercel.app"
-  },
-  {
-    "id": 25,
-    "title": "Bauvet Dog Parent",
-    "category": "Web Application",
-    "description": "An AI-powered pet care platform for dog owners, offering personalised care advice, veterinary resources, health tracking, and community features.",
-    "image": "/Bauvet Dog Parent.png",
-    "features": [
-      "AI-powered pet care assistant",
-      "Dog health and wellness tracking",
-      "Veterinary resource library",
-      "Appointment scheduling",
-      "Community and social features",
-      "Breed information database"
-    ],
-    "technologies": [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Supabase",
-      "Tailwind CSS",
-      "AI Integration",
-      "Vercel"
-    ],
-    "link": "https://bauvet---dog-parent.vercel.app"
   }
 ]
