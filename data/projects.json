@@ -148,30 +148,6 @@
   {
     "image": "",
     "features": [
-      "Modern UI/UX",
-      "Responsive design",
-      "Font optimization",
-      "Clean codebase",
-      "ESLint configured"
-    ],
-    "technologies": [
-      "Next.js",
-      "TypeScript",
-      "CSS",
-      "Geist Font"
-    ],
-    "status": "completed",
-    "title": "Eighteen Cubic",
-    "category": "Website",
-    "description": "Modern business website built with Next.js and TypeScript using Geist font and a clean, professional architecture.",
-    "link": "https://github.com/PlnDominic/Eighteen-Cubic",
-    "year": 2024,
-    "id": 42,
-    "updatedAt": "2026-06-23T14:15:48.644Z"
-  },
-  {
-    "image": "",
-    "features": [
       "Property listings",
       "Management dashboard",
       "Database integration",
