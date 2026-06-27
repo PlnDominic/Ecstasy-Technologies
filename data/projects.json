@@ -245,30 +245,6 @@
   {
     "image": "",
     "features": [
-      "School information pages",
-      "Responsive design",
-      "SEO optimization",
-      "Custom React hooks",
-      "Component-based UI"
-    ],
-    "technologies": [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "PostCSS"
-    ],
-    "status": "completed",
-    "title": "Bubbly Montessori School Website",
-    "category": "Website",
-    "description": "Clean, professional school website for Bubbly Montessori built with Next.js and Tailwind CSS with SEO optimization and component-based architecture.",
-    "link": "https://github.com/PlnDominic/Bubbly-Montessori",
-    "year": 2024,
-    "id": 30,
-    "updatedAt": "2026-06-20T15:10:27.998Z"
-  },
-  {
-    "image": "",
-    "features": [
       "Responsive design",
       "Dark/light theme toggle",
       "Services directory",
