@@ -3,7 +3,8 @@ import type { Metadata } from 'next'
 import React from 'react'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/context/ThemeContext'
-import Script from 'next/script'
+import CookieConsent from '@/components/CookieConsent'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 // Note: Dynamic imports might be needed if we run into issues with server components
 // const Navigation = dynamic(() => import('@/components/Navigation'), { ssr: false })
@@ -229,27 +230,14 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        {/* Google Analytics */}
-        <Script
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-RCT4LZB7QD"
-        />
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-RCT4LZB7QD');
-            `,
-          }}
-        />
-        
+        {/* Google Analytics — only loads after the visitor accepts cookies */}
+        <GoogleAnalytics />
+
         <ThemeProvider>
           {children}
         </ThemeProvider>
+
+        <CookieConsent />
       </body>
     </html>
   )

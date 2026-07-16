@@ -6,6 +6,7 @@ import ThemeToggle from '@/components/ThemeToggle';
 import SplashCursor from '@/components/SplashCursor';
 import Breadcrumb from '@/components/Breadcrumb';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 interface SharedLayoutProps {
   children: React.ReactNode;
@@ -33,7 +34,9 @@ export default function SharedLayout({ children, currentPath = '' }: SharedLayou
         </div>
         {children}
       </div>
-      
+
+      <Footer />
+
       {/* Glow effects */}
       <div className="absolute top-1/4 -right-20 w-64 h-64 bg-accent rounded-full opacity-10 blur-3xl animate-pulse-slow"></div>
       <div className="absolute bottom-1/4 -left-20 w-80 h-80 bg-accent rounded-full opacity-10 blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
