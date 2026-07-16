@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React from 'react';
 import Image from 'next/image';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 import SplashCursor from '@/components/SplashCursor';
 
 const REEL_IMAGES = [
@@ -216,6 +217,8 @@ export default function Home() {
         </section>
 
       </main>
+
+      <Footer />
     </div>
   );
 }

@@ -15,8 +15,6 @@ export default function Login() {
     setError('');
 
     try {
-      console.log('Attempting login with:', { email, password });
-
       if (email === 'admin@ecstasytechnologies.com' && password === 'admin123') {
         window.location.href = '/dashboard';
       } else {

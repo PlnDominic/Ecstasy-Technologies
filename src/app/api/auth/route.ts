@@ -1,10 +1,12 @@
 import { NextResponse } from 'next/server';
 
-// Mock users for demonstration - in a real application, this would use Clerk or a database
+// Mock users for demonstration only - not real accounts. In a real application
+// this would authenticate against a database with hashed passwords (e.g. via
+// Clerk or Supabase Auth), never a hardcoded list of plaintext credentials.
 const users = [
-  { id: 1, email: 'admin@ecstasytechnologies.com', password: 'admin123', role: 'admin' },
-  { id: 2, email: 'developer@ecstasytechnologies.com', password: 'dev123', role: 'developer' },
-  { id: 3, email: 'client@mapinnovations.com', password: 'client123', role: 'client' }
+  { id: 1, email: 'admin@example.com', password: 'admin123', role: 'admin' },
+  { id: 2, email: 'developer@example.com', password: 'dev123', role: 'developer' },
+  { id: 3, email: 'client@example.com', password: 'client123', role: 'client' }
 ];
 
 export async function POST(request: Request) {
