@@ -23,9 +23,14 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: ['/dashboard/', '/login/', '/api/', '/client-portal/', '/time-tracking/'],
       },
-      // Explicitly allow Anthropic's Claude
+      // Explicitly allow Anthropic's Claude (training + live retrieval)
       {
         userAgent: 'anthropic-ai',
+        allow: '/',
+        disallow: ['/dashboard/', '/login/', '/api/', '/client-portal/', '/time-tracking/'],
+      },
+      {
+        userAgent: 'ClaudeBot',
         allow: '/',
         disallow: ['/dashboard/', '/login/', '/api/', '/client-portal/', '/time-tracking/'],
       },
