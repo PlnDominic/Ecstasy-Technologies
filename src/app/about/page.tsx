@@ -73,35 +73,61 @@ const WHY_US = [
   { num: '06', title: 'Long-Term Support', body: 'Dedicated support and maintenance. We don\'t disappear at launch — we stay to ensure your software thrives.' },
 ];
 
+// Single source of truth for both the visible FAQ section below and the
+// FAQPage JSON-LD — structured data must match what's actually on the page.
+// Questions are phrased the way a person (or an AI answering on their
+// behalf) would actually ask them, each with a short, self-contained,
+// directly-quotable answer.
+const FAQS = [
+  {
+    q: 'What services does Ecstasy Technologies offer in Ghana?',
+    a: 'Ecstasy Technologies offers web design & development, web applications, mobile apps, business software, GIS solutions, and UI/UX design for organisations across Ghana and Africa.',
+  },
+  {
+    q: 'Where is Ecstasy Technologies located?',
+    a: 'We are based in Bibiani, Ghana, and serve clients throughout Ghana including Accra, Kumasi, and other major cities, as well as international clients.',
+  },
+  {
+    q: 'How much does it cost to develop software with Ecstasy?',
+    a: 'Costs vary based on project complexity and scope. Contact us for a free consultation and custom quote.',
+  },
+  {
+    q: 'Does Ecstasy Technologies build hotel management software?',
+    a: 'Yes. We build complete hotel management systems covering booking, inventory, and staff management, and have delivered these for hotels including Lavimac Royal Hotel, Emson Hotel, and Nhyiraba Hotel.',
+  },
+  {
+    q: 'Can Ecstasy Technologies build mobile apps?',
+    a: 'Yes, we design and build native and cross-platform mobile applications for iOS and Android alongside our web and enterprise software work.',
+  },
+  {
+    q: 'What industries does Ecstasy Technologies work with?',
+    a: 'We have delivered software for hotels, logistics companies, schools, banks, real estate firms, and enterprise clients across Ghana and beyond.',
+  },
+  {
+    q: 'How long does a typical software project take?',
+    a: 'Timelines depend on scope — a marketing website can take a few weeks, while a full business or enterprise system typically takes a few months. We work in agile sprints so you see progress throughout.',
+  },
+  {
+    q: 'Does Ecstasy Technologies provide support after launch?',
+    a: 'Yes, we offer ongoing support and maintenance after launch — we stay engaged to make sure the software keeps working for your business as it grows.',
+  },
+  {
+    q: 'How do I start a project with Ecstasy Technologies?',
+    a: 'Reach out through our contact page or email support@ecstasytechnologies.com for a free consultation. We typically respond within 24 hours.',
+  },
+];
+
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'What services does Ecstasy Technologies offer in Ghana?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ecstasy Technologies offers web design & development, web applications, mobile apps, business software, GIS solutions, and UI/UX design for organisations across Ghana and Africa.',
-      },
+  mainEntity: FAQS.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: a,
     },
-    {
-      '@type': 'Question',
-      name: 'Where is Ecstasy Technologies located?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'We are based in Bibiani, Ghana, and serve clients throughout Ghana including Accra, Kumasi, and other major cities, as well as international clients.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'How much does it cost to develop software with Ecstasy?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Costs vary based on project complexity and scope. Contact us for a free consultation and custom quote.',
-      },
-    },
-  ],
+  })),
 };
 
 export default function About() {
@@ -300,6 +326,24 @@ export default function About() {
                     {title}
                   </h3>
                   <p className="ip-body" style={{ fontSize: '13px' }}>{body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ── FAQ ── */}
+          <div className="ip-section">
+            <div style={{ marginBottom: '1.5rem' }}>
+              <hr className="es-rule" />
+              <span className="es-section-label">FAQ</span>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', maxWidth: '760px' }}>
+              {FAQS.map(({ q, a }) => (
+                <div key={q} style={{ paddingBottom: '1.5rem', borderBottom: '1px solid var(--border)' }}>
+                  <h3 className="ip-subheading" style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)', marginBottom: '0.5rem' }}>
+                    {q}
+                  </h3>
+                  <p className="ip-body" style={{ fontSize: '13px' }}>{a}</p>
                 </div>
               ))}
             </div>
