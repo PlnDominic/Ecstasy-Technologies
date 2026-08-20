@@ -146,11 +146,12 @@ export default function Home() {
             {/* Photo column — bleeds to the frame edges */}
             <div className="relative min-h-[50vh] lg:min-h-0">
               <Image
-                src="/opare.JPG"
-                alt="Ecstasy Technologies team member"
+                src="/hero-desk.jpg"
+                alt="Building software at Ecstasy Technologies"
                 fill
                 priority
-                className="object-cover object-top"
+                className="object-cover"
+                style={{ objectPosition: '75% center' }}
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
@@ -278,7 +279,7 @@ export default function Home() {
           <ol className="es-services" aria-label="Our capabilities">
             {SERVICES.map(({ num, name }, i) => (
               <li key={num} className="es-service es-reveal" style={{ '--d': `${i * 55}ms` } as React.CSSProperties}>
-                <span className="es-svc-num" aria-hidden="true">{num}</span>
+                <span className="es-svc-num" aria-hidden="true" style={{ color: 'var(--foreground)' }}>{num}</span>
                 <span className="es-svc-name">{name}</span>
                 <span className="es-svc-arrow" aria-hidden="true">↗</span>
               </li>
@@ -309,10 +310,10 @@ export default function Home() {
                   />
                 </div>
                 <div className="es-proj-meta">
-                  <span className="es-proj-num" aria-hidden="true">{num}</span>
+                  <span className="es-proj-num" aria-hidden="true" style={{ color: 'var(--foreground)' }}>{num}</span>
                   <h3 className="es-proj-title">{title.toUpperCase()}</h3>
                   <span className="es-proj-fill" aria-hidden="true" />
-                  <span className="es-proj-cat">{category}</span>
+                  <span className="es-proj-cat" style={{ color: 'var(--foreground)' }}>{category}</span>
                   <span className="es-proj-sep" aria-hidden="true">·</span>
                   <span className="es-proj-year">{year}</span>
                   <Link href="/portfolio" className="btn-press es-proj-cta" aria-label={`View ${title} case study`}>
@@ -330,7 +331,7 @@ export default function Home() {
           <div className="es-cta-inner">
             <h2 className="es-cta-head">
               <span className="block es-reveal" style={{ '--d': '0ms' } as React.CSSProperties}>LET'S</span>
-              <span className="block es-cta-accent es-reveal" style={{ '--d': '70ms' } as React.CSSProperties}>BUILD</span>
+              <span className="block es-cta-accent es-reveal" style={{ '--d': '70ms', color: 'var(--foreground)' } as React.CSSProperties}>BUILD</span>
               <span className="block es-reveal" style={{ '--d': '140ms' } as React.CSSProperties}>SOMETHING.</span>
             </h2>
             <div className="es-cta-right es-reveal" style={{ '--d': '210ms' } as React.CSSProperties}>
