@@ -66,13 +66,18 @@ export default function Home() {
     <div className="es-root with-splash-cursor">
       <SplashCursor />
 
-      <Navbar />
+      <Navbar transparent />
 
       <main>
 
-        {/* ── HERO (light, split composition) ── */}
-        <section className="relative overflow-hidden bg-white" style={{ fontFamily: "'Figtree', system-ui, sans-serif" }}>
-          <div className="relative grid grid-cols-1 lg:grid-cols-2 min-h-[92vh]">
+        {/* ── HERO (light, split composition) ──
+            Negative top margin pulls the white background up behind the
+            transparent navbar (56px, matching .es-nav-inner's height), so the
+            nav merges with the hero instead of revealing the page's own
+            (dark-themed) backdrop through it. pt-14 on the grid keeps the
+            actual content clear of the nav. */}
+        <section className="relative overflow-hidden bg-white -mt-14" style={{ fontFamily: "'Figtree', system-ui, sans-serif" }}>
+          <div className="relative grid grid-cols-1 lg:grid-cols-2 min-h-[92vh] pt-14">
 
             {/* Copy column */}
             <div className="relative z-10 flex items-center px-6 sm:px-12 lg:px-16 py-20 lg:py-0">

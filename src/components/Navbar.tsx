@@ -15,8 +15,14 @@ const NAV_LINKS = [
   { label: 'Contact', href: '/contact' },
 ];
 
-const Navbar = () => {
+interface NavbarProps {
+  /** Sits directly on a light hero with no bar/blur until the visitor scrolls past it. */
+  transparent?: boolean;
+}
+
+const Navbar = ({ transparent = false }: NavbarProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -30,10 +36,20 @@ const Navbar = () => {
     };
   }, [mobileMenuOpen]);
 
+  useEffect(() => {
+    if (!transparent) return;
+    const onScroll = () => setScrolled(window.scrollY > window.innerHeight * 0.75);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [transparent]);
+
+  const onLight = transparent && !scrolled;
+
   return (
     <>
       {/* ── Navigation ── */}
-      <header className="es-nav">
+      <header className={`es-nav ${onLight ? 'es-nav--on-light' : ''}`}>
         <div className="es-nav-inner">
           <Link href="/" className="es-logo btn-press" aria-label="Ecstasy Technologies home">
             <Image
