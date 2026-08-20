@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import SharedLayout from '@/components/SharedLayout';
@@ -339,12 +339,32 @@ export default function About() {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', maxWidth: '760px' }}>
               {FAQS.map(({ q, a }) => (
-                <div key={q} style={{ paddingBottom: '1.5rem', borderBottom: '1px solid var(--border)' }}>
-                  <h3 className="ip-subheading" style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)', marginBottom: '0.5rem' }}>
+                <details key={q} className="group" style={{ paddingBottom: '1.5rem', borderBottom: '1px solid var(--border)' }}>
+                  <summary
+                    className="ip-subheading"
+                    style={{
+                      fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)',
+                      marginBottom: '0.5rem',
+                      listStyle: 'none',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      gap: '0.5rem',
+                    }}
+                  >
                     {q}
-                  </h3>
-                  <p className="ip-body" style={{ fontSize: '13px' }}>{a}</p>
-                </div>
+                    <svg
+                      className="transition-transform duration-200 group-open:rotate-180 shrink-0"
+                      width="16" height="16" viewBox="0 0 24 24" fill="none"
+                      aria-hidden="true"
+                      style={{ color: 'var(--muted-foreground)' }}
+                    >
+                      <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </summary>
+                  <p className="ip-body" style={{ fontSize: '13px', marginTop: '0.25rem' }}>{a}</p>
+                </details>
               ))}
             </div>
           </div>
