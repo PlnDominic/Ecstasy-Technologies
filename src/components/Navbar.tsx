@@ -87,12 +87,6 @@ const Navbar = ({ transparent = false }: NavbarProps) => {
               <span className={`es-bl mt-1 ${mobileMenuOpen ? 'opacity-0' : ''}`} />
               <span className={`es-bl mt-1 ${mobileMenuOpen ? '-rotate-45 -translate-y-[9px]' : ''}`} />
             </button>
-            <Link href="/contact" className="btn-press es-nav-cta hidden sm:inline-flex items-center gap-1.5">
-              Start a Project
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square"/>
-              </svg>
-            </Link>
           </div>
         </div>
       </header>

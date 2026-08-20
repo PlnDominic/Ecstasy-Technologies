@@ -68,95 +68,85 @@ export default function Home() {
 
       <main>
 
-        {/* ── HERO (light, split composition) ──
-            Negative top margin pulls the white background up behind the
-            transparent navbar (56px, matching .es-nav-inner's height), so the
-            nav merges with the hero instead of revealing the page's own
-            (dark-themed) backdrop through it. pt-14 on the grid keeps the
-            actual content clear of the nav. */}
-        <section className="relative overflow-hidden bg-white -mt-14" style={{ fontFamily: "'Figtree', system-ui, sans-serif" }}>
-          <div className="relative grid grid-cols-1 lg:grid-cols-2 min-h-[92vh] pt-14">
+        {/* ── HERO (full-bleed video, text overlaid) ──
+            Negative top margin pulls the video up behind the transparent
+            navbar (56px, matching .es-nav-inner's height), so the nav merges
+            with the hero instead of revealing the page's own (dark-themed)
+            backdrop through it. pt-14 on the content keeps it clear of the
+            nav. */}
+        <section className="relative overflow-hidden -mt-14" style={{ fontFamily: "'Figtree', system-ui, sans-serif" }}>
 
-            {/* Copy column */}
-            <div className="relative z-10 flex items-center px-6 sm:px-12 lg:px-16 py-20 lg:py-0">
-              <div className="max-w-md">
-                <div className="flex items-start gap-3 mb-6">
-                  <span className="text-[11px] font-semibold text-neutral-400 mt-1">01</span>
-                  <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-neutral-400">
-                    Software Studio
-                  </span>
-                </div>
+          {/* Background video — fills the entire hero */}
+          <div className="absolute inset-0 w-full h-full" aria-hidden="true">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src="/video/hero-video.mp4" type="video/mp4" />
+            </video>
+            {/* Scrim — keeps the overlaid copy legible against the light footage */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-black/15" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10" />
+          </div>
 
-                <h1
-                  className="text-[2.6rem] sm:text-[3.4rem] lg:text-[3.8rem] leading-[0.98] font-extrabold tracking-tight text-neutral-900 mb-6"
-                  style={{ fontFamily: "'Syne', system-ui, sans-serif" }}
+          {/* Copy — overlaid directly on the video */}
+          <div className="relative z-10 flex items-center min-h-[92vh] pt-14 px-6 sm:px-12 lg:px-16">
+            <div className="max-w-md">
+              <div className="flex items-start gap-3 mb-6">
+                <span className="text-[11px] font-semibold text-white/50 mt-1">01</span>
+                <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-white/50">
+                  Software Studio
+                </span>
+              </div>
+
+              <h1
+                className="text-[2.6rem] sm:text-[3.4rem] lg:text-[3.8rem] leading-[0.98] font-extrabold tracking-tight text-white mb-6"
+                style={{ fontFamily: "'Syne', system-ui, sans-serif" }}
+              >
+                SOFTWARE<br />AFRICA<br />TRUSTS.
+              </h1>
+
+              <div className="flex flex-wrap items-center gap-3 mb-10">
+                <Link
+                  href="/contact"
+                  className="btn-press inline-flex items-center justify-center rounded-md bg-white text-neutral-900 text-[13px] font-semibold px-6 py-3.5 hover:bg-neutral-200 transition-colors"
                 >
-                  SOFTWARE<br />AFRICA<br />TRUSTS.
-                </h1>
+                  Start a Project
+                </Link>
+                <Link
+                  href="/portfolio"
+                  className="text-[13px] font-semibold text-white border-b border-white/40 pb-0.5 hover:border-white transition-colors"
+                >
+                  View Our Work
+                </Link>
+              </div>
 
-                <div className="flex flex-wrap items-center gap-3 mb-10">
-                  <Link
-                    href="/contact"
-                    className="btn-press inline-flex items-center justify-center rounded-md bg-neutral-900 text-white text-[13px] font-semibold px-6 py-3.5 hover:bg-neutral-700 transition-colors"
-                  >
-                    Start a Project
-                  </Link>
-                  <Link
-                    href="/portfolio"
-                    className="text-[13px] font-semibold text-neutral-900 border-b border-neutral-300 pb-0.5 hover:border-neutral-900 transition-colors"
-                  >
-                    View Our Work
-                  </Link>
-                </div>
-
-                <div className="mb-10">
+              <div className="flex items-start gap-4 pt-8 border-t border-white/20">
+                <div className="flex items-center shrink-0">
+                  <div className="flex -space-x-2.5">
+                    {TRUST_AVATARS.map((a) => (
+                      <div key={a.src} className="relative w-8 h-8 rounded-full ring-2 ring-white overflow-hidden bg-neutral-200">
+                        <Image src={a.src} alt={a.alt} fill className="object-cover" style={{ objectPosition: a.position }} sizes="32px" />
+                      </div>
+                    ))}
+                  </div>
                   <span
-                    className="block text-[2.75rem] font-extrabold text-neutral-900 leading-none"
+                    className="ml-2 text-[13px] font-bold text-white"
                     style={{ fontFamily: "'Syne', system-ui, sans-serif" }}
                   >
-                    98<span className="text-[1.5rem] align-top">%</span>
+                    32+
                   </span>
-                  <span className="text-[12px] text-neutral-400">Client satisfaction</span>
                 </div>
-
-                <div className="flex items-start gap-4 pt-8 border-t border-neutral-200">
-                  <div className="flex items-center shrink-0">
-                    <div className="flex -space-x-2.5">
-                      {TRUST_AVATARS.map((a) => (
-                        <div key={a.src} className="relative w-8 h-8 rounded-full ring-2 ring-white overflow-hidden bg-neutral-200">
-                          <Image src={a.src} alt={a.alt} fill className="object-cover" style={{ objectPosition: a.position }} sizes="32px" />
-                        </div>
-                      ))}
-                    </div>
-                    <span
-                      className="ml-2 text-[13px] font-bold text-neutral-900"
-                      style={{ fontFamily: "'Syne', system-ui, sans-serif" }}
-                    >
-                      32+
-                    </span>
-                  </div>
-                  <p className="text-[12.5px] leading-relaxed text-neutral-500">
-                    <span className="block text-[10px] font-bold tracking-[0.14em] uppercase text-neutral-400 mb-1">
-                      Trusted by Clients
-                    </span>
-                    We&apos;ve helped 32+ businesses across Ghana build websites, apps, and
-                    systems that work as hard as they do.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Photo column — a smaller, framed photo rather than a full-bleed panel */}
-            <div className="relative min-h-[50vh] lg:min-h-0 flex items-center justify-center px-6 sm:px-12 lg:px-10 py-10 lg:py-0">
-              <div className="relative w-full max-w-md lg:max-w-lg aspect-[3/2] rounded-xl overflow-hidden shadow-xl">
-                <Image
-                  src="/hero-desk.jpg"
-                  alt="Building software at Ecstasy Technologies"
-                  fill
-                  priority
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 90vw, 40vw"
-                />
+                <p className="text-[12.5px] leading-relaxed text-white/70">
+                  <span className="block text-[10px] font-bold tracking-[0.14em] uppercase text-white/50 mb-1">
+                    Trusted by Clients
+                  </span>
+                  We&apos;ve helped 32+ businesses across Ghana build websites, apps, and
+                  systems that work as hard as they do.
+                </p>
               </div>
             </div>
           </div>
