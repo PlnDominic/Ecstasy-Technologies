@@ -70,7 +70,7 @@ const WHY_US = [
   { num: '03', title: 'Agile Process', body: 'Iterative delivery with transparency. You see progress every sprint and can shape the product throughout the build.' },
   { num: '04', title: 'End-to-End', body: 'From concept through deployment and ongoing support, one team, full accountability.' },
   { num: '05', title: 'Quality Assurance', body: 'Rigorous testing and code review at every stage. We ship software we\'re proud to put our name on.' },
-  { num: '06', title: 'Long-Term Support', body: 'Dedicated support and maintenance. We don\\'t disappear at launch, we stay to ensure your software thrives.' },
+  { num: '06', title: 'Long-Term Support', body: 'Dedicated support and maintenance. We don\'t disappear at launch, we stay to ensure your software thrives.' },
 ];
 
 // Single source of truth for both the visible FAQ section below and the
