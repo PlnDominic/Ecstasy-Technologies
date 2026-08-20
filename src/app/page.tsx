@@ -52,16 +52,22 @@ export default function Home() {
       <main>
 
         {/* ── HERO ── */}
-        <section className="relative min-h-[88vh] overflow-hidden bg-background">
+        <section className="relative min-h-[88vh] overflow-hidden bg-black">
 
           {/* Background */}
           <div className="absolute inset-0 w-full h-full" aria-hidden="true">
-            <div
-              className="absolute inset-0 w-full h-full opacity-[0.04]"
-              style={{ backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzAgMzBoMzB2MzBIMzB6IiBzdHJva2Utb3BhY2l0eT0iLjEiIHN0cm9rZT0iIzAwMCIvPjxwYXRoIGQ9Ik0zMCAwaDMwdjMwSDMweiIgc3Ryb2tlLW9wYWNpdHk9Ii4xIiBzdHJva2U9IiMwMDAiLz48cGF0aCBkPSJNMCAzMGgzMHYzMEgweiIgc3Ryb2tlLW9wYWNpdHk9Ii4xIiBzdHJva2U9IiMwMDAiLz48cGF0aCBkPSJNMCAwaDMwdjMwSDB6IiBzdHJva2Utb3BhY2l0eT0iLjEiIHN0cm9rZT0iIzAwMCIvPjwvZz48L3N2Zz4=')" }}
-            />
-            <div className="absolute top-0 right-0 w-[32rem] h-[32rem] bg-accent rounded-full opacity-[0.08] blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-[26rem] h-[26rem] bg-accent rounded-full opacity-[0.06] blur-3xl" />
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src="/video/hero-background.mp4" type="video/mp4" />
+            </video>
+            {/* Dark gradient scrim — keeps the bottom-left copy legible over the footage */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+            <div className="absolute bottom-0 left-0 w-[26rem] h-[26rem] bg-accent rounded-full opacity-[0.12] blur-3xl" />
           </div>
 
           {/* Foreground content */}
@@ -77,11 +83,11 @@ export default function Home() {
                   <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5">→</span>
                 </Link>
 
-                <h1 className="text-[1.5rem] sm:text-[1.75rem] leading-[1.15] font-medium text-foreground tracking-tight mb-3">
+                <h1 className="text-[1.5rem] sm:text-[1.75rem] leading-[1.15] font-medium text-white tracking-tight mb-3">
                   Simple, smart software built for businesses who keep growing.
                 </h1>
 
-                <p className="text-[13px] text-muted-foreground font-normal mb-3">
+                <p className="text-[13px] text-gray-300 font-normal mb-3">
                   Let&apos;s build what&apos;s next.
                 </p>
 
