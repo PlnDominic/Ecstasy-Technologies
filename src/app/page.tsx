@@ -168,8 +168,8 @@ export default function Home() {
 
             <div className="relative min-h-[380px] lg:min-h-[520px] mx-6 sm:mx-12 lg:mx-0 lg:ml-16 lg:mr-8 overflow-hidden rounded-sm">
               <Image
-                src="/welbeck.jpg"
-                alt="An Ecstasy Technologies engineer"
+                src="/dominic-about.jpg"
+                alt="Dominic Kudom, CEO & Founder of Ecstasy Technologies"
                 fill
                 className="object-cover grayscale contrast-125"
                 sizes="(max-width: 1024px) 100vw, 40vw"
