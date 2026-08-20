@@ -1,82 +1,190 @@
+'use client';
+
+import Link from 'next/link';
+import React from 'react';
+import Image from 'next/image';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import SplashCursor from '@/components/SplashCursor';
+
+const SERVICES = [
+  { num: '01', name: 'Web Design & Development' },
+  { num: '02', name: 'Web Applications' },
+  { num: '03', name: 'Mobile Apps' },
+  { num: '04', name: 'Business Software' },
+  { num: '05', name: 'GIS Solutions' },
+];
+
+const PROJECTS = [
+  {
+    num: '01',
+    src: '/Lavimac royal hotel website.png',
+    alt: 'Lavimac Royal Hotel Website',
+    title: 'Lavimac Royal Hotel',
+    category: 'Website',
+    year: '2024',
+  },
+  {
+    num: '02',
+    src: '/Dynamic Shipping and Logistics.png',
+    alt: 'Dynamic Shipping and Logistics Platform',
+    title: 'Dynamic Shipping & Logistics',
+    category: 'Web Application',
+    year: '2024',
+  },
+  {
+    num: '03',
+    src: '/Obotan Coorperative Credit  Union Banking App.jpg',
+    alt: 'Obotan Credit Union Banking App',
+    title: 'Obotan Credit Union',
+    category: 'Mobile App',
+    year: '2023',
+  },
+];
+
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#f0f0ee]">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source
-          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260508_215831_c6a8989c-d716-4d8d-8745-e972a2eec711.mp4"
-          type="video/mp4"
-        />
-      </video>
+    <div className="es-root with-splash-cursor">
+      <SplashCursor />
 
-      <div className="relative z-10 flex flex-col min-h-screen">
-        <nav className="flex items-center justify-center pt-4 sm:pt-6 px-4 sm:px-8 gap-2 sm:gap-3">
-          <div
-            className="flex items-center justify-center rounded-full w-10 h-10 sm:w-11 sm:h-11 shrink-0"
-            style={{ backgroundColor: '#EDEDED' }}
-          >
-            <Logo />
+      <Navbar />
+
+      <main>
+
+        {/* ── HERO ── */}
+        <section className="relative min-h-[88vh] overflow-hidden bg-black">
+
+          {/* Background */}
+          <div className="absolute inset-0 w-full h-full" aria-hidden="true">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src="/video/hero-background.mp4" type="video/mp4" />
+            </video>
+            {/* Dark gradient scrim — keeps the bottom-left copy legible over the footage */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+            <div className="absolute bottom-0 left-0 w-[26rem] h-[26rem] bg-accent rounded-full opacity-[0.12] blur-3xl" />
           </div>
-          <div
-            className="flex items-center gap-4 sm:gap-10 rounded-xl px-4 sm:px-8 py-2.5 sm:py-3"
-            style={{ backgroundColor: '#EDEDED' }}
-          >
-            {['Story', 'Products', 'Help', 'Support'].map((link) => (
-              <a
-                key={link}
-                href="#"
-                className="text-[12px] sm:text-[14px] font-medium text-gray-700 hover:text-gray-900 transition-colors duration-200"
-              >
-                {link}
-              </a>
+
+          {/* Foreground content */}
+          <div className="relative z-10 flex flex-col min-h-[88vh]">
+            <div className="flex-1 flex items-end pb-10 sm:pb-16 lg:pb-20 px-6 sm:px-12 md:px-20 lg:px-28">
+              <div className="max-w-xs">
+
+                <Link
+                  href="/portfolio"
+                  className="inline-flex items-center gap-1.5 text-[11.5px] font-medium text-blue-500 hover:text-blue-600 transition-colors mb-3 group"
+                >
+                  Trusted by 32+ businesses across Ghana
+                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+                </Link>
+
+                <h1 className="text-[1.5rem] sm:text-[1.75rem] leading-[1.15] font-medium text-white tracking-tight mb-3">
+                  Simple, smart software built for businesses who keep growing.
+                </h1>
+
+                <p className="text-[13px] text-gray-300 font-normal mb-3">
+                  Let&apos;s build what&apos;s next.
+                </p>
+
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 text-[13px] font-medium text-blue-500 border border-blue-400 rounded-full px-5 py-2.5 hover:bg-blue-500 hover:text-white hover:border-blue-500 transition-all duration-200 group"
+                >
+                  Start a Project
+                  <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+                </Link>
+
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        {/* ── CAPABILITIES ── */}
+        <section className="es-section">
+          <div className="es-section-head">
+            <hr className="es-rule" />
+            <span className="es-section-label">CAPABILITIES</span>
+          </div>
+          <ol className="es-services" aria-label="Our capabilities">
+            {SERVICES.map(({ num, name }, i) => (
+              <li key={num} className="es-service es-reveal" style={{ '--d': `${i * 55}ms` } as React.CSSProperties}>
+                <span className="es-svc-num" aria-hidden="true">{num}</span>
+                <span className="es-svc-name">{name}</span>
+                <span className="es-svc-arrow" aria-hidden="true">↗</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        {/* ── SELECTED WORK ── */}
+        <section className="es-section">
+          <div className="es-section-head es-section-head-row">
+            <div>
+              <hr className="es-rule" />
+              <span className="es-section-label">SELECTED WORK</span>
+            </div>
+            <Link href="/portfolio" className="btn-press es-all-link">All Projects ↗</Link>
+          </div>
+
+          <div className="es-work-list">
+            {PROJECTS.map(({ num, src, alt, title, category, year }) => (
+              <article key={num} className="es-project group">
+                <div className="es-proj-img-wrap">
+                  <Image
+                    src={src}
+                    alt={alt}
+                    fill
+                    className="object-cover object-top es-proj-img"
+                    sizes="(max-width: 768px) 100vw, 90vw"
+                  />
+                </div>
+                <div className="es-proj-meta">
+                  <span className="es-proj-num" aria-hidden="true">{num}</span>
+                  <h3 className="es-proj-title">{title.toUpperCase()}</h3>
+                  <span className="es-proj-fill" aria-hidden="true" />
+                  <span className="es-proj-cat">{category}</span>
+                  <span className="es-proj-sep" aria-hidden="true">·</span>
+                  <span className="es-proj-year">{year}</span>
+                  <Link href="/portfolio" className="btn-press es-proj-cta" aria-label={`View ${title} case study`}>
+                    View →
+                  </Link>
+                </div>
+              </article>
             ))}
           </div>
-        </nav>
+        </section>
 
-        <div className="flex-1 flex items-end pb-10 sm:pb-16 lg:pb-20 px-6 sm:px-12 md:px-20 lg:px-28">
-          <div className="max-w-xs">
-            <a
-              href="#"
-              className="inline-flex items-center gap-1.5 text-[11.5px] font-medium text-blue-500 hover:text-blue-600 transition-colors mb-3 group"
-            >
-              Seen on Shark Tank in India
-              <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5">→</span>
-            </a>
-
-            <h1 className="text-[1.5rem] sm:text-[1.75rem] leading-[1.15] font-medium text-gray-900 tracking-tight mb-3">
-              Simple, smart prosthetics made for people who keep fighting.
-            </h1>
-
-            <p className="text-[13px] text-gray-400 font-normal mb-3">
-              Reclaim your movement now.
-            </p>
-
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 text-[13px] font-medium text-blue-500 border border-blue-400 rounded-full px-5 py-2.5 hover:bg-blue-500 hover:text-white hover:border-blue-500 transition-all duration-200 group"
-            >
-              Try a free fitting
-              <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
-            </a>
+        {/* ── CTA ── */}
+        <section className="es-section es-cta-section">
+          <hr className="es-rule" />
+          <div className="es-cta-inner">
+            <h2 className="es-cta-head">
+              <span className="block es-reveal" style={{ '--d': '0ms' } as React.CSSProperties}>LET'S</span>
+              <span className="block es-cta-accent es-reveal" style={{ '--d': '70ms' } as React.CSSProperties}>BUILD</span>
+              <span className="block es-reveal" style={{ '--d': '140ms' } as React.CSSProperties}>SOMETHING.</span>
+            </h2>
+            <div className="es-cta-right es-reveal" style={{ '--d': '210ms' } as React.CSSProperties}>
+              <Link href="/contact" className="btn-press es-cta-btn">
+                Start a Project
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square"/>
+                </svg>
+              </Link>
+              <p className="es-cta-sub">No commitment required. We reply within 24 hours.</p>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+          <hr className="es-rule" />
+        </section>
 
-function Logo() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 256 256" fill="none">
-      <path
-        fill="rgb(84, 84, 84)"
-        d="M 160 88 L 194 34 L 216 0 L 256 0 L 256 40 L 221.5 93.5 L 200 128 L 256 128 L 256 256 L 96 256 L 96 168 L 64.246 220 L 40 256 L 0 256 L 0 216 L 34 162 L 56 128 L 0 128 L 0 0 L 160 0 Z"
-      />
-    </svg>
+      </main>
+
+      <Footer />
+    </div>
   );
 }
