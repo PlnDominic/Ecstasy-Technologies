@@ -8,11 +8,11 @@ import Footer from '@/components/Footer';
 import SplashCursor from '@/components/SplashCursor';
 
 const SERVICES = [
-  { num: '01', name: 'Web Design & Development' },
-  { num: '02', name: 'Web Applications' },
-  { num: '03', name: 'Mobile Apps' },
-  { num: '04', name: 'Business Software' },
-  { num: '05', name: 'GIS Solutions' },
+  { num: '01', name: 'Web Design & Development', slug: 'web-design-development' },
+  { num: '02', name: 'Web Applications', slug: 'web-applications' },
+  { num: '03', name: 'Mobile Apps', slug: 'mobile-apps' },
+  { num: '04', name: 'Business Software', slug: 'business-software' },
+  { num: '05', name: 'GIS Solutions', slug: 'gis-solutions' },
 ];
 
 const TRUST_AVATARS = [
@@ -23,8 +23,6 @@ const TRUST_AVATARS = [
 ];
 
 const FRONTIER_TAGS = ['Web', 'Mobile', 'Enterprise'];
-
-const POSSIBILITY_TABS = ['Innovation', 'Technology', 'Experience'];
 
 const FEATURED_POST = {
   href: '/blog/web-vs-mobile-app-which-does-your-business-need',
@@ -238,18 +236,36 @@ export default function Home() {
               ENDLESS POSSIBILITIES<br />WITH ECSTASY.
             </h2>
 
-            <div className="grid grid-cols-1 lg:grid-cols-[160px_1fr] gap-8 lg:gap-16">
-              <ul className="flex lg:flex-col gap-6 lg:gap-4">
-                {POSSIBILITY_TABS.map((tab, i) => (
-                  <li
-                    key={tab}
-                    className={`text-[13px] font-semibold ${i === 0 ? 'text-white' : 'text-neutral-600'}`}
-                  >
-                    {tab}
-                  </li>
-                ))}
-              </ul>
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-10 lg:gap-16 items-start">
 
+              {/* Capabilities */}
+              <div>
+                <span className="block text-[11px] font-bold tracking-[0.2em] uppercase text-neutral-500 mb-4">
+                  Capabilities
+                </span>
+                <ol aria-label="Our capabilities">
+                  {SERVICES.map(({ num, name, slug }) => (
+                    <li key={num} className="border-b border-neutral-800 first:border-t">
+                      <Link
+                        href={`/services/${slug}`}
+                        className="group flex items-center justify-between gap-4 py-3.5"
+                      >
+                        <span className="flex items-baseline gap-3">
+                          <span className="text-[11px] font-semibold text-neutral-500">{num}</span>
+                          <span className="text-[15px] font-semibold text-white group-hover:text-neutral-300 transition-colors">
+                            {name}
+                          </span>
+                        </span>
+                        <span className="text-[13px] text-neutral-600 transition-all duration-200 group-hover:text-white group-hover:translate-x-0.5">
+                          ↗
+                        </span>
+                      </Link>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              {/* Featured article */}
               <Link href={FEATURED_POST.href} className="group grid grid-cols-1 sm:grid-cols-[220px_1fr] gap-6 items-center">
                 <div className="relative w-full aspect-[4/3] sm:aspect-square overflow-hidden rounded-sm bg-neutral-900">
                   <Image
@@ -274,23 +290,6 @@ export default function Home() {
               </Link>
             </div>
           </div>
-        </section>
-
-        {/* ── CAPABILITIES ── */}
-        <section className="es-section">
-          <div className="es-section-head">
-            <hr className="es-rule" />
-            <span className="es-section-label">CAPABILITIES</span>
-          </div>
-          <ol className="es-services" aria-label="Our capabilities">
-            {SERVICES.map(({ num, name }, i) => (
-              <li key={num} className="es-service es-reveal" style={{ '--d': `${i * 55}ms` } as React.CSSProperties}>
-                <span className="es-svc-num" aria-hidden="true" style={{ color: 'var(--foreground)' }}>{num}</span>
-                <span className="es-svc-name">{name}</span>
-                <span className="es-svc-arrow" aria-hidden="true">↗</span>
-              </li>
-            ))}
-          </ol>
         </section>
 
         {/* ── SELECTED WORK ── */}
