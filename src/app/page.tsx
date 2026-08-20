@@ -143,17 +143,19 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Photo column — bleeds to the frame edges */}
-            <div className="relative min-h-[50vh] lg:min-h-0">
-              <Image
-                src="/hero-desk.jpg"
-                alt="Building software at Ecstasy Technologies"
-                fill
-                priority
-                className="object-cover"
-                style={{ objectPosition: '75% center' }}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+            {/* Photo column — background removed, floats directly on the same white surface */}
+            <div className="relative min-h-[50vh] lg:min-h-0 flex items-end justify-center overflow-visible px-6 pb-6 lg:pb-0">
+              <div className="relative w-full h-full max-h-[85vh]">
+                <Image
+                  src="/hero-desk-cutout.png"
+                  alt="Building software at Ecstasy Technologies"
+                  fill
+                  priority
+                  className="object-contain"
+                  style={{ objectPosition: 'center bottom' }}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
             </div>
           </div>
         </section>
