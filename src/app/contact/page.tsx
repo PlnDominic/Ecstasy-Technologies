@@ -88,7 +88,7 @@ export default function Contact() {
                     </svg>
                     <div>
                       <p style={{ margin: '0 0 0.2rem', fontSize: '11px', fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--muted-foreground)' }}>Email</p>
-                      <a href="mailto:support@ecstasytechnologies.com" className="ip-contact-link">support@ecstasytechnologies.com</a>
+                      <a href="mailto:info@ecstasytechnologies.com" className="ip-contact-link">info@ecstasytechnologies.com</a>
                     </div>
                   </div>
 

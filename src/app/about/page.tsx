@@ -65,12 +65,12 @@ const SALES = [
 ];
 
 const WHY_US = [
-  { num: '01', title: 'Technical Depth', body: 'Our engineers bring serious expertise across modern web, mobile, and cloud technologies — not generalists, specialists.' },
+  { num: '01', title: 'Technical Depth', body: 'Our engineers bring serious expertise across modern web, mobile, and cloud technologies, not generalists, specialists.' },
   { num: '02', title: 'Client-First', body: 'We prioritise understanding your business before writing a line of code. Solutions that create real value, not impressive demos.' },
   { num: '03', title: 'Agile Process', body: 'Iterative delivery with transparency. You see progress every sprint and can shape the product throughout the build.' },
-  { num: '04', title: 'End-to-End', body: 'From concept through deployment and ongoing support — one team, full accountability.' },
+  { num: '04', title: 'End-to-End', body: 'From concept through deployment and ongoing support, one team, full accountability.' },
   { num: '05', title: 'Quality Assurance', body: 'Rigorous testing and code review at every stage. We ship software we\'re proud to put our name on.' },
-  { num: '06', title: 'Long-Term Support', body: 'Dedicated support and maintenance. We don\'t disappear at launch — we stay to ensure your software thrives.' },
+  { num: '06', title: 'Long-Term Support', body: 'Dedicated support and maintenance. We don\\'t disappear at launch, we stay to ensure your software thrives.' },
 ];
 
 // Single source of truth for both the visible FAQ section below and the
@@ -105,15 +105,15 @@ const FAQS = [
   },
   {
     q: 'How long does a typical software project take?',
-    a: 'Timelines depend on scope — a marketing website can take a few weeks, while a full business or enterprise system typically takes a few months. We work in agile sprints so you see progress throughout.',
+    a: 'Timelines depend on scope, a marketing website can take a few weeks, while a full business or enterprise system typically takes a few months. We work in agile sprints so you see progress throughout.',
   },
   {
     q: 'Does Ecstasy Technologies provide support after launch?',
-    a: 'Yes, we offer ongoing support and maintenance after launch — we stay engaged to make sure the software keeps working for your business as it grows.',
+    a: 'Yes, we offer ongoing support and maintenance after launch, we stay engaged to make sure the software keeps working for your business as it grows.',
   },
   {
     q: 'How do I start a project with Ecstasy Technologies?',
-    a: 'Reach out through our contact page or email support@ecstasytechnologies.com for a free consultation. We typically respond within 24 hours.',
+    a: 'Reach out through our contact page or email info@ecstasytechnologies.com for a free consultation. We typically respond within 24 hours.',
   },
 ];
 
@@ -151,7 +151,7 @@ export default function About() {
               <span style={{ color: 'var(--accent)' }}>ARE.</span>
             </h1>
             <p className="ip-body" style={{ marginTop: '1.5rem' }}>
-              A software studio founded in Bibiani, Ghana in 2018. We build digital products that work —
+              A software studio founded in Bibiani, Ghana in 2018. We build digital products that work,
               for hotels, logistics companies, schools, banks, and anyone who takes their software seriously.
             </p>
           </div>
@@ -181,7 +181,7 @@ export default function About() {
                   with expertise across web, mobile, and enterprise systems.
                 </p>
                 <p className="ip-body">
-                  Today we have helped over 32 clients transform their operations — from boutique hotels in Bibiani
+                  Today we have helped over 32 clients transform their operations, from boutique hotels in Bibiani
                   to logistics companies operating nationally.
                 </p>
               </div>
@@ -205,7 +205,7 @@ export default function About() {
                   <span className="es-section-label">MISSION</span>
                 </div>
                 <p className="ip-body">
-                  Deliver high-quality, purpose-built software solutions — tailored to each client's unique context —
+                  Deliver high-quality, purpose-built software solutions, tailored to each client's unique context,
                   that create measurable value and long-term competitive advantage.
                 </p>
               </div>

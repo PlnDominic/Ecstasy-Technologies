@@ -28,8 +28,8 @@ export default function Footer() {
       </span>
 
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem 1.5rem', alignItems: 'center' }}>
-        <a href="mailto:support@ecstasytechnologies.com" style={linkStyle}>
-          support@ecstasytechnologies.com
+        <a href="mailto:info@ecstasytechnologies.com" style={linkStyle}>
+          info@ecstasytechnologies.com
         </a>
         <a href="tel:+233542855399" style={linkStyle}>
           +233 54 285 5399
