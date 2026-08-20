@@ -7,17 +7,6 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import SplashCursor from '@/components/SplashCursor';
 
-const REEL_IMAGES = [
-  { src: '/Lavimac royal hotel website.png', alt: 'Lavimac Royal Hotel' },
-  { src: '/Dynamic Shipping and Logistics.png', alt: 'Dynamic Shipping & Logistics' },
-  { src: '/Pro Realty Properties Web App.png', alt: 'Pro Realty Properties' },
-  { src: '/Emson hotel website.png', alt: 'Emson Hotel' },
-  { src: '/Hotel Management System Software Web App.png', alt: 'Hotel Management System' },
-  { src: '/Bubbly kids academy.png', alt: 'Bubbly Kids Academy' },
-  { src: '/Nhyiraba Hotel.png', alt: 'Nhyiraba Hotel' },
-  { src: '/Solani Construction.png', alt: 'Solani Construction' },
-];
-
 const SERVICES = [
   { num: '01', name: 'Web Design & Development' },
   { num: '02', name: 'Web Applications' },
@@ -63,80 +52,51 @@ export default function Home() {
       <main>
 
         {/* ── HERO ── */}
-        <section className="es-hero">
-          <div className="es-hero-inner">
+        <section className="relative min-h-[88vh] overflow-hidden bg-background">
 
-            {/* Identity strip */}
-            <div className="es-hero-meta">
-              <span>Ecstasy</span>
-              <span className="es-meta-dot" aria-hidden="true">·</span>
-              <span>Software Studio</span>
-              <span className="es-meta-dot" aria-hidden="true">·</span>
-              <span>Ghana</span>
-              <span className="es-meta-dot" aria-hidden="true">·</span>
-              <span>Est. 2018</span>
-            </div>
-
-            {/* Headline */}
-            <h1 className="es-headline">
-              <span className="es-hl es-reveal" style={{ '--d': '0ms' } as React.CSSProperties}>BUILDING</span>
-              <span className="es-hl es-reveal" style={{ '--d': '70ms' } as React.CSSProperties}>SOFTWARE</span>
-              <span className="es-hl es-hl-accent es-reveal" style={{ '--d': '140ms' } as React.CSSProperties}>AFRICA</span>
-              <span className="es-hl es-hl-outline es-reveal" style={{ '--d': '210ms' } as React.CSSProperties}>TRUSTS.</span>
-            </h1>
-
-            {/* Project reel */}
-            <div className="es-hero-reel es-reveal" style={{ '--d': '280ms' } as React.CSSProperties} aria-hidden="true">
-              <div className="es-hero-reel-track">
-                {[...REEL_IMAGES, ...REEL_IMAGES].map((img, i) => (
-                  <div key={i} className="es-reel-item">
-                    <Image
-                      src={img.src}
-                      alt={img.alt}
-                      fill
-                      className="object-cover object-top"
-                      sizes="300px"
-                      quality={70}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Footer: description + CTAs | stats */}
-            <div className="es-hero-foot es-reveal" style={{ '--d': '350ms' } as React.CSSProperties}>
-              <div className="es-hero-copy">
-                <p className="es-hero-sub">
-                  Websites, apps, and business systems — engineered for ambitious organisations across the continent.
-                </p>
-                <div className="es-hero-actions">
-                  <Link href="/portfolio" className="btn-press es-btn-primary">
-                    View Our Work
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square" strokeLinejoin="miter"/>
-                    </svg>
-                  </Link>
-                  <Link href="/contact" className="btn-press es-btn-ghost">
-                    Get in Touch
-                  </Link>
-                </div>
-              </div>
-
-              <div className="es-hero-stats-col" aria-label="Studio highlights">
-                {[
-                  { num: '32+', label: 'Projects' },
-                  { num: '6',   label: 'Years' },
-                  { num: '98%', label: 'Satisfied' },
-                ].map(({ num, label }) => (
-                  <div key={label} className="es-stat">
-                    <span className="es-stat-num">{num}</span>
-                    <span className="es-stat-label">{label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
+          {/* Background */}
+          <div className="absolute inset-0 w-full h-full" aria-hidden="true">
+            <div
+              className="absolute inset-0 w-full h-full opacity-[0.04]"
+              style={{ backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzAgMzBoMzB2MzBIMzB6IiBzdHJva2Utb3BhY2l0eT0iLjEiIHN0cm9rZT0iIzAwMCIvPjxwYXRoIGQ9Ik0zMCAwaDMwdjMwSDMweiIgc3Ryb2tlLW9wYWNpdHk9Ii4xIiBzdHJva2U9IiMwMDAiLz48cGF0aCBkPSJNMCAzMGgzMHYzMEgweiIgc3Ryb2tlLW9wYWNpdHk9Ii4xIiBzdHJva2U9IiMwMDAiLz48cGF0aCBkPSJNMCAwaDMwdjMwSDB6IiBzdHJva2Utb3BhY2l0eT0iLjEiIHN0cm9rZT0iIzAwMCIvPjwvZz48L3N2Zz4=')" }}
+            />
+            <div className="absolute top-0 right-0 w-[32rem] h-[32rem] bg-accent rounded-full opacity-[0.08] blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-[26rem] h-[26rem] bg-accent rounded-full opacity-[0.06] blur-3xl" />
           </div>
+
+          {/* Foreground content */}
+          <div className="relative z-10 flex flex-col min-h-[88vh]">
+            <div className="flex-1 flex items-end pb-10 sm:pb-16 lg:pb-20 px-6 sm:px-12 md:px-20 lg:px-28">
+              <div className="max-w-xs">
+
+                <Link
+                  href="/portfolio"
+                  className="inline-flex items-center gap-1.5 text-[11.5px] font-medium text-blue-500 hover:text-blue-600 transition-colors mb-3 group"
+                >
+                  Trusted by 32+ businesses across Ghana
+                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+                </Link>
+
+                <h1 className="text-[1.5rem] sm:text-[1.75rem] leading-[1.15] font-medium text-foreground tracking-tight mb-3">
+                  Simple, smart software built for businesses who keep growing.
+                </h1>
+
+                <p className="text-[13px] text-muted-foreground font-normal mb-3">
+                  Let&apos;s build what&apos;s next.
+                </p>
+
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 text-[13px] font-medium text-blue-500 border border-blue-400 rounded-full px-5 py-2.5 hover:bg-blue-500 hover:text-white hover:border-blue-500 transition-all duration-200 group"
+                >
+                  Start a Project
+                  <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+                </Link>
+
+              </div>
+            </div>
+          </div>
+
         </section>
 
         {/* ── CAPABILITIES ── */}
