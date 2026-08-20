@@ -6,6 +6,8 @@ import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import SplashCursor from '@/components/SplashCursor';
+import SiteSearch from '@/components/SiteSearch';
+import FloatingContactButton from '@/components/FloatingContactButton';
 
 const REEL_IMAGES = [
   { src: '/Lavimac royal hotel website.png', alt: 'Lavimac Royal Hotel' },
@@ -219,6 +221,7 @@ export default function Home() {
       </main>
 
       <Footer />
+      <FloatingContactButton />
     </div>
   );
 }

@@ -153,6 +153,35 @@
 @keyframes slideUp { from { transform: translateY(14px); opacity: 0;} to { transform: translateY(0); opacity: 1; } }
 @keyframes pulseSlow  { 0%,100%{ opacity:.08; } 50%{ opacity:.18; } }
 @keyframes borderPulse{ 0%,100%{ opacity:.6;  } 50%{ opacity:1;   } }
+@keyframes es-spin { to { transform: rotate(360deg); } }
+
+/* ─────────────────────────────────────────────────────────────
+   FLOATING CONTACT BUTTON
+   ───────────────────────────────────────────────────────────── */
+.fb-btn {
+  transition: transform 200ms var(--ease-out), box-shadow 200ms ease;
+}
+.fb-panel {
+  transition: opacity 280ms var(--ease-out), transform 280ms var(--ease-out);
+  overflow: hidden;
+}
+.fb-backdrop {
+  transition: opacity 200ms ease;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   SITE SEARCH
+   ───────────────────────────────────────────────────────────── */
+.ss-trigger {
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+.ss-result {
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+.ss-result-selected {
+  background-color: var(--accent-light) !important;
+  border-color: var(--accent);
+}
 
 /* ─────────────────────────────────────────────────────────────
    BODY / CURSOR

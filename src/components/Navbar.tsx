@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import ThemeToggle from './ThemeToggle';
+import SiteSearch from './SiteSearch';
 
 const NAV_LINKS = [
   { label: 'Services', href: '/services' },
@@ -58,6 +59,7 @@ const Navbar = () => {
           </nav>
 
           <div className="es-nav-right">
+            <SiteSearch />
             <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(v => !v)}

@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { initUtmTracking, useUtm, withUtm } from '@/utils/utm';
 
 interface FormValues {
   name: string;
@@ -52,6 +53,13 @@ export default function ContactForm() {
   const [touched, setTouched] = useState<Partial<Record<keyof FormValues, boolean>>>({});
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
+  // Capture UTM campaign params from the URL on first mount so the
+  // submission can be attributed to the marketing channel that brought
+  // the visitor here.
+  useEffect(() => {
+    initUtmTracking();
+  }, []);
+
   const handleChange = (field: keyof FormValues) => (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
@@ -83,6 +91,16 @@ export default function ContactForm() {
       // No backend endpoint is wired up yet — this simulates a successful
       // submit so the UX (validation, errors, success state) is complete
       // and ready to point at a real API route.
+      //
+      // UTM campaign params (utm_source, utm_medium, utm_campaign, …) are
+      // captured on mount via initUtmTracking() and persisted to localStorage.
+      // Build a campaign snapshot here so a future API call can forward it
+      // as part of the submission payload / hidden fields.
+      const campaign = useUtm();
+      const campaignPayload = Object.keys(campaign).length
+        ? JSON.stringify(campaign)
+        : null;
+
       await new Promise(resolve => setTimeout(resolve, 600));
       setStatus('success');
       setValues(INITIAL_VALUES);
