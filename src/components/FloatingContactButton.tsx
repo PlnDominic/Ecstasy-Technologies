@@ -277,7 +277,7 @@ export default function FloatingContactButton() {
             zIndex: 78,
             background: 'rgba(0,0,0,0.35)',
             backdropFilter: 'blur(3px)',
-            Zzz: 'none',
+            pointerEvents: 'none',
           }}
           aria-hidden="true"
         />

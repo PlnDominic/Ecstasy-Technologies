@@ -211,7 +211,7 @@ export default function SiteSearch() {
           position: 'fixed',
           top: '130px',
           left: '50%',
-          transform: 'translateX(-50%)',
+          transform: open ? 'translateX(-50%) translateY(0)' : 'translateX(-50%) translateY(-8px)',
           zIndex: 91,
           width: 'min(620px, calc(100vw - 2rem))',
           background: 'var(--background)',
