@@ -211,7 +211,7 @@ export default function SiteSearch() {
           position: 'fixed',
           top: '130px',
           left: '50%',
-          transform: open ? 'translateX(-50%) translateY(0)' : 'translateX(-50%) translateY(-8px)',
+          transform: 'translateX(-50%)',
           zIndex: 91,
           width: 'min(620px, calc(100vw - 2rem))',
           background: 'var(--background)',
@@ -222,7 +222,6 @@ export default function SiteSearch() {
           opacity: open ? 1 : 0,
           pointerEvents: open ? 'auto' : 'none',
           transition: 'opacity 200ms var(--ease-out), transform 200ms var(--ease-out)',
-          transform: open ? 'translateX(-50%) translateY(0)' : 'translateX(-50%) translateY(-8px)',
         }}
       >
         {/* Search input row */}
