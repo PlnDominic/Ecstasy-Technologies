@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import SharedLayout from '@/components/SharedLayout';
+import Tooltip from '@/components/Tooltip';
+import { SERVICES } from '@/data/services';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -15,42 +17,25 @@ export const metadata: Metadata = {
   },
 };
 
-const SERVICES = [
+const PAYMENT_METHODS = [
   {
-    num: '01',
-    name: 'Web Design & Development',
-    description: 'Bespoke websites built for performance, clarity, and conversion — from marketing sites to full e-commerce platforms.',
-    features: ['Responsive across all devices', 'E-commerce & payment systems', 'Content management systems', 'SEO-first architecture'],
+    name: 'Mobile Money',
+    tooltip: 'MTN Mobile Money, Vodafone Cash, and AirtelTigo Money — pay directly from your phone, no bank account required.',
+    icon: (
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+        <rect x="5" y="2" width="14" height="20" rx="2" stroke="currentColor" strokeWidth="1.5"/>
+        <line x1="5" y1="18" x2="19" y2="18" stroke="currentColor" strokeWidth="1.5"/>
+      </svg>
+    ),
   },
   {
-    num: '02',
-    name: 'Web Applications',
-    description: 'Complex, scalable systems that power real business operations — logistics dashboards to booking platforms to SaaS tools.',
-    features: ['Progressive web apps', 'Real-time data & notifications', 'Workflow automation', 'Third-party API integrations'],
-  },
-  {
-    num: '03',
-    name: 'Mobile Apps',
-    description: 'Native and cross-platform mobile applications that users actually enjoy — built for speed, reliability, and retention.',
-    features: ['iOS & Android development', 'Cross-platform (React Native)', 'Offline capability', 'Push notifications'],
-  },
-  {
-    num: '04',
-    name: 'Business Software',
-    description: 'Custom management systems, ERPs, and operational tools engineered to fit your workflows — not the other way around.',
-    features: ['Hotel & property management', 'School management systems', 'Inventory & order systems', 'Financial reporting tools'],
-  },
-  {
-    num: '05',
-    name: 'GIS Solutions',
-    description: 'Geospatial software for organisations that need to visualise, analyse, and act on location data at scale.',
-    features: ['Interactive mapping', 'Location-based services', 'Geospatial data analysis', 'GIS web applications'],
-  },
-  {
-    num: '06',
-    name: 'UI/UX Design',
-    description: 'User research, wireframing, and interface design that turns complex systems into intuitive, memorable experiences.',
-    features: ['User research & personas', 'Wireframing & prototyping', 'Design systems', 'Usability testing'],
+    name: 'Bank Transfer',
+    tooltip: 'Local and international wire transfer. Full account details are shared once a project is scoped.',
+    icon: (
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+        <path d="M3 10h18M5 10v9m4-9v9m6-9v9m4-9v9M3 19h18M12 2L3 7h18L12 2z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
   },
 ];
 
@@ -96,7 +81,7 @@ export default function Services() {
 
           {/* ── Services list ── */}
           <div className="ip-section">
-            {SERVICES.map(({ num, name, description, features }, i) => (
+            {SERVICES.map(({ num, slug, name, description, features }, i) => (
               <div
                 key={num}
                 className="ip-service animate-enter"
@@ -104,13 +89,22 @@ export default function Services() {
               >
                 <span className="es-svc-num" style={{ paddingTop: '0.25rem' }}>{num}</span>
                 <div className="ip-service-meta">
-                  <h2 className="ip-subheading">{name}</h2>
+                  <h2 className="ip-subheading">
+                    {name === 'GIS Solutions' ? (
+                      <Tooltip label="GIS" content="Geographic Information Systems — software for capturing, mapping, and analysing location-based data.">
+                        {name}
+                      </Tooltip>
+                    ) : name}
+                  </h2>
                   <p className="ip-body" style={{ fontSize: '14px' }}>{description}</p>
                   <ul className="ip-service-features">
                     {features.map(f => (
                       <li key={f} className="ip-service-feature">{f}</li>
                     ))}
                   </ul>
+                  <Link href={`/services/${slug}`} className="btn-press es-all-link" style={{ alignSelf: 'flex-start' }}>
+                    Learn more ↗
+                  </Link>
                 </div>
               </div>
             ))}
@@ -132,6 +126,49 @@ export default function Services() {
                   <p className="ip-body" style={{ fontSize: '13.5px' }}>{body}</p>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* ── Payment & Guarantee ── */}
+          <div className="ip-section">
+            <div style={{ marginBottom: '1.75rem' }}>
+              <hr className="es-rule" />
+              <span className="es-section-label">PAYMENT & GUARANTEE</span>
+            </div>
+            <div className="ip-info-grid">
+              <div>
+                <h3 className="ip-subheading" style={{ fontSize: 'clamp(1rem, 1.6vw, 1.2rem)', marginBottom: '1rem' }}>
+                  How you pay
+                </h3>
+                <ul className="ip-payment-list">
+                  {PAYMENT_METHODS.map(({ name, tooltip, icon }) => (
+                    <li key={name} className="ip-payment-item">
+                      <span className="ip-payment-icon" aria-hidden="true">{icon}</span>
+                      <Tooltip content={tooltip}>{name}</Tooltip>
+                    </li>
+                  ))}
+                </ul>
+                <p className="ip-body" style={{ fontSize: '12.5px', marginTop: '0.85rem' }}>
+                  Projects are billed in milestones tied to project phases — never 100% upfront.
+                </p>
+              </div>
+              <div className="ip-guarantee-card">
+                <span className="ip-guarantee-badge">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 2l7 3.5v6c0 5-3 8.5-7 10.5-4-2-7-5.5-7-10.5v-6L12 2z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/>
+                    <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Our guarantee
+                </span>
+                <h3 className="ip-subheading" style={{ fontSize: 'clamp(1rem, 1.6vw, 1.2rem)' }}>
+                  30 days of free bug fixes after launch
+                </h3>
+                <p className="ip-body" style={{ fontSize: '13px' }}>
+                  If something we built breaks within 30 days of go-live, we fix it at no extra
+                  cost. Beyond that window, ongoing support and maintenance plans are available
+                  for every project we deliver.
+                </p>
+              </div>
             </div>
           </div>
 

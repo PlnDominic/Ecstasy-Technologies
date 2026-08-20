@@ -89,6 +89,36 @@ const PROJECTS = [
 
 const FILTERS = ['All', 'Website', 'Web Application', 'Mobile App', 'Business Software'];
 
+// Case studies for the Impact Showcase — built from the same real project
+// data above (features, links) framed as problem → build → result, rather
+// than fabricated "before" screenshots we don't have.
+const CASE_STUDIES = [
+  {
+    title: 'Lavimac Royal Hotel',
+    image: '/Lavimac royal hotel website.png',
+    link: 'https://lavimacroyalhotel.com',
+    problem: 'Boutique hotels lose bookings whenever guests can\'t check room availability and reserve directly online, and instead have to call and wait for a reply.',
+    build: 'A luxury hotel website with a live room showcase, an online booking and reservation system, and integrated payment processing — built with React, Next.js, and Node.js.',
+    result: 'Live in production today, handling guest bookings directly through lavimacroyalhotel.com.',
+  },
+  {
+    title: 'Dynamic Shipping & Logistics',
+    image: '/Dynamic Shipping and Logistics.png',
+    link: 'https://dynamicshippingandlogistics.com',
+    problem: 'Logistics operators lose time and money when shipment tracking, inventory, and delivery scheduling live in disconnected spreadsheets instead of one system.',
+    build: 'A logistics management platform with real-time shipment tracking, route optimisation, inventory management, and delivery scheduling — built with React, Node.js, and Google Maps API.',
+    result: 'Live in production today, running shipment tracking and delivery operations at dynamicshippingandlogistics.com.',
+  },
+  {
+    title: 'Pro Realty Properties',
+    image: '/Pro Realty Properties Web App.png',
+    link: 'https://prorealtyconsult.com',
+    problem: 'Real estate agencies struggle to convert browsers into leads when property listings, tours, and enquiries are scattered across PDFs, WhatsApp, and phone calls.',
+    build: 'A real estate platform with property listing management, virtual tours, appointment scheduling, and a client management system — built with React, Next.js, and PostgreSQL.',
+    result: 'Live in production today, powering property listings and enquiries at prorealtyconsult.com.',
+  },
+];
+
 export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState<string>('All');
   const [selectedProject, setSelectedProject] = useState<any>(null);
@@ -181,6 +211,62 @@ export default function Portfolio() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* ── Impact Showcase ── */}
+          <div className="ip-section">
+            <div style={{ marginBottom: '0.5rem' }}>
+              <hr className="es-rule" />
+              <span className="es-section-label">IMPACT SHOWCASE</span>
+            </div>
+            <p className="ip-body" style={{ marginBottom: 'clamp(1.5rem, 3vw, 2.5rem)' }}>
+              A closer look at the problem, what we built, and the result — for three projects
+              still live in production today.
+            </p>
+            <div className="ip-case-list">
+              {CASE_STUDIES.map(cs => (
+                <article key={cs.title} className="ip-case">
+                  <div className="ip-case-img-wrap">
+                    <Image
+                      src={cs.image}
+                      alt={cs.title}
+                      fill
+                      className="object-cover object-top"
+                      sizes="(max-width: 760px) 100vw, 45vw"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="ip-subheading" style={{ fontSize: 'clamp(1.1rem, 1.8vw, 1.4rem)', marginBottom: '1rem' }}>
+                      {cs.title}
+                    </h3>
+                    <div className="ip-case-steps">
+                      <div className="ip-case-step ip-case-step-problem">
+                        <span className="ip-case-step-label">The Problem</span>
+                        <p className="ip-case-step-body">{cs.problem}</p>
+                      </div>
+                      <div className="ip-case-step ip-case-step-build">
+                        <span className="ip-case-step-label">What We Built</span>
+                        <p className="ip-case-step-body">{cs.build}</p>
+                      </div>
+                      <div className="ip-case-step ip-case-step-result">
+                        <span className="ip-case-step-label">The Result</span>
+                        <p className="ip-case-step-body">
+                          {cs.result}{' '}
+                          <a
+                            href={cs.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: 'var(--accent)', borderBottom: '1px solid var(--accent)' }}
+                          >
+                            Visit site ↗
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
 
           {/* ── CTA ── */}

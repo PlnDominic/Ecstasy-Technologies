@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import SharedLayout from '@/components/SharedLayout';
+import ContactForm from '@/components/ContactForm';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -52,81 +53,7 @@ export default function Contact() {
                 <span className="es-section-label">SEND A MESSAGE</span>
               </div>
 
-              <form style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1rem' }}>
-                  <div>
-                    <label htmlFor="name" className="ip-label">Your Name</label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      className="ip-input"
-                      placeholder="Dominic Kudom"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="ip-label">Email Address</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      className="ip-input"
-                      placeholder="you@example.com"
-                    />
-                  </div>
-                </div>
-
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1rem' }}>
-                  <div>
-                    <label htmlFor="company" className="ip-label">Company (Optional)</label>
-                    <input
-                      type="text"
-                      id="company"
-                      name="company"
-                      className="ip-input"
-                      placeholder="Your Company"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="service" className="ip-label">Service Interested In</label>
-                    <select id="service" name="service" className="ip-input" style={{ cursor: 'pointer' }}>
-                      <option value="">Select a service</option>
-                      <option value="web-design">Web Design & Development</option>
-                      <option value="web-app">Web Applications</option>
-                      <option value="mobile">Mobile Apps</option>
-                      <option value="business-software">Business Software</option>
-                      <option value="gis">GIS Solutions</option>
-                      <option value="uiux">UI/UX Design</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="ip-label">Your Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    className="ip-input"
-                    placeholder="Tell us about your project — the more context, the better our response."
-                    style={{ resize: 'vertical' }}
-                  />
-                </div>
-
-                <div>
-                  <button
-                    type="submit"
-                    className="btn-press es-btn-primary"
-                    style={{ cursor: 'pointer' }}
-                  >
-                    Send Message
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square" strokeLinejoin="miter"/>
-                    </svg>
-                  </button>
-                </div>
-              </form>
+              <ContactForm />
             </div>
 
             {/* ── Contact information ── */}
@@ -147,8 +74,8 @@ export default function Contact() {
                     </svg>
                     <div>
                       <p style={{ margin: '0 0 0.2rem', fontSize: '11px', fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--muted-foreground)' }}>Phone</p>
-                      <p style={{ margin: 0, fontSize: '14px', color: 'var(--foreground)' }}>+233 54 285 5399</p>
-                      <p style={{ margin: 0, fontSize: '14px', color: 'var(--foreground)' }}>+233 24 262 6287</p>
+                      <a href="tel:+233542855399" className="ip-contact-link">+233 54 285 5399</a>
+                      <a href="tel:+233242626287" className="ip-contact-link">+233 24 262 6287</a>
                     </div>
                   </div>
 
@@ -161,7 +88,7 @@ export default function Contact() {
                     </svg>
                     <div>
                       <p style={{ margin: '0 0 0.2rem', fontSize: '11px', fontFamily: "'Syne', system-ui, sans-serif", fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--muted-foreground)' }}>Email</p>
-                      <p style={{ margin: 0, fontSize: '14px', color: 'var(--foreground)' }}>support@ecstasytechnologies.com</p>
+                      <a href="mailto:support@ecstasytechnologies.com" className="ip-contact-link">support@ecstasytechnologies.com</a>
                     </div>
                   </div>
 
@@ -214,42 +141,18 @@ export default function Contact() {
                 <div style={{ display: 'flex', gap: '1rem' }}>
                   {[
                     {
-                      label: 'Twitter',
-                      href: 'https://twitter.com',
+                      label: 'TikTok',
+                      href: 'https://www.tiktok.com/@ecstasytechnologies',
                       icon: (
-                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
-                          stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M16.5 2h-3v13.5a2.5 2.5 0 11-2.5-2.5c.17 0 .34.01.5.04V9.96a5.6 5.6 0 00-.5-.02A5.58 5.58 0 005.42 15.5 5.58 5.58 0 0011 21.08a5.58 5.58 0 005.5-5.58V8.36a8.34 8.34 0 004.5 1.32V6.68A5.5 5.5 0 0116.5 2z"
+                          stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
                       ),
                     },
                     {
-                      label: 'LinkedIn',
-                      href: 'https://linkedin.com',
+                      label: 'X (Twitter)',
+                      href: 'https://x.com/ecstasy_tech',
                       icon: (
-                        <>
-                          <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"
-                            stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                          <rect x="2" y="9" width="4" height="12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                          <circle cx="4" cy="4" r="2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                        </>
-                      ),
-                    },
-                    {
-                      label: 'Instagram',
-                      href: 'https://instagram.com',
-                      icon: (
-                        <>
-                          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                        </>
-                      ),
-                    },
-                    {
-                      label: 'Facebook',
-                      href: 'https://facebook.com',
-                      icon: (
-                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
-                          stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        <path d="M4 4l16 16M20 4L4 20" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
                       ),
                     },
                   ].map(({ label, href, icon }) => (

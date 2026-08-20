@@ -839,3 +839,153 @@ body::before {
 @media (hover: hover) and (pointer: fine) {
   .ip-proj-visit:hover { color: var(--accent); border-color: var(--accent); }
 }
+
+/* ── Contact detail links (tel: / mailto:) ── */
+.ip-contact-link {
+  display: block; margin: 0; font-size: 14px; color: var(--foreground);
+  text-decoration: none; border-bottom: 1px solid transparent;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .ip-contact-link:hover { color: var(--accent); border-color: var(--accent); }
+}
+
+/* ── Inline form field error ── */
+.ip-field-error {
+  margin: 0.4rem 0 0; font-size: 12px; line-height: 1.4; color: var(--accent);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TOOLTIP — rich hover/focus bubble
+   ═══════════════════════════════════════════════════════════════ */
+.es-tooltip-wrap { position: relative; display: inline-flex; }
+.es-tooltip-trigger {
+  cursor: help; border-bottom: 1px dotted var(--border-strong);
+}
+.es-tooltip-bubble {
+  position: absolute; left: 50%; bottom: calc(100% + 8px);
+  transform: translateX(-50%) translateY(4px);
+  width: max-content; max-width: 240px;
+  background-color: var(--foreground); color: var(--background);
+  font-size: 12px; line-height: 1.5; font-weight: 400;
+  padding: 0.6rem 0.75rem;
+  opacity: 0; pointer-events: none; visibility: hidden;
+  transition: opacity 140ms ease, transform 140ms ease;
+  z-index: 40;
+}
+.es-tooltip-bubble::after {
+  content: ''; position: absolute; top: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent; border-top-color: var(--foreground);
+}
+.es-tooltip-visible {
+  opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+}
+.es-tooltip-label {
+  display: block; font-family: 'Syne', system-ui, sans-serif;
+  font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 0.25rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PAYMENT + GUARANTEE — services page
+   ═══════════════════════════════════════════════════════════════ */
+.ip-info-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+.ip-payment-list { display: flex; flex-direction: column; gap: 0.75rem; margin: 0; padding: 0; list-style: none; }
+.ip-payment-item {
+  display: flex; align-items: center; gap: 0.65rem;
+  font-size: 13.5px; color: var(--foreground);
+  padding-bottom: 0.75rem; border-bottom: 1px solid var(--border);
+}
+.ip-payment-item:last-child { border-bottom: none; padding-bottom: 0; }
+.ip-payment-icon {
+  flex-shrink: 0; width: 26px; height: 26px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent); border: 1px solid var(--border);
+}
+.ip-guarantee-card {
+  border: 1px solid var(--border); padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  display: flex; flex-direction: column; gap: 0.75rem;
+}
+.ip-guarantee-badge {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-family: 'Syne', system-ui, sans-serif;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent); align-self: flex-start;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BLOG — listing + post
+   ═══════════════════════════════════════════════════════════════ */
+.ip-blog-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0; border-top: 1px solid var(--border); border-left: 1px solid var(--border);
+}
+.ip-blog-card {
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  display: flex; flex-direction: column; gap: 0.75rem; text-decoration: none;
+  transition: background-color 150ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .ip-blog-card:hover { background-color: var(--muted); }
+  .ip-blog-card:hover .ip-blog-title { color: var(--accent); }
+}
+.ip-blog-meta {
+  display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted-foreground); font-family: 'Syne', system-ui, sans-serif;
+}
+.ip-blog-cat { color: var(--accent); }
+.ip-blog-title {
+  font-family: 'Syne', system-ui, sans-serif; font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  font-weight: 700; color: var(--foreground); margin: 0; line-height: 1.25;
+  transition: color 150ms ease;
+}
+.ip-blog-excerpt { font-size: 13px; line-height: 1.6; color: var(--muted-foreground); margin: 0; }
+.ip-blog-readmore {
+  margin-top: auto; padding-top: 0.5rem;
+  font-size: 11px; font-weight: 600; color: var(--muted-foreground);
+}
+
+.ip-post-body { max-width: 680px; display: flex; flex-direction: column; gap: 2rem; }
+.ip-post-block h2 {
+  font-family: 'Syne', system-ui, sans-serif; font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  font-weight: 700; color: var(--foreground); margin: 0 0 0.85rem;
+}
+.ip-post-block p {
+  font-size: 15px; line-height: 1.75; color: var(--muted-foreground); margin: 0 0 1rem;
+}
+.ip-post-block p:last-child { margin-bottom: 0; }
+
+/* ═══════════════════════════════════════════════════════════════
+   IMPACT SHOWCASE — problem / build / result (portfolio page)
+   ═══════════════════════════════════════════════════════════════ */
+.ip-case-list { display: flex; flex-direction: column; gap: 0; }
+.ip-case {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(2rem, 4vw, 3rem) 0;
+  border-bottom: 1px solid var(--border);
+}
+.ip-case:first-child { padding-top: 0; }
+.ip-case-img-wrap {
+  position: relative; aspect-ratio: 4 / 3; overflow: hidden; background-color: var(--secondary);
+}
+.ip-case-steps { display: flex; flex-direction: column; gap: 1.25rem; }
+.ip-case-step { padding-left: 1.1rem; border-left: 2px solid var(--border); }
+.ip-case-step-problem { border-left-color: var(--border-strong); }
+.ip-case-step-result { border-left-color: var(--accent); }
+.ip-case-step-label {
+  display: block; font-family: 'Syne', system-ui, sans-serif;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--muted-foreground); margin-bottom: 0.35rem;
+}
+.ip-case-step-result .ip-case-step-label { color: var(--accent); }
+.ip-case-step-body { font-size: 13.5px; line-height: 1.6; color: var(--foreground); margin: 0; }
+@media (max-width: 760px) {
+  .ip-case { grid-template-columns: 1fr; }
+}

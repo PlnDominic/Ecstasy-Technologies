@@ -9,6 +9,7 @@ import ThemeToggle from './ThemeToggle';
 const NAV_LINKS = [
   { label: 'Services', href: '/services' },
   { label: 'Projects', href: '/projects' },
+  { label: 'Blog', href: '/blog' },
   { label: 'About Us', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ];

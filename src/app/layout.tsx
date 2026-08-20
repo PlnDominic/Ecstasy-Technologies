@@ -212,9 +212,8 @@ export default function RootLayout({
     ],
     keywords: 'software development Ghana, web development Accra, mobile app development Ghana, custom software Ghana, hotel management system, e-commerce Ghana, enterprise software',
     sameAs: [
-      'https://www.linkedin.com/company/ecstasy-software-services',
-      'https://twitter.com/ecstasysoftware',
-      'https://www.facebook.com/ecstasysoftware',
+      'https://www.tiktok.com/@ecstasytechnologies',
+      'https://x.com/ecstasy_tech',
     ],
   }
 
