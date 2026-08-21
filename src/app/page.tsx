@@ -18,7 +18,7 @@ const FRONTIER_TAGS = ['Web', 'Mobile', 'Enterprise'];
 
 const FEATURED_POST = {
   href: '/blog/web-vs-mobile-app-which-does-your-business-need',
-  image: '/Pro Realty Properties Web App.png',
+  image: '/desk.jpg',
   title: 'Website, Web App, or Mobile App? How to Choose',
   excerpt:
     'Not every business idea needs a mobile app, and not every mobile app idea should skip the website. Here’s a practical way to decide.',
