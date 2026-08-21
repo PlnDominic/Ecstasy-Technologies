@@ -9,6 +9,8 @@ interface FormValues {
   company: string;
   service: string;
   message: string;
+  /** Honeypot — left blank by real visitors, invisible to them. */
+  website: string;
 }
 
 type FormErrors = Partial<Record<keyof FormValues, string>>;
@@ -19,6 +21,7 @@ const INITIAL_VALUES: FormValues = {
   company: '',
   service: '',
   message: '',
+  website: '',
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -52,6 +55,7 @@ export default function ContactForm() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [touched, setTouched] = useState<Partial<Record<keyof FormValues, boolean>>>({});
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [serverError, setServerError] = useState<string | null>(null);
 
   // Capture UTM campaign params from the URL on first mount so the
   // submission can be attributed to the marketing channel that brought
@@ -77,6 +81,7 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setServerError(null);
     const nextErrors = validate(values);
     setErrors(nextErrors);
     setTouched({ name: true, email: true, company: true, service: true, message: true });
@@ -88,24 +93,33 @@ export default function ContactForm() {
 
     setStatus('submitting');
     try {
-      // No backend endpoint is wired up yet — this simulates a successful
-      // submit so the UX (validation, errors, success state) is complete
-      // and ready to point at a real API route.
-      //
       // UTM campaign params (utm_source, utm_medium, utm_campaign, …) are
       // captured on mount via initUtmTracking() and persisted to localStorage.
-      // Build a campaign snapshot here so a future API call can forward it
-      // as part of the submission payload / hidden fields.
+      // Forward them so the email lands with attribution attached.
       const campaign = useUtm();
-      const campaignPayload = Object.keys(campaign).length
-        ? JSON.stringify(campaign)
-        : null;
 
-      await new Promise(resolve => setTimeout(resolve, 600));
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...values,
+          campaign: Object.keys(campaign).length ? campaign : null,
+        }),
+      });
+
+      const data = await res.json().catch(() => null);
+
+      if (!res.ok || !data?.success) {
+        setServerError(data?.message || 'Something went wrong. Please try again.');
+        setStatus('error');
+        return;
+      }
+
       setStatus('success');
       setValues(INITIAL_VALUES);
       setTouched({});
     } catch {
+      setServerError('Something went wrong. Please try again.');
       setStatus('error');
     }
   };
@@ -117,6 +131,22 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+      {/* Honeypot — hidden from real visitors via CSS, not just `display: none`,
+          since some spam bots skip fields that are display:none. Real users
+          never focus or fill it; bots that autofill every field do. */}
+      <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}>
+        <label htmlFor="website">Leave this field empty</label>
+        <input
+          type="text"
+          id="website"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          value={values.website}
+          onChange={handleChange('website')}
+        />
+      </div>
+
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1rem' }}>
         <div>
           <label htmlFor="name" className="ip-label">Your Name</label>
@@ -233,6 +263,11 @@ export default function ContactForm() {
         {status === 'error' && Object.keys(errors).length > 0 && (
           <p role="alert" style={{ margin: 0, fontSize: '13px', color: 'var(--accent)' }}>
             Please fix the highlighted field{Object.keys(errors).length > 1 ? 's' : ''} above.
+          </p>
+        )}
+        {status === 'error' && Object.keys(errors).length === 0 && serverError && (
+          <p role="alert" style={{ margin: 0, fontSize: '13px', color: 'var(--accent)' }}>
+            {serverError}
           </p>
         )}
       </div>
