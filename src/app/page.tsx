@@ -96,9 +96,8 @@ export default function Home() {
           <div className="relative z-10 flex items-center min-h-[92vh] pt-14 px-6 sm:px-12 lg:px-16">
             <div className="max-w-md">
               <div className="flex items-start gap-3 mb-6">
-                <span className="text-[11px] font-semibold text-white/50 mt-1">01</span>
                 <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-white/50">
-                  Software Studio
+                  Ecstasy Technologies
                 </span>
               </div>
 
