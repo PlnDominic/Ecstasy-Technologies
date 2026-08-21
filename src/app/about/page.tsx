@@ -81,7 +81,7 @@ const WHY_US = [
 const FAQS = [
   {
     q: 'What services does Ecstasy Technologies offer in Ghana?',
-    a: 'Ecstasy Technologies offers web design & development, web applications, mobile apps, business software, GIS solutions, and UI/UX design for organisations across Ghana and Africa.',
+    a: 'Ecstasy Technologies offers web design & development, web applications, mobile apps, business software, and UI/UX design for organisations across Ghana and Africa.',
   },
   {
     q: 'Where is Ecstasy Technologies located?',

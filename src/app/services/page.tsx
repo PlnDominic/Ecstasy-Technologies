@@ -89,13 +89,7 @@ export default function Services() {
               >
                 <span className="es-svc-num" style={{ paddingTop: '0.25rem' }}>{num}</span>
                 <div className="ip-service-meta">
-                  <h2 className="ip-subheading">
-                    {name === 'GIS Solutions' ? (
-                      <Tooltip label="GIS" content="Geographic Information Systems - software for capturing, mapping, and analysing location-based data.">
-                        {name}
-                      </Tooltip>
-                    ) : name}
-                  </h2>
+                  <h2 className="ip-subheading">{name}</h2>
                   <p className="ip-body" style={{ fontSize: '14px' }}>{description}</p>
                   <ul className="ip-service-features">
                     {features.map(f => (

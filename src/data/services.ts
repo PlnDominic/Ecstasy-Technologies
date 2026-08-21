@@ -156,36 +156,6 @@ export const SERVICES: ServiceDetail[] = [
   },
   {
     num: '05',
-    slug: 'gis-solutions',
-    name: 'GIS Solutions',
-    tagline: 'Geospatial software for location-based decisions.',
-    description:
-      'Geospatial software for organisations that need to visualise, analyse, and act on location data at scale - from interactive maps to full location-intelligence platforms.',
-    features: [
-      'Interactive mapping',
-      'Location-based services',
-      'Geospatial data analysis',
-      'GIS web applications',
-    ],
-    useCases: [
-      'Route and territory mapping',
-      'Asset and land tracking',
-      'Delivery and logistics zoning',
-      'Location-based analytics dashboards',
-    ],
-    technologies: ['React', 'Node.js', 'Google Maps API', 'PostgreSQL/PostGIS'],
-    relatedProjects: [
-      { title: 'Dynamic Shipping & Logistics', category: 'Web Application' },
-    ],
-    faqs: [
-      {
-        q: 'What mapping data can you work with?',
-        a: 'We work with Google Maps and OpenStreetMap-based data, as well as custom geospatial datasets you provide.',
-      },
-    ],
-  },
-  {
-    num: '06',
     slug: 'ui-ux-design',
     name: 'UI/UX Design',
     tagline: 'Interface design that turns complexity into clarity.',

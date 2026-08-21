@@ -34,6 +34,11 @@ const nextConfig = {
         destination: '/projects',
         permanent: true,
       },
+      {
+        source: '/services/gis-solutions',
+        destination: '/services',
+        permanent: true,
+      },
     ]
   },
   async headers() {

@@ -12,7 +12,6 @@ const SERVICES = [
   { num: '02', name: 'Web Applications', slug: 'web-applications' },
   { num: '03', name: 'Mobile Apps', slug: 'mobile-apps' },
   { num: '04', name: 'Business Software', slug: 'business-software' },
-  { num: '05', name: 'GIS Solutions', slug: 'gis-solutions' },
 ];
 
 const FRONTIER_TAGS = ['Web', 'Mobile', 'Enterprise'];

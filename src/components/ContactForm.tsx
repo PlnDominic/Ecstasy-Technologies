@@ -186,7 +186,6 @@ export default function ContactForm() {
             <option value="web-app">Web Applications</option>
             <option value="mobile">Mobile Apps</option>
             <option value="business-software">Business Software</option>
-            <option value="gis">GIS Solutions</option>
             <option value="uiux">UI/UX Design</option>
             <option value="other">Other</option>
           </select>

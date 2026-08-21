@@ -15,7 +15,7 @@ interface SearchResult {
 const SEARCH_INDEX: SearchResult[] = [
   // Pages
   { type: 'page', title: 'Home', description: 'Ecstasy Technologies — software studio in Ghana. Websites, apps, and business systems.', href: '/', category: 'Page' },
-  { type: 'page', title: 'Services', description: 'Web design, web apps, mobile apps, business software, GIS, UI/UX design.', href: '/services', category: 'Page' },
+  { type: 'page', title: 'Services', description: 'Web design, web apps, mobile apps, business software, UI/UX design.', href: '/services', category: 'Page' },
   { type: 'page', title: 'Projects', description: 'A focused selection of websites, applications, and enterprise systems.', href: '/projects', category: 'Page' },
   { type: 'page', title: 'Blog / Insights', description: 'Practical notes on custom software, hospitality systems, and running projects in Ghana.', href: '/blog', category: 'Page' },
   { type: 'page', title: 'About Us', description: 'Who we are — a software studio founded in Bibiani, Ghana in 2018.', href: '/about', category: 'Page' },
@@ -25,7 +25,6 @@ const SEARCH_INDEX: SearchResult[] = [
   { type: 'service', title: 'Web Applications', description: 'Complex scalable systems — logistics dashboards, booking platforms, SaaS tools.', href: '/services/web-applications', category: 'Services' },
   { type: 'service', title: 'Mobile Apps', description: 'Native and cross-platform mobile apps — iOS & Android, React Native, offline, push notifications.', href: '/services/mobile-apps', category: 'Services' },
   { type: 'service', title: 'Business Software', description: 'Custom management systems, ERPs, and operational tools — hotel, school, inventory, finance.', href: '/services/business-software', category: 'Services' },
-  { type: 'service', title: 'GIS Solutions', description: 'Geospatial software — interactive mapping, location-based services, GIS web applications.', href: '/services/gis-solutions', category: 'Services' },
   { type: 'service', title: 'UI/UX Design', description: 'User research, wireframing, and interface design — new products or redesigns of existing systems.', href: '/services/ui-ux-design', category: 'Services' },
   // Projects
   { type: 'project', title: 'Lavimac Royal Hotel', description: 'Luxury hotel website with online booking, room showcase, and integrated payment processing.', href: '/projects', category: 'Projects' },
@@ -354,7 +353,7 @@ export default function SiteSearch() {
             </svg>
             No results for <strong>"{query}"</strong>
             <br />
-            <span style={{ fontSize: '12.5px' }}>Try a different keyword, or search by service name like &ldquo;hotel&rdquo; or &ldquo;GIS&rdquo;.</span>
+            <span style={{ fontSize: '12.5px' }}>Try a different keyword, or search by service name like &ldquo;hotel&rdquo; or &ldquo;mobile&rdquo;.</span>
           </div>
         ) : (
           <div style={{ padding: '1.25rem 1.5rem', textAlign: 'center', color: 'var(--muted-foreground)', fontSize: '13px', borderTop: '1px solid var(--border)' }}>
