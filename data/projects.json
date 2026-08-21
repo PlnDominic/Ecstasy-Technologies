@@ -2,28 +2,6 @@
   {
     "image": "",
     "features": [
-      "Product catalogue",
-      "WhatsApp ordering",
-      "Elegant UI",
-      "Mobile-first design",
-      "Responsive layout"
-    ],
-    "technologies": [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS"
-    ],
-    "status": "completed",
-    "title": "Fine Wine",
-    "category": "Website",
-    "description": "Premium wine retail website with product catalogue, WhatsApp ordering, and elegant design tailored for a Ghanaian wine business.",
-    "year": 2024,
-    "id": 60,
-    "updatedAt": "2026-08-21T06:07:53.350Z"
-  },
-  {
-    "image": "",
-    "features": [
       "Modern UI/UX",
       "Responsive design",
       "Font optimization",
