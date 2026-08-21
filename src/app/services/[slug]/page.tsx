@@ -144,7 +144,7 @@ export default function ServiceDetail({ params }: Props) {
                 {service.relatedProjects.map(p => (
                   <Link
                     key={p.title}
-                    href="/portfolio"
+                    href="/projects"
                     className="btn-press"
                     style={{
                       display: 'flex', justifyContent: 'space-between', alignItems: 'center',

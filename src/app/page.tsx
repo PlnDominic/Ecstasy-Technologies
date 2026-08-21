@@ -109,7 +109,7 @@ export default function Home() {
                   Start a Project
                 </Link>
                 <Link
-                  href="/portfolio"
+                  href="/projects"
                   className="text-[13px] font-semibold text-white border-b border-white/40 pb-0.5 hover:border-white transition-colors"
                 >
                   View Our Work
@@ -170,7 +170,7 @@ export default function Home() {
                   Learn More
                 </Link>
                 <Link
-                  href="/portfolio"
+                  href="/projects"
                   className="inline-flex items-center gap-2.5 text-[13px] font-medium text-white group"
                 >
                   <span className="flex items-center justify-center w-8 h-8 rounded-full border border-neutral-600 group-hover:border-white transition-colors">
@@ -256,14 +256,14 @@ export default function Home() {
               <hr className="es-rule" />
               <span className="es-section-label">SELECTED WORK</span>
             </div>
-            <Link href="/portfolio" className="btn-press es-all-link">All Projects ↗</Link>
+            <Link href="/projects" className="btn-press es-all-link">All Projects ↗</Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 lg:gap-x-8 gap-y-12 lg:gap-y-14">
             {PROJECTS.map(({ num, src, alt, title, category, year }, i) => (
               <Link
                 key={num}
-                href="/portfolio"
+                href="/projects"
                 className="group block es-reveal"
                 style={{ '--d': `${i * 70}ms` } as React.CSSProperties}
                 aria-label={`View ${title} case study`}

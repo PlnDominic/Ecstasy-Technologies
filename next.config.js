@@ -27,6 +27,15 @@ const nextConfig = {
   },
   compress: true,
   poweredByHeader: false,
+  async redirects() {
+    return [
+      {
+        source: '/portfolio',
+        destination: '/projects',
+        permanent: true,
+      },
+    ]
+  },
   async headers() {
     return [
       {

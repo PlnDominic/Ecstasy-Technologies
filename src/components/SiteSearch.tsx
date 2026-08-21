@@ -16,7 +16,7 @@ const SEARCH_INDEX: SearchResult[] = [
   // Pages
   { type: 'page', title: 'Home', description: 'Ecstasy Technologies — software studio in Ghana. Websites, apps, and business systems.', href: '/', category: 'Page' },
   { type: 'page', title: 'Services', description: 'Web design, web apps, mobile apps, business software, GIS, UI/UX design.', href: '/services', category: 'Page' },
-  { type: 'page', title: 'Projects / Portfolio', description: 'A focused selection of websites, applications, and enterprise systems.', href: '/portfolio', category: 'Page' },
+  { type: 'page', title: 'Projects', description: 'A focused selection of websites, applications, and enterprise systems.', href: '/projects', category: 'Page' },
   { type: 'page', title: 'Blog / Insights', description: 'Practical notes on custom software, hospitality systems, and running projects in Ghana.', href: '/blog', category: 'Page' },
   { type: 'page', title: 'About Us', description: 'Who we are — a software studio founded in Bibiani, Ghana in 2018.', href: '/about', category: 'Page' },
   { type: 'page', title: 'Contact', description: 'Start a project — fill in the form or reach us directly. We reply within 24 hours.', href: '/contact', category: 'Page' },
@@ -28,12 +28,12 @@ const SEARCH_INDEX: SearchResult[] = [
   { type: 'service', title: 'GIS Solutions', description: 'Geospatial software — interactive mapping, location-based services, GIS web applications.', href: '/services/gis-solutions', category: 'Services' },
   { type: 'service', title: 'UI/UX Design', description: 'User research, wireframing, and interface design — new products or redesigns of existing systems.', href: '/services/ui-ux-design', category: 'Services' },
   // Projects
-  { type: 'project', title: 'Lavimac Royal Hotel', description: 'Luxury hotel website with online booking, room showcase, and integrated payment processing.', href: '/portfolio', category: 'Projects' },
-  { type: 'project', title: 'Dynamic Shipping & Logistics', description: 'Logistics management platform with real-time shipment tracking, route optimisation, and inventory.', href: '/portfolio', category: 'Projects' },
-  { type: 'project', title: 'Obotan Credit Union', description: 'Secure mobile banking app for credit union members — account management, transfers, bill payments.', href: '/portfolio', category: 'Projects' },
-  { type: 'project', title: 'Pro Realty Properties', description: 'Real estate platform with property listings, virtual tours, appointment scheduling, and client management.', href: '/portfolio', category: 'Projects' },
-  { type: 'project', title: 'Emson Hotel', description: 'Boutique hotel website with room bookings, amenities showcase, and event planning services.', href: '/portfolio', category: 'Projects' },
-  { type: 'project', title: 'Hotel Management System', description: 'Comprehensive hotel management software — reservations, housekeeping, billing, reporting.', href: '/portfolio', category: 'Projects' },
+  { type: 'project', title: 'Lavimac Royal Hotel', description: 'Luxury hotel website with online booking, room showcase, and integrated payment processing.', href: '/projects', category: 'Projects' },
+  { type: 'project', title: 'Dynamic Shipping & Logistics', description: 'Logistics management platform with real-time shipment tracking, route optimisation, and inventory.', href: '/projects', category: 'Projects' },
+  { type: 'project', title: 'Obotan Credit Union', description: 'Secure mobile banking app for credit union members — account management, transfers, bill payments.', href: '/projects', category: 'Projects' },
+  { type: 'project', title: 'Pro Realty Properties', description: 'Real estate platform with property listings, virtual tours, appointment scheduling, and client management.', href: '/projects', category: 'Projects' },
+  { type: 'project', title: 'Emson Hotel', description: 'Boutique hotel website with room bookings, amenities showcase, and event planning services.', href: '/projects', category: 'Projects' },
+  { type: 'project', title: 'Hotel Management System', description: 'Comprehensive hotel management software — reservations, housekeeping, billing, reporting.', href: '/projects', category: 'Projects' },
   // Blog posts
   { type: 'blog', title: '7 Signs Your Business Has Outgrown Spreadsheets', description: 'How to tell when it\'s time to move from spreadsheets to purpose-built software.', href: '/blog/signs-your-business-needs-custom-software', category: 'Blog' },
   { type: 'blog', title: 'What Makes a Good Hotel Management System', description: 'Booking engines, housekeeping, billing — what actually matters when choosing or building one.', href: '/blog/what-makes-a-good-hotel-management-system', category: 'Blog' },

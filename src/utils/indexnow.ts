@@ -98,7 +98,6 @@ export async function submitAllPagesToIndexNow(): Promise<IndexNowResponse[]> {
     '/about',
     '/services',
     '/projects',
-    '/portfolio',
     '/contact',
   ];
 
