@@ -44,12 +44,12 @@ const Navbar = ({ transparent = false }: NavbarProps) => {
     return () => window.removeEventListener('scroll', onScroll);
   }, [transparent]);
 
-  const onLight = transparent && !scrolled;
+  const overHero = transparent && !scrolled;
 
   return (
     <>
       {/* ── Navigation ── */}
-      <header className={`es-nav ${onLight ? 'es-nav--on-light' : ''}`}>
+      <header className={`es-nav ${overHero ? 'es-nav--transparent' : ''}`}>
         <div className="es-nav-inner">
           <Link href="/" className="es-logo btn-press" aria-label="Ecstasy Technologies home">
             <Image

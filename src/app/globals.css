@@ -305,23 +305,24 @@ body::before {
   transition: transform 200ms var(--ease-out), opacity 200ms ease, background-color 250ms ease;
 }
 
-/* ── Transparent navbar — merges with a light hero, regardless of site theme ──
-   Text/icon colors are hardcoded (not theme vars) since the hero it sits on
-   is always light, even when the rest of the site is in dark mode. */
-.es-nav.es-nav--on-light {
+/* ── Transparent navbar — merges with the hero, regardless of site theme ──
+   Text/icon colors are hardcoded white (not theme vars) since the hero it
+   sits on is always a dark video/scrim, even when the rest of the site is
+   in light mode. */
+.es-nav.es-nav--transparent {
   background-color: transparent;
   border-bottom-color: transparent;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   transition: background-color 250ms ease, border-color 250ms ease, backdrop-filter 250ms ease;
 }
-.es-nav--on-light .es-nav-link { color: rgba(23, 23, 23, 0.6); }
+.es-nav--transparent .es-nav-link { color: rgba(255, 255, 255, 0.75); }
 @media (hover: hover) and (pointer: fine) {
-  .es-nav--on-light .es-nav-link:hover { color: #171717; }
+  .es-nav--transparent .es-nav-link:hover { color: #ffffff; }
 }
-.es-nav--on-light .es-nav-link-active { color: #171717 !important; }
-.es-nav--on-light .es-bl { background-color: #171717; }
-.es-nav--on-light .theme-toggle-btn { color: #171717; }
+.es-nav--transparent .es-nav-link-active { color: #ffffff !important; }
+.es-nav--transparent .es-bl { background-color: #ffffff; }
+.es-nav--transparent .theme-toggle-btn { color: #ffffff; }
 
 /* ── Mobile drawer ── */
 .es-drawer {
