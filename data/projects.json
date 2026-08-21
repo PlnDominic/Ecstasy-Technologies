@@ -1,5 +1,20 @@
 [
   {
+    "image": "/project-images/tagett-1787293301377.png",
+    "features": [],
+    "technologies": [],
+    "title": "Tagett",
+    "category": "Web Application",
+    "description": "A web app for Ecstasy Technologies for managing the clients and helps increase productivity",
+    "year": 2026,
+    "link": "https://tagett.vercel.app/",
+    "client": "Ecstasy Technologies",
+    "featured": false,
+    "status": "completed",
+    "updatedAt": "2026-08-21T06:23:01.188Z",
+    "id": 50
+  },
+  {
     "image": "/project-images/tagett-1782571570217.png",
     "features": [],
     "technologies": [],
