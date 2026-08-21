@@ -35,27 +35,27 @@ const FEATURED_POST = {
 const PROJECTS = [
   {
     num: '01',
-    src: '/Lavimac royal hotel website.png',
-    alt: 'Lavimac Royal Hotel Website',
-    title: 'Lavimac Royal Hotel',
+    src: '/project-images/tagett-1782570849082.png',
+    alt: 'Gusty Women Foundation website',
+    title: 'Gusty Women Foundation',
     category: 'Website',
-    year: '2024',
+    year: '2026',
   },
   {
     num: '02',
-    src: '/Dynamic Shipping and Logistics.png',
-    alt: 'Dynamic Shipping and Logistics Platform',
-    title: 'Dynamic Shipping & Logistics',
+    src: '/project-images/tagett-1782224340328.png',
+    alt: 'Glow Healthy skincare web application',
+    title: 'Glow Healthy',
     category: 'Web Application',
-    year: '2024',
+    year: '2026',
   },
   {
     num: '03',
-    src: '/Obotan Coorperative Credit  Union Banking App.jpg',
-    alt: 'Obotan Credit Union Banking App',
-    title: 'Obotan Credit Union',
-    category: 'Mobile App',
-    year: '2023',
+    src: '/Nevrol Ventures.png',
+    alt: 'Nevrol Ventures business website',
+    title: 'Nevrol Ventures',
+    category: 'Website',
+    year: '2026',
   },
 ];
 
@@ -291,30 +291,50 @@ export default function Home() {
             <Link href="/portfolio" className="btn-press es-all-link">All Projects ↗</Link>
           </div>
 
-          <div className="es-work-list">
-            {PROJECTS.map(({ num, src, alt, title, category, year }) => (
-              <article key={num} className="es-project group">
-                <div className="es-proj-img-wrap">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 lg:gap-x-8 gap-y-12 lg:gap-y-14">
+            {PROJECTS.map(({ num, src, alt, title, category, year }, i) => (
+              <Link
+                key={num}
+                href="/portfolio"
+                className="group block es-reveal"
+                style={{ '--d': `${i * 70}ms` } as React.CSSProperties}
+                aria-label={`View ${title} case study`}
+              >
+                <div
+                  className="relative aspect-[4/3] overflow-hidden rounded-sm mb-4"
+                  style={{ backgroundColor: 'var(--secondary)' }}
+                >
                   <Image
                     src={src}
                     alt={alt}
                     fill
-                    className="object-cover object-top es-proj-img"
-                    sizes="(max-width: 768px) 100vw, 90vw"
+                    className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
-                <div className="es-proj-meta">
-                  <span className="es-proj-num" aria-hidden="true" style={{ color: 'var(--foreground)' }}>{num}</span>
-                  <h3 className="es-proj-title">{title.toUpperCase()}</h3>
-                  <span className="es-proj-fill" aria-hidden="true" />
-                  <span className="es-proj-cat" style={{ color: 'var(--foreground)' }}>{category}</span>
-                  <span className="es-proj-sep" aria-hidden="true">·</span>
-                  <span className="es-proj-year">{year}</span>
-                  <Link href="/portfolio" className="btn-press es-proj-cta" aria-label={`View ${title} case study`}>
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <div
+                      className="flex items-center gap-2 mb-1.5 text-[10.5px] font-semibold uppercase tracking-[0.08em]"
+                      style={{ fontVariantNumeric: 'tabular-nums' }}
+                    >
+                      <span style={{ fontFamily: "'Syne', system-ui, sans-serif", color: 'var(--foreground)' }}>{num}</span>
+                      <span style={{ color: 'var(--muted-foreground)' }}>{category} · {year}</span>
+                    </div>
+                    <h3
+                      className="text-[1.05rem] font-bold leading-tight tracking-tight"
+                      style={{ fontFamily: "'Syne', system-ui, sans-serif", color: 'var(--foreground)' }}
+                    >
+                      {title}
+                    </h3>
+                  </div>
+                  <span
+                    className="shrink-0 mt-1.5 text-[12px] font-medium pb-0.5 border-b transition-colors text-[var(--muted-foreground)] border-[var(--border)] group-hover:text-[var(--accent)] group-hover:border-[var(--accent)]"
+                  >
                     View →
-                  </Link>
+                  </span>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </section>
