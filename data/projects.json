@@ -45,31 +45,6 @@
     "updatedAt": "2026-08-21T05:57:45.837Z"
   },
   {
-    "image": "",
-    "features": [
-      "Product storefront & catalogue",
-      "Vendor & buyer dashboards",
-      "Order management system",
-      "State management with Zustand",
-      "System documentation simulator"
-    ],
-    "technologies": [
-      "Next.js",
-      "React",
-      "Tailwind CSS",
-      "Zustand",
-      "TypeScript"
-    ],
-    "status": "completed",
-    "title": "Local Drop Shipping",
-    "category": "Web Application",
-    "description": "Full-featured Next.js marketplace for a local dropshipping platform, covering storefront, product listings, vendor dashboards, order management, and a system documentation simulator.",
-    "link": "https://github.com/PlnDominic/Local-Drop-Shipping",
-    "year": 2025,
-    "id": 62,
-    "updatedAt": "2026-08-21T05:57:45.837Z"
-  },
-  {
     "image": "/project-images/tagett-1782571570217.png",
     "features": [],
     "technologies": [],
