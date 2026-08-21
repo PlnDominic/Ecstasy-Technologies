@@ -1,20 +1,5 @@
 [
   {
-    "image": "",
-    "features": [],
-    "technologies": [],
-    "title": "Kings Towers Hotel Website",
-    "category": "Website",
-    "description": "Kings Towers Hotel is a hotel in Ahinsan Estate, Kumasi that provides a serene and scenic location where guests can enjoy soothing relaxation. Our trademark approach to service is unique and personal, delivering to the requirements of both the business and leisure traveler.",
-    "year": 2026,
-    "link": "https://www.kingstowers-hotel.com/",
-    "client": "Kings Towers Hotel",
-    "featured": false,
-    "status": "completed",
-    "updatedAt": "2026-08-21T11:34:55.817Z",
-    "id": 53
-  },
-  {
     "image": "/project-images/tagett-1787310108287.png",
     "features": [],
     "technologies": [],
@@ -26,7 +11,7 @@
     "client": "Becca's Luxe",
     "featured": false,
     "status": "completed",
-    "updatedAt": "2026-08-21T11:02:42.087Z",
+    "updatedAt": "2026-08-21T11:02:35.189Z",
     "id": 52
   },
   {
