@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const PAYMENT_METHODS = [
   {
     name: 'Mobile Money',
-    tooltip: 'MTN Mobile Money, Vodafone Cash, and AirtelTigo Money — pay directly from your phone, no bank account required.',
+    tooltip: 'MTN Mobile Money, Vodafone Cash, and AirtelTigo Money - pay directly from your phone, no bank account required.',
     icon: (
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
         <rect x="5" y="2" width="14" height="20" rx="2" stroke="currentColor" strokeWidth="1.5"/>
@@ -43,7 +43,7 @@ const PROCESS = [
   {
     num: '01',
     title: 'Discovery',
-    body: 'We listen first. Understanding your business context, goals, and constraints lets us design the right solution — not just a clever one.',
+    body: 'We listen first. Understanding your business context, goals, and constraints lets us design the right solution - not just a clever one.',
   },
   {
     num: '02',
@@ -74,7 +74,7 @@ export default function Services() {
               <span style={{ color: 'var(--accent)' }}>BUILD.</span>
             </h1>
             <p className="ip-body" style={{ marginTop: '1.5rem' }}>
-              End-to-end software services for ambitious organisations across Africa —
+              End-to-end software services for ambitious organisations across Africa -
               from first prototype to long-term support.
             </p>
           </div>
@@ -91,7 +91,7 @@ export default function Services() {
                 <div className="ip-service-meta">
                   <h2 className="ip-subheading">
                     {name === 'GIS Solutions' ? (
-                      <Tooltip label="GIS" content="Geographic Information Systems — software for capturing, mapping, and analysing location-based data.">
+                      <Tooltip label="GIS" content="Geographic Information Systems - software for capturing, mapping, and analysing location-based data.">
                         {name}
                       </Tooltip>
                     ) : name}
@@ -149,7 +149,7 @@ export default function Services() {
                   ))}
                 </ul>
                 <p className="ip-body" style={{ fontSize: '12.5px', marginTop: '0.85rem' }}>
-                  Projects are billed in milestones tied to project phases — never 100% upfront.
+                  Projects are billed in milestones tied to project phases - never 100% upfront.
                 </p>
               </div>
               <div className="ip-guarantee-card">

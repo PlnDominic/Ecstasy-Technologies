@@ -741,7 +741,7 @@ body::before {
   font-size: 12px; color: var(--muted-foreground);
   display: flex; align-items: center; gap: 0.45rem;
 }
-.ip-service-feature::before { content: '—'; color: var(--accent); font-size: 9px; }
+.ip-service-feature::before { content: '-'; color: var(--accent); font-size: 9px; }
 
 /* ── Process grid ── */
 .ip-process-grid {

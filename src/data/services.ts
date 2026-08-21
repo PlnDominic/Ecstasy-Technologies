@@ -21,7 +21,7 @@ export const SERVICES: ServiceDetail[] = [
     name: 'Web Design & Development',
     tagline: 'Websites built for performance, clarity, and conversion.',
     description:
-      'Bespoke websites built for performance, clarity, and conversion — from marketing sites to full e-commerce platforms. Every site is designed around your customer\'s journey and built on a technical foundation that keeps it fast, secure, and easy to update.',
+      'Bespoke websites built for performance, clarity, and conversion - from marketing sites to full e-commerce platforms. Every site is designed around your customer\'s journey and built on a technical foundation that keeps it fast, secure, and easy to update.',
     features: [
       'Responsive across all devices',
       'E-commerce & payment systems',
@@ -46,7 +46,7 @@ export const SERVICES: ServiceDetail[] = [
       },
       {
         q: 'Do you handle hosting and domains?',
-        a: 'Yes — we can set up hosting, domain configuration, and SSL for you, or work with your existing provider.',
+        a: 'Yes - we can set up hosting, domain configuration, and SSL for you, or work with your existing provider.',
       },
     ],
   },
@@ -56,7 +56,7 @@ export const SERVICES: ServiceDetail[] = [
     name: 'Web Applications',
     tagline: 'Scalable systems that power real business operations.',
     description:
-      'Complex, scalable systems that power real business operations — logistics dashboards to booking platforms to SaaS tools. We design the data model and workflows around how your team actually works, not the other way around.',
+      'Complex, scalable systems that power real business operations - logistics dashboards to booking platforms to SaaS tools. We design the data model and workflows around how your team actually works, not the other way around.',
     features: [
       'Progressive web apps',
       'Real-time data & notifications',
@@ -77,11 +77,11 @@ export const SERVICES: ServiceDetail[] = [
     faqs: [
       {
         q: 'Can you integrate with our existing tools?',
-        a: 'Yes — we regularly integrate with payment processors, mapping APIs, SMS/email providers, and existing internal systems via API.',
+        a: 'Yes - we regularly integrate with payment processors, mapping APIs, SMS/email providers, and existing internal systems via API.',
       },
       {
         q: 'What happens after launch?',
-        a: 'We offer ongoing support and a post-launch bug-fix warranty — see our guarantee on the Services page.',
+        a: 'We offer ongoing support and a post-launch bug-fix warranty - see our guarantee on the Services page.',
       },
     ],
   },
@@ -91,7 +91,7 @@ export const SERVICES: ServiceDetail[] = [
     name: 'Mobile Apps',
     tagline: 'Native and cross-platform apps users actually enjoy.',
     description:
-      'Native and cross-platform mobile applications that users actually enjoy — built for speed, reliability, and retention, from first onboarding screen to app-store submission.',
+      'Native and cross-platform mobile applications that users actually enjoy - built for speed, reliability, and retention, from first onboarding screen to app-store submission.',
     features: [
       'iOS & Android development',
       'Cross-platform (React Native)',
@@ -125,7 +125,7 @@ export const SERVICES: ServiceDetail[] = [
     name: 'Business Software',
     tagline: 'Management systems engineered to fit your workflows.',
     description:
-      'Custom management systems, ERPs, and operational tools engineered to fit your workflows — not the other way around. We start from how your business actually runs, not a generic template.',
+      'Custom management systems, ERPs, and operational tools engineered to fit your workflows - not the other way around. We start from how your business actually runs, not a generic template.',
     features: [
       'Hotel & property management',
       'School management systems',
@@ -146,7 +146,7 @@ export const SERVICES: ServiceDetail[] = [
     faqs: [
       {
         q: 'Can this replace our spreadsheets and paper processes?',
-        a: 'Yes — this is exactly what we specialise in. We map your current process first, then build a system that removes the manual steps without disrupting the parts that already work.',
+        a: 'Yes - this is exactly what we specialise in. We map your current process first, then build a system that removes the manual steps without disrupting the parts that already work.',
       },
       {
         q: 'Can staff be trained on the new system?',
@@ -160,7 +160,7 @@ export const SERVICES: ServiceDetail[] = [
     name: 'GIS Solutions',
     tagline: 'Geospatial software for location-based decisions.',
     description:
-      'Geospatial software for organisations that need to visualise, analyse, and act on location data at scale — from interactive maps to full location-intelligence platforms.',
+      'Geospatial software for organisations that need to visualise, analyse, and act on location data at scale - from interactive maps to full location-intelligence platforms.',
     features: [
       'Interactive mapping',
       'Location-based services',
@@ -190,7 +190,7 @@ export const SERVICES: ServiceDetail[] = [
     name: 'UI/UX Design',
     tagline: 'Interface design that turns complexity into clarity.',
     description:
-      'User research, wireframing, and interface design that turns complex systems into intuitive, memorable experiences — for both new products and existing systems that need a redesign.',
+      'User research, wireframing, and interface design that turns complex systems into intuitive, memorable experiences - for both new products and existing systems that need a redesign.',
     features: [
       'User research & personas',
       'Wireframing & prototyping',
@@ -210,7 +210,7 @@ export const SERVICES: ServiceDetail[] = [
     faqs: [
       {
         q: 'Do you design without building, or only as part of a full build?',
-        a: 'Both — we take standalone design engagements as well as full design-and-build projects.',
+        a: 'Both - we take standalone design engagements as well as full design-and-build projects.',
       },
     ],
   },
