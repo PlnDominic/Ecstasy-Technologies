@@ -29,18 +29,6 @@ const LEADERSHIP = [
     src: '/Parvathi.jpeg',
     bio: 'Parvathi specialises in interface design and user experience, crafting intuitive digital experiences that balance beauty with function.',
   },
-  {
-    name: 'Design Director',
-    role: 'Coming Soon',
-    src: null,
-    bio: "We're expanding our leadership team to bring deep creative direction to every client engagement.",
-  },
-  {
-    name: 'Operations Director',
-    role: 'Coming Soon',
-    src: null,
-    bio: "We're growing our operations leadership to support flawless project delivery at scale.",
-  },
 ];
 
 const SALES = [
