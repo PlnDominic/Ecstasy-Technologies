@@ -480,7 +480,11 @@
       "TypeScript",
       "Vercel"
     ],
-    "link": "https://freemanaaron.com"
+    "link": "https://freemanaaron.com",
+    "year": 2026,
+    "featured": false,
+    "status": "completed",
+    "updatedAt": "2026-08-21T11:55:26.367Z"
   },
   {
     "id": 10,
