@@ -12,26 +12,26 @@ type ThemeContextType = {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('dark');
+  const [theme, setTheme] = useState<Theme>('light');
 
   // Initialize theme from localStorage on mount (client-side only)
   useEffect(() => {
     try {
       const savedTheme = localStorage.getItem('theme') as Theme | null;
-      const newTheme = savedTheme || 'dark';
+      const newTheme = savedTheme || 'light';
       setTheme(newTheme);
-      
+
       // Remove both classes first, then add the correct one
       document.documentElement.classList.remove('dark-theme', 'light-theme');
       document.documentElement.classList.add(`${newTheme}-theme`);
-      
+
       // Also add a data-theme attribute for potential CSS attribute selectors
       document.documentElement.setAttribute('data-theme', newTheme);
     } catch (error) {
       console.error('Error accessing localStorage:', error);
-      // Fallback to dark theme if there's an error
-      document.documentElement.classList.add('dark-theme');
-      document.documentElement.setAttribute('data-theme', 'dark');
+      // Fallback to light theme if there's an error
+      document.documentElement.classList.add('light-theme');
+      document.documentElement.setAttribute('data-theme', 'light');
     }
   }, []);
 
