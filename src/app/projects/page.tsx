@@ -13,6 +13,10 @@ const PROJECTS = projectsData as Array<{
 
 const FILTERS = ['All', 'Website', 'Web Application', 'Mobile App', 'Business Software'];
 
+// Derived from the actual project list rather than hardcoded, so the count
+// on the page can't drift out of sync as new projects are added.
+const PROJECT_COUNT = PROJECTS.length;
+
 function ProjectImage({ src, alt }: { src: string; alt: string }) {
   const [failed, setFailed] = useState(false)
   if (!src || failed) {
@@ -65,7 +69,7 @@ export default function Projects() {
               <span className="es-section-label">ALL WORK</span>
             </div>
             <h1 className="ip-heading">
-              32+<br />
+              {PROJECT_COUNT}+<br />
               <span style={{ color: 'var(--accent)' }}>PROJECTS.</span>
             </h1>
             <p className="ip-body" style={{ marginTop: '1.5rem' }}>
@@ -134,7 +138,7 @@ export default function Projects() {
             </h2>
             <div className="ip-cta-side">
               <p className="ip-cta-sub">
-                Join 32+ organisations that trust Ecstasy to build their digital infrastructure.
+                Join {PROJECT_COUNT}+ organisations that trust Ecstasy to build their digital infrastructure.
               </p>
               <Link href="/contact" className="btn-press ip-cta-btn">
                 Start a Project
