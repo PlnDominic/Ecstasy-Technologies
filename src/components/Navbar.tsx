@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import ThemeToggle from './ThemeToggle';
@@ -52,14 +51,7 @@ const Navbar = ({ transparent = false }: NavbarProps) => {
       <header className={`es-nav ${overHero ? 'es-nav--transparent' : ''}`}>
         <div className="es-nav-inner">
           <Link href="/" className="es-logo btn-press" aria-label="Ecstasy Technologies home">
-            <Image
-              src="/logo.png"
-              alt="Ecstasy Technologies"
-              width={1208}
-              height={995}
-              priority
-              className="es-logo-img"
-            />
+            <span className="es-logo-name">ECSTASY TECHNOLOGIES</span>
           </Link>
 
           <nav className="es-nav-links" aria-label="Primary">

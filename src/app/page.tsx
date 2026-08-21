@@ -15,13 +15,6 @@ const SERVICES = [
   { num: '05', name: 'GIS Solutions', slug: 'gis-solutions' },
 ];
 
-const TRUST_AVATARS = [
-  { src: '/Dominic Kudom.jpeg', alt: 'Dominic Kudom', position: 'center 20%' },
-  { src: '/opare.JPG', alt: 'John Opare', position: 'center top' },
-  { src: '/Parvathi.jpeg', alt: 'Parvathi Mackay', position: 'center 38%' },
-  { src: '/welbeck.jpg', alt: 'Welbeck Kwasi Morgah', position: 'center 15%' },
-];
-
 const FRONTIER_TAGS = ['Web', 'Mobile', 'Enterprise'];
 
 const FEATURED_POST = {
@@ -108,7 +101,7 @@ export default function Home() {
                 SOFTWARE<br />AFRICA<br />TRUSTS.
               </h1>
 
-              <div className="flex flex-wrap items-center gap-3 mb-10">
+              <div className="flex flex-wrap items-center gap-3">
                 <Link
                   href="/contact"
                   className="btn-press inline-flex items-center justify-center rounded-md bg-white text-neutral-900 text-[13px] font-semibold px-6 py-3.5 hover:bg-neutral-200 transition-colors"
@@ -121,31 +114,6 @@ export default function Home() {
                 >
                   View Our Work
                 </Link>
-              </div>
-
-              <div className="flex items-start gap-4 pt-8 border-t border-white/20">
-                <div className="flex items-center shrink-0">
-                  <div className="flex -space-x-2.5">
-                    {TRUST_AVATARS.map((a) => (
-                      <div key={a.src} className="relative w-8 h-8 rounded-full ring-2 ring-white overflow-hidden bg-neutral-200">
-                        <Image src={a.src} alt={a.alt} fill className="object-cover" style={{ objectPosition: a.position }} sizes="32px" />
-                      </div>
-                    ))}
-                  </div>
-                  <span
-                    className="ml-2 text-[13px] font-bold text-white"
-                    style={{ fontFamily: "'Syne', system-ui, sans-serif" }}
-                  >
-                    32+
-                  </span>
-                </div>
-                <p className="text-[12.5px] leading-relaxed text-white/70">
-                  <span className="block text-[10px] font-bold tracking-[0.14em] uppercase text-white/50 mb-1">
-                    Trusted by Clients
-                  </span>
-                  We&apos;ve helped 32+ businesses across Ghana build websites, apps, and
-                  systems that work as hard as they do.
-                </p>
               </div>
             </div>
           </div>

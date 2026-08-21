@@ -24,12 +24,12 @@
 .light-theme {
   --background:          oklch(97% 0.008 80);
   --foreground:          oklch(10% 0.012 50);
-  --primary:             oklch(54% 0.22 26);
+  --primary:             oklch(18% 0 0);
   --primary-foreground:  oklch(98% 0.004 80);
   --secondary:           oklch(93% 0.009 78);
   --secondary-foreground:oklch(22% 0.012 50);
-  --accent:              oklch(54% 0.22 26);
-  --accent-light:        oklch(93% 0.04 26);
+  --accent:              oklch(18% 0 0);
+  --accent-light:        oklch(92% 0 0);
   --muted:               oklch(93% 0.009 78);
   --muted-foreground:    oklch(44% 0.014 54);
   --border:              oklch(88% 0.01 76);
@@ -38,7 +38,7 @@
   --card:                oklch(100% 0.003 80);
   --card-foreground:     oklch(10% 0.012 50);
   --grid-pattern-color:  oklch(0% 0 0 / 0.03);
-  --glow-purple:         oklch(54% 0.22 26 / 0.08);
+  --glow-purple:         oklch(18% 0 0 / 0.06);
   --glow-blue:           oklch(60% 0.1 250 / 0.06);
 }
 
@@ -48,12 +48,12 @@
 .dark-theme {
   --background:          oklch(11% 0.01 50);
   --foreground:          oklch(95% 0.008 80);
-  --primary:             oklch(64% 0.23 26);
+  --primary:             oklch(40% 0 0);
   --primary-foreground:  oklch(98% 0.004 80);
   --secondary:           oklch(17% 0.01 50);
   --secondary-foreground:oklch(80% 0.01 75);
-  --accent:              oklch(64% 0.23 26);
-  --accent-light:        oklch(25% 0.06 26);
+  --accent:              oklch(40% 0 0);
+  --accent-light:        oklch(28% 0 0);
   --muted:               oklch(17% 0.01 50);
   --muted-foreground:    oklch(58% 0.014 58);
   --border:              oklch(22% 0.01 50);
@@ -62,7 +62,7 @@
   --card:                oklch(15% 0.01 50);
   --card-foreground:     oklch(95% 0.008 80);
   --grid-pattern-color:  oklch(100% 0 0 / 0.03);
-  --glow-purple:         oklch(64% 0.23 26 / 0.12);
+  --glow-purple:         oklch(40% 0 0 / 0.1);
   --glow-blue:           oklch(60% 0.1 250 / 0.08);
 }
 
@@ -258,19 +258,15 @@ body::before {
   text-decoration: none; color: inherit; flex-shrink: 0;
   transition: opacity 150ms ease;
 }
-.es-logo-img {
-  width: clamp(138px, 16vw, 184px);
-  height: 42px;
-  object-fit: cover;
-  object-position: center 53%;
-}
 @media (hover: hover) and (pointer: fine) {
   .es-logo:hover { opacity: 0.65; }
 }
 .es-logo-name {
   font-family: 'Syne', system-ui, sans-serif;
   font-weight: 800; font-size: 14px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
+  color: var(--foreground);
+  white-space: nowrap;
 }
 .es-nav-links {
   display: none; align-items: center; gap: 2rem; margin: 0 auto;
@@ -321,6 +317,7 @@ body::before {
   .es-nav--transparent .es-nav-link:hover { color: #ffffff; }
 }
 .es-nav--transparent .es-nav-link-active { color: #ffffff !important; }
+.es-nav--transparent .es-logo-name { color: #ffffff; }
 .es-nav--transparent .es-bl { background-color: #ffffff; }
 .es-nav--transparent .theme-toggle-btn { color: #ffffff; }
 
