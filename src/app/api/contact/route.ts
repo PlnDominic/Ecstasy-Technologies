@@ -52,7 +52,16 @@ function escapeHtml(value: string): string {
 }
 
 function getTransporter() {
-  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS } = process.env;
+  // Trim every value — env vars pasted from a dashboard UI or password
+  // manager frequently carry a stray leading/trailing space or newline,
+  // which silently breaks DNS lookup (host) or SMTP auth (user/pass)
+  // without any obviously-wrong error message.
+  const SMTP_HOST = process.env.SMTP_HOST?.trim();
+  const SMTP_PORT = process.env.SMTP_PORT?.trim();
+  const SMTP_USER = process.env.SMTP_USER?.trim();
+  const SMTP_PASS = process.env.SMTP_PASS?.trim();
+  const SMTP_SECURE = process.env.SMTP_SECURE?.trim();
+
   if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS) {
     throw new Error(
       'Email is not configured — set SMTP_HOST, SMTP_PORT, SMTP_USER, and SMTP_PASS.'
@@ -62,7 +71,7 @@ function getTransporter() {
   return nodemailer.createTransport({
     host: SMTP_HOST,
     port,
-    secure: process.env.SMTP_SECURE ? process.env.SMTP_SECURE === 'true' : port === 465,
+    secure: SMTP_SECURE ? SMTP_SECURE === 'true' : port === 465,
     auth: { user: SMTP_USER, pass: SMTP_PASS },
     // Fail fast rather than hanging the request until the platform's own
     // timeout if the SMTP host is slow or unreachable.
@@ -99,8 +108,8 @@ export async function POST(request: Request) {
   const campaign =
     payload.campaign && Object.keys(payload.campaign).length > 0 ? payload.campaign : null;
 
-  const toEmail = process.env.CONTACT_TO_EMAIL || 'support@ecstasytechnologies.com';
-  const fromEmail = process.env.CONTACT_FROM_EMAIL || process.env.SMTP_USER;
+  const toEmail = process.env.CONTACT_TO_EMAIL?.trim() || 'support@ecstasytechnologies.com';
+  const fromEmail = process.env.CONTACT_FROM_EMAIL?.trim() || process.env.SMTP_USER?.trim();
 
   const textLines = [
     `Name: ${name}`,
