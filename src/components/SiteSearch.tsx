@@ -176,12 +176,12 @@ export default function SiteSearch() {
           whiteSpace: 'nowrap',
         }}
       >
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
           <circle cx="11" cy="11" r="7" stroke="currentColor" strokeWidth="1.8"/>
           <path d="M21 21l-4.3-4.3" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
         </svg>
-        Search
-        <span style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '0.06em', color: 'var(--muted-foreground)', background: 'var(--input)', padding: '2px 5px', borderRadius: '4px' }}>
+        <span className="ss-trigger-label">Search</span>
+        <span className="ss-trigger-kbd" style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '0.06em', color: 'var(--muted-foreground)', background: 'var(--input)', padding: '2px 5px', borderRadius: '4px' }}>
           ⌘K
         </span>
       </button>
