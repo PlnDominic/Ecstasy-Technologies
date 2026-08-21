@@ -113,7 +113,7 @@ const FAQS = [
   },
   {
     q: 'How do I start a project with Ecstasy Technologies?',
-    a: 'Reach out through our contact page or email info@ecstasytechnologies.com for a free consultation. We typically respond within 24 hours.',
+    a: 'Reach out through our contact page or email support@ecstasytechnologies.com for a free consultation. We typically respond within 24 hours.',
   },
 ];
 

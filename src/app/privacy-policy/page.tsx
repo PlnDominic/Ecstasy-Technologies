@@ -52,8 +52,8 @@ export default function PrivacyPolicy() {
                 based in Bibiani, Ghana. This policy explains what personal data we collect
                 through ecstasytechnologies.com, why we collect it, and the choices you have.
                 If you have questions, contact us at{' '}
-                <a href="mailto:info@ecstasytechnologies.com" style={{ color: 'var(--accent)' }}>
-                  info@ecstasytechnologies.com
+                <a href="mailto:support@ecstasytechnologies.com" style={{ color: 'var(--accent)' }}>
+                  support@ecstasytechnologies.com
                 </a>.
               </p>
             </section>
@@ -121,8 +121,8 @@ export default function PrivacyPolicy() {
                 Depending on your location, you may have the right to access, correct, delete,
                 or export your personal data, to object to or restrict our processing of it, and
                 to withdraw consent at any time. To exercise any of these rights, email{' '}
-                <a href="mailto:info@ecstasytechnologies.com" style={{ color: 'var(--accent)' }}>
-                  info@ecstasytechnologies.com
+                <a href="mailto:support@ecstasytechnologies.com" style={{ color: 'var(--accent)' }}>
+                  support@ecstasytechnologies.com
                 </a>. If you are in the European Economic Area or UK, you also have the right to
                 lodge a complaint with your local data protection supervisory authority.
               </p>
@@ -149,8 +149,8 @@ export default function PrivacyPolicy() {
               <p style={bodyStyle}>
                 Ecstasy Technologies, Bibiani Anhwiaso Bekwai Municipal Assembly, P.O. Box 49,
                 Bibiani, Ghana. Email:{' '}
-                <a href="mailto:info@ecstasytechnologies.com" style={{ color: 'var(--accent)' }}>
-                  info@ecstasytechnologies.com
+                <a href="mailto:support@ecstasytechnologies.com" style={{ color: 'var(--accent)' }}>
+                  support@ecstasytechnologies.com
                 </a>. See also our{' '}
                 <Link href="/contact" style={{ color: 'var(--accent)' }}>contact page</Link>.
               </p>

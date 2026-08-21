@@ -151,8 +151,8 @@ export default function TermsOfService() {
               <p style={bodyStyle}>
                 Ecstasy Technologies, Bibiani Anhwiaso Bekwai Municipal Assembly, P.O. Box 49,
                 Bibiani, Ghana. Email:{' '}
-                <a href="mailto:info@ecstasytechnologies.com" style={{ color: 'var(--accent)' }}>
-                  info@ecstasytechnologies.com
+                <a href="mailto:support@ecstasytechnologies.com" style={{ color: 'var(--accent)' }}>
+                  support@ecstasytechnologies.com
                 </a>. See also our{' '}
                 <Link href="/privacy-policy" style={{ color: 'var(--accent)' }}>Privacy Policy</Link>{' '}
                 and{' '}

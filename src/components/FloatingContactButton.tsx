@@ -206,7 +206,7 @@ export default function FloatingContactButton() {
         {/* Direct links */}
         <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
           <a
-            href="mailto:info@ecstasytechnologies.com"
+            href="mailto:support@ecstasytechnologies.com"
             className="btn-press"
             style={{
               flex: 1,
