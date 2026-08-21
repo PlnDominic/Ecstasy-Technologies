@@ -6,7 +6,7 @@ import { BLOG_POSTS } from '@/data/blog-posts';
 
 export const metadata: Metadata = {
   title: 'Blog | Software Development Insights | Ecstasy Technologies',
-  description: 'Practical articles on custom software, hotel management systems, web vs mobile apps, and running software projects in Ghana — from the Ecstasy Technologies team.',
+  description: 'Practical articles on custom software, hotel management systems, web vs mobile apps, and running software projects in Ghana, from the Ecstasy Technologies team.',
   alternates: { canonical: '/blog' },
   openGraph: {
     title: 'Ecstasy Technologies Blog',
@@ -39,7 +39,7 @@ export default function Blog() {
               <span style={{ color: 'var(--accent)' }}>STUDIO.</span>
             </h1>
             <p className="ip-body" style={{ marginTop: '1.5rem' }}>
-              Practical notes on custom software, hospitality systems, and running projects —
+              Practical notes on custom software, hospitality systems, and running projects,
               written from what we've learned building for clients across Ghana.
             </p>
           </div>
