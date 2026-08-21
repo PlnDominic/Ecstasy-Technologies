@@ -187,33 +187,6 @@
     "updatedAt": "2026-08-21T05:57:45.836Z"
   },
   {
-    "image": "",
-    "features": [
-      "Building compliance tracking",
-      "Geospatial map views",
-      "Shapefile & GeoJSON support",
-      "File upload system",
-      "Database migrations",
-      "Test suite"
-    ],
-    "technologies": [
-      "Python",
-      "Flask",
-      "JavaScript",
-      "HTML5",
-      "CSS3",
-      "GeoJSON"
-    ],
-    "status": "completed",
-    "title": "Building Compliance Tracking App",
-    "category": "GIS",
-    "description": "Web application for tracking and assessing building compliance with geospatial mapping support, shapefile and GeoJSON data handling, and a migration-backed database.",
-    "link": "https://github.com/PlnDominic/building-compliance-app",
-    "year": 2023,
-    "id": 56,
-    "updatedAt": "2026-08-21T05:57:45.836Z"
-  },
-  {
     "image": "/project-images/tagett-1782571570217.png",
     "features": [],
     "technologies": [],
