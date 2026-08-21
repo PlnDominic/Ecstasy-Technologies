@@ -2,28 +2,6 @@
   {
     "image": "",
     "features": [
-      "Custom brand design",
-      "Responsive layout",
-      "Modern UI",
-      "Contact & enquiry section"
-    ],
-    "technologies": [
-      "JavaScript",
-      "HTML5",
-      "CSS3"
-    ],
-    "status": "completed",
-    "title": "Raynelle",
-    "category": "Website",
-    "description": "Client website project built with JavaScript. A clean, responsive web presence with a modern layout and tailored brand design.",
-    "link": "https://github.com/PlnDominic/Raynelle",
-    "year": 2025,
-    "id": 63,
-    "updatedAt": "2026-08-21T06:07:53.350Z"
-  },
-  {
-    "image": "",
-    "features": [
       "Product storefront & catalogue",
       "Vendor & buyer dashboards",
       "Order management system",
