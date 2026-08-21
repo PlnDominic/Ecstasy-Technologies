@@ -276,7 +276,7 @@ export default function Home() {
                     src={src}
                     alt={alt}
                     fill
-                    className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                    className="object-cover object-top grayscale transition-[transform,filter] duration-500 ease-out group-hover:scale-[1.04] group-hover:grayscale-0"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
