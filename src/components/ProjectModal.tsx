@@ -104,7 +104,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, project })
                 </button>
               </div>
 
-              {/* ── Image — takes the lion's share ── */}
+              {/* ── Image - takes the lion's share ── */}
               <div style={{
                 position: 'relative',
                 flex: '1 1 0',
@@ -165,7 +165,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, project })
                         display: 'flex', alignItems: 'baseline', gap: '0.45rem',
                       }}>
                         {f}
-                        <span style={{ color: 'var(--accent)', fontSize: '9px' }}>—</span>
+                        <span style={{ color: 'var(--accent)', fontSize: '9px' }}>-</span>
                       </li>
                     ))}
                   </ul>

@@ -28,7 +28,7 @@ function ProjectImage({ src, alt }: { src: string; alt: string }) {
       </div>
     )
   }
-  // Plain <img> — bypasses Next.js /_next/image optimizer (avoids Vercel quota)
+  // Plain <img> - bypasses Next.js /_next/image optimizer (avoids Vercel quota)
   return (
     <img
       src={src}
@@ -69,7 +69,7 @@ export default function Projects() {
               <span style={{ color: 'var(--accent)' }}>PROJECTS.</span>
             </h1>
             <p className="ip-body" style={{ marginTop: '1.5rem' }}>
-              Every project we&#39;ve built &#8212; websites, applications, and enterprise systems for clients across Africa and beyond.
+              Every project we&#39;ve built - websites, applications, and enterprise systems for clients across Africa and beyond.
             </p>
           </div>
 
