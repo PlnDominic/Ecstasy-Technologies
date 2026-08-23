@@ -161,3 +161,8 @@ export function pickTodaysPost(): SocialPost | null {
   const dayOfYear = Math.floor(Date.now() / 86_400_000); // days since epoch, stable per day
   return socialPosts[dayOfYear % socialPosts.length];
 }
+
+/** Looks up a specific post by id — used by the manual-override query param on the posting routes. */
+export function findPostById(id: string): SocialPost | null {
+  return socialPosts.find((post) => post.id === id) ?? null;
+}

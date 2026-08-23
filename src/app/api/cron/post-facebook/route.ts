@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { postToFacebook } from '@/lib/facebook';
-import { pickTodaysPost } from '@/data/social-posts';
+import { pickTodaysPost, findPostById } from '@/data/social-posts';
 
 // ── Scheduled Facebook Page posting ──
 // Called by Vercel Cron (see vercel.json) on a fixed schedule. Posts to
@@ -8,6 +8,11 @@ import { pickTodaysPost } from '@/data/social-posts';
 // same content queue and day-of-year selection as the X posting route
 // (see src/data/social-posts.ts) so both platforms stay in sync without
 // duplicating the rotation logic.
+//
+// Optional manual override: pass ?postId=<id> to post a specific queue
+// entry right now instead of the deterministic daily pick — useful for
+// testing a particular post (e.g. an image one) without waiting for the
+// rotation to land on it. Still gated by the same CRON_SECRET check.
 //
 // Locked down with CRON_SECRET so only Vercel's own cron invoker (or
 // someone who has that secret) can trigger a real post — see
@@ -31,9 +36,13 @@ export async function GET(request: Request) {
     return NextResponse.json({ success: false, message: 'Unauthorized' }, { status: 401 });
   }
 
-  const post = pickTodaysPost();
+  const overrideId = new URL(request.url).searchParams.get('postId');
+  const post = overrideId ? findPostById(overrideId) : pickTodaysPost();
   if (!post) {
-    return NextResponse.json({ success: false, message: 'No posts in the queue.' }, { status: 200 });
+    return NextResponse.json(
+      { success: false, message: overrideId ? `No post with id "${overrideId}".` : 'No posts in the queue.' },
+      { status: overrideId ? 404 : 200 }
+    );
   }
 
   // Image paths (from data/projects.json) are site-root-relative and may
