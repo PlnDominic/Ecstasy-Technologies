@@ -35,18 +35,6 @@ export async function GET(request: Request) {
 
   const verifyToken = process.env.META_WEBHOOK_VERIFY_TOKEN?.trim();
 
-  // Diagnostic only — logs presence/length, never the actual token
-  // values, so this is safe to leave visible in Vercel's runtime logs
-  // while debugging a 403. Remove once verification is confirmed working.
-  console.log('[webhooks/meta] verify handshake', {
-    mode,
-    tokenConfigured: Boolean(verifyToken),
-    tokenConfiguredLength: verifyToken?.length ?? 0,
-    tokenReceivedLength: token?.length ?? 0,
-    tokensMatch: token === verifyToken,
-    challengePresent: Boolean(challenge),
-  });
-
   if (mode === 'subscribe' && verifyToken && token === verifyToken && challenge) {
     return new NextResponse(challenge, { status: 200 });
   }
