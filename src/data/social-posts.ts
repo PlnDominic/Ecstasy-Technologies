@@ -89,3 +89,13 @@ export const socialPosts: SocialPost[] = [
     text: 'Not sure if your idea needs a website, an app, or both? Send us the details and we will help you figure out the right build. → ecstasytechnologies.com/contact',
   },
 ];
+
+// Picks the same entry all day, deterministically, no matter how many
+// times a scheduled job happens to fire — and wraps around once the
+// rotation reaches the end. Shared by every platform's posting route so
+// they all agree on "today's post" without duplicating this logic.
+export function pickTodaysPost(): SocialPost | null {
+  if (socialPosts.length === 0) return null;
+  const dayOfYear = Math.floor(Date.now() / 86_400_000); // days since epoch, stable per day
+  return socialPosts[dayOfYear % socialPosts.length];
+}

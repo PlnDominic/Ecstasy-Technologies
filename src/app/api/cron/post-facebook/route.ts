@@ -1,17 +1,13 @@
 import { NextResponse } from 'next/server';
-import { postTweet } from '@/lib/x';
+import { postToFacebook } from '@/lib/facebook';
 import { pickTodaysPost } from '@/data/social-posts';
 
-// ── Scheduled X (Twitter) posting — currently PAUSED ──
-// Fully built and verified working (auth, signing, and X API all confirmed
-// end-to-end), but not wired to a schedule right now: posting via X's API
-// requires the developer project to be on a paid/Pay-Per-Use plan, and
-// that tradeoff hasn't been made yet. The vercel.json cron entry that used
-// to call this route on a schedule has been removed, so this route sits
-// dormant — reachable only by a direct authorized call, never automatic.
-//
-// To resume: re-add a "crons" entry pointing at this path in vercel.json,
-// and make sure the X project has posting credits/billing enabled.
+// ── Scheduled Facebook Page posting ──
+// Called by Vercel Cron (see vercel.json) on a fixed schedule. Posts to
+// the "Ecstasy Technologies | Bibiani" Page via the Graph API, using the
+// same content queue and day-of-year selection as the X posting route
+// (see src/data/social-posts.ts) so both platforms stay in sync without
+// duplicating the rotation logic.
 //
 // Locked down with CRON_SECRET so only Vercel's own cron invoker (or
 // someone who has that secret) can trigger a real post — see
@@ -39,10 +35,10 @@ export async function GET(request: Request) {
   }
 
   try {
-    const tweet = await postTweet(post.text);
-    return NextResponse.json({ success: true, postId: post.id, tweetId: tweet.id });
+    const result = await postToFacebook(post.text);
+    return NextResponse.json({ success: true, postId: post.id, facebookPostId: result.id });
   } catch (error) {
-    console.error('X posting error:', error);
+    console.error('Facebook posting error:', error);
     return NextResponse.json(
       { success: false, message: error instanceof Error ? error.message : 'Unknown error' },
       { status: 502 }
