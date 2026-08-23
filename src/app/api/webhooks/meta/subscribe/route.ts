@@ -37,7 +37,24 @@ export async function GET(request: Request) {
     );
   }
 
+  // ?action=status reads the Page's current subscriptions without
+  // changing anything — useful for confirming what's actually active.
+  const action = url.searchParams.get('action');
   const graphUrl = `https://graph.facebook.com/${GRAPH_API_VERSION}/${pageId}/subscribed_apps`;
+
+  if (action === 'status') {
+    const statusUrl = `${graphUrl}?access_token=${encodeURIComponent(pageAccessToken)}`;
+    const statusResponse = await fetch(statusUrl);
+    const statusBody = await statusResponse.json().catch(() => null);
+    if (!statusResponse.ok) {
+      return NextResponse.json(
+        { success: false, message: `Graph API error (${statusResponse.status}): ${statusBody ? JSON.stringify(statusBody) : statusResponse.statusText}` },
+        { status: 502 }
+      );
+    }
+    return NextResponse.json({ success: true, currentSubscriptions: statusBody });
+  }
+
   const response = await fetch(graphUrl, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
