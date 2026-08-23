@@ -64,4 +64,28 @@ export const socialPosts: SocialPost[] = [
     id: 'web-performance',
     text: 'A slow website costs you customers before they even see what you offer. Performance is not optional, it is part of the product. #WebDevelopment',
   },
+  {
+    id: 'support-1',
+    text: 'Launch day is not the finish line. We stick around for updates, fixes, and the next feature, not just the first version.',
+  },
+  {
+    id: 'security-1',
+    text: 'Custom software should not mean cutting corners on security. We build with that in mind from day one, not as an afterthought. #SoftwareDevelopment',
+  },
+  {
+    id: 'scalability-1',
+    text: 'Built for 100 users today does not mean built for 10,000 tomorrow. We design software that can grow with your business.',
+  },
+  {
+    id: 'discovery-process',
+    text: 'Before we write a line of code, we spend time understanding your workflow. Good software starts with good questions.',
+  },
+  {
+    id: 'dev-tip-2',
+    text: 'If a bug only shows up in production, that is not bad luck, that is a gap in your testing. We treat both as part of the build. #WebDevelopment',
+  },
+  {
+    id: 'cta-contact-2',
+    text: 'Not sure if your idea needs a website, an app, or both? Send us the details and we will help you figure out the right build. → ecstasytechnologies.com/contact',
+  },
 ];
