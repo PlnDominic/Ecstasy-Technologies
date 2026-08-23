@@ -18,8 +18,20 @@ export const dynamic = 'force-dynamic';
 
 function isAuthorized(request: Request): boolean {
   const secret = process.env.CRON_SECRET?.trim();
-  if (!secret) return false; // refuse to run unconfigured — never post unauthenticated
   const auth = request.headers.get('authorization');
+
+  // Diagnostic only — logs presence/length, never the actual secret or
+  // header value, so this is safe to leave visible in Vercel's runtime
+  // logs while debugging a 401. Remove once auth is confirmed working.
+  console.log('[cron/post-x] auth check', {
+    secretConfigured: Boolean(secret),
+    secretLength: secret?.length ?? 0,
+    authHeaderPresent: Boolean(auth),
+    authHeaderLength: auth?.length ?? 0,
+    authHeaderStartsWithBearer: auth?.startsWith('Bearer ') ?? false,
+  });
+
+  if (!secret) return false; // refuse to run unconfigured — never post unauthenticated
   return auth === `Bearer ${secret}`;
 }
 
