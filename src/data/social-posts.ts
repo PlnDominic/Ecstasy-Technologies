@@ -18,11 +18,11 @@ export const socialPosts: SocialPost[] = [
   },
   {
     id: 'service-web',
-    text: 'From landing pages to full web applications — we design and ship software that looks sharp and holds up in production. #WebDevelopment',
+    text: 'From landing pages to full web applications, we design and ship software that looks sharp and holds up in production. #WebDevelopment',
   },
   {
     id: 'service-uiux',
-    text: "Good UI/UX isn't decoration — it's the difference between users staying and users bouncing. That's the bar we design to. #UIUX #ProductDesign",
+    text: "Good UI/UX isn't decoration. It's the difference between users staying and users bouncing. That's the bar we design to. #UIUX #ProductDesign",
   },
   {
     id: 'service-mobile',
