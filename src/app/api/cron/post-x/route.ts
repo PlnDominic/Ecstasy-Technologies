@@ -2,11 +2,16 @@ import { NextResponse } from 'next/server';
 import { postTweet } from '@/lib/x';
 import { socialPosts } from '@/data/social-posts';
 
-// ── Scheduled X (Twitter) posting ──
-// Called by Vercel Cron (see vercel.json) on a fixed schedule. Picks the
-// next post in the rotation deterministically by day-of-year, so the same
-// entry is chosen no matter how many times the job happens to fire on a
-// given day, and the queue wraps around once it reaches the end.
+// ── Scheduled X (Twitter) posting — currently PAUSED ──
+// Fully built and verified working (auth, signing, and X API all confirmed
+// end-to-end), but not wired to a schedule right now: posting via X's API
+// requires the developer project to be on a paid/Pay-Per-Use plan, and
+// that tradeoff hasn't been made yet. The vercel.json cron entry that used
+// to call this route on a schedule has been removed, so this route sits
+// dormant — reachable only by a direct authorized call, never automatic.
+//
+// To resume: re-add a "crons" entry pointing at this path in vercel.json,
+// and make sure the X project has posting credits/billing enabled.
 //
 // Locked down with CRON_SECRET so only Vercel's own cron invoker (or
 // someone who has that secret) can trigger a real post — see
@@ -18,20 +23,8 @@ export const dynamic = 'force-dynamic';
 
 function isAuthorized(request: Request): boolean {
   const secret = process.env.CRON_SECRET?.trim();
-  const auth = request.headers.get('authorization');
-
-  // Diagnostic only — logs presence/length, never the actual secret or
-  // header value, so this is safe to leave visible in Vercel's runtime
-  // logs while debugging a 401. Remove once auth is confirmed working.
-  console.log('[cron/post-x] auth check', {
-    secretConfigured: Boolean(secret),
-    secretLength: secret?.length ?? 0,
-    authHeaderPresent: Boolean(auth),
-    authHeaderLength: auth?.length ?? 0,
-    authHeaderStartsWithBearer: auth?.startsWith('Bearer ') ?? false,
-  });
-
   if (!secret) return false; // refuse to run unconfigured — never post unauthenticated
+  const auth = request.headers.get('authorization');
   return auth === `Bearer ${secret}`;
 }
 
