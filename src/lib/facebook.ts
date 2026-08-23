@@ -20,14 +20,20 @@ function readCredentials(): FacebookCredentials {
   return { pageId, pageAccessToken };
 }
 
-export async function postToFacebook(message: string): Promise<{ id: string }> {
+// With imageUrl: posts a photo (the image, with the text as its caption)
+// via the /photos endpoint. Without it: a plain text post via /feed.
+export async function postToFacebook(message: string, imageUrl?: string): Promise<{ id: string }> {
   const { pageId, pageAccessToken } = readCredentials();
-  const url = `https://graph.facebook.com/${GRAPH_API_VERSION}/${pageId}/feed`;
+  const endpoint = imageUrl ? 'photos' : 'feed';
+  const url = `https://graph.facebook.com/${GRAPH_API_VERSION}/${pageId}/${endpoint}`;
+  const payload = imageUrl
+    ? { url: imageUrl, caption: message, access_token: pageAccessToken }
+    : { message, access_token: pageAccessToken };
 
   const response = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ message, access_token: pageAccessToken }),
+    body: JSON.stringify(payload),
   });
 
   const body = await response.json().catch(() => null);

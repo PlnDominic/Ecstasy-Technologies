@@ -9,6 +9,13 @@ export interface SocialPost {
   /** Stable id — used only for your own reference when editing this file. */
   id: string;
   text: string;
+  /**
+   * Optional path to an image, relative to the site root (e.g.
+   * "/project-images/foo.webp" — matching an entry's "image" field in
+   * data/projects.json). When set, Facebook posts this as a photo post
+   * instead of a plain text post. Leave unset for text-only posts.
+   */
+  image?: string;
 }
 
 export const socialPosts: SocialPost[] = [
@@ -87,6 +94,61 @@ export const socialPosts: SocialPost[] = [
   {
     id: 'cta-contact-2',
     text: 'Not sure if your idea needs a website, an app, or both? Send us the details and we will help you figure out the right build. → ecstasytechnologies.com/contact',
+  },
+
+  // ── Project highlights ──
+  // Real work from data/projects.json, paired with the project's actual
+  // screenshot. Keep these grounded in what that file actually says about
+  // each project — no invented client quotes, results, or numbers.
+  {
+    id: 'project-52-beccas-luxe',
+    text: "Built the website for Becca's Luxe, a custom souvenir studio in Accra crafting personalized keepsakes for weddings, christenings, and corporate milestones. #WebDevelopment",
+    image: '/project-images/tagett-1787310108287.webp',
+  },
+  {
+    id: 'project-50-tagett',
+    text: 'Tagett is our own internal client management tool, built to keep projects, communication, and productivity in one place. Sometimes the best case study is the tool we use every day.',
+    image: '/project-images/tagett-1787293301377.webp',
+  },
+  {
+    id: 'project-49-obuasi-links',
+    text: 'Obuasi Links needed a professional home online for their NGO work in the Obuasi community. We built a website that does exactly that.',
+    image: '/project-images/tagett-1782571570217.webp',
+  },
+  {
+    id: 'project-47-aspee-pharma',
+    text: 'For Aspee Pharmaceuticals we built a TypeScript, React, and Next.js platform with a performance-first architecture and a clean component-based design. #WebDevelopment',
+    image: '/project-images/tagett-1782569436979.webp',
+  },
+  {
+    id: 'project-45-local-drop-shipping',
+    text: 'A full marketplace build for Local Drop Shipping GH: storefront, vendor and buyer dashboards, and order management, all in one Next.js application. #WebDevelopment',
+    image: '/project-images/tagett-1782570005106.webp',
+  },
+  {
+    id: 'project-39-bia-east',
+    text: 'For Bia East District we built a digital platform with GIS mapping, a community resource directory, and a full service listing. Government and community projects need software too.',
+    image: '/project-images/tagett-1781969724443.webp',
+  },
+  {
+    id: 'project-36-royal-ecclesia',
+    text: 'Built a full church management system for Royal Ecclesia: member records, attendance tracking, and event coordination, all in one dashboard. #BusinessSoftware',
+    image: '/project-images/tagett-1782222344067.webp',
+  },
+  {
+    id: 'project-4-building-dev-manager',
+    text: 'A construction project management platform we built: timelines, budget tracking, document management, and a stakeholder communication portal, all in one place.',
+    image: '/Building Development Web App.jpg',
+  },
+  {
+    id: 'project-17-nhyiraba-hms',
+    text: 'Built a full hotel management system for Nhyiraba: real-time room status, guest check-in and checkout, reservations, and billing, all in one system. #BusinessSoftware',
+    image: '/Nhyiraba HMS.png',
+  },
+  {
+    id: 'project-24-moldgold-school',
+    text: 'For MoldGold we built a school management system covering academics, student records, fee collection, and communication between parents and teachers.',
+    image: '/Moldgold School.png',
   },
 ];
 

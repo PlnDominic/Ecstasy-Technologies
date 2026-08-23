@@ -24,6 +24,8 @@ function isAuthorized(request: Request): boolean {
   return auth === `Bearer ${secret}`;
 }
 
+const SITE_URL = 'https://ecstasytechnologies.com';
+
 export async function GET(request: Request) {
   if (!isAuthorized(request)) {
     return NextResponse.json({ success: false, message: 'Unauthorized' }, { status: 401 });
@@ -34,8 +36,13 @@ export async function GET(request: Request) {
     return NextResponse.json({ success: false, message: 'No posts in the queue.' }, { status: 200 });
   }
 
+  // Image paths (from data/projects.json) are site-root-relative and may
+  // contain spaces — encodeURI turns them into a real, fetchable absolute
+  // URL that Facebook's servers can retrieve the image from.
+  const imageUrl = post.image ? `${SITE_URL}${encodeURI(post.image)}` : undefined;
+
   try {
-    const result = await postToFacebook(post.text);
+    const result = await postToFacebook(post.text, imageUrl);
     return NextResponse.json({ success: true, postId: post.id, facebookPostId: result.id });
   } catch (error) {
     console.error('Facebook posting error:', error);
