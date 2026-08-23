@@ -5,7 +5,7 @@
       "schedule": "0 15 * * *"
     },
     {
-      "path": "/api/cron/post-instagram",
+      "path": "/api/cron/post-instagram?postId=project-17-nhyiraba-hms",
       "schedule": "10 15 * * *"
     }
   ]
