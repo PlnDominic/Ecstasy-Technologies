@@ -1,7 +1,7 @@
 {
   "crons": [
     {
-      "path": "/api/cron/post-facebook?postId=project-47-aspee-pharma",
+      "path": "/api/cron/post-facebook",
       "schedule": "0 15 * * *"
     }
   ]
