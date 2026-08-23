@@ -50,11 +50,9 @@ export async function GET(request: Request) {
   }
 
   if (!post.image) {
-    return NextResponse.json({
-      success: false,
-      skipped: true,
-      message: `Post "${post.id}" has no image — Instagram requires one, skipping.`,
-    });
+    const message = `Post "${post.id}" has no image — Instagram requires one, skipping.`;
+    console.log('Instagram posting skipped:', message);
+    return NextResponse.json({ success: false, skipped: true, message });
   }
 
   // Image paths (from data/projects.json) are site-root-relative and may
