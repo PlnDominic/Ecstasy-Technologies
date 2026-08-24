@@ -150,6 +150,42 @@ export const socialPosts: SocialPost[] = [
     text: 'For MoldGold we built a school management system covering academics, student records, fee collection, and communication between parents and teachers.',
     image: '/Moldgold School.png',
   },
+  {
+    id: 'project-48-glow-healthy',
+    text: 'Glow Healthy needed a wellness platform that felt as vibrant as the brand. We built a mobile-first site with a services showcase, lifestyle content, and a booking flow. #WebDevelopment',
+    image: '/project-images/tagett-1782224340328.webp',
+  },
+  {
+    id: 'project-46-raynelle-portfolio',
+    text: 'A clean, responsive portfolio site for Ms. Raynelle Nana Yaa Boadu, built with a custom brand design and a modern layout from the ground up.',
+    image: '/project-images/tagett-1782571185662.webp',
+  },
+  {
+    id: 'project-44-gusty-women-foundation',
+    text: 'Built a Next.js website for the Gusty Women Foundation to showcase their mission, programs, and impact stories, with a clear path for people to get involved.',
+    image: '/project-images/tagett-1782570849082.webp',
+  },
+  {
+    id: 'project-43-autosphere-imports',
+    text: 'For Autosphere Imports, a Ghana-based car dealership, we built a vehicle catalogue and listings site with a clean enquiry system and a design built around the brand.',
+    image: '/project-images/tagett-1782570881710.webp',
+  },
+  {
+    id: 'dev-tip-3',
+    text: "The best software feature is often the one users never notice, because it just works. That is the standard we build to, not the one that just demos well.",
+  },
+  {
+    id: 'why-us-2',
+    text: 'We are a small team, which means the person scoping your project is the same one who ships it. No handoffs, no lost context.',
+  },
+  {
+    id: 'service-web-2',
+    text: 'A website is not done at launch. It should keep earning its place: fast, findable, and easy to update as your business changes. #WebDevelopment',
+  },
+  {
+    id: 'cta-contact-3',
+    text: "Tell us what is slowing your business down, whether it is a manual process, an outdated site, or no system at all, and we will help you fix it. → ecstasytechnologies.com/contact",
+  },
 ];
 
 // Picks the same entry all day, deterministically, no matter how many
