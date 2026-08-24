@@ -60,6 +60,15 @@ export async function GET(request: Request) {
     return NextResponse.json({ success: false, skipped: true, message });
   }
 
+  if (post.instagramUnsafeAspectRatio) {
+    // Only reachable via ?postId= pointing at a flagged entry —
+    // pickTodaysImagePost() itself excludes these. Fail clearly instead
+    // of letting Instagram's API reject it (400, "Invalid aspect ratio").
+    const message = `Post "${post.id}"'s image is outside Instagram's supported aspect ratio, skipping.`;
+    console.log('Instagram posting skipped:', message);
+    return NextResponse.json({ success: false, skipped: true, message });
+  }
+
   // Image paths (from data/projects.json) are site-root-relative and may
   // contain spaces — encodeURI turns them into a real, fetchable absolute
   // URL that Instagram's servers can retrieve the image from.

@@ -16,6 +16,20 @@ export interface SocialPost {
    * instead of a plain text post. Leave unset for text-only posts.
    */
   image?: string;
+  /**
+   * Set true only when this image's aspect ratio falls outside
+   * Instagram's supported range (roughly 4:5 to 1.91:1 — see
+   * https://developers.facebook.com/docs/instagram-platform/content-publishing).
+   * Most of our project screenshots are wider than that (~2:1), which
+   * Instagram's API rejects outright with a 400 (code 36003, "Invalid
+   * aspect ratio") rather than silently cropping — see the incident this
+   * flag fixes. Facebook has no such restriction, so this only affects
+   * pickTodaysImagePost() below; Facebook still posts every image post
+   * via pickTodaysPost(). When adding a new project-highlight post,
+   * check the image's actual pixel dimensions and set this true if
+   * width/height is under 0.8 or over 1.91.
+   */
+  instagramUnsafeAspectRatio?: boolean;
 }
 
 export const socialPosts: SocialPost[] = [
@@ -109,16 +123,19 @@ export const socialPosts: SocialPost[] = [
     id: 'project-50-tagett',
     text: 'Tagett is our own internal client management tool, built to keep projects, communication, and productivity in one place. Sometimes the best case study is the tool we use every day.',
     image: '/project-images/tagett-1787293301377.webp',
+    instagramUnsafeAspectRatio: true,
   },
   {
     id: 'project-49-obuasi-links',
     text: 'Obuasi Links needed a professional home online for their NGO work in the Obuasi community. We built a website that does exactly that.',
     image: '/project-images/tagett-1782571570217.webp',
+    instagramUnsafeAspectRatio: true,
   },
   {
     id: 'project-47-aspee-pharma',
     text: 'For Aspee Pharmaceuticals we built a TypeScript, React, and Next.js platform with a performance-first architecture and a clean component-based design. #WebDevelopment',
     image: '/project-images/tagett-1782569436979.webp',
+    instagramUnsafeAspectRatio: true,
   },
   {
     id: 'project-45-local-drop-shipping',
@@ -129,16 +146,19 @@ export const socialPosts: SocialPost[] = [
     id: 'project-39-bia-east',
     text: 'For Bia East District we built a digital platform with GIS mapping, a community resource directory, and a full service listing. Government and community projects need software too.',
     image: '/project-images/tagett-1781969724443.webp',
+    instagramUnsafeAspectRatio: true,
   },
   {
     id: 'project-36-royal-ecclesia',
     text: 'Built a full church management system for Royal Ecclesia: member records, attendance tracking, and event coordination, all in one dashboard. #BusinessSoftware',
     image: '/project-images/tagett-1782222344067.webp',
+    instagramUnsafeAspectRatio: true,
   },
   {
     id: 'project-4-building-dev-manager',
     text: 'A construction project management platform we built: timelines, budget tracking, document management, and a stakeholder communication portal, all in one place.',
     image: '/Building Development Web App.jpg',
+    instagramUnsafeAspectRatio: true,
   },
   {
     id: 'project-17-nhyiraba-hms',
@@ -149,16 +169,19 @@ export const socialPosts: SocialPost[] = [
     id: 'project-24-moldgold-school',
     text: 'For MoldGold we built a school management system covering academics, student records, fee collection, and communication between parents and teachers.',
     image: '/Moldgold School.png',
+    instagramUnsafeAspectRatio: true,
   },
   {
     id: 'project-48-glow-healthy',
     text: 'Glow Healthy needed a wellness platform that felt as vibrant as the brand. We built a mobile-first site with a services showcase, lifestyle content, and a booking flow. #WebDevelopment',
     image: '/project-images/tagett-1782224340328.webp',
+    instagramUnsafeAspectRatio: true,
   },
   {
     id: 'project-46-raynelle-portfolio',
     text: 'A clean, responsive portfolio site for Ms. Raynelle Nana Yaa Boadu, built with a custom brand design and a modern layout from the ground up.',
     image: '/project-images/tagett-1782571185662.webp',
+    instagramUnsafeAspectRatio: true,
   },
   {
     id: 'project-44-gusty-women-foundation',
@@ -169,6 +192,7 @@ export const socialPosts: SocialPost[] = [
     id: 'project-43-autosphere-imports',
     text: 'For Autosphere Imports, a Ghana-based car dealership, we built a vehicle catalogue and listings site with a clean enquiry system and a design built around the brand.',
     image: '/project-images/tagett-1782570881710.webp',
+    instagramUnsafeAspectRatio: true,
   },
   {
     id: 'dev-tip-3',
@@ -206,13 +230,15 @@ export function findPostById(id: string): SocialPost | null {
 // Instagram has no text-only post type, so it can't just use
 // pickTodaysPost() — plenty of queue entries have no image. This runs
 // the same deterministic day-of-year rotation, but only over the
-// image-bearing subset, so Instagram always has something to post
-// instead of skipping on days the shared rotation lands on a
-// text-only entry. Facebook (and X, if resumed) keep using
+// image-bearing subset (excluding any marked instagramUnsafeAspectRatio
+// — see that field's docs above), so Instagram always has something
+// postable instead of skipping on days the shared rotation lands on a
+// text-only entry, or erroring on one whose image Instagram's API
+// rejects outright. Facebook (and X, if resumed) keep using
 // pickTodaysPost() as-is, so a given day's Facebook and Instagram
 // posts can differ — that's expected, not a bug.
 export function pickTodaysImagePost(): SocialPost | null {
-  const imagePosts = socialPosts.filter((post) => post.image);
+  const imagePosts = socialPosts.filter((post) => post.image && !post.instagramUnsafeAspectRatio);
   if (imagePosts.length === 0) return null;
   const dayOfYear = Math.floor(Date.now() / 86_400_000);
   return imagePosts[dayOfYear % imagePosts.length];
