@@ -1,9 +1,41 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+
+// Mirrors the projects list page's fallback: some entries (freshly added,
+// pending an image upload) have no image yet, or a stale path that no
+// longer resolves. Show a placeholder instead of a broken <img>.
+function ModalImage({ src, alt }: { src: string; alt: string }) {
+  const [failed, setFailed] = useState(false);
+  if (!src || failed) {
+    return (
+      <div style={{
+        position: 'absolute', inset: 0,
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        background: 'linear-gradient(135deg, #111 0%, #1a1a1a 100%)',
+      }}>
+        <span style={{ color: '#333', fontSize: '13px', fontFamily: 'monospace', letterSpacing: '0.05em' }}>
+          [ preview soon ]
+        </span>
+      </div>
+    );
+  }
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      fill
+      className="object-cover object-top"
+      priority
+      quality={95}
+      sizes="min(92vw, 1060px)"
+      onError={() => setFailed(true)}
+    />
+  );
+}
 
 interface ProjectModalProps {
   isOpen: boolean;
@@ -112,15 +144,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, project })
                 backgroundColor: 'var(--secondary)',
                 overflow: 'hidden',
               }}>
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover object-top"
-                  priority
-                  quality={95}
-                  sizes="min(92vw, 1060px)"
-                />
+                <ModalImage src={project.image} alt={project.title} />
               </div>
 
               {/* ── Info footer ── */}
