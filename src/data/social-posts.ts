@@ -202,3 +202,18 @@ export function pickTodaysPost(): SocialPost | null {
 export function findPostById(id: string): SocialPost | null {
   return socialPosts.find((post) => post.id === id) ?? null;
 }
+
+// Instagram has no text-only post type, so it can't just use
+// pickTodaysPost() — plenty of queue entries have no image. This runs
+// the same deterministic day-of-year rotation, but only over the
+// image-bearing subset, so Instagram always has something to post
+// instead of skipping on days the shared rotation lands on a
+// text-only entry. Facebook (and X, if resumed) keep using
+// pickTodaysPost() as-is, so a given day's Facebook and Instagram
+// posts can differ — that's expected, not a bug.
+export function pickTodaysImagePost(): SocialPost | null {
+  const imagePosts = socialPosts.filter((post) => post.image);
+  if (imagePosts.length === 0) return null;
+  const dayOfYear = Math.floor(Date.now() / 86_400_000);
+  return imagePosts[dayOfYear % imagePosts.length];
+}
