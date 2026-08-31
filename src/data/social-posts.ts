@@ -210,6 +210,43 @@ export const socialPosts: SocialPost[] = [
     id: 'cta-contact-3',
     text: "Tell us what is slowing your business down, whether it is a manual process, an outdated site, or no system at all, and we will help you fix it. → ecstasytechnologies.com/contact",
   },
+  {
+    id: 'project-53-cassvo',
+    text: "Cassvo is Ghana's trusted reviews and ratings platform, connecting businesses all over the country with the people who use them. #WebDevelopment",
+    image: '/project-images/tagett-1787596523517.webp',
+    instagramUnsafeAspectRatio: true,
+  },
+  {
+    id: 'project-5-pro-realty',
+    text: 'For Pro Realty we built a full real estate platform: property listings, virtual tours, appointment scheduling, and a client management system, all in one place. #WebDevelopment',
+    image: '/Pro Realty Properties Web App.png',
+  },
+  {
+    id: 'project-10-bubbly-kids-academy',
+    text: "A vibrant website for Bubbly Kids Academy, built to showcase their programs, admissions, teaching methodology, and hands-on learning approach.",
+    image: '/Bubbly kids academy.png',
+  },
+  {
+    id: 'project-11-clems-akinaabi',
+    text: 'For Clems Akinaabi, a bag manufacturer, we built a complete offline inventory management system: order processing, customer tracking, and a product catalog. #BusinessSoftware',
+    image: '/Clems Akinaabi Company Limited.png',
+  },
+  {
+    id: 'dev-tip-4',
+    text: 'A feature request is not a spec. Part of our job is turning "we need this" into something that actually fits how your team works day to day.',
+  },
+  {
+    id: 'service-mobile-3',
+    text: 'From concept to app store, we handle the full build: design, development, testing, and launch. #MobileApps #SoftwareDevelopment',
+  },
+  {
+    id: 'why-us-3',
+    text: 'We have built for hotels, schools, NGOs, and retailers. Different industries, same approach: understand the workflow first, then build the software around it.',
+  },
+  {
+    id: 'seasonal-planning-ahead',
+    text: 'The businesses that plan their software needs early are the ones that are not scrambling later. If something on your roadmap needs a custom build, start the conversation now.',
+  },
 ];
 
 // Picks the same entry all day, deterministically, no matter how many
