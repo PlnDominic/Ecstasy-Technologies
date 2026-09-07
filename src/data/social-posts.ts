@@ -58,10 +58,6 @@ export const socialPosts: SocialPost[] = [
     text: 'Spreadsheets and sticky notes are not a system. If your business is outgrowing them, we build the custom software to replace them. #BusinessSoftware',
   },
   {
-    id: 'social-proof-1',
-    text: 'Clients come to us with an idea and a deadline. They leave with software their team actually uses. That is the whole job.',
-  },
-  {
     id: 'dev-tip-1',
     text: 'A good rule for any product: if your team cannot explain what a feature does in one sentence, users will not figure it out either.',
   },
@@ -76,10 +72,6 @@ export const socialPosts: SocialPost[] = [
   {
     id: 'service-uiux-2',
     text: 'Great design is not about making things pretty. It is about removing every extra click between a user and what they came to do. #UIUX',
-  },
-  {
-    id: 'seasonal-q4-planning',
-    text: 'Q4 planning season: if a custom software project is on next year\'s roadmap, now is the time to start scoping it, not January.',
   },
   {
     id: 'web-performance',
@@ -246,6 +238,40 @@ export const socialPosts: SocialPost[] = [
   {
     id: 'seasonal-planning-ahead',
     text: 'The businesses that plan their software needs early are the ones that are not scrambling later. If something on your roadmap needs a custom build, start the conversation now.',
+  },
+  {
+    id: 'project-1-lavimac-royal-hotel',
+    text: 'For Lavimac Royal Hotel we built a luxury hotel website with online booking, a high-resolution room gallery, and integrated payment processing. #WebDevelopment',
+    image: '/Lavimac royal hotel website.png',
+    instagramUnsafeAspectRatio: true,
+  },
+  {
+    id: 'project-7-dominic-kudom-portfolio',
+    text: 'Sometimes the case study is closer to home. Our own portfolio site: interactive UI, a project showcase, dark and light mode, and SEO built in from the start.',
+    image: '/Dominic Kudom Portfolio.png',
+    instagramUnsafeAspectRatio: true,
+  },
+  {
+    id: 'project-18-solani-construction',
+    text: 'For Solani Construction Limited we built a professional website showcasing their services, project portfolio, and team, with inquiry forms built right in. #WebDevelopment',
+    image: '/Solani Construction.png',
+    instagramUnsafeAspectRatio: true,
+  },
+  {
+    id: 'dev-tip-5',
+    text: 'Fast is a feature. A page that loads in two seconds keeps more visitors than one that loads in eight, no matter how good the design is. #WebDevelopment',
+  },
+  {
+    id: 'service-uiux-3',
+    text: 'A confusing app is still an app. A usable one is what people actually keep. That gap is where good UI/UX design earns its keep. #UIUX',
+  },
+  {
+    id: 'why-us-4',
+    text: 'We are not the cheapest option and we are not trying to be. We build software that holds up, and that shows in how few emergency fixes our clients need.',
+  },
+  {
+    id: 'cta-contact-4',
+    text: "If your business idea is still just an idea, that is fine. Bring us where you are and we will help map out what building it actually looks like. → ecstasytechnologies.com/contact",
   },
 ];
 
