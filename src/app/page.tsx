@@ -85,9 +85,9 @@ export default function Home() {
           </div>
 
           {/* Copy — overlaid directly on the video */}
-          <div className="relative z-10 flex items-center min-h-[92vh] pt-14 px-6 sm:px-12 lg:px-16">
-            <div className="max-w-md">
-              <div className="flex items-start gap-3 mb-6">
+          <div className="relative z-10 flex items-center min-h-[92vh] pt-14 px-6 sm:px-12 lg:px-16 lg:justify-center">
+            <div className="max-w-md lg:text-center">
+              <div className="flex items-start gap-3 mb-6 lg:justify-center">
                 <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-white/50">
                   Ecstasy Technologies
                 </span>
@@ -100,7 +100,7 @@ export default function Home() {
                 WE BUILD<br />WEBSITES, MOBILE APPS<br />&amp; BUSINESS SOFTWARE.
               </h1>
 
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="flex flex-wrap items-center gap-3 lg:justify-center">
                 <Link
                   href="/contact"
                   className="btn-press inline-flex items-center justify-center rounded-md bg-white text-neutral-900 text-[13px] font-semibold px-6 py-3.5 hover:bg-neutral-200 transition-colors"
