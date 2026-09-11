@@ -94,10 +94,10 @@ export default function Home() {
               </div>
 
               <h1
-                className="text-[2.6rem] sm:text-[3.4rem] lg:text-[3.8rem] leading-[0.98] font-extrabold tracking-tight text-white mb-6"
+                className="text-[2.2rem] sm:text-[2.8rem] lg:text-[3.2rem] leading-[1.05] font-extrabold tracking-tight text-white mb-6"
                 style={{ fontFamily: "'Syne', system-ui, sans-serif" }}
               >
-                SOFTWARE<br />AFRICA<br />TRUSTS.
+                We build<br />websites, mobile apps<br />&amp; business software.
               </h1>
 
               <div className="flex flex-wrap items-center gap-3">
