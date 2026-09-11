@@ -86,7 +86,7 @@ export default function Home() {
 
           {/* Copy — overlaid directly on the video */}
           <div className="relative z-10 flex items-center min-h-[92vh] pt-14 px-6 sm:px-12 lg:px-16 lg:justify-center">
-            <div className="max-w-md lg:text-center">
+            <div className="max-w-md lg:max-w-none lg:text-center">
               <div className="flex items-start gap-3 mb-6 lg:justify-center">
                 <span
                   className="es-reveal text-[11px] font-bold tracking-[0.2em] uppercase text-white/50"
@@ -97,26 +97,20 @@ export default function Home() {
               </div>
 
               <h1
-                className="text-[2.2rem] sm:text-[2.8rem] lg:text-[3.4rem] leading-[0.95] tracking-[-0.02em] text-white mb-7"
+                className="text-[2rem] sm:text-[2.4rem] lg:text-[1.25rem] xl:text-[1.55rem] 2xl:text-[2rem] leading-[1.1] lg:leading-none tracking-[-0.02em] text-white mb-7 lg:whitespace-nowrap"
                 style={{ fontFamily: "'Syne', system-ui, sans-serif" }}
               >
                 <span
-                  className="es-reveal block font-semibold text-white/75"
+                  className="es-reveal font-semibold text-white/75"
                   style={{ '--d': '70ms' } as React.CSSProperties}
                 >
-                  WE BUILD
+                  WE BUILD{' '}
                 </span>
                 <span
-                  className="es-reveal block font-extrabold"
+                  className="es-reveal font-extrabold"
                   style={{ '--d': '140ms' } as React.CSSProperties}
                 >
-                  WEBSITES, MOBILE APPS
-                </span>
-                <span
-                  className="es-reveal block font-extrabold"
-                  style={{ '--d': '210ms' } as React.CSSProperties}
-                >
-                  &amp; BUSINESS SOFTWARE.
+                  WEBSITES, MOBILE APPS &amp; BUSINESS SOFTWARE.
                 </span>
               </h1>
 
