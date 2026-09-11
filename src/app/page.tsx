@@ -97,7 +97,7 @@ export default function Home() {
                 className="text-[2.2rem] sm:text-[2.8rem] lg:text-[3.2rem] leading-[1.05] font-extrabold tracking-tight text-white mb-6"
                 style={{ fontFamily: "'Syne', system-ui, sans-serif" }}
               >
-                We build<br />websites, mobile apps<br />&amp; business software.
+                WE BUILD<br />WEBSITES, MOBILE APPS<br />&amp; BUSINESS SOFTWARE.
               </h1>
 
               <div className="flex flex-wrap items-center gap-3">
