@@ -88,28 +88,50 @@ export default function Home() {
           <div className="relative z-10 flex items-center min-h-[92vh] pt-14 px-6 sm:px-12 lg:px-16 lg:justify-center">
             <div className="max-w-md lg:text-center">
               <div className="flex items-start gap-3 mb-6 lg:justify-center">
-                <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-white/50">
+                <span
+                  className="es-reveal text-[11px] font-bold tracking-[0.2em] uppercase text-white/50"
+                  style={{ '--d': '0ms' } as React.CSSProperties}
+                >
                   Ecstasy Technologies
                 </span>
               </div>
 
               <h1
-                className="text-[2.2rem] sm:text-[2.8rem] lg:text-[3.2rem] leading-[1.05] font-extrabold tracking-tight text-white mb-6"
+                className="text-[2.2rem] sm:text-[2.8rem] lg:text-[3.4rem] leading-[0.95] tracking-[-0.02em] text-white mb-7"
                 style={{ fontFamily: "'Syne', system-ui, sans-serif" }}
               >
-                WE BUILD<br />WEBSITES, MOBILE APPS<br />&amp; BUSINESS SOFTWARE.
+                <span
+                  className="es-reveal block font-semibold text-white/75"
+                  style={{ '--d': '70ms' } as React.CSSProperties}
+                >
+                  WE BUILD
+                </span>
+                <span
+                  className="es-reveal block font-extrabold"
+                  style={{ '--d': '140ms' } as React.CSSProperties}
+                >
+                  WEBSITES, MOBILE APPS
+                </span>
+                <span
+                  className="es-reveal block font-extrabold"
+                  style={{ '--d': '210ms' } as React.CSSProperties}
+                >
+                  &amp; BUSINESS SOFTWARE.
+                </span>
               </h1>
 
               <div className="flex flex-wrap items-center gap-3 lg:justify-center">
                 <Link
                   href="/contact"
-                  className="btn-press inline-flex items-center justify-center rounded-md bg-white text-neutral-900 text-[13px] font-semibold px-6 py-3.5 hover:bg-neutral-200 transition-colors"
+                  className="es-reveal btn-press inline-flex items-center justify-center rounded-md bg-white text-neutral-900 text-[13px] font-semibold px-6 py-3.5 hover:bg-neutral-200 transition-colors"
+                  style={{ '--d': '280ms' } as React.CSSProperties}
                 >
                   Start a Project
                 </Link>
                 <Link
                   href="/projects"
-                  className="text-[13px] font-semibold text-white border-b border-white/40 pb-0.5 hover:border-white transition-colors"
+                  className="es-reveal text-[13px] font-semibold text-white border-b border-white/40 pb-0.5 hover:border-white transition-colors"
+                  style={{ '--d': '320ms' } as React.CSSProperties}
                 >
                   View Our Work
                 </Link>
