@@ -27,7 +27,7 @@ const FEATURED_POST = {
 const PROJECTS = [
   {
     num: '01',
-    src: '/project-images/tagett-1782570849082.png',
+    src: '/project-images/tagett-1782570849082.webp',
     alt: 'Gusty Women Foundation website',
     title: 'Gusty Women Foundation',
     category: 'Website',
@@ -35,7 +35,7 @@ const PROJECTS = [
   },
   {
     num: '02',
-    src: '/project-images/tagett-1782224340328.png',
+    src: '/project-images/tagett-1782224340328.webp',
     alt: 'Glow Healthy skincare web application',
     title: 'Glow Healthy',
     category: 'Web Application',
