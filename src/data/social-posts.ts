@@ -38,28 +38,12 @@ export const socialPosts: SocialPost[] = [
     text: "We build web apps, mobile apps, and business software that actually fit how your team works. Let's talk about your project → ecstasytechnologies.com",
   },
   {
-    id: 'service-web',
-    text: 'From landing pages to full web applications, we design and ship software that looks sharp and holds up in production. #WebDevelopment',
-  },
-  {
-    id: 'service-uiux',
-    text: "Good UI/UX isn't decoration. It's the difference between users staying and users bouncing. That's the bar we design to. #UIUX #ProductDesign",
-  },
-  {
-    id: 'service-mobile',
-    text: 'Need a mobile app that your users actually want to open twice? That is what we do. #MobileApps #SoftwareDevelopment',
-  },
-  {
     id: 'cta-contact',
     text: "Got an idea for a web or mobile product? We'd love to hear it. Reach out and let's scope it together → ecstasytechnologies.com/contact",
   },
   {
     id: 'service-business',
     text: 'Spreadsheets and sticky notes are not a system. If your business is outgrowing them, we build the custom software to replace them. #BusinessSoftware',
-  },
-  {
-    id: 'dev-tip-1',
-    text: 'A good rule for any product: if your team cannot explain what a feature does in one sentence, users will not figure it out either.',
   },
   {
     id: 'why-us-1',
@@ -78,20 +62,12 @@ export const socialPosts: SocialPost[] = [
     text: 'A slow website costs you customers before they even see what you offer. Performance is not optional, it is part of the product. #WebDevelopment',
   },
   {
-    id: 'support-1',
-    text: 'Launch day is not the finish line. We stick around for updates, fixes, and the next feature, not just the first version.',
-  },
-  {
     id: 'security-1',
     text: 'Custom software should not mean cutting corners on security. We build with that in mind from day one, not as an afterthought. #SoftwareDevelopment',
   },
   {
     id: 'scalability-1',
     text: 'Built for 100 users today does not mean built for 10,000 tomorrow. We design software that can grow with your business.',
-  },
-  {
-    id: 'discovery-process',
-    text: 'Before we write a line of code, we spend time understanding your workflow. Good software starts with good questions.',
   },
   {
     id: 'dev-tip-2',
@@ -272,6 +248,33 @@ export const socialPosts: SocialPost[] = [
   {
     id: 'cta-contact-4',
     text: "If your business idea is still just an idea, that is fine. Bring us where you are and we will help map out what building it actually looks like. → ecstasytechnologies.com/contact",
+  },
+  {
+    id: 'project-54-kings-towers-hotel',
+    text: 'Kings Towers Hotel sits in Ahinsan, Kumasi, with a serene, scenic setting for guests. We built the website to match that. #WebDevelopment',
+    image: '/project-images/tagett-1793000000101.webp',
+    instagramUnsafeAspectRatio: true,
+  },
+  {
+    id: 'project-51-thrive-edu',
+    text: 'Thrive EDU is an international education NGO helping schools and communities build the systems that make quality learning stick. We built their web application.',
+    image: '/project-images/tagett-1793000000102.webp',
+  },
+  {
+    id: 'dev-tip-6',
+    text: 'A form with twelve fields will get fewer submissions than one with four. If you are not using the data, do not ask for it. #UIUX',
+  },
+  {
+    id: 'service-business-2',
+    text: 'Manual processes do not scale, they just get more painful. If your team is duct-taping workflows together, custom software is usually cheaper than the workaround. #BusinessSoftware',
+  },
+  {
+    id: 'why-us-5',
+    text: 'A lot of software agencies disappear after launch. We do not. Ongoing support is part of how we build, not an add-on you have to negotiate for.',
+  },
+  {
+    id: 'social-proof-2',
+    text: 'Hotels, schools, NGOs, pharmacies, construction firms. The businesses we build for do not look alike, but the software we deliver all shares one thing: it gets used.',
   },
 ];
 
