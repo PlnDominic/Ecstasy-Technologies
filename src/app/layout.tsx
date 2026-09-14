@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/context/ThemeContext'
 import CookieConsent from '@/components/CookieConsent'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
+import MetaPixel from '@/components/MetaPixel'
 
 // Note: Dynamic imports might be needed if we run into issues with server components
 // const Navigation = dynamic(() => import('@/components/Navigation'), { ssr: false })
@@ -231,6 +232,9 @@ export default function RootLayout({
       <body className={inter.className}>
         {/* Google Analytics — only loads after the visitor accepts cookies */}
         <GoogleAnalytics />
+
+        {/* Meta (Facebook) Pixel — only loads after the visitor accepts cookies */}
+        <MetaPixel />
 
         <ThemeProvider>
           {children}
