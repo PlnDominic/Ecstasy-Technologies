@@ -38,40 +38,12 @@ export const socialPosts: SocialPost[] = [
     text: "We build web apps, mobile apps, and business software that actually fit how your team works. Let's talk about your project → ecstasytechnologies.com",
   },
   {
-    id: 'cta-contact',
-    text: "Got an idea for a web or mobile product? We'd love to hear it. Reach out and let's scope it together → ecstasytechnologies.com/contact",
-  },
-  {
     id: 'service-business',
     text: 'Spreadsheets and sticky notes are not a system. If your business is outgrowing them, we build the custom software to replace them. #BusinessSoftware',
   },
   {
-    id: 'why-us-1',
-    text: 'We are not a factory that ships templates. Every project starts with understanding how your business actually runs, then we build around that.',
-  },
-  {
-    id: 'service-mobile-2',
-    text: 'Your customers are on their phones more than your website. If your business does not have a mobile app yet, that is worth a conversation. #MobileApps',
-  },
-  {
-    id: 'service-uiux-2',
-    text: 'Great design is not about making things pretty. It is about removing every extra click between a user and what they came to do. #UIUX',
-  },
-  {
     id: 'web-performance',
     text: 'A slow website costs you customers before they even see what you offer. Performance is not optional, it is part of the product. #WebDevelopment',
-  },
-  {
-    id: 'security-1',
-    text: 'Custom software should not mean cutting corners on security. We build with that in mind from day one, not as an afterthought. #SoftwareDevelopment',
-  },
-  {
-    id: 'scalability-1',
-    text: 'Built for 100 users today does not mean built for 10,000 tomorrow. We design software that can grow with your business.',
-  },
-  {
-    id: 'dev-tip-2',
-    text: 'If a bug only shows up in production, that is not bad luck, that is a gap in your testing. We treat both as part of the build. #WebDevelopment',
   },
   {
     id: 'cta-contact-2',
@@ -275,6 +247,40 @@ export const socialPosts: SocialPost[] = [
   {
     id: 'social-proof-2',
     text: 'Hotels, schools, NGOs, pharmacies, construction firms. The businesses we build for do not look alike, but the software we deliver all shares one thing: it gets used.',
+  },
+  {
+    id: 'project-6-emson-hotel',
+    text: 'For Emson Hotel we built an elegant website with room bookings, an availability checker, and event planning services, all in one place. #WebDevelopment',
+    image: '/Emson hotel website.png',
+    instagramUnsafeAspectRatio: true,
+  },
+  {
+    id: 'project-13-nevrol-ventures',
+    text: 'A professional business website for Nevrol Ventures: company overview, services, portfolio, and inquiry forms, built with a modern UI. #WebDevelopment',
+    image: '/Nevrol Ventures.png',
+    instagramUnsafeAspectRatio: true,
+  },
+  {
+    id: 'project-21-persis-luxury-beauty',
+    text: 'For Persis Luxury Beauty World we built a high-end site to match the brand: a full product catalog, collections and lookbooks, and an online shopping experience.',
+    image: '/Persis Luxury Beauty World.png',
+    instagramUnsafeAspectRatio: true,
+  },
+  {
+    id: 'dev-tip-7',
+    text: 'Every extra step in a checkout or signup flow loses you people. Count the steps in yours, then ask which ones you can cut. #UIUX',
+  },
+  {
+    id: 'service-web-3',
+    text: 'A website that only works well on desktop is only half a website now. We build mobile-first, not mobile-fixed-later. #WebDevelopment',
+  },
+  {
+    id: 'why-us-6',
+    text: 'We ask more questions before we write code than most agencies ask the whole project. It is why fewer things need to be rebuilt later.',
+  },
+  {
+    id: 'cta-contact-5',
+    text: "Have a rough idea but no technical plan yet? That is normal. We help turn rough ideas into something buildable. → ecstasytechnologies.com/contact",
   },
 ];
 
