@@ -39,7 +39,7 @@ This document outlines all the technical SEO improvements implemented for Ecstas
   - New: Peravic Lodge
 - **About page**: 5 team member images
   - Core Team: Dominic Kudom, Parvathi Mackay, Joseph Atanga
-  - Sales Team: Aishetu Ahmed, John Opare, Welbeck Kwasi Morgah
+  - Marketing Team: Aishetu Ahmed, John Opare, Welbeck Kwasi Morgah
 - **Homepage**: Logo and brand assets
 
 ### Benefits:

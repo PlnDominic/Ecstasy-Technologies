@@ -255,11 +255,11 @@ export default function About() {
             </div>
           </div>
 
-          {/* ── Sales team ── */}
+          {/* ── Marketing team ── */}
           <div className="ip-section">
             <div style={{ marginBottom: '2rem' }}>
               <hr className="es-rule" />
-              <span className="es-section-label">SALES TEAM</span>
+              <span className="es-section-label">MARKETING TEAM</span>
             </div>
             <div
               style={{
