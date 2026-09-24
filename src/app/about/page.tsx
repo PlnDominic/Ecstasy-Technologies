@@ -29,6 +29,12 @@ const LEADERSHIP = [
     src: '/Parvathi.jpeg',
     bio: 'Parvathi specialises in interface design and user experience, crafting intuitive digital experiences that balance beauty with function.',
   },
+  {
+    name: 'Joseph Atanga',
+    role: 'Junior Developer',
+    src: '/joseph-atanga.jpg',
+    bio: 'Joseph builds and maintains features across our web and mobile projects, turning designs into reliable, well-tested code.',
+  },
 ];
 
 const SALES = [
@@ -200,11 +206,11 @@ export default function About() {
             </div>
           </div>
 
-          {/* ── Leadership team ── */}
+          {/* ── Core team ── */}
           <div className="ip-section">
             <div style={{ marginBottom: '2rem' }}>
               <hr className="es-rule" />
-              <span className="es-section-label">LEADERSHIP</span>
+              <span className="es-section-label">CORE TEAM</span>
             </div>
             <div
               style={{

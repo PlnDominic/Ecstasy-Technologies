@@ -38,7 +38,7 @@ This document outlines all the technical SEO improvements implemented for Ecstas
   - Lavimac Royal Hotel, Dynamic Shipping, Obotan Credit Union, etc.
   - New: Peravic Lodge
 - **About page**: 5 team member images
-  - Leadership: Dominic Kudom, Parvathi Mackay
+  - Core Team: Dominic Kudom, Parvathi Mackay, Joseph Atanga
   - Sales Team: Aishetu Ahmed, John Opare, Welbeck Kwasi Morgah
 - **Homepage**: Logo and brand assets
 
