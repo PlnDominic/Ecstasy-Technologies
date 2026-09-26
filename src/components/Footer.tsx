@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import PreferredSourceButton from '@/components/PreferredSourceButton';
 
 const linkStyle = {
   fontSize: '12px',
@@ -40,6 +41,7 @@ export default function Footer() {
         <Link href="/terms-of-service" style={linkStyle}>
           Terms of Service
         </Link>
+        <PreferredSourceButton />
       </div>
     </footer>
   );
