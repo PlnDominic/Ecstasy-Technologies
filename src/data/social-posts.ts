@@ -37,18 +37,6 @@ export const socialPosts: SocialPost[] = [
     id: 'intro-1',
     text: "We build web apps, mobile apps, and business software that actually fit how your team works. Let's talk about your project → ecstasytechnologies.com",
   },
-  {
-    id: 'service-business',
-    text: 'Spreadsheets and sticky notes are not a system. If your business is outgrowing them, we build the custom software to replace them. #BusinessSoftware',
-  },
-  {
-    id: 'web-performance',
-    text: 'A slow website costs you customers before they even see what you offer. Performance is not optional, it is part of the product. #WebDevelopment',
-  },
-  {
-    id: 'cta-contact-2',
-    text: 'Not sure if your idea needs a website, an app, or both? Send us the details and we will help you figure out the right build. → ecstasytechnologies.com/contact',
-  },
 
   // ── Project highlights ──
   // Real work from data/projects.json, paired with the project's actual
@@ -133,22 +121,6 @@ export const socialPosts: SocialPost[] = [
     text: 'For Autosphere Imports, a Ghana-based car dealership, we built a vehicle catalogue and listings site with a clean enquiry system and a design built around the brand.',
     image: '/project-images/tagett-1782570881710.webp',
     instagramUnsafeAspectRatio: true,
-  },
-  {
-    id: 'dev-tip-3',
-    text: "The best software feature is often the one users never notice, because it just works. That is the standard we build to, not the one that just demos well.",
-  },
-  {
-    id: 'why-us-2',
-    text: 'We are a small team, which means the person scoping your project is the same one who ships it. No handoffs, no lost context.',
-  },
-  {
-    id: 'service-web-2',
-    text: 'A website is not done at launch. It should keep earning its place: fast, findable, and easy to update as your business changes. #WebDevelopment',
-  },
-  {
-    id: 'cta-contact-3',
-    text: "Tell us what is slowing your business down, whether it is a manual process, an outdated site, or no system at all, and we will help you fix it. → ecstasytechnologies.com/contact",
   },
   {
     id: 'project-53-cassvo',
@@ -281,6 +253,40 @@ export const socialPosts: SocialPost[] = [
   {
     id: 'cta-contact-5',
     text: "Have a rough idea but no technical plan yet? That is normal. We help turn rough ideas into something buildable. → ecstasytechnologies.com/contact",
+  },
+  {
+    id: 'project-8-hotel-management-system',
+    text: 'A comprehensive hotel management system we built: reservations, room allocation, housekeeping, billing, and staff management, all in one platform. #BusinessSoftware',
+    image: '/Hotel Management System Software Web App.png',
+    instagramUnsafeAspectRatio: true,
+  },
+  {
+    id: 'project-14-jokran-hotel',
+    text: 'For Jokran Hotel we built an elegant website with online booking, a room gallery, amenities showcase, and guest services information. #WebDevelopment',
+    image: '/Jokran Hotel.png',
+    instagramUnsafeAspectRatio: true,
+  },
+  {
+    id: 'project-22-royal-home-comfort',
+    text: 'Royal Home Comfort needed a site that covers both property listings and their home comfort services. We built one with a client inquiry system built in.',
+    image: '/Royal Home Comfort.png',
+    instagramUnsafeAspectRatio: true,
+  },
+  {
+    id: 'dev-tip-8',
+    text: 'If your team keeps asking "what does this button do," the button is the bug, not the users. #UIUX',
+  },
+  {
+    id: 'service-mobile-4',
+    text: 'A mobile app is not just a smaller website. It has its own patterns, its own constraints, and its own expectations. We design for the platform, not around it. #MobileApps',
+  },
+  {
+    id: 'why-us-7',
+    text: 'We keep a small client list on purpose. Fewer projects at once means each one gets more attention, not less.',
+  },
+  {
+    id: 'seasonal-year-end-review',
+    text: 'End of year is a good time to look at what slowed your team down in the past twelve months. If the answer involves your software, let us know what needs fixing.',
   },
 ];
 
