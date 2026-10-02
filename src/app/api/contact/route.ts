@@ -107,6 +107,10 @@ export async function POST(request: Request) {
   const message = payload.message!.trim();
   const campaign =
     payload.campaign && Object.keys(payload.campaign).length > 0 ? payload.campaign : null;
+  // Ref code of the social post that brought this visitor (from Tagett's
+  // tracked links). Shown in the subject so the enquiry can be matched to the
+  // post at a glance; anything not shaped like a code is ignored.
+  const postRef = /^[A-Za-z0-9-]{2,12}$/.test(campaign?.ref ?? '') ? campaign!.ref : null;
 
   const toEmail = process.env.CONTACT_TO_EMAIL?.trim() || 'support@ecstasytechnologies.com';
   const fromEmail = process.env.CONTACT_FROM_EMAIL?.trim() || process.env.SMTP_USER?.trim();
@@ -116,6 +120,7 @@ export async function POST(request: Request) {
     `Email: ${email}`,
     `Company: ${company ?? '—'}`,
     `Service: ${serviceLabel ?? '—'}`,
+    ...(postRef ? [`From post: Ref ${postRef}`] : []),
     '',
     'Message:',
     message,
@@ -129,6 +134,7 @@ export async function POST(request: Request) {
     ['Email', email],
     ['Company', company ?? '—'],
     ['Service', serviceLabel ?? '—'],
+    ...(postRef ? [['From post', `Ref ${postRef}`]] : []),
   ]
     .map(
       ([label, value]) =>
@@ -160,7 +166,7 @@ export async function POST(request: Request) {
       from: `"Ecstasy Technologies Website" <${fromEmail}>`,
       to: toEmail,
       replyTo: `"${name}" <${email}>`,
-      subject: `New project enquiry from ${name}`,
+      subject: `New project enquiry from ${name}${postRef ? ` (Ref ${postRef})` : ''}`,
       text: textLines.join('\n'),
       html,
     });
