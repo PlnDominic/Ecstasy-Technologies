@@ -22,6 +22,12 @@ type UtmParams = {
   utm_campaign?: string;
   utm_term?: string;
   utm_content?: string;
+  /**
+   * Post reference from Tagett's social posts (…/contact?ref=TEGP). Captured
+   * and sent with the enquiry so it can be matched to the post that brought
+   * the visitor, but never appended to outbound links like the utm_* keys.
+   */
+  ref?: string;
 };
 
 const UTOM_KEY = 'ecstasy_utm';
@@ -29,7 +35,7 @@ const UTOM_KEY = 'ecstasy_utm';
 function readFromUrl(): UtmParams {
   const params = new URLSearchParams(window.location.search);
   const out: UtmParams = {};
-  for (const key of ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']) {
+  for (const key of ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'ref']) {
     const v = params.get(key);
     if (v) out[key as keyof UtmParams] = v;
   }
