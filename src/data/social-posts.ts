@@ -144,22 +144,6 @@ export const socialPosts: SocialPost[] = [
     image: '/Clems Akinaabi Company Limited.png',
   },
   {
-    id: 'dev-tip-4',
-    text: 'A feature request is not a spec. Part of our job is turning "we need this" into something that actually fits how your team works day to day.',
-  },
-  {
-    id: 'service-mobile-3',
-    text: 'From concept to app store, we handle the full build: design, development, testing, and launch. #MobileApps #SoftwareDevelopment',
-  },
-  {
-    id: 'why-us-3',
-    text: 'We have built for hotels, schools, NGOs, and retailers. Different industries, same approach: understand the workflow first, then build the software around it.',
-  },
-  {
-    id: 'seasonal-planning-ahead',
-    text: 'The businesses that plan their software needs early are the ones that are not scrambling later. If something on your roadmap needs a custom build, start the conversation now.',
-  },
-  {
     id: 'project-1-lavimac-royal-hotel',
     text: 'For Lavimac Royal Hotel we built a luxury hotel website with online booking, a high-resolution room gallery, and integrated payment processing. #WebDevelopment',
     image: '/Lavimac royal hotel website.png',
@@ -176,18 +160,6 @@ export const socialPosts: SocialPost[] = [
     text: 'For Solani Construction Limited we built a professional website showcasing their services, project portfolio, and team, with inquiry forms built right in. #WebDevelopment',
     image: '/Solani Construction.png',
     instagramUnsafeAspectRatio: true,
-  },
-  {
-    id: 'dev-tip-5',
-    text: 'Fast is a feature. A page that loads in two seconds keeps more visitors than one that loads in eight, no matter how good the design is. #WebDevelopment',
-  },
-  {
-    id: 'service-uiux-3',
-    text: 'A confusing app is still an app. A usable one is what people actually keep. That gap is where good UI/UX design earns its keep. #UIUX',
-  },
-  {
-    id: 'why-us-4',
-    text: 'We are not the cheapest option and we are not trying to be. We build software that holds up, and that shows in how few emergency fixes our clients need.',
   },
   {
     id: 'cta-contact-4',
@@ -287,6 +259,40 @@ export const socialPosts: SocialPost[] = [
   {
     id: 'seasonal-year-end-review',
     text: 'End of year is a good time to look at what slowed your team down in the past twelve months. If the answer involves your software, let us know what needs fixing.',
+  },
+  {
+    id: 'project-9-aaron-freeman-portfolio',
+    text: 'For Aaron Freeman, an urban and environmental planner, we built a portfolio to showcase his sustainable city planning projects and community leadership work.',
+    image: '/Aaron Freeman.png',
+    instagramUnsafeAspectRatio: true,
+  },
+  {
+    id: 'project-15-peravic-lodge',
+    text: 'For Peravic Lodge we built a welcoming website with an accommodations gallery, amenities showcase, and booking information for guests. #WebDevelopment',
+    image: '/Peravic Lodge.png',
+    instagramUnsafeAspectRatio: true,
+  },
+  {
+    id: 'project-20-mankind-foundation',
+    text: 'Mankind Foundation Ghana needed a site that communicates their mission clearly: programs, impact stories, and a real way for people to donate or volunteer.',
+    image: '/Mankind Foundation Ghana.png',
+    instagramUnsafeAspectRatio: true,
+  },
+  {
+    id: 'dev-tip-9',
+    text: 'A dropdown with forty options is not a feature, it is a search bar you forgot to build. #UIUX',
+  },
+  {
+    id: 'why-us-8',
+    text: 'We do not disappear after the invoice. If something breaks six months in, you can still reach the person who built it.',
+  },
+  {
+    id: 'service-business-3',
+    text: 'If your team has three different spreadsheets for one process, that is not a workflow, that is a warning sign. #BusinessSoftware',
+  },
+  {
+    id: 'cta-contact-6',
+    text: "Not sure where to start? Tell us what your business does and what is slow about it right now. We will take it from there. → ecstasytechnologies.com/contact",
   },
 ];
 
