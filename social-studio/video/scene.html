@@ -1,0 +1,365 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+
+:root { --cream:#FFFFFF; --ink:#1D1D1F; --muted:#86868B; --blue:#0071E3; --navy:#0E1A4A; --line:rgba(0,0,0,0); }
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { overflow:hidden; background:var(--cream); }
+#stage { position:relative; overflow:hidden; background:var(--cream); font-family:'Inter',sans-serif; color:var(--ink); }
+#grid-bg { position:absolute; inset:0;
+  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 60px 60px; }
+.abs { position:absolute; left:0; top:0; transform-origin:0 0; }
+
+/* chrome */
+#brand { font-family:'Inter'; font-weight:700; font-size:26px; letter-spacing:-.02em; }
+#brand i { font-style:normal; color:var(--blue); }
+#counter { font-family:'Inter'; font-weight:500; font-size:22px; letter-spacing:0; color:var(--muted); }
+#counter b { color:var(--ink); font-weight:700; }
+#foot { font-family:'Inter'; font-weight:500; font-size:22px; letter-spacing:0; color:var(--muted); }
+
+/* headline */
+#webuild { font-family:'Inter'; font-weight:700; letter-spacing:-.035em; line-height:1; white-space:nowrap; }
+.word-mask { overflow:hidden; }
+.word { font-family:'Inter'; font-weight:700; line-height:1.0; letter-spacing:-.045em; padding-bottom:.06em; white-space:nowrap; }
+.word .dot { color:var(--blue); }
+
+/* caption */
+.caption { display:flex; align-items:center; gap:14px; font-weight:600; letter-spacing:.02em; white-space:nowrap; }
+.caption .pip { width:10px; height:10px; border-radius:50%; background:var(--blue); }
+.caption span.sub { color:var(--muted); font-weight:500; }
+
+/* windows */
+.win { border-radius:14px; overflow:hidden; background:#fff; box-shadow: 0 40px 90px -30px rgba(0,0,0,.28), 0 0 0 1px rgba(0,0,0,.06); }
+.win .bar { height:40px; background:#F2F2F4; display:flex; align-items:center; gap:8px; padding:0 16px; position:relative; }
+.win .bar i { width:12px; height:12px; border-radius:50%; background:#D9D9DE; display:block; }
+.win .bar .url { position:absolute; left:50%; transform:translateX(-50%); background:#E8E8ED; border-radius:8px; padding:5px 18px; font-size:15px; color:var(--muted); font-weight:500; white-space:nowrap; }
+.win .view { position:relative; overflow:hidden; }
+.win .view img { position:absolute; left:0; top:0; width:100%; display:block; }
+.phone { border-radius:44px; overflow:hidden; box-shadow: 0 30px 70px -18px rgba(20,17,14,.45); background:#111; }
+.phone img { width:100%; height:100%; display:block; object-fit:cover; }
+
+/* grid beat */
+.tile { border-radius:10px; overflow:hidden; box-shadow:0 10px 30px -12px rgba(20,17,14,.35); background:#ddd; }
+.tile img { width:100%; height:100%; object-fit:cover; display:block; }
+#count-card { background:var(--ink); color:var(--cream); border-radius:22px; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+#count-card .n { font-family:'Inter'; font-weight:700; line-height:.9; letter-spacing:-.05em; }
+#count-card .n em { font-style:normal; color:#2997FF; }
+#count-card .l { font-family:'Inter'; font-weight:600; letter-spacing:-.02em; margin-top:16px; }
+
+/* end card */
+#logo { mix-blend-mode:multiply; }
+#cta { background:var(--blue); color:#fff; border-radius:999px; font-family:'Inter'; font-weight:600; letter-spacing:-.01em; display:flex; align-items:center; justify-content:center; gap:16px; white-space:nowrap; }
+#cta .arr { color:#fff; }
+#url { font-family:'Inter'; font-weight:500; letter-spacing:-.01em; color:var(--ink); white-space:nowrap; text-align:center; }
+#tag { font-family:'Inter'; font-weight:500; color:var(--muted); white-space:nowrap; text-align:center; }
+#wipe { background:var(--ink); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="grid-bg"></div>
+
+  <!-- beat 1: websites -->
+  <div class="abs win" id="w-back2"><div class="bar"><i></i><i></i><i></i><div class="url">gustywomenfoundation.org</div></div><div class="view"><img src="assets/w-gusty.jpg"></div></div>
+  <div class="abs win" id="w-back1"><div class="bar"><i></i><i></i><i></i><div class="url">persisluxury.com</div></div><div class="view"><img src="assets/w-persis.jpg"></div></div>
+  <div class="abs win" id="w-front"><div class="bar"><i></i><i></i><i></i><div class="url">kingstowers-hotel.com</div></div><div class="view"><img id="kings" src="assets/w-kings.jpg"></div></div>
+
+  <!-- beat 2: business software -->
+  <div class="abs win" id="b-back"><div class="bar"><i></i><i></i><i></i><div class="url">clems-akinaabi.vercel.app</div></div><div class="view"><img id="clems" src="assets/b-clems.jpg"></div></div>
+  <div class="abs win" id="b-front"><div class="bar"><i></i><i></i><i></i></div><div class="view"><img id="permit" src="assets/b-permit.jpg"></div></div>
+
+  <!-- beat 3: mobile -->
+  <div class="abs phone" id="p1"><img src="assets/phone-1.png"></div>
+  <div class="abs phone" id="p3"><img src="assets/phone-5.png"></div>
+  <div class="abs phone" id="p2"><img src="assets/phone-2.png"></div>
+
+  <!-- beat 4: grid -->
+  <div id="tiles"></div>
+  <div class="abs" id="count-card"><div class="n">38<em>+</em></div><div class="l">Projects. One studio.</div></div>
+
+  <!-- headline -->
+  <div class="abs" id="webuild">We build</div>
+  <div class="abs word-mask" id="wm"></div>
+
+  <!-- captions -->
+  <div class="abs caption" id="cap1"><div class="pip"></div>Kings Towers Hotel <span class="sub">· Kumasi</span></div>
+  <div class="abs caption" id="cap2"><div class="pip"></div>Development permit system <span class="sub">· GIS mapping</span></div>
+  <div class="abs caption" id="cap3"><div class="pip"></div>Cassvo <span class="sub">· live on the App Store</span></div>
+
+  <!-- chrome -->
+  <div class="abs" id="brand">Ecstasy Technologies</div>
+  <div class="abs" id="counter"><b>01</b> / 03</div>
+  <div class="abs" id="foot">ecstasytechnologies.com</div>
+
+  <!-- end card -->
+  <div class="abs" id="wipe"></div>
+  <img class="abs" id="logo" src="assets/logo.png">
+  <div class="abs" id="tag">Websites · Mobile apps · Business software</div>
+  <div class="abs" id="cta">Start your project <span class="arr">→</span></div>
+  <div class="abs" id="url">ecstasytechnologies.com</div>
+</div>
+
+<script>
+const FMT = new URLSearchParams(location.search).get('fmt') || 'v';
+const V = FMT === 'v';
+const W = V ? 1080 : 1920, H = V ? 1920 : 1080;
+const stage = document.getElementById('stage');
+stage.style.width = W + 'px'; stage.style.height = H + 'px';
+document.body.style.width = W + 'px'; document.body.style.height = H + 'px';
+const $ = id => document.getElementById(id);
+
+// ---------- motion primitives (closed form, deterministic) ----------
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, k) => a + (b - a) * k;
+function spring(t, w = 16, z = 0.55) {            // step response of damped spring
+  if (t <= 0) return 0;
+  if (z >= 1) return 1 - Math.exp(-w * t) * (1 + w * t);
+  const wd = w * Math.sqrt(1 - z * z);
+  return 1 - Math.exp(-z * w * t) * (Math.cos(wd * t) + (z * w / wd) * Math.sin(wd * t));
+}
+const TYPE  = t => spring(t, 18, 0.62);   // snappy, slight overshoot
+const HEAVY = t => spring(t, 9, 1);       // device frames: no overshoot
+const easeIn = t => { t = clamp(t); return t * t * t; };
+const easeInOut = t => { t = clamp(t); return t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2; };
+function set(el, { x = 0, y = 0, s = 1, r = 0, o = 1 }) {
+  el.style.transform = `translate(${x}px,${y}px) rotate(${r}deg) scale(${s})`;
+  el.style.opacity = o;
+}
+
+// ---------- beat timing (single source for picture AND sound) ----------
+const T = { hook: 0, b1: 2.2, b2: 5.4, b3: 8.6, grid: 11.2, end: 12.8, out: 15.0 };
+const EVENTS = [];   // filled below, consumed by audio synth
+
+// ---------- layout (composed per format, not cropped) ----------
+const L = V ? {
+  pad: 80,
+  label: { x: 80, y: 186, fs: 64 },
+  word:  { x: 80, y: 262, fs: 150, h: 300 },
+  dev:   { cx: 540, top: 640 },
+  win:   { w: 920, h: 860 }, back: { w: 820, h: 512 },
+  bwin:  { w: 940, h: 520 }, bback: { w: 800, h: 466 },
+  phone: { w: 330, h: 698 },
+  cap:   { x: 80, y: 1660, fs: 34 },
+  grid:  { cols: 3, tw: 300, th: 188, gap: 26 },
+  card:  { w: 760, h: 520, n: 240, l: 44 },
+} : {
+  pad: 100,
+  label: { x: 110, y: 318, fs: 56 },
+  word:  { x: 110, y: 390, fs: 130, h: 270 },
+  dev:   { cx: 1410, top: 150 },
+  win:   { w: 900, h: 640 }, back: { w: 760, h: 474 },
+  bwin:  { w: 860, h: 476 }, bback: { w: 700, h: 408 },
+  phone: { w: 270, h: 571 },
+  cap:   { x: 110, y: 700, fs: 32 },
+  grid:  { cols: 5, tw: 340, th: 213, gap: 24 },
+  card:  { w: 760, h: 440, n: 210, l: 40 },
+};
+
+// size elements
+function size(el, w, h) { el.style.width = w + 'px'; el.style.height = h + 'px'; }
+function sizeWin(id, w, h) { size($(id), w, h); $(id).querySelector('.view').style.height = (h - 40) + 'px'; }
+sizeWin('w-front', L.win.w, L.win.h);
+sizeWin('w-back1', L.back.w, L.back.h);
+sizeWin('w-back2', L.back.w, L.back.h);
+sizeWin('b-front', L.bwin.w, L.bwin.h);
+sizeWin('b-back', L.bback.w, L.bback.h);
+['p1','p2','p3'].forEach(id => size($(id), L.phone.w, L.phone.h));
+$('permit').style.width = 'auto'; $('permit').style.height = '100%';
+
+$('webuild').style.fontSize = L.label.fs + 'px';
+['cap1','cap2','cap3'].forEach(id => $(id).style.fontSize = L.cap.fs + 'px');
+
+// words (two-line where needed so nothing is cropped)
+const WORDS = [
+  'Websites<span class="dot">.</span>',
+  'Business<br>software<span class="dot">.</span>',
+  'Mobile apps<span class="dot">.</span>',
+];
+const wm = $('wm');
+size(wm, W - L.word.x - (V ? 40 : 0), L.word.h);
+wm.style.width = (V ? W - 120 : 880) + 'px';
+const wordEls = WORDS.map(html => {
+  const d = document.createElement('div');
+  d.className = 'abs word'; d.innerHTML = html; d.style.fontSize = L.word.fs + 'px';
+  wm.appendChild(d); return d;
+});
+
+// grid tiles
+const tilesBox = $('tiles');
+const NG = 28;
+const G = L.grid;
+const rows = V ? 9 : 5;
+const tiles = [];
+const gw = G.cols * G.tw + (G.cols - 1) * G.gap, gh = rows * G.th + (rows - 1) * G.gap;
+const gx0 = (W - gw) / 2, gy0 = (H - gh) / 2;
+for (let r = 0; r < rows; r++) for (let c = 0; c < G.cols; c++) {
+  const i = tiles.length;
+  const d = document.createElement('div');
+  d.className = 'abs tile';
+  d.innerHTML = `<img src="assets/g${String(i % NG).padStart(2,'0')}.jpg">`;
+  size(d, G.tw, G.th); tilesBox.appendChild(d);
+  tiles.push({ el: d, x: gx0 + c * (G.tw + G.gap), y: gy0 + r * (G.th + G.gap),
+               delay: ((r * 7 + c * 3) % 11) * 0.045 });
+}
+size($('count-card'), L.card.w, L.card.h);
+$('count-card').querySelector('.n').style.fontSize = L.card.n + 'px';
+$('count-card').querySelector('.l').style.fontSize = L.card.l + 'px';
+
+// end card sizing
+const logoW = V ? 860 : 900;
+$('logo').style.width = logoW + 'px';
+$('cta').style.fontSize = (V ? 46 : 40) + 'px';
+size($('cta'), V ? 640 : 560, V ? 120 : 104);
+$('url').style.fontSize = (V ? 32 : 28) + 'px';
+$('tag').style.fontSize = (V ? 32 : 28) + 'px';
+size($('wipe'), W, H);
+
+// ---------- events for sound ----------
+EVENTS.push({ t: 0.15, k: 'thump' }, { t: 0.40, k: 'thump' });
+EVENTS.push({ t: 1.85, k: 'whoosh' });
+[T.b1, T.b2, T.b3].forEach((t, i) => { EVENTS.push({ t: t - 0.12, k: 'whoosh' }); EVENTS.push({ t: t + 0.05, k: 'slam' }); });
+tiles.forEach(tl => { if (tl.delay < 0.5) EVENTS.push({ t: T.grid + tl.delay, k: 'tick' }); });
+EVENTS.push({ t: T.grid + 0.35, k: 'slam' });
+EVENTS.push({ t: T.end - 0.15, k: 'riser_end' });
+EVENTS.push({ t: T.end + 0.25, k: 'chord' });
+EVENTS.push({ t: T.end + 0.9, k: 'tick' });
+
+// ---------- seek(t): paints any moment ----------
+function seek(t) {
+  // chrome
+  const chromeIn = HEAVY(t - 0.05);
+  set($('brand'), { x: L.pad - 0 + (V ? 0 : 10), y: V ? 72 : 60, o: chromeIn * (t < T.end ? 1 : 0) });
+  const cw = $('counter').offsetWidth;
+  set($('counter'), { x: W - L.pad - cw, y: V ? 76 : 64, o: clamp((t - T.b1) / .3) * (t < T.grid ? 1 : 0) });
+  $('counter').firstChild.textContent = t < T.b2 ? '01' : t < T.b3 ? '02' : '03';
+  const fw = $('foot').offsetWidth;
+  set($('foot'), { x: V ? (W - fw) / 2 : W - L.pad - fw, y: V ? H - 90 : H - 70, o: chromeIn * (t < T.grid ? 1 : 0) });
+
+  // "WE BUILD": huge & centered during hook, settles into label slot
+  const wb = $('webuild');
+  const ww = wb.offsetWidth, wh = wb.offsetHeight;
+  const bigS = BIG_S;
+  const settle = TYPE(t - 1.75);
+  const hx = (W - ww * bigS) / 2, hy = (H - wh * bigS) / 2;
+  const hookIn = TYPE(t - 0.15);
+  const hs = lerp(bigS, 1, settle), hxx = lerp(hx, L.label.x, settle), hyy = lerp(hy, L.label.y, settle);
+  const gridOut = easeIn((t - T.grid) / 0.3);
+  set(wb, { x: hxx, y: hyy + (1 - hookIn) * 80 + gridOut * -40, s: hs, o: clamp(hookIn * 1.4) * (1 - gridOut) });
+  wb.style.color = settle > .5 ? 'var(--muted)' : 'var(--ink)';
+
+  // words swap through a mask
+  set(wm, { x: L.word.x, y: L.word.y, o: 1 - gridOut });
+  const starts = [T.b1, T.b2, T.b3], ends = [T.b2, T.b3, T.grid];
+  wordEls.forEach((el, i) => {
+    const inK = TYPE(t - starts[i]);
+    const outK = easeIn((t - ends[i] + 0.25) / 0.25);
+    const y = (1 - inK) * L.word.h - outK * L.word.h;
+    set(el, { x: 0, y, o: t >= starts[i] - 0.01 && t < ends[i] + 0.01 ? 1 : 0 });
+  });
+
+  // ---- beat 1: websites ----
+  const d = L.dev;
+  const exitK = (b) => easeIn((t - b + 0.32) / 0.32);
+  {
+    const k = HEAVY(t - (T.b1 + 0.05)), out = exitK(T.b2);
+    const fx = d.cx - L.win.w / 2, fy = d.top + (V ? 120 : 110);
+    const off = (1 - k) * (V ? 700 : 700);
+    set($('w-front'), { x: fx - out * W, y: fy + off, o: k > 0 ? 1 : 0 });
+    const k1 = HEAVY(t - (T.b1 + 0.18)), k2 = HEAVY(t - (T.b1 + 0.30));
+    set($('w-back1'), { x: fx + (V ? 130 : 110) - out * W * 1.1, y: fy - (V ? 110 : 130) + (1 - k1) * 700, s: 1, r: 3, o: k1 > 0 ? 0.95 : 0 });
+    set($('w-back2'), { x: fx - (V ? 60 : 70) - out * W * 1.2, y: fy - (V ? 70 : 60) + (1 - k2) * 700, s: 1, r: -4, o: k2 > 0 ? 0.95 : 0 });
+    const img = $('kings');
+    const viewH = L.win.h - 40, imgH = L.win.w * (3500 / 1200);
+    const sc = easeInOut((t - (T.b1 + 0.7)) / 2.3);
+    img.style.transform = `translateY(${-sc * (imgH - viewH) * 0.62}px)`;
+    set($('cap1'), { x: L.cap.x, y: L.cap.y + (1 - TYPE(t - (T.b1 + .45))) * 30, o: clamp((t - (T.b1 + .45)) / .2) * (1 - out) });
+  }
+  // ---- beat 2: business software ----
+  {
+    const k = HEAVY(t - T.b2), out = exitK(T.b3);
+    const enter = (1 - k) * W;
+    const fx = d.cx - L.bwin.w / 2, fy = d.top + (V ? 330 : 230);
+    set($('b-front'), { x: fx + enter - out * W, y: fy, o: t > T.b2 - 0.4 ? 1 : 0 });
+    const k2 = HEAVY(t - (T.b2 + 0.15));
+    set($('b-back'), { x: fx + (V ? 60 : 120) + (1 - k2) * W - out * W * 1.1, y: fy - (V ? 300 : 190), r: 2.5, o: t > T.b2 - 0.4 ? 0.97 : 0 });
+    // slow pan across the permit map
+    const viewH = L.bwin.h - 40, imgW = viewH * (1280 / 588);
+    const p = easeInOut((t - T.b2) / 3.2);
+    const z = lerp(1.0, 1.12, p);
+    $('permit').style.transform = `translateX(${-p * (imgW * z - L.bwin.w)}px) scale(${z})`;
+    $('permit').style.transformOrigin = '0 0';
+    set($('cap2'), { x: L.cap.x, y: L.cap.y + (1 - TYPE(t - (T.b2 + .4))) * 30, o: clamp((t - (T.b2 + .4)) / .2) * (1 - out) });
+  }
+  // ---- beat 3: mobile ----
+  {
+    const out = exitK(T.grid);
+    const P = L.phone, cy = d.top + (V ? 200 : 120);
+    const spread = V ? 300 : 270;
+    [['p1', -1, 0.0, -9], ['p2', 0, 0.12, 0], ['p3', 1, 0.24, 9]].forEach(([id, dir, dl, rot]) => {
+      const k = HEAVY(t - (T.b3 + dl));
+      const x = d.cx - P.w / 2 + dir * spread;
+      const y = cy + (dir === 0 ? -20 : 40) + (1 - k) * (H * 0.75);
+      set($(id), { x: x - out * W * (1 + dl), y, r: rot * k, o: t > T.b3 - 0.05 ? 1 : 0 });
+    });
+    set($('cap3'), { x: L.cap.x, y: L.cap.y + (1 - TYPE(t - (T.b3 + .45))) * 30, o: clamp((t - (T.b3 + .45)) / .2) * (1 - out) });
+  }
+  // ---- beat 4: grid of real projects ----
+  {
+    const gOut = easeIn((t - T.end + 0.05) / 0.35);
+    tiles.forEach(tl => {
+      const k = TYPE(t - (T.grid + tl.delay));
+      set(tl.el, { x: tl.x, y: tl.y + (1 - k) * 60, s: lerp(0.85, 1, k), o: clamp((t - (T.grid + tl.delay)) / 0.12) * (1 - gOut) });
+    });
+    const ck = TYPE(t - (T.grid + 0.3));
+    const cx = (W - L.card.w) / 2, cy = (H - L.card.h) / 2;
+    set($('count-card'), { x: cx, y: cy + (1 - ck) * 50, s: lerp(0.9, 1, ck), o: clamp((t - (T.grid + 0.3)) / 0.12) * (1 - gOut) });
+  }
+  // ---- end card ----
+  {
+    // ink wipe sweeps up then away, revealing cream end card
+    const wIn = easeInOut((t - (T.end - 0.25)) / 0.35), wOut = easeInOut((t - (T.end + 0.1)) / 0.4);
+    set($('wipe'), { x: 0, y: lerp(H, 0, wIn) - wOut * H, o: t > T.end - 0.3 && t < T.end + 0.6 ? 1 : 0 });
+    const lk = TYPE(t - (T.end + 0.25));
+    const lw = logoW, lh = logoW * (340 / 1090);
+    const ly = V ? 620 : 250;
+    set($('logo'), { x: (W - lw) / 2, y: ly + (1 - lk) * 40, s: 1, o: clamp((t - (T.end + 0.25)) / .2) });
+    const tk = TYPE(t - (T.end + 0.55));
+    const tw = $('tag').offsetWidth;
+    set($('tag'), { x: (W - tw) / 2, y: ly + lh + (V ? 60 : 40) + (1 - tk) * 20, o: clamp((t - (T.end + 0.55)) / .2) });
+    const ck = TYPE(t - (T.end + 0.85));
+    const cw2 = parseFloat($('cta').style.width), ch2 = parseFloat($('cta').style.height);
+    set($('cta'), { x: (W - cw2) / 2, y: ly + lh + (V ? 190 : 140), s: lerp(.85, 1, ck), o: clamp((t - (T.end + 0.85)) / .15) });
+    const uw = $('url').offsetWidth;
+    set($('url'), { x: (W - uw) / 2, y: ly + lh + (V ? 360 : 290), o: clamp((t - (T.end + 1.1)) / .25) });
+  }
+}
+
+window.__duration = T.out;
+window.__events = EVENTS;
+window.__seek = seek;
+const WORD_MAX = V ? W - 160 : 660;
+let BIG_S = 3;
+function fit() {
+  let maxH = 0;
+  wordEls.forEach(el => {
+    el.style.fontSize = L.word.fs + 'px';
+    const k = Math.min(1, WORD_MAX / el.offsetWidth);
+    el.style.fontSize = Math.floor(L.word.fs * k) + 'px';
+    maxH = Math.max(maxH, el.offsetHeight);
+  });
+  wm.style.width = WORD_MAX + 40 + 'px';
+  wm.style.height = (maxH + 10) + 'px';
+  L.word.h = maxH + 10;
+  BIG_S = (W * 0.86) / $('webuild').offsetWidth;
+  // keep captions clear of the 16:9 headline block
+  if (!V) L.cap.y = L.word.y + maxH + 50;
+}
+Promise.all([document.fonts.load("700 40px Inter"), document.fonts.load("500 20px Inter")]).then(() => document.fonts.ready).then(() => Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; }))))
+  .then(() => { fit(); seek(0); window.__ready = true; });
+</script>
+</body>
+</html>

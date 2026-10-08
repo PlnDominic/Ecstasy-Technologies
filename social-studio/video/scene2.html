@@ -1,0 +1,433 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+:root { --ink:#1D1D1F; --muted:#86868B; --blue:#0071E3; --grey:#E9E9EB; --hair:#E5E5EA; --green:#34C759; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { overflow:hidden; background:#fff; }
+#stage { position:relative; overflow:hidden; background:#fff; font-family:'Inter',sans-serif; color:var(--ink); }
+.abs { position:absolute; left:0; top:0; transform-origin:0 0; }
+
+/* header */
+#avatar { border-radius:50%; background:#fff; box-shadow:0 0 0 1.5px var(--hair); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+#avatar img { width:78%; mix-blend-mode:multiply; }
+#name { font-weight:600; letter-spacing:-.02em; white-space:nowrap; }
+#sub { font-weight:500; color:var(--muted); white-space:nowrap; }
+.hair { background:var(--hair); }
+#stamp { color:var(--muted); font-weight:500; white-space:nowrap; }
+
+/* thread */
+#viewport { overflow:hidden; }
+#thread { position:absolute; left:0; top:0; width:100%; }
+.item { position:absolute; left:0; top:0; width:100%; }
+.b { display:inline-block; border-radius:1.05em; padding:.5em .8em; line-height:1.25; letter-spacing:-.015em; font-weight:450; max-width:78%; }
+.me { text-align:right; }
+.me .b { background:var(--blue); color:#fff; }
+.them .b { background:var(--grey); color:var(--ink); }
+.b.done { font-weight:700; }
+.b.num { color:var(--blue); font-weight:600; text-decoration:underline; text-underline-offset:.15em; }
+.media { display:inline-block; border-radius:34px; overflow:hidden; background:var(--grey); }
+.media .cap { padding:22px 30px 24px; font-weight:600; letter-spacing:-.015em; white-space:nowrap; }
+.media .cap span { color:var(--muted); font-weight:500; }
+.mview { position:relative; overflow:hidden; background:#fff; }
+.mview img { position:absolute; left:0; top:0; display:block; }
+.phones { background:linear-gradient(180deg,#F5F5F7,#E9E9EB); }
+.link { display:inline-block; border-radius:26px; overflow:hidden; background:var(--grey); }
+.link .t { font-weight:600; letter-spacing:-.015em; white-space:nowrap; }
+.link .d { color:var(--muted); font-weight:500; white-space:nowrap; }
+.link .strip { height:8px; background:var(--blue); }
+
+#typing { border-radius:1.05em; background:var(--grey); display:flex; align-items:center; justify-content:center; gap:.28em; }
+#typing i { width:.34em; height:.34em; border-radius:50%; background:#8E8E93; display:block; }
+
+/* input bar */
+#field { border-radius:999px; box-shadow:0 0 0 2px var(--hair) inset; display:flex; align-items:center; white-space:nowrap; overflow:hidden; letter-spacing:-.015em; }
+#field .ph { color:#C7C7CC; }
+#caret { display:inline-block; width:3px; background:var(--blue); margin-left:2px; vertical-align:middle; }
+#send { border-radius:50%; background:var(--blue); display:flex; align-items:center; justify-content:center; }
+
+/* 16:9 showcase panel */
+.win { border-radius:16px; overflow:hidden; background:#fff; box-shadow:0 40px 90px -30px rgba(0,0,0,.28), 0 0 0 1px rgba(0,0,0,.06); }
+.win .bar { height:40px; background:#F2F2F4; display:flex; align-items:center; gap:8px; padding:0 16px; position:relative; }
+.win .bar i { width:12px; height:12px; border-radius:50%; background:#D9D9DE; display:block; }
+.win .bar .url { position:absolute; left:50%; transform:translateX(-50%); background:#E8E8ED; border-radius:8px; padding:5px 18px; font-size:15px; color:var(--muted); font-weight:500; white-space:nowrap; }
+.win .view { position:relative; overflow:hidden; }
+.win .view img { position:absolute; left:0; top:0; display:block; }
+.phone { border-radius:44px; overflow:hidden; box-shadow:0 30px 70px -18px rgba(0,0,0,.35); }
+.phone img { width:100%; height:100%; display:block; object-fit:cover; }
+.scap { display:flex; align-items:center; gap:12px; font-weight:600; letter-spacing:-.015em; white-space:nowrap; }
+.scap .pip { width:10px; height:10px; border-radius:50%; background:var(--blue); }
+.scap span { color:var(--muted); font-weight:500; }
+
+/* end card */
+#endbg { background:#fff; }
+#e-logo { mix-blend-mode:multiply; }
+#e-head { font-weight:700; letter-spacing:-.045em; white-space:nowrap; text-align:center; line-height:1; }
+#e-head em { font-style:normal; color:var(--blue); }
+#e-num { font-weight:700; letter-spacing:-.03em; white-space:nowrap; text-align:center; font-variant-numeric:tabular-nums; }
+#e-call { background:var(--green); color:#fff; border-radius:999px; display:flex; align-items:center; justify-content:center; gap:.45em; font-weight:600; letter-spacing:-.01em; white-space:nowrap; }
+#e-call svg { fill:#fff; }
+#e-url { color:var(--muted); font-weight:500; white-space:nowrap; text-align:center; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <!-- 16:9 showcase (hidden in 9:16) -->
+  <div id="show">
+    <div class="abs win" id="s-web"><div class="bar"><i></i><i></i><i></i><div class="url">kingstowers-hotel.com</div></div><div class="view"><img id="s-kings" src="assets/w-kings.jpg"></div></div>
+    <div class="abs phone" id="s-p1"><img src="assets/phone-1.png"></div>
+    <div class="abs phone" id="s-p3"><img src="assets/phone-5.png"></div>
+    <div class="abs phone" id="s-p2"><img src="assets/phone-2.png"></div>
+    <div class="abs win" id="s-sw"><div class="bar"><i></i><i></i><i></i></div><div class="view"><img id="s-permit" src="assets/b-permit.jpg"></div></div>
+    <div class="abs scap" id="s-cap1"><div class="pip"></div>Kings Towers Hotel <span>· Kumasi</span></div>
+    <div class="abs scap" id="s-cap2"><div class="pip"></div>Cassvo <span>· live on the App Store</span></div>
+    <div class="abs scap" id="s-cap3"><div class="pip"></div>Development permit system <span>· GIS mapping</span></div>
+    <div class="abs hair" id="vline"></div>
+  </div>
+
+  <!-- chat -->
+  <div class="abs" id="avatar"><img src="assets/globe.png"></div>
+  <div class="abs" id="name">Ecstasy Technologies</div>
+  <div class="abs" id="sub">Websites · Apps · Software</div>
+  <div class="abs hair" id="hline"></div>
+  <div class="abs" id="viewport"><div id="thread"></div><div class="abs" id="typing"><i></i><i></i><i></i></div></div>
+  <div class="abs" id="field"><span id="ftext"></span><span id="caret"></span><span class="ph" id="ph">Message</span></div>
+  <div class="abs" id="send"><svg viewBox="0 0 24 24" width="55%" height="55%"><path fill="#fff" d="M12 4l-7 7 1.4 1.4L11 7.8V20h2V7.8l4.6 4.6L19 11z"/></svg></div>
+
+  <!-- end card -->
+  <div class="abs" id="endbg"></div>
+  <img class="abs" id="e-logo" src="assets/logo.png">
+  <div class="abs" id="e-head">Let's build yours<em>.</em></div>
+  <div class="abs" id="e-num">+233 54 285 5399</div>
+  <div class="abs" id="e-call"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>Call now</div>
+  <div class="abs" id="e-url">ecstasytechnologies.com</div>
+</div>
+
+<script>
+const FMT = new URLSearchParams(location.search).get('fmt') || 'v';
+const V = FMT === 'v';
+const W = V ? 1080 : 1920, H = V ? 1920 : 1080;
+const $ = id => document.getElementById(id);
+const stage = $('stage');
+stage.style.width = W + 'px'; stage.style.height = H + 'px';
+document.body.style.width = W + 'px'; document.body.style.height = H + 'px';
+
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, k) => a + (b - a) * k;
+function spring(t, w = 16, z = 0.55) {
+  if (t <= 0) return 0;
+  if (z >= 1) return 1 - Math.exp(-w * t) * (1 + w * t);
+  const wd = w * Math.sqrt(1 - z * z);
+  return 1 - Math.exp(-z * w * t) * (Math.cos(wd * t) + (z * w / wd) * Math.sin(wd * t));
+}
+const POP = t => spring(t, 20, 0.6);
+const HEAVY = t => spring(t, 9, 1);
+const SCROLL = t => spring(t, 14, 0.9);
+const easeIn = t => { t = clamp(t); return t * t * t; };
+const easeInOut = t => { t = clamp(t); return t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2; };
+function set(el, { x = 0, y = 0, s = 1, r = 0, o = 1 }) {
+  el.style.transform = `translate(${x}px,${y}px) rotate(${r}deg) scale(${s})`;
+  el.style.opacity = o;
+}
+function size(el, w, h) { el.style.width = w + 'px'; if (h != null) el.style.height = h + 'px'; }
+
+// ---------------- script (timeline) ----------------
+const B = [1.0, 5.0, 9.0, 13.0];  // section starts, 4s apart = one bar at 60 BPM
+const END = 15.6, DUR = 18.0;
+const SEC = [
+  { me: 'We need a website that takes bookings.', reply: 'Done.', media: 'web' },
+  { me: 'Our customers want an app too.', reply: 'Done.', media: 'app' },
+  { me: 'And software to run the business?', reply: 'Done.', media: 'sw' },
+  { me: 'How do we start?', reply: 'Call us.', media: 'num' },
+];
+const TYPE_D = 0.62, SEND = 0.65, TY0 = 0.9, TY1 = 1.4, REPLY = 1.4, MEDIA = 1.65;
+
+// ---------------- layout ----------------
+const L = V ? {
+  pad: 48, fs: 46,
+  avatar: { s: 120, y: 74 }, name: { y: 206, fs: 34 }, sub: { y: 250, fs: 26 }, hline: 304,
+  vp: { x: 0, y: 305, w: 1080, h: 1445 },
+  field: { x: 48, y: 1772, w: 860, h: 104, fs: 40 }, send: { s: 104 },
+  mediaW: 840,
+} : {
+  pad: 44, fs: 34,
+  avatar: { s: 92, y: 40 }, name: { y: 142, fs: 28 }, sub: { y: 180, fs: 21 }, hline: 222,
+  vp: { x: 70, y: 223, w: 820, h: 715 },
+  field: { x: 114, y: 958, w: 660, h: 80, fs: 30 }, send: { s: 80 },
+  mediaW: 0,
+};
+const COLW = V ? W : 960;  // chat column width
+const colCX = V ? W / 2 : 70 + 410;
+
+size($('avatar'), L.avatar.s, L.avatar.s);
+$('name').style.fontSize = L.name.fs + 'px';
+$('sub').style.fontSize = L.sub.fs + 'px';
+size($('hline'), V ? W : 820, 2);
+size($('viewport'), L.vp.w, L.vp.h);
+size($('field'), L.field.w, L.field.h);
+$('field').style.fontSize = L.field.fs + 'px';
+$('field').style.padding = `0 ${L.field.h * 0.36}px`;
+$('caret').style.height = (L.field.fs * 1.15) + 'px';
+size($('send'), L.send.s, L.send.s);
+$('show').style.display = V ? 'none' : 'block';
+
+// thread items
+const thread = $('thread');
+const items = [];   // {el, t, side, h, y}
+function bubble(side, html, t, cls = '') {
+  const el = document.createElement('div');
+  el.className = 'item ' + side;
+  el.style.padding = `0 ${L.pad}px`;
+  el.innerHTML = `<div class="b ${cls}" style="font-size:${L.fs}px">${html}</div>`;
+  thread.appendChild(el);
+  items.push({ el, t, side, gap: 14 });
+  return el;
+}
+function mediaItem(kind, t) {
+  const el = document.createElement('div');
+  el.className = 'item them';
+  el.style.padding = `0 ${L.pad}px`;
+  const mw = L.mediaW;
+  let inner = '';
+  if (V) {
+    if (kind === 'web') inner = `<div class="media"><div class="mview" style="width:${mw}px;height:560px"><img id="m-kings" src="assets/w-kings.jpg" style="width:${mw}px"></div><div class="cap" style="font-size:34px">Kings Towers Hotel <span>· Kumasi</span></div></div>`;
+    if (kind === 'app') inner = `<div class="media"><div class="mview phones" style="width:${mw}px;height:600px">
+        <img class="mp" src="assets/phone-1.png" style="width:236px;height:499px;border-radius:30px">
+        <img class="mp" src="assets/phone-2.png" style="width:236px;height:499px;border-radius:30px">
+        <img class="mp" src="assets/phone-5.png" style="width:236px;height:499px;border-radius:30px"></div>
+        <div class="cap" style="font-size:34px">Cassvo <span>· live on the App Store</span></div></div>`;
+    if (kind === 'sw') inner = `<div class="media"><div class="mview" style="width:${mw}px;height:420px"><img id="m-permit" src="assets/b-permit.jpg" style="height:420px"></div><div class="cap" style="font-size:34px">Development permit system <span>· GIS mapping</span></div></div>`;
+  } else {
+    const LINK = {
+      web: ['Kings Towers Hotel', 'kingstowers-hotel.com · booking website'],
+      app: ['Cassvo', 'iOS app · live on the App Store'],
+      sw:  ['Development permit system', 'web app · GIS plot mapping'],
+    }[kind];
+    inner = `<div class="link"><div class="strip"></div><div style="padding:20px 28px 22px"><div class="t" style="font-size:28px">${LINK[0]}</div><div class="d" style="font-size:22px;margin-top:6px">${LINK[1]}</div></div></div>`;
+  }
+  el.innerHTML = inner;
+  thread.appendChild(el);
+  items.push({ el, t, side: 'them', gap: 30, kind });
+  return el;
+}
+
+// stamp
+const stamp = document.createElement('div');
+stamp.className = 'item'; stamp.style.textAlign = 'center';
+stamp.innerHTML = `<span id="stamp" style="font-size:${V ? 26 : 20}px">Today</span>`;
+thread.appendChild(stamp);
+items.push({ el: stamp, t: 0, side: 'c', gap: 34 });
+
+const EVENTS = [];
+SEC.forEach((s, i) => {
+  const b = B[i];
+  bubble('me', s.me, b + SEND);
+  bubble('them', s.reply, b + REPLY, s.media === 'num' ? '' : 'done');
+  if (s.media === 'num') bubble('them', '+233 54 285 5399', b + REPLY + 0.45, 'num');
+  else mediaItem(s.media, b + MEDIA);
+  // sound cues
+  const n = s.me.length;
+  for (let k = 0; k < n; k += 3) EVENTS.push({ t: b + (k / n) * TYPE_D, k: 'key' });
+  EVENTS.push({ t: b + SEND, k: 'send' });
+  EVENTS.push({ t: b + REPLY, k: 'recv' });
+  if (s.media === 'num') EVENTS.push({ t: b + REPLY + 0.45, k: 'recv' });
+  else EVENTS.push({ t: b + MEDIA, k: 'reveal' });
+});
+EVENTS.push({ t: END - 0.2, k: 'riser_end' }, { t: END + 0.15, k: 'chord' }, { t: END + 0.75, k: 'thump' }, { t: END + 1.15, k: 'tick' });
+
+// ---------------- fit (needs fonts) ----------------
+let SCROLL_STEPS = [];
+function fit() {
+  let y = 26;
+  items.forEach(it => { it.y = y; it.el.style.top = y + 'px'; it.h = it.el.offsetHeight; y += it.h + it.gap; });
+  // grow/scroll target whenever an item appears (and while typing dots occupy a slot)
+  const typingH = L.fs * 2.1;
+  const evs = items.map(it => ({ t: it.t, bottom: it.y + it.h }));
+  SEC.forEach((s, i) => {
+    const r = items.find(it => it.t === B[i] + REPLY);
+    evs.push({ t: B[i] + TY0, bottom: r.y + typingH });
+  });
+  evs.sort((a, b) => a.t - b.t);
+  let cur = 0, maxB = 0;
+  SCROLL_STEPS = [];
+  evs.forEach(e => {
+    maxB = Math.max(maxB, e.bottom);
+    const target = Math.max(0, maxB + 30 - L.vp.h);
+    if (target > cur) { SCROLL_STEPS.push({ t: e.t, d: target - cur }); cur = target; }
+  });
+  size($('typing'), L.fs * 2.6, typingH);
+  $('typing').style.fontSize = L.fs + 'px';
+}
+
+// ---------------- 16:9 showcase layout ----------------
+const SX = 1440;  // showcase centre
+size($('vline'), 2, H);
+function sizeWin(id, w, h) { size($(id), w, h); $(id).querySelector('.view').style.height = (h - 40) + 'px'; }
+if (!V) {
+  sizeWin('s-web', 860, 600); $('s-kings').style.width = '860px';
+  sizeWin('s-sw', 880, 520); $('s-permit').style.height = '480px';
+  ['s-p1','s-p2','s-p3'].forEach(id => size($(id), 270, 571));
+  ['s-cap1','s-cap2','s-cap3'].forEach(id => $(id).style.fontSize = '28px');
+}
+
+// ---------------- end card sizing ----------------
+size($('endbg'), W, H);
+const logoW = V ? 640 : 560;
+$('e-logo').style.width = logoW + 'px';
+$('e-head').style.fontSize = (V ? 118 : 104) + 'px';
+$('e-num').style.fontSize = (V ? 92 : 80) + 'px';
+$('e-call').style.fontSize = (V ? 44 : 38) + 'px';
+size($('e-call'), V ? 460 : 400, V ? 116 : 100);
+$('e-call').querySelector('svg').setAttribute('width', V ? 46 : 40);
+$('e-call').querySelector('svg').setAttribute('height', V ? 46 : 40);
+$('e-url').style.fontSize = (V ? 30 : 26) + 'px';
+
+// ---------------- seek ----------------
+function seek(t) {
+  const endK = easeInOut((t - END) / 0.55);
+  const chatO = 1 - endK;
+
+  // header
+  const hk = HEAVY(t - 0.05);
+  const av = L.avatar.s;
+  set($('avatar'), { x: colCX - av / 2, y: L.avatar.y + (1 - hk) * 20, o: hk * chatO });
+  const nw = $('name').offsetWidth, sw = $('sub').offsetWidth;
+  set($('name'), { x: colCX - nw / 2, y: L.name.y, o: hk * chatO });
+  set($('sub'), { x: colCX - sw / 2, y: L.sub.y, o: hk * chatO });
+  set($('hline'), { x: V ? 0 : 70, y: L.hline, o: hk * chatO });
+
+  // thread scroll
+  let off = 0;
+  SCROLL_STEPS.forEach(s => { off += s.d * SCROLL(t - s.t); });
+  set($('viewport'), { x: L.vp.x, y: L.vp.y - endK * 120, o: chatO });
+  $('thread').style.transform = `translateY(${-off}px)`;
+
+  items.forEach(it => {
+    const k = POP(t - it.t);
+    const vis = t >= it.t;
+    const origin = it.side === 'me' ? '100% 100%' : '0% 100%';
+    const inner = it.el.firstElementChild;
+    inner.style.transformOrigin = origin;
+    inner.style.transform = `translateY(${(1 - k) * 24}px) scale(${lerp(0.7, 1, k)})`;
+    it.el.style.opacity = vis ? clamp((t - it.t) / 0.08) : 0;
+  });
+
+  // typing dots
+  let typingOn = false;
+  SEC.forEach((s, i) => {
+    const r = items.find(it => it.t === B[i] + REPLY);
+    if (t >= B[i] + TY0 && t < B[i] + TY1) {
+      typingOn = true;
+      const k = POP(t - (B[i] + TY0));
+      set($('typing'), { x: L.pad, y: r.y - off, s: lerp(0.6, 1, k), o: 1 });
+      [...$('typing').children].forEach((d, j) => {
+        const p = 0.5 + 0.5 * Math.sin((t * 7) - j * 0.9);
+        d.style.opacity = 0.35 + 0.65 * p;
+        d.style.transform = `translateY(${-p * 4}px)`;
+      });
+    }
+  });
+  if (!typingOn) $('typing').style.opacity = 0;
+
+  // input bar typing
+  let txt = '';
+  SEC.forEach((s, i) => {
+    if (t >= B[i] && t < B[i] + SEND) {
+      const n = Math.floor(clamp((t - B[i]) / TYPE_D) * s.me.length);
+      txt = s.me.slice(0, n);
+    }
+  });
+  $('ftext').textContent = txt;
+  $('ph').style.display = txt ? 'none' : 'inline';
+  $('caret').style.display = txt ? 'inline-block' : 'none';
+  set($('field'), { x: L.field.x, y: L.field.y + (1 - hk) * 20, o: hk * chatO });
+  // send button pulses on send
+  let pulse = 0;
+  B.forEach(b => { const d = t - (b + SEND); if (d >= 0 && d < 0.3) pulse = Math.sin(d / 0.3 * Math.PI); });
+  const ss = L.send.s;
+  const sx = L.field.x + L.field.w + 16, sy = L.field.y;
+  set($('send'), { x: sx + ss / 2 * pulse * 0.1, y: sy + ss / 2 * pulse * 0.1, s: 1 - pulse * 0.1, o: hk * chatO * (txt ? 1 : 0.35) });
+
+  // in-bubble media motion (9:16)
+  if (V) {
+    const mk = $('m-kings');
+    if (mk) {
+      // slow push-in toward the real "Book Your Stay" widget
+      const p = easeInOut((t - (B[0] + MEDIA + 0.3)) / 2.4);
+      const z = lerp(1, 1.3, p);
+      mk.style.transformOrigin = '50% 483px';   // the real "Book Your Stay" widget
+      mk.style.transform = `translateY(${-p * 175}px) scale(${z})`;
+    }
+    const mp = [...document.querySelectorAll('.mp')];
+    mp.forEach((img, j) => {
+      const k = HEAVY(t - (B[1] + MEDIA + 0.1 + j * 0.12));
+      const x = 34 + j * 270, y = 50 + (j === 1 ? -10 : 20);
+      img.style.position = 'absolute';
+      img.style.transform = `translate(${x}px,${y + (1 - k) * 520}px) rotate(${(j - 1) * 4 * k}deg)`;
+    });
+    const pm = $('m-permit');
+    if (pm) {
+      const p = easeInOut((t - (B[2] + MEDIA)) / 3.0);
+      const imgW = 420 * (1280 / 588);
+      pm.style.transform = `translateX(${-p * (imgW - L.mediaW)}px)`;
+    }
+  }
+
+  // 16:9 showcase panel
+  if (!V) {
+    set($('vline'), { x: 920, y: 0, o: hk * chatO * 0.9 });
+    const secK = i => {
+      const a = HEAVY(t - (B[i] + MEDIA)), out = easeIn((t - (B[i + 1] ?? END) + 0.05) / 0.35);
+      return { a, out };
+    };
+    { const { a, out } = secK(0);
+      set($('s-web'), { x: SX - 430, y: 170 + (1 - a) * 700 - out * 60, o: (t > B[0] + MEDIA - .02 ? 1 : 0) * (1 - out) });
+      const p = easeInOut((t - (B[0] + MEDIA + 0.3)) / 2.4), z = lerp(1, 1.3, p);
+      $('s-kings').style.transformOrigin = '50% 494px';
+      $('s-kings').style.transform = `translateY(${-p * 215}px) scale(${z})`;
+      set($('s-cap1'), { x: SX - 430, y: 800, o: clamp((t - (B[0] + MEDIA + .4)) / .2) * (1 - out) }); }
+    { const { a, out } = secK(1);
+      [['s-p1', -1, 0], ['s-p2', 0, .12], ['s-p3', 1, .24]].forEach(([id, d, dl]) => {
+        const k = HEAVY(t - (B[1] + MEDIA + dl));
+        set($(id), { x: SX - 135 + d * 250, y: 150 + (d === 0 ? -20 : 30) + (1 - k) * 800 - out * 60, r: d * 8 * k, o: (t > B[1] + MEDIA - .02 ? 1 : 0) * (1 - out) });
+      });
+      set($('s-cap2'), { x: SX - 400, y: 800, o: clamp((t - (B[1] + MEDIA + .4)) / .2) * (1 - out) }); }
+    { const { a, out } = secK(2);
+      set($('s-sw'), { x: SX - 440, y: 200 + (1 - a) * 700 - out * 60, o: (t > B[2] + MEDIA - .02 ? 1 : 0) * (1 - out) });
+      const p = easeInOut((t - (B[2] + MEDIA)) / 3.0);
+      const imgW = 480 * (1280 / 588);
+      $('s-permit').style.transform = `translateX(${-p * (imgW - 880)}px)`;
+      set($('s-cap3'), { x: SX - 440, y: 760, o: clamp((t - (B[2] + MEDIA + .4)) / .2) * (1 - out) }); }
+  }
+
+  // ---------- end card ----------
+  set($('endbg'), { x: 0, y: 0, o: endK });
+  const cy = V ? 560 : 150;
+  const lk = POP(t - (END + 0.15));
+  const lh = logoW * (340 / 1090);
+  set($('e-logo'), { x: (W - logoW) / 2, y: cy + (1 - lk) * 30, o: clamp((t - (END + 0.15)) / .2) });
+  const hd = $('e-head'), hw = hd.offsetWidth;
+  const hk2 = POP(t - (END + 0.4));
+  set(hd, { x: (W - hw) / 2, y: cy + lh + (V ? 70 : 46) + (1 - hk2) * 30, o: clamp((t - (END + 0.4)) / .2) });
+  const nm = $('e-num'), nmw = nm.offsetWidth;
+  const nk = POP(t - (END + 0.75));
+  set(nm, { x: (W - nmw) / 2, y: cy + lh + (V ? 250 : 200) + (1 - nk) * 30, s: 1, o: clamp((t - (END + 0.75)) / .2) });
+  const ck = POP(t - (END + 1.1));
+  const cw = parseFloat($('e-call').style.width), ch = parseFloat($('e-call').style.height);
+  set($('e-call'), { x: (W - cw * lerp(.85, 1, ck)) / 2, y: cy + lh + (V ? 410 : 340), s: lerp(.85, 1, ck), o: clamp((t - (END + 1.1)) / .15) });
+  const uw = $('e-url').offsetWidth;
+  set($('e-url'), { x: (W - uw) / 2, y: cy + lh + (V ? 590 : 480), o: clamp((t - (END + 1.4)) / .25) });
+}
+
+window.__duration = DUR;
+window.__events = EVENTS;
+window.__seek = seek;
+Promise.all([document.fonts.load('700 40px Inter'), document.fonts.load('500 20px Inter')])
+  .then(() => document.fonts.ready)
+  .then(() => Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; }))))
+  .then(() => { fit(); seek(0); window.__ready = true; });
+</script>
+</body>
+</html>

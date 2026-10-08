@@ -1,0 +1,544 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+:root { --night:#070915; --ink:#F5F5F7; --muted:#8E8EA0; --blue:#0A84FF; --green:#30D158; --warm:#FFC36B; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { overflow:hidden; background:var(--night); }
+#stage { position:relative; overflow:hidden; background:var(--night); font-family:'Inter',sans-serif; color:var(--ink); }
+.abs { position:absolute; left:0; top:0; transform-origin:0 0; }
+.full { position:absolute; inset:0; }
+#sky { background:linear-gradient(180deg,#05060F 0%,#0B0E24 55%,#151A3A 100%); }
+#dawn { background:linear-gradient(180deg,#0A0C22 0%,#2A1E4A 50%,#7A3F52 78%,#E2875A 100%); opacity:0; }
+#sun { border-radius:50%; background:radial-gradient(circle, rgba(255,190,120,.9) 0%, rgba(255,150,90,.35) 35%, rgba(255,120,80,0) 70%); }
+#moon { border-radius:50%; box-shadow: inset -28px 10px 0 0 #F4EFE2; filter: drop-shadow(0 0 30px rgba(244,239,226,.35)); }
+
+/* street */
+#ground { background:#0B0D1B; border-top:3px solid #1C2036; }
+#lampglow { border-radius:50%; background:radial-gradient(circle, rgba(255,200,120,.45) 0%, rgba(255,190,110,.12) 40%, rgba(255,190,110,0) 70%); }
+#pole { background:#262A40; border-radius:6px; }
+#lamphead { background:#FFE2A8; border-radius:10px 10px 4px 4px; box-shadow:0 0 30px 10px rgba(255,205,130,.5); }
+
+#shop { }
+#shop .part { position:absolute; }
+#fascia { background:#1D2036; display:flex; align-items:center; justify-content:center; font-weight:800; letter-spacing:.12em; white-space:nowrap; border-radius:6px 6px 0 0; }
+#awning { background:repeating-linear-gradient(90deg,#C8454E 0 46px,#EDE3D1 46px 92px); border-radius:0 0 18px 18px; }
+#wall { background:#1A1D2F; }
+#win { background:#0D1020; border:6px solid #2A2E46; overflow:hidden; }
+#warmglow { position:absolute; inset:0; background:radial-gradient(ellipse at 50% 60%, rgba(255,200,110,.95) 0%, rgba(255,170,80,.55) 45%, rgba(255,150,70,.15) 100%); }
+#blueglow { position:absolute; inset:0; background:radial-gradient(ellipse at 50% 55%, rgba(80,150,255,.85) 0%, rgba(40,90,220,.45) 50%, rgba(20,40,120,.2) 100%); opacity:0; }
+.shelf { position:absolute; left:8%; right:8%; height:6px; background:rgba(10,12,25,.55); border-radius:3px; }
+.jar { position:absolute; bottom:6px; border-radius:4px 4px 2px 2px; background:rgba(10,12,25,.5); }
+#neon { position:absolute; left:0; right:0; text-align:center; font-weight:800; letter-spacing:.04em; color:#BFDCFF; white-space:nowrap;
+  text-shadow: 0 0 6px #6FB0FF, 0 0 18px #3D8BFF, 0 0 40px #2A6BFF; }
+#door { background:#141729; border:6px solid #2A2E46; border-bottom:none; }
+#knob { border-radius:50%; background:#C9A35C; }
+#tag { border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:800; letter-spacing:.08em; white-space:nowrap; }
+#string { background:#3A3F5C; }
+
+/* fireflies */
+.ff { display:flex; align-items:center; gap:.6em; border-radius:999px; background:rgba(255,255,255,.08); box-shadow:0 0 0 1.5px rgba(255,255,255,.14) inset, 0 0 40px rgba(120,170,255,.18); padding:.55em 1em .55em .7em; white-space:nowrap; letter-spacing:-.01em; font-weight:600; }
+.ff .ic { width:1.25em; height:1.25em; border-radius:50%; flex:none; }
+.ff .tm { color:var(--muted); font-weight:500; }
+.spark { border-radius:50%; background:#fff; box-shadow:0 0 12px 4px rgba(170,200,255,.7); }
+
+/* skyline */
+.scr { overflow:hidden; border-radius:6px; background:#000; }
+.scr img { width:100%; height:100%; object-fit:cover; object-position:50% 0; display:block; }
+.scap { white-space:nowrap; font-weight:600; letter-spacing:-.01em; text-align:center; }
+.scap span { color:var(--muted); font-weight:500; }
+
+/* text */
+.line { overflow:hidden; }
+.line .in { font-weight:700; letter-spacing:-.04em; line-height:1.06; white-space:nowrap; }
+.line .l2 { color:var(--muted); }
+
+/* dawn card */
+#card { border-radius:34px; background:rgba(18,20,40,.72); box-shadow:0 0 0 1.5px rgba(255,255,255,.12) inset, 0 30px 80px -20px rgba(0,0,0,.6); }
+#card .hd { display:flex; justify-content:space-between; align-items:baseline; font-weight:700; letter-spacing:-.02em; }
+#card .hd span { color:var(--blue); font-weight:600; }
+#card .row { display:flex; align-items:center; gap:.7em; font-weight:500; letter-spacing:-.01em; white-space:nowrap; }
+#card .row .ic { width:.95em; height:.95em; border-radius:50%; flex:none; }
+#card .row .tm { margin-left:auto; color:var(--muted); }
+
+/* end */
+#logocard { background:#fff; border-radius:28px; display:flex; align-items:center; justify-content:center; box-shadow:0 20px 60px -10px rgba(0,0,0,.6); }
+#logocard img { mix-blend-mode:multiply; display:block; }
+#e-head { font-weight:700; letter-spacing:-.045em; white-space:nowrap; line-height:1; }
+#e-head em { font-style:normal; color:var(--warm); }
+#e-sub { color:#C9C9D6; font-weight:500; letter-spacing:-.02em; white-space:nowrap; }
+#e-num { font-weight:700; letter-spacing:-.03em; white-space:nowrap; font-variant-numeric:tabular-nums; }
+.pill { border-radius:999px; display:flex; align-items:center; justify-content:center; gap:.45em; font-weight:600; letter-spacing:-.01em; white-space:nowrap; color:#fff; }
+.pill svg { fill:#fff; }
+#e-call { background:#25D366; box-shadow:0 0 40px rgba(37,211,102,.4); }
+#e-text { background:var(--blue); box-shadow:0 0 40px rgba(10,132,255,.3); }
+#e-url { color:#fff; font-weight:600; white-space:nowrap; letter-spacing:-.01em; display:flex; align-items:center; gap:.45em; border-radius:999px; padding:.5em 1.1em; box-shadow:0 0 0 2px rgba(143,195,255,.55) inset; background:rgba(143,195,255,.08); }
+#e-lab { color:#25D366; font-weight:700; letter-spacing:.12em; text-transform:uppercase; white-space:nowrap; }
+#veil { background:rgba(5,6,15,.86); opacity:0; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="full" id="sky"></div>
+  <div class="full" id="dawn"></div>
+  <div class="abs" id="sun"></div>
+  <canvas class="abs" id="stars"></canvas>
+  <div class="abs" id="moon"></div>
+
+  <div class="abs" id="ground"></div>
+  <div class="abs" id="skyline"><canvas class="abs" id="city"></canvas><div class="abs" id="screens"></div></div>
+
+  <div class="abs" id="street">
+    <canvas class="abs" id="houses"></canvas>
+    <div class="abs" id="lampglow"></div>
+    <div class="abs" id="pole"></div>
+    <div class="abs" id="lamphead"></div>
+    <div class="abs" id="shop">
+      <div class="part" id="wall"></div>
+      <div class="part" id="fascia">AMA'S PROVISIONS</div>
+      <div class="part" id="awning"></div>
+      <div class="part" id="win"><div id="warmglow"></div><div id="blueglow"></div><div id="shelves"></div><div id="neon">OPEN 24/7</div></div>
+      <div class="part" id="door"><div class="abs" id="knob"></div></div>
+      <div class="part" id="string"></div>
+      <div class="part" id="tag">OPEN</div>
+    </div>
+  </div>
+
+  <div id="flies"></div>
+  <div class="full" id="veil"></div>
+
+  <div class="abs" id="card">
+    <div class="hd"><div>While you slept</div><span>4 new</span></div>
+  </div>
+
+  <div id="texts"></div>
+
+  <div class="abs" id="logocard"><img src="assets/logo.png"></div>
+  <div class="abs" id="e-head">Let's build yours<em>.</em></div>
+  <div class="abs" id="e-sub">A business that never sleeps.</div>
+  <div class="abs" id="e-lab">WhatsApp · Call</div>
+  <div class="abs" id="e-num">+233 54 285 5399</div>
+  <div class="abs pill" id="e-call"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>WhatsApp us</div>
+  <div class="abs pill" id="e-text"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>Call us</div>
+  <div class="abs" id="e-url"><svg viewBox="0 0 24 24" width="1em" height="1em"><path fill="#8FC3FF" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 6h-3a15.7 15.7 0 0 0-1.4-3.6A8 8 0 0 1 18.9 8zM12 4c.8 1.2 1.5 2.5 1.9 4h-3.8c.4-1.5 1.1-2.8 1.9-4zM4.3 14a8 8 0 0 1 0-4h3.4a16.5 16.5 0 0 0 0 4H4.3zm.8 2h3a15.7 15.7 0 0 0 1.4 3.6A8 8 0 0 1 5.1 16zM8 8H5.1a8 8 0 0 1 4.4-3.6C8.9 5.5 8.4 6.7 8 8zm4 12c-.8-1.2-1.5-2.5-1.9-4h3.8c-.4 1.5-1.1 2.8-1.9 4zm2.3-6H9.7a14.7 14.7 0 0 1 0-4h4.6a14.7 14.7 0 0 1 0 4zm.2 5.6c.6-1.1 1.1-2.3 1.4-3.6h3a8 8 0 0 1-4.4 3.6zM16.3 14a16.5 16.5 0 0 0 0-4h3.4a8 8 0 0 1 0 4h-3.4z"/></svg><span>www.ecstasytechnologies.com</span></div>
+</div>
+
+<script>
+const FMT = new URLSearchParams(location.search).get('fmt') || 'v';
+const V = FMT === 'v';
+const W = V ? 1080 : 1920, H = V ? 1920 : 1080;
+const $ = id => document.getElementById(id);
+$('stage').style.width = W + 'px'; $('stage').style.height = H + 'px';
+document.body.style.width = W + 'px'; document.body.style.height = H + 'px';
+
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, k) => a + (b - a) * k;
+function spring(t, w = 16, z = 0.55) {
+  if (t <= 0) return 0;
+  if (z >= 1) return 1 - Math.exp(-w * t) * (1 + w * t);
+  const wd = w * Math.sqrt(1 - z * z);
+  return 1 - Math.exp(-z * w * t) * (Math.cos(wd * t) + (z * w / wd) * Math.sin(wd * t));
+}
+const TYPE = t => spring(t, 18, 0.62);
+const POP = t => spring(t, 20, 0.6);
+const HEAVY = t => spring(t, 9, 1);
+const easeIn = t => { t = clamp(t); return t * t * t; };
+const easeOut = t => { t = clamp(t); return 1 - Math.pow(1 - t, 3); };
+const easeInOut = t => { t = clamp(t); return t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2; };
+function set(el, { x = 0, y = 0, s = 1, r = 0, o = 1 }) {
+  el.style.transform = `translate(${x}px,${y}px) rotate(${r}deg) scale(${s})`;
+  el.style.opacity = o;
+}
+function box(el, x, y, w, h) { el.style.left = x + 'px'; el.style.top = y + 'px'; el.style.width = w + 'px'; el.style.height = h + 'px'; }
+function size(el, w, h) { el.style.width = w + 'px'; if (h != null) el.style.height = h + 'px'; }
+function rng(seed) { return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+
+// ---------------- timeline (2.4s bars, 100 BPM) ----------------
+const T = { flip: 1.55, off: 1.9, awake: 2.4, neon: 4.8, pull: 7.2, sky: 8.0, dawn: 14.4, end: 16.8, out: 22.0 };
+const FLIES = [
+  { t: 3.3, txt: 'New order', tm: '11:42 PM', c: '#30D158' },
+  { t: 4.1, txt: 'Booking for Saturday', tm: '1:15 AM', c: '#0A84FF' },
+  { t: 5.4, txt: '“Do you deliver?”', tm: '2:03 AM', c: '#FF9F0A' },
+  { t: 6.2, txt: 'Payment received', tm: '3:30 AM', c: '#FFD60A' },
+];
+const TEXTS = [
+  { t0: 0.35, t1: T.awake, l1: '9 PM.', l2: 'Ama closes her shop.', d2: 0.55 },
+  { t0: T.awake + 0.05, t1: T.neon, l1: 'Her customers', l2: 'are still awake.', d2: 0.3 },
+  { t0: T.neon + 0.05, t1: T.pull, l1: 'Good thing her shop', l2: 'never closes.', d2: 0.3 },
+  { t0: T.sky - 0.1, t1: T.dawn, l1: 'We build businesses', l2: 'that never sleep.', d2: 0.3, sky: true },
+  { t0: T.dawn + 0.3, t1: T.end, l1: 'Good morning,', l2: 'Ama.', d2: 0.3 },
+];
+
+// ---------------- layout ----------------
+const G = V ? 1500 : 880;                     // street ground
+const SHOP = V ? { w: 720, h: 640, cx: 560 } : { w: 540, h: 480, cx: 1330 };
+const TXT = V ? { x: 80, y: 210, fs: 96, w: 920 } : { x: 110, y: 300, fs: 84, w: 760 };
+const TXT_SKY = V ? { x: 80, y: 210, fs: 96 } : { x: 110, y: 70, fs: 72 };
+const MOON = V ? { x: 820, y: 560, r: 62 } : { x: 1680, y: 150, r: 54 };
+
+// sky bits
+size($('moon'), MOON.r * 2, MOON.r * 2);
+const SUN = V ? 1100 : 1400;
+size($('sun'), SUN, SUN);
+const starsC = $('stars'); starsC.width = W; starsC.height = H;
+const R1 = rng(7);
+const STARS = Array.from({ length: V ? 170 : 220 }, () => ({ x: R1() * W, y: R1() * (G - 120), r: 0.6 + R1() * 1.6, f: 0.6 + R1() * 2.2, p: R1() * 6.28, a: 0.35 + R1() * 0.65 }));
+
+// street: houses canvas
+const hc = $('houses'); hc.width = W; hc.height = H;
+const R2 = rng(21);
+const HOUSES = [];
+{
+  let x = -40;
+  while (x < W + 40) {
+    const w = 170 + R2() * 170, h = 180 + R2() * 260;
+    const wins = [];
+    const cols = Math.max(1, Math.floor((w - 40) / 54)), rows = Math.max(1, Math.floor((h - 80) / 70));
+    for (let c = 0; c < cols; c++) for (let r = 0; r < rows; r++) {
+      const lit = R2() < 0.35, phone = R2() < 0.45;
+      wins.push({ x: x + 26 + c * 54, y: G - h + 40 + r * 70, lit, phone, pt: T.awake + 0.1 + R2() * 1.6 });
+    }
+    HOUSES.push({ x, w, h, roof: R2() < 0.5, wins });
+    x += w + 6 + R2() * 20;
+  }
+}
+function drawHouses(t) {
+  const c = hc.getContext('2d');
+  c.clearRect(0, 0, W, H);
+  HOUSES.forEach(hs => {
+    c.fillStyle = '#10132A';
+    c.fillRect(hs.x, G - hs.h, hs.w, hs.h);
+    if (hs.roof) { c.beginPath(); c.moveTo(hs.x - 10, G - hs.h); c.lineTo(hs.x + hs.w / 2, G - hs.h - 70); c.lineTo(hs.x + hs.w + 10, G - hs.h); c.fill(); }
+    hs.wins.forEach(wd => {
+      let col = null;
+      if (wd.lit && t < T.off + 0.6) col = `rgba(255,196,110,${0.75})`;
+      else if (wd.lit) col = `rgba(255,196,110,${0.18})`;
+      if (wd.phone && t >= wd.pt) {
+        const k = clamp((t - wd.pt) / 0.25);
+        col = `rgba(110,170,255,${0.85 * k})`;
+      }
+      c.fillStyle = col || 'rgba(255,255,255,.035)';
+      c.fillRect(wd.x, wd.y, 26, 34);
+      if (wd.phone && t >= wd.pt) { c.fillStyle = `rgba(120,180,255,${0.12 * clamp((t - wd.pt) / 0.25)})`; c.fillRect(wd.x - 10, wd.y - 10, 46, 54); }
+    });
+  });
+}
+
+// ground, lamp
+box($('ground'), -20, G, W + 40, H - G + 20);
+const GROUND_Y = G;
+const LX = SHOP.cx - SHOP.w / 2 - (V ? 120 : 140);
+box($('pole'), LX - 7, G - (V ? 520 : 470), 14, V ? 520 : 470);
+box($('lamphead'), LX - 30, G - (V ? 540 : 490), 60, 30);
+box($('lampglow'), LX - 260, G - (V ? 790 : 740), 520, 520);
+
+// shop parts (relative px)
+const SW = SHOP.w, SH = SHOP.h;
+box($('shop'), SHOP.cx - SW / 2, G - SH, SW, SH);
+box($('fascia'), 0, 0, SW, SH * 0.15); $('fascia').style.fontSize = (SW * 0.052) + 'px';
+box($('awning'), -14, SH * 0.15, SW + 28, SH * 0.12);
+box($('wall'), 0, SH * 0.15, SW, SH * 0.85);
+const WIN = { x: SW * 0.06, y: SH * 0.34, w: SW * 0.56, h: SH * 0.5 };
+box($('win'), WIN.x, WIN.y, WIN.w, WIN.h);
+[0.33, 0.66].forEach(f => { const s = document.createElement('div'); s.className = 'shelf'; s.style.top = (WIN.h * f) + 'px'; $('shelves').appendChild(s);
+  for (let j = 0; j < 6; j++) { const jar = document.createElement('div'); jar.className = 'jar'; const jw = 18 + (j % 3) * 8, jh = 26 + (j % 2) * 18;
+    jar.style.cssText = `left:${12 + j * 15}%;top:${WIN.h * f - jh}px;width:${jw}px;height:${jh}px`; $('shelves').appendChild(jar); } });
+$('neon').style.fontSize = (WIN.w * 0.15) + 'px';
+$('neon').style.top = (WIN.h * 0.72) + 'px';
+const DOOR = { x: SW * 0.68, y: SH * 0.38, w: SW * 0.25, h: SH * 0.62 };
+box($('door'), DOOR.x, DOOR.y, DOOR.w, DOOR.h);
+box($('knob'), DOOR.w * 0.12, DOOR.h * 0.52, 14, 14);
+const TAG = { w: DOOR.w * 0.78, h: 44 };
+box($('tag'), DOOR.x + (DOOR.w - TAG.w) / 2, DOOR.y + DOOR.h * 0.18, TAG.w, TAG.h);
+$('tag').style.fontSize = (V ? 24 : 21) + 'px';
+box($('string'), DOOR.x + DOOR.w / 2 - 1, DOOR.y + 10, 2, DOOR.h * 0.18 - 10);
+const WINC = { x: SHOP.cx - SW / 2 + WIN.x + WIN.w / 2, y: G - SH + WIN.y + WIN.h * 0.45 };
+
+// fireflies
+const flies = FLIES.map((f, i) => {
+  const el = document.createElement('div');
+  el.className = 'abs ff';
+  el.innerHTML = `<div class="ic" style="background:${f.c};box-shadow:0 0 14px ${f.c}"></div>${f.txt}<span class="tm">${f.tm}</span>`;
+  el.style.fontSize = (V ? 34 : 27) + 'px';
+  $('flies').appendChild(el);
+  const sp = document.createElement('div'); sp.className = 'abs spark'; size(sp, 8, 8); $('flies').appendChild(sp);
+  const endX = V ? [180, 760, 300, 820][i] : [1100, 1560, 1240, 1720][i];
+  const endY = V ? [560, 470, 690, 640][i] : [120, 90, 240, 280][i];
+  return { ...f, el, sp, endX, endY, sway: i % 2 ? 1 : -1 };
+});
+
+// skyline (world coordinates)
+const G2 = V ? 1600 : 960;
+const SCR = V ? { w: 440, h: 275 } : { w: 420, h: 262 };
+const PH = V ? { w: 180, h: 390 } : { w: 150, h: 325 };
+const PROJ = [
+  { img: 'assets/w-kings.jpg', name: 'Kings Towers Hotel', sub: 'Kumasi' },
+  { img: 'assets/w-persis.jpg', name: 'Persis Luxury', sub: 'Beauty World' },
+  { img: 'assets/phone-2.png', name: 'Cassvo', sub: 'App Store', phone: true },
+  { img: 'assets/s3-solani.jpg', name: 'Solani', sub: 'Construction' },
+  { img: 'assets/w-gusty.jpg', name: 'Gusty Women', sub: 'Foundation' },
+  { img: 'assets/w-thrive.jpg', name: 'Thrive Edu', sub: 'NGO' },
+];
+const BLD = [];
+{
+  const R3 = rng(99);
+  let x = -60, pi = 0;
+  const pattern = ['f', 'p', 'f', 'p', 'p', 'f', 'p', 'f', 'p', 'p', 'f'];
+  pattern.forEach(kind => {
+    if (kind === 'f') {
+      const w = 150 + R3() * 90, h = (V ? 500 : 360) + R3() * (V ? 260 : 200);
+      BLD.push({ x, w, h, kind }); x += w + 14;
+    } else if (pi < PROJ.length) {
+      const pr = PROJ[pi++];
+      const w = pr.phone ? PH.w + 90 : SCR.w + 80;
+      const h = pr.phone ? (V ? 1000 : 640) : (V ? 780 + R3() * 160 : 520 + R3() * 110);
+      BLD.push({ x, w, h, kind, pr }); x += w + 14;
+    }
+  });
+  BLD.worldW = x - 14;
+}
+const cityC = $('city');
+cityC.width = BLD.worldW + 120; cityC.height = H;
+{
+  const c = cityC.getContext('2d');
+  const R4 = rng(5);
+  BLD.forEach(b => {
+    const top = G2 - b.h;
+    const g = c.createLinearGradient(0, top, 0, G2);
+    g.addColorStop(0, '#171B36'); g.addColorStop(1, '#0C0F22');
+    c.fillStyle = g; c.fillRect(b.x, top, b.w, b.h);
+    c.fillStyle = '#20264A'; c.fillRect(b.x, top, b.w, 6);
+    if (b.kind === 'f' || b.pr) {
+      const scrBottom = b.pr ? top + 70 + (b.pr.phone ? PH.h : SCR.h) + 90 : top;
+      for (let yy = Math.max(top + 30, scrBottom); yy < G2 - 40; yy += 46)
+        for (let xx = b.x + 18; xx < b.x + b.w - 26; xx += 34) {
+          const r = R4();
+          c.fillStyle = r < 0.3 ? `rgba(255,196,110,${0.35 + R4() * 0.5})` : r < 0.4 ? `rgba(120,170,255,${0.35 + R4() * 0.4})` : 'rgba(255,255,255,.04)';
+          c.fillRect(xx, yy, 14, 22);
+        }
+    }
+  });
+  c.fillStyle = '#0B0D1B'; c.fillRect(0, G2, cityC.width, H - G2);
+  c.fillStyle = '#1C2036'; c.fillRect(0, G2, cityC.width, 3);
+}
+const screens = BLD.filter(b => b.pr).map(b => {
+  const pr = b.pr, sw = pr.phone ? PH.w : SCR.w, sh = pr.phone ? PH.h : SCR.h;
+  const sx = b.x + (b.w - sw) / 2, sy = G2 - b.h + 70;
+  const el = document.createElement('div');
+  el.className = 'abs scr';
+  box(el, sx, sy, sw, sh);
+  if (pr.phone) el.style.borderRadius = '26px';
+  el.innerHTML = `<img src="${pr.img}">`;
+  $('screens').appendChild(el);
+  const cap = document.createElement('div');
+  cap.className = 'abs scap';
+  cap.innerHTML = `${pr.name} <span>· ${pr.sub}</span>`;
+  cap.style.fontSize = (V ? 28 : 22) + 'px';
+  $('screens').appendChild(cap);
+  return { el, cap, sx, sy, sw, sh, cx: sx + sw / 2, lit: 0 };
+});
+const PAN = BLD.worldW + 60 - W;
+const panX = t => -40 + easeInOut((t - (T.sky + 0.1)) / (T.dawn - T.sky + 0.4)) * PAN;
+// precompute each screen's switch-on time (when it reaches 78% across the frame)
+screens.forEach(s => { for (let t = T.sky; t < T.dawn + 1; t += 0.01) { if (s.cx - panX(t) < W * 0.78) { s.lit = Math.max(t, T.sky + 0.35); break; } } });
+
+// texts
+const texts = TEXTS.map(tx => {
+  const el = document.createElement('div');
+  el.className = 'abs';
+  const fs = tx.sky ? TXT_SKY.fs : TXT.fs;
+  el.innerHTML = `<div class="line"><div class="in" style="font-size:${fs}px">${tx.l1}</div></div><div class="line"><div class="in l2" style="font-size:${fs}px">${tx.l2}</div></div>`;
+  $('texts').appendChild(el);
+  return { ...tx, el, lines: [...el.querySelectorAll('.in')] };
+});
+
+// dawn card
+const CARD = V ? { w: 820, x: 130, y: 760, fs: 34 } : { w: 700, x: 1110, y: 300, fs: 28 };
+size($('card'), CARD.w);
+$('card').style.padding = (V ? '40px 46px 30px' : '34px 40px 24px');
+$('card').querySelector('.hd').style.fontSize = (CARD.fs * 1.15) + 'px';
+FLIES.forEach(f => {
+  const r = document.createElement('div'); r.className = 'row';
+  r.style.fontSize = CARD.fs + 'px'; r.style.marginTop = (V ? 26 : 20) + 'px';
+  r.innerHTML = `<div class="ic" style="background:${f.c};box-shadow:0 0 10px ${f.c}"></div>${f.txt}<span class="tm">${f.tm}</span>`;
+  $('card').appendChild(r);
+});
+const cardRows = [...$('card').querySelectorAll('.row')];
+
+// end card sizes
+const LC = V ? { w: 460, h: 170 } : { w: 400, h: 150 };
+size($('logocard'), LC.w, LC.h);
+$('logocard').querySelector('img').style.width = (LC.w - 60) + 'px';
+$('e-head').style.fontSize = (V ? 122 : 108) + 'px';
+$('e-sub').style.fontSize = (V ? 44 : 38) + 'px';
+$('e-num').style.fontSize = (V ? 94 : 84) + 'px';
+['e-call', 'e-text'].forEach(id => {
+  $(id).style.fontSize = (V ? 42 : 36) + 'px';
+  size($(id), V ? 420 : 360, V ? 112 : 96);
+  $(id).querySelector('svg').setAttribute('width', V ? 44 : 38);
+  $(id).querySelector('svg').setAttribute('height', V ? 44 : 38);
+});
+$('e-url').style.fontSize = (V ? 40 : 34) + 'px';
+$('e-lab').style.fontSize = (V ? 28 : 24) + 'px';
+
+// ---------------- sound events ----------------
+const EVENTS = [
+  { t: T.flip, k: 'click' }, { t: T.off, k: 'thunk' },
+  ...FLIES.map(f => ({ t: f.t, k: 'chime' })),
+  { t: T.neon, k: 'buzz' }, { t: T.neon + 0.18, k: 'buzz' }, { t: T.neon + 0.32, k: 'buzz' },
+  { t: T.pull, k: 'whoosh' },
+  ...screens.map(s => ({ t: s.lit, k: 'pluck' })),
+  { t: T.dawn, k: 'swell' },
+  { t: T.dawn + 0.9, k: 'chime' },
+  { t: T.end - 0.2, k: 'riser_end' }, { t: T.end + 0.15, k: 'chord' },
+  { t: T.end + 1.6, k: 'tick' }, { t: T.end + 1.9, k: 'tick' },
+];
+
+// ---------------- seek ----------------
+const skyIn0 = t => 1;
+function seek(t) {
+  // sky & dawn
+  const dawnK = easeInOut((t - T.dawn) / 2.0);
+  $('dawn').style.opacity = dawnK * 0.95;
+  set($('sun'), { x: W / 2 - SUN / 2, y: lerp(H + 100, (V ? G2 : G2) - SUN * 0.42, dawnK), o: dawnK });
+  const sc = starsC.getContext('2d');
+  sc.clearRect(0, 0, W, H);
+  STARS.forEach(s => {
+    const tw = 0.55 + 0.45 * Math.sin(t * s.f + s.p);
+    sc.globalAlpha = s.a * tw * (1 - dawnK * 0.85);
+    sc.fillStyle = '#fff';
+    sc.beginPath(); sc.arc(s.x, s.y, s.r, 0, 6.283); sc.fill();
+  });
+  sc.globalAlpha = 1;
+  set($('moon'), { x: MOON.x - MOON.r, y: MOON.y - MOON.r + dawnK * 80, o: clamp(HEAVY(t - 0.05)) * (1 - dawnK) });
+
+  // ---- street ----
+  const pullK = easeInOut((t - T.pull) / 1.1);
+  const stO = 1 - clamp((t - (T.pull + 0.5)) / 0.6);
+  const ss = lerp(1, 0.45, pullK);
+  const ox = WINC.x, oy = G;
+  $('street').style.transformOrigin = `${ox}px ${oy}px`;
+  $('street').style.transform = `translateY(${pullK * (V ? 260 : 160)}px) scale(${ss})`;
+  $('street').style.opacity = stO;
+  drawHouses(t);
+  set($('ground'), { x: 0, y: lerp(0, G2 - G, pullK) + (1 - skyIn0(t)) * 0 });
+  // lights off with a flicker
+  let lightK = 1;
+  if (t >= T.off) { const d = t - T.off; lightK = d < 0.08 ? 0.2 : d < 0.14 ? 0.8 : d < 0.22 ? 0.1 : 0; }
+  $('warmglow').style.opacity = lightK;
+  $('fascia').style.color = `rgba(242,196,109,${lerp(0.25, 1, lightK)})`;
+  $('fascia').style.textShadow = lightK > 0.5 ? '0 0 18px rgba(255,190,100,.6)' : 'none';
+  $('awning').style.filter = `brightness(${lerp(0.38, 1, lightK)})`;
+  $('wall').style.filter = `brightness(${lerp(0.8, 1.15, lightK)})`;
+  // door tag flip OPEN -> CLOSED
+  const fl = clamp((t - T.flip) / 0.3);
+  const tag = $('tag');
+  const sx = Math.abs(Math.cos(fl * Math.PI));
+  tag.style.transformOrigin = '50% 0';
+  tag.style.transform = `scaleX(${Math.max(0.02, sx)}) rotate(${Math.sin(t * 2.2) * (t > T.flip ? 3 * Math.exp(-(t - T.flip) * 1.5) : 0)}deg)`;
+  if (fl < 0.5) { tag.textContent = 'OPEN'; tag.style.background = '#E5484D'; tag.style.color = '#fff'; tag.style.boxShadow = '0 0 22px rgba(229,72,77,.65)'; }
+  else { tag.textContent = 'CLOSED'; tag.style.background = '#3A3F5C'; tag.style.color = '#A8ACC4'; tag.style.boxShadow = 'none'; }
+  // neon OPEN 24/7 + blue screen glow
+  let neonK = 0;
+  if (t >= T.neon) { const d = t - T.neon; neonK = d < 0.06 ? 1 : d < 0.18 ? 0.15 : d < 0.24 ? 1 : d < 0.32 ? 0.3 : 1; }
+  $('neon').style.opacity = neonK;
+  $('blueglow').style.opacity = neonK * (0.85 + 0.15 * Math.sin(t * 5));
+
+  // fireflies
+  flies.forEach((f, i) => {
+    const d = t - f.t, life = 2.5;
+    const o = d < 0 ? 0 : d < 0.2 ? d / 0.2 : d < life - 0.6 ? 1 : clamp((life - d) / 0.6);
+    const p = easeOut(d / life);
+    const x0 = WINC.x, y0 = WINC.y;
+    const x = lerp(x0, f.endX, p) + Math.sin(d * 2.4 + i) * 40 * f.sway * (1 - p * 0.5);
+    const y = lerp(y0, f.endY, p);
+    const s = lerp(0.6, 1, POP(d)) * lerp(1, 0.55, p);
+    const w = f.el.offsetWidth, h = f.el.offsetHeight;
+    set(f.el, { x: x - (w * s) / 2, y: y - (h * s) / 2, s, o: o * stO });
+    // becomes a star
+    const so = clamp((d - (life - 0.7)) / 0.4);
+    set(f.sp, { x: f.endX - 4 + Math.sin(life * 2.4 + i) * 20 * f.sway, y: f.endY - 4, s: 1 + 0.4 * Math.sin(t * 3 + i), o: so * (1 - dawnK * 0.8) });
+  });
+
+  // ---- skyline ----
+  const skyIn = easeOut((t - (T.pull + 0.45)) / 0.9);
+  const px = panX(t);
+  $('skyline').style.transform = `translate(${-px}px, ${(1 - skyIn) * 420}px)`;
+  $('skyline').style.opacity = skyIn;
+  $('skyline').style.filter = `brightness(${lerp(1, 0.55, clamp((t - T.end) / 0.6))})`;
+  screens.forEach(s => {
+    const d = t - s.lit;
+    let k = d < 0 ? 0.06 : d < 0.06 ? 0.9 : d < 0.12 ? 0.2 : 1;
+    s.el.style.opacity = k;
+    s.el.style.boxShadow = d >= 0.12 ? '0 0 50px 6px rgba(110,160,255,.35)' : 'none';
+    const ck = TYPE(d - 0.15);
+    const cw = s.cap.offsetWidth;
+    set(s.cap, { x: s.cx - cw / 2, y: s.sy + s.sh + 22 + (1 - ck) * 16, o: d > 0.15 ? clamp((d - 0.15) / 0.2) : 0 });
+  });
+
+  // ---- texts ----
+  texts.forEach(tx => {
+    const vis = t >= tx.t0 - 0.01 && t < tx.t1 + 0.01;
+    tx.el.style.opacity = vis ? 1 : 0;
+    if (!vis) return;
+    const out = easeIn((t - tx.t1 + 0.25) / 0.25);
+    const P = tx.sky ? TXT_SKY : TXT;
+    set(tx.el, { x: P.x, y: P.y });
+    tx.lines.forEach((ln, j) => {
+      const st = tx.t0 + (j ? tx.d2 : 0);
+      const k = TYPE(t - st);
+      ln.style.transform = `translateY(${((1 - k) - out) * ln.offsetHeight * 1.05}px)`;
+      ln.style.opacity = t >= st ? 1 : 0;
+    });
+  });
+
+  // ---- dawn card ----
+  {
+    const k = POP(t - (T.dawn + 0.9));
+    const out = easeIn((t - T.end + 0.3) / 0.3);
+    set($('card'), { x: CARD.x, y: CARD.y + (1 - k) * 60 - out * 40, s: lerp(0.92, 1, k), o: clamp((t - (T.dawn + 0.9)) / .2) * (1 - out) });
+    cardRows.forEach((r, i) => { r.style.opacity = clamp((t - (T.dawn + 1.1 + i * 0.12)) / 0.15); });
+  }
+  $('veil').style.opacity = clamp((t - T.end) / 0.6) * 0.95;
+
+  // ---- end card ----
+  const E = T.end;
+  const cy = V ? 470 : 80;
+  const lk = POP(t - (E + 0.1));
+  set($('logocard'), { x: (W - LC.w) / 2, y: cy + (1 - lk) * 30, s: lerp(0.9, 1, lk), o: clamp((t - (E + 0.1)) / .2) });
+  const hw = $('e-head').offsetWidth;
+  const hk = POP(t - (E + 0.35));
+  set($('e-head'), { x: (W - hw) / 2, y: cy + LC.h + (V ? 80 : 50) + (1 - hk) * 30, o: clamp((t - (E + 0.35)) / .2) });
+  const sw2 = $('e-sub').offsetWidth;
+  set($('e-sub'), { x: (W - sw2) / 2, y: cy + LC.h + (V ? 230 : 180) + (1 - TYPE(t - (E + 0.55))) * 20, o: clamp((t - (E + 0.55)) / .2) });
+  const nw = $('e-num').offsetWidth;
+  const nk = POP(t - (E + 0.85));
+  set($('e-num'), { x: (W - nw) / 2, y: cy + LC.h + (V ? 360 : 280) + (1 - nk) * 30, o: clamp((t - (E + 0.85)) / .2) });
+  const lw = $('e-lab').offsetWidth;
+  set($('e-lab'), { x: (W - lw) / 2, y: cy + LC.h + (V ? 320 : 244), o: clamp((t - (E + 0.8)) / .2) });
+  const pw = parseFloat($('e-call').style.width), ph = parseFloat($('e-call').style.height);
+  const gap = V ? 30 : 28, py = cy + LC.h + (V ? 520 : 420);
+  const c1 = POP(t - (E + 1.1)), c2 = POP(t - (E + 1.35));
+  const callX = V ? (W - pw) / 2 : W / 2 - pw - gap / 2;
+  set($('e-call'), { x: callX, y: py + (1 - c1) * 30, o: clamp((t - (E + 1.1)) / .15) });
+  set($('e-text'), { x: V ? (W - pw) / 2 : W / 2 + gap / 2, y: (V ? py + ph + gap : py) + (1 - c2) * 30, o: clamp((t - (E + 1.35)) / .15) });
+  const uw = $('e-url').offsetWidth;
+  set($('e-url'), { x: (W - uw) / 2, y: py + (V ? 2 * ph + gap + 60 : ph + 46) + (1 - POP(t - (E + 1.7))) * 24, o: clamp((t - (E + 1.7)) / .25) });
+  if (t > E + 2.2) {
+    const p = 1 + 0.035 * Math.max(0, Math.sin((t - (E + 2.2)) * Math.PI * 1.67));
+    $('e-call').style.transform = `translate(${callX - pw * (p - 1) / 2}px,${py - ph * (p - 1) / 2}px) scale(${p})`;
+  }
+}
+
+window.__duration = T.out;
+window.__events = EVENTS;
+window.__seek = seek;
+Promise.all([document.fonts.load('700 40px Inter'), document.fonts.load('800 20px Inter')])
+  .then(() => document.fonts.ready)
+  .then(() => Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; }))))
+  .then(() => { seek(0); window.__ready = true; });
+</script>
+</body>
+</html>

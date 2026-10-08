@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+:root { --ink:#1D1D1F; --muted:#86868B; --wa:#25D366; --gold:#B8901E; --warm:#B8901E; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { overflow:hidden; background:#FFFFFF; }
+#s { position:relative; overflow:hidden; font-family:'Inter',sans-serif; color:var(--ink);
+  background:#FFFFFF; }
+.abs { position:absolute; }
+canvas { position:absolute; inset:0; }
+.brand { font-weight:700; letter-spacing:.18em; font-size:24px; color:#1D1D1F; }
+.brand i { font-style:normal; color:var(--warm); }
+.count { font-weight:600; font-size:24px; color:#86868B; letter-spacing:.05em; }
+h1 { font-weight:800; letter-spacing:-.045em; line-height:1.02; }
+h1 .m { color:var(--muted); }
+h1 em { font-style:normal; color:var(--warm); }
+.sub { font-weight:500; color:#3A3A3C; letter-spacing:-.015em; line-height:1.3; }
+.phone { border-radius:64px; background:#1D1D1F; padding:16px; box-shadow:0 50px 100px -30px rgba(0,0,0,.35), 0 0 0 1px rgba(0,0,0,.08); }
+.screen { border-radius:50px; overflow:hidden; background:#000; position:relative; width:100%; height:100%; }
+.screen img { width:100%; display:block; }
+.notch { position:absolute; top:14px; left:50%; transform:translateX(-50%); width:150px; height:38px; border-radius:20px; background:#1D1D1F; z-index:2; }
+.win { border-radius:18px; overflow:hidden; background:#000; box-shadow:0 50px 100px -30px rgba(0,0,0,.32), 0 0 0 1px rgba(0,0,0,.08); }
+.win .bar { height:46px; background:#F2F2F4; display:flex; align-items:center; gap:9px; padding:0 18px; position:relative; }
+.win .bar i { width:13px; height:13px; border-radius:50%; background:#D9D9DE; display:block; }
+.win .bar .url { position:absolute; left:50%; transform:translateX(-50%); background:#E8E8ED; border-radius:8px; padding:6px 20px; font-size:18px; color:#9A9AAE; font-weight:500; }
+.win img { width:100%; display:block; }
+.chip { border-radius:999px; font-weight:800; letter-spacing:-.03em; display:flex; align-items:center; justify-content:center; background:#F5F5F7; color:#1D1D1F; box-shadow:0 12px 30px -10px rgba(0,0,0,.25), 0 0 0 1px rgba(0,0,0,.06); }
+.pill { border-radius:999px; display:flex; align-items:center; justify-content:center; gap:16px; font-weight:700; white-space:nowrap; letter-spacing:-.01em; }
+.wa { background:var(--wa); color:#fff; box-shadow:0 20px 40px -14px rgba(37,211,102,.6); }
+.web { color:#1D1D1F; box-shadow:0 0 0 2.5px #D2D2D7 inset; background:#fff; font-weight:600; }
+.swipe { font-weight:600; font-size:30px; color:#86868B; letter-spacing:.01em; }
+.cap { font-weight:600; font-size:34px; letter-spacing:-.015em; }
+.cap span { color:var(--muted); font-weight:500; }
+</style>
+</head>
+<body>
+<div id="s"><canvas id="stars"></canvas></div>
+<script>
+const Q = new URLSearchParams(location.search);
+const FMT = Q.get('fmt') || 'tt';
+const N = +(Q.get('n') || 1);
+const W = 1080, H = FMT === 'tt' ? 1920 : 1350, TT = FMT === 'tt';
+const S = document.getElementById('s');
+S.style.width = W + 'px'; S.style.height = H + 'px';
+document.body.style.width = W + 'px'; document.body.style.height = H + 'px';
+const TOTAL = 6;
+const c = document.getElementById('stars'); c.width = W; c.height = H;
+{ let seed = 23; const r = () => { seed = (seed * 16807) % 2147483647; return seed / 2147483647; };
+  const g = c.getContext('2d');
+  for (let i = 0; i < 0; i++) { g.globalAlpha = 0.12 + r() * 0.55; g.fillStyle = '#fff'; g.beginPath(); g.arc(r() * W, r() * H, 0.6 + r() * 1.5, 0, 6.283); g.fill(); } }
+function el(html, style, cls) { const d = document.createElement('div'); d.className = 'abs ' + (cls || ''); d.innerHTML = html; Object.assign(d.style, style); S.appendChild(d); return d; }
+const TOPY = TT ? 90 : 56;
+el('ECSTASY TECHNOLOGIES', { left: '70px', top: TOPY + 'px' }, 'brand');
+el(`${N} / ${TOTAL}`, { right: '70px', top: TOPY + 'px' }, 'count');
+const WA_ICON = '<svg viewBox="0 0 24 24" width="1.1em" height="1.1em"><path fill="#fff" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>';
+const GLOBE = '<svg viewBox="0 0 24 24" width="1em" height="1em"><path fill="#0071E3" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 6h-3a15.7 15.7 0 0 0-1.4-3.6A8 8 0 0 1 18.9 8zM12 4c.8 1.2 1.5 2.5 1.9 4h-3.8c.4-1.5 1.1-2.8 1.9-4zM4.3 14a8 8 0 0 1 0-4h3.4a16.5 16.5 0 0 0 0 4H4.3zm.8 2h3a15.7 15.7 0 0 0 1.4 3.6A8 8 0 0 1 5.1 16zM8 8H5.1a8 8 0 0 1 4.4-3.6C8.9 5.5 8.4 6.7 8 8zm4 12c-.8-1.2-1.5-2.5-1.9-4h3.8c-.4 1.5-1.1 2.8-1.9 4zm2.3-6H9.7a14.7 14.7 0 0 1 0-4h4.6a14.7 14.7 0 0 1 0 4zm.2 5.6c.6-1.1 1.1-2.3 1.4-3.6h3a8 8 0 0 1-4.4 3.6zM16.3 14a16.5 16.5 0 0 0 0-4h3.4a8 8 0 0 1 0 4h-3.4z"/></svg>';
+
+function phone(img, x, y, w, h, rot) {
+  const p = el(`<div class="notch"></div><div class="screen"><img src="${img}"></div>`, { left: x + 'px', top: y + 'px', width: w + 'px', height: h + 'px', transform: `rotate(${rot || 0}deg)` }, 'phone');
+  return p;
+}
+
+if (N === 1) {
+  // hook
+  const fs = TT ? 150 : 124;
+  el(`<h1 style="font-size:${fs}px">Rate this<br>website<em>.</em></h1>`, { left: '70px', top: (TT ? 200 : 140) + 'px', width: '940px' });
+  el(`<div style="font-weight:800;font-size:${TT ? 92 : 76}px;letter-spacing:-.04em;color:var(--warm)">1 to 10?</div>`, { left: '70px', top: (TT ? 530 : 420) + 'px' });
+  // floating number chips
+  const chips = [['7', 700, 600, 0], ['9', 860, 760, 0], ['10', 760, 920, 0]];
+  if (TT) chips.forEach(([t, x, y]) => el(t, { left: x + 'px', top: y + 'px', width: '140px', height: '140px', fontSize: '64px' }, 'chip'));
+  // phone peeking from bottom, slightly tilted
+  if (TT) phone('assets/p-hero.jpg', 250, 1000, 600, 1130, -6);
+  else phone('assets/p-hero.jpg', 560, 380, 430, 810, -6);
+  el(`<div class="swipe">Swipe to judge →</div>`, TT ? { left: '70px', top: '760px' } : { left: '70px', top: '560px' });
+  el(`<div class="sub" style="font-size:${TT ? 34 : 30}px;color:var(--muted)">Persis Luxury Beauty World</div>`, TT ? { left: '70px', top: '830px' } : { left: '70px', top: '620px' });
+} else if (N >= 2 && N <= 4) {
+  const D = {
+    2: ['First impression.', 'assets/p-hero.jpg', 'Booking button front and centre'],
+    3: ['Services, clear<br>at a glance.', 'assets/p-services.jpg', 'Hair · Makeup · Nails'],
+    4: ['The work<br>speaks.', 'assets/p-gallery.jpg', 'A gallery of real results'],
+  }[N];
+  el(`<h1 style="font-size:${TT ? 92 : 74}px">${D[0]}</h1>`, { left: '70px', top: (TT ? 190 : 130) + 'px', width: '940px' });
+  if (TT) {
+    phone(D[1], 220, N === 2 ? 440 : 520, 640, 1210);
+    el(`<div class="cap">${D[2]}</div>`, { left: '70px', top: (N === 2 ? 1690 : 1770) + 'px' });
+  } else {
+    phone(D[1], 70, 330, 470, 890);
+    el(`<div class="cap" style="font-size:36px;line-height:1.2">${D[2]}</div><div class="sub" style="margin-top:22px;font-size:28px;color:var(--muted)">Persis Luxury Beauty World</div>`, { left: '600px', top: '900px', width: '420px' });
+  }
+} else if (N === 5) {
+  el(`<h1 style="font-size:${TT ? 92 : 74}px">And on<br><span class="m">desktop.</span></h1>`, { left: '70px', top: (TT ? 190 : 130) + 'px', width: '940px' });
+  const ww = 940, wh = 46 + Math.round(940 * 900 / 1440);
+  el(`<div class="bar"><i></i><i></i><i></i><div class="url">persisluxury.com</div></div><img src="assets/p-desktop.jpg">`, { left: '70px', top: (TT ? 640 : 420) + 'px', width: ww + 'px', height: wh + 'px' }, 'win');
+  el(`<div class="cap">Same brand, every screen size.</div>`, { left: '70px', top: ((TT ? 640 : 420) + wh + 50) + 'px' });
+  if (TT) el(`<div class="sub" style="font-size:30px;color:var(--muted)">Responsive design: phone, tablet, laptop</div>`, { left: '70px', top: (640 + wh + 110) + 'px' });
+} else {
+  const y0 = TT ? 500 : 150;
+  el(`<h1 style="font-size:${TT ? 120 : 98}px;text-align:center">So… what's<br>your rating<em>?</em></h1>`, { left: '60px', top: y0 + 'px', width: '960px' });
+  el(`<div style="font-weight:700;font-size:${TT ? 46 : 40}px;text-align:center;color:var(--warm)">Drop it in the comments ↓</div>`, { left: '60px', top: (y0 + (TT ? 300 : 250)) + 'px', width: '960px' });
+  const by = y0 + (TT ? 520 : 400);
+  el(`<div class="sub" style="font-size:${TT ? 40 : 34}px;text-align:center">Want a website like this for your business?</div>`, { left: '60px', top: by + 'px', width: '960px' });
+  el(`${WA_ICON}WhatsApp +233 54 285 5399`, { left: '115px', top: (by + (TT ? 100 : 80)) + 'px', width: '850px', height: (TT ? 130 : 116) + 'px', fontSize: (TT ? 46 : 42) + 'px' }, 'pill wa');
+  el(`${GLOBE}www.ecstasytechnologies.com`, { left: '165px', top: (by + (TT ? 270 : 230)) + 'px', width: '750px', height: (TT ? 104 : 94) + 'px', fontSize: (TT ? 38 : 34) + 'px' }, 'pill web');
+  el(`<div class="sub" style="font-size:${TT ? 30 : 26}px;text-align:center;color:var(--muted)">Built by Ecstasy Technologies</div>`, { left: '60px', top: (by + (TT ? 430 : 365)) + 'px', width: '960px' });
+}
+Promise.all([document.fonts.load('800 40px Inter'), document.fonts.load('500 20px Inter')]).then(() => document.fonts.ready)
+  .then(() => Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; }))))
+  .then(() => { window.__ready = true; });
+</script>
+</body>
+</html>

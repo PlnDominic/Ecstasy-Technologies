@@ -1,0 +1,417 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+:root { --ink:#1D1D1F; --muted:#86868B; --soft:#AEAEB2; --blue:#0071E3; --grey:#E9E9EB; --hair:#E5E5EA; --green:#34C759; --red:#FF3B30; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { overflow:hidden; background:#fff; }
+#stage { position:relative; overflow:hidden; background:#fff; font-family:'Inter',sans-serif; color:var(--ink); }
+.abs { position:absolute; left:0; top:0; transform-origin:0 0; }
+
+/* headlines */
+.head { overflow:hidden; }
+.head .in { font-weight:700; letter-spacing:-.045em; line-height:1.02; }
+.head .l2 { color:var(--soft); }
+.head .dot { color:var(--blue); }
+
+/* pain 1: search */
+#search { border-radius:999px; background:#fff; box-shadow:0 0 0 2px var(--hair), 0 20px 50px -25px rgba(0,0,0,.25); display:flex; align-items:center; gap:.6em; padding:0 1.1em; white-space:nowrap; letter-spacing:-.015em; }
+#search svg { flex:none; }
+#qcaret { display:inline-block; width:3px; background:var(--ink); vertical-align:middle; margin-left:2px; }
+#results { border-radius:28px; background:#F5F5F7; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+#results .nr { font-weight:700; letter-spacing:-.03em; }
+#results .ns { color:var(--muted); font-weight:500; margin-top:.4em; }
+
+/* pain 2: notebook */
+#book { border-radius:18px; background:#FFFDF6;
+  background-image: linear-gradient(90deg, transparent 0, transparent 92px, rgba(255,59,48,.35) 92px, rgba(255,59,48,.35) 95px, transparent 95px),
+                    repeating-linear-gradient(180deg, transparent 0, transparent 63px, rgba(0,113,227,.13) 63px, rgba(0,113,227,.13) 65px);
+  box-shadow:0 30px 70px -30px rgba(0,0,0,.35), 0 0 0 1px rgba(0,0,0,.05); overflow:hidden; }
+.entry { position:absolute; left:120px; font-weight:500; font-style:italic; color:#3A3A3C; letter-spacing:-.01em; white-space:nowrap; }
+.strike { position:absolute; height:5px; background:#3A3A3C; border-radius:3px; transform-origin:0 50%; }
+.qm { position:absolute; font-weight:800; color:var(--red); }
+
+/* pain 3: DM pile */
+#dms { overflow:hidden; }
+.dm { position:absolute; left:0; display:flex; align-items:center; gap:.55em; }
+.dm .av { border-radius:50%; background:#D1D1D6; flex:none; }
+.dm .bb { background:var(--grey); border-radius:1em; padding:.45em .8em; white-space:nowrap; letter-spacing:-.015em; font-weight:450; }
+#badge { background:var(--red); color:#fff; border-radius:999px; font-weight:700; display:flex; align-items:center; justify-content:center; letter-spacing:-.02em; font-variant-numeric:tabular-nums; white-space:nowrap; }
+#badge-label { color:var(--muted); font-weight:600; white-space:nowrap; letter-spacing:-.01em; }
+
+/* windows */
+.win { border-radius:16px; overflow:hidden; background:#fff; box-shadow:0 40px 90px -30px rgba(0,0,0,.28), 0 0 0 1px rgba(0,0,0,.06); }
+.win .bar { height:40px; background:#F2F2F4; display:flex; align-items:center; gap:8px; padding:0 16px; position:relative; }
+.win .bar i { width:12px; height:12px; border-radius:50%; background:#D9D9DE; display:block; }
+.win .bar .url { position:absolute; left:50%; transform:translateX(-50%); background:#E8E8ED; border-radius:8px; padding:5px 18px; font-size:15px; color:var(--muted); font-weight:500; white-space:nowrap; }
+.win .view { position:relative; overflow:hidden; }
+.win .view img { position:absolute; left:0; top:0; display:block; }
+.cap { display:flex; align-items:center; gap:12px; font-weight:600; letter-spacing:-.015em; white-space:nowrap; }
+.cap .pip { width:10px; height:10px; border-radius:50%; background:var(--blue); }
+.cap span { color:var(--muted); font-weight:500; }
+#ring { border-radius:14px; box-shadow:0 0 0 5px var(--blue); }
+
+/* end card */
+#e-logo { mix-blend-mode:multiply; }
+#e-head { font-weight:700; letter-spacing:-.045em; white-space:nowrap; text-align:center; line-height:1; }
+#e-head em { font-style:normal; color:var(--blue); }
+#e-num { font-weight:700; letter-spacing:-.03em; white-space:nowrap; font-variant-numeric:tabular-nums; }
+.pill { border-radius:999px; display:flex; align-items:center; justify-content:center; gap:.45em; font-weight:600; letter-spacing:-.01em; white-space:nowrap; color:#fff; }
+.pill svg { fill:#fff; }
+#e-call { background:var(--green); }
+#e-text { background:var(--blue); }
+#e-url { color:var(--muted); font-weight:500; white-space:nowrap; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <!-- pain 1 -->
+  <div class="abs" id="search"><svg viewBox="0 0 24 24"><path fill="#8E8E93" d="M15.5 14h-.8l-.3-.3A6.5 6.5 0 1 0 14 15.5l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"/></svg><span id="qtext"></span><span id="qcaret"></span></div>
+  <div class="abs" id="results"><div class="nr">No results found</div><div class="ns">Try a different search</div></div>
+
+  <!-- pain 2 -->
+  <div class="abs" id="book"></div>
+
+  <!-- pain 3 -->
+  <div class="abs" id="dms"></div>
+  <div class="abs" id="badge">0</div>
+  <div class="abs" id="badge-label">unread messages</div>
+
+  <!-- fixes -->
+  <div class="abs win" id="w1"><div class="bar"><i></i><i></i><i></i><div class="url">solaniconstruction.com</div></div><div class="view"><img id="i1" src="assets/s3-solani.jpg"></div></div>
+  <div class="abs win" id="w2"><div class="bar"><i></i><i></i><i></i><div class="url">clems-akinaabi.vercel.app</div></div><div class="view"><img id="i2" src="assets/s3-clems.jpg"></div></div>
+  <div class="abs win" id="w3"><div class="bar"><i></i><i></i><i></i><div class="url">persisluxury.com</div></div><div class="view"><img id="i3" src="assets/s3-persis.jpg"><div class="abs" id="ring"></div></div></div>
+  <div class="abs cap" id="c1"><div class="pip"></div>Solani Construction &amp; Engineering <span>· website</span></div>
+  <div class="abs cap" id="c2"><div class="pip"></div>Clems Akinaabi <span>· inventory &amp; order system</span></div>
+  <div class="abs cap" id="c3"><div class="pip"></div>Persis Luxury Beauty World <span>· online appointments</span></div>
+
+  <div id="heads"></div>
+
+  <!-- end card -->
+  <img class="abs" id="e-logo" src="assets/logo.png">
+  <div class="abs" id="e-head">Let's fix that<em>.</em></div>
+  <div class="abs" id="e-num">+233 54 285 5399</div>
+  <div class="abs pill" id="e-call"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>Call us</div>
+  <div class="abs pill" id="e-text"><svg viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/></svg>Message us</div>
+  <div class="abs" id="e-url">ecstasytechnologies.com</div>
+</div>
+
+<script>
+const FMT = new URLSearchParams(location.search).get('fmt') || 'v';
+const V = FMT === 'v';
+const W = V ? 1080 : 1920, H = V ? 1920 : 1080;
+const $ = id => document.getElementById(id);
+$('stage').style.width = W + 'px'; $('stage').style.height = H + 'px';
+document.body.style.width = W + 'px'; document.body.style.height = H + 'px';
+
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, k) => a + (b - a) * k;
+function spring(t, w = 16, z = 0.55) {
+  if (t <= 0) return 0;
+  if (z >= 1) return 1 - Math.exp(-w * t) * (1 + w * t);
+  const wd = w * Math.sqrt(1 - z * z);
+  return 1 - Math.exp(-z * w * t) * (Math.cos(wd * t) + (z * w / wd) * Math.sin(wd * t));
+}
+const TYPE = t => spring(t, 18, 0.62);
+const POP = t => spring(t, 20, 0.6);
+const HEAVY = t => spring(t, 9, 1);
+const easeIn = t => { t = clamp(t); return t * t * t; };
+const easeOut = t => { t = clamp(t); return 1 - Math.pow(1 - t, 3); };
+const easeInOut = t => { t = clamp(t); return t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2; };
+function set(el, { x = 0, y = 0, s = 1, r = 0, o = 1 }) {
+  el.style.transform = `translate(${x}px,${y}px) rotate(${r}deg) scale(${s})`;
+  el.style.opacity = o;
+}
+function size(el, w, h) { el.style.width = w + 'px'; if (h != null) el.style.height = h + 'px'; }
+
+// ---------------- timeline ----------------
+const T = { p1: 0.0, p2: 2.3, p3: 4.6, turn: 6.9, f1: 8.0, f2: 10.4, f3: 12.8, look: 15.2, end: 16.3, out: 20.0 };
+const HEADS = [
+  { t0: 0.15, t1: T.p2, l1: 'Customers search for you…', l2: '…and find nothing.', l2t: 1.25 },
+  { t0: T.p2 + 0.1, t1: T.p3, l1: 'Orders lost', l2: 'in notebooks.', l2t: 0.0 },
+  { t0: T.p3 + 0.1, t1: T.turn, l1: 'Bookings buried', l2: 'in your DMs.', l2t: 0.0 },
+  { t0: T.turn, t1: T.turn + 0.55, l1: 'Sound familiar?', l2: '', l2t: 0, center: true },
+  { t0: T.turn + 0.55, t1: T.f1, l1: 'We fix that<span class="dot">.</span>', l2: '', l2t: 0, center: true },
+  { t0: T.f1 + 0.05, t1: T.f2, l1: 'Get found<span class="dot">.</span>', l2: 'A website customers can actually find.', l2t: 0.35, small2: true },
+  { t0: T.f2 + 0.05, t1: T.f3, l1: 'Get organised<span class="dot">.</span>', l2: 'Orders and stock in one system.', l2t: 0.35, small2: true },
+  { t0: T.f3 + 0.05, t1: T.look, l1: 'Get booked<span class="dot">.</span>', l2: 'Appointments, without the back-and-forth.', l2t: 0.35, small2: true },
+  { t0: T.look + 0.05, t1: T.end, l1: 'Your customers', l2: 'are already looking.', l2t: 0.25, center: true },
+];
+
+// ---------------- layout ----------------
+const L = V ? {
+  head: { x: 80, y: 190, w: 920, fs: 104, fs2: 44 },
+  headC: { fs: 120 },
+  vis: { cx: 540, top: 760 },
+  search: { w: 920, h: 124, fs: 44 }, results: { w: 920, h: 420 },
+  book: { w: 900, h: 700 }, entryFs: 44,
+  dms: { w: 920, h: 820, fs: 40 },
+  win: { w: 920, h: 820 },
+  cap: { x: 80, y: 1700, fs: 34 },
+} : {
+  head: { x: 110, y: 330, w: 720, fs: 84, fs2: 34 },
+  headC: { fs: 120 },
+  vis: { cx: 1390, top: 170 },
+  search: { w: 840, h: 112, fs: 40 }, results: { w: 840, h: 380 },
+  book: { w: 820, h: 640 }, entryFs: 40,
+  dms: { w: 840, h: 720, fs: 36 },
+  win: { w: 880, h: 640 },
+  cap: { x: 950, y: 860, fs: 28 },
+};
+
+// headlines
+const heads = HEADS.map(h => {
+  const el = document.createElement('div');
+  el.className = 'abs';
+  const fs = h.center ? L.headC.fs : L.head.fs;
+  el.innerHTML = `<div class="head"><div class="in" style="font-size:${fs}px">${h.l1}</div></div>` +
+    (h.l2 ? `<div class="head"><div class="in l2" style="font-size:${h.small2 ? L.head.fs2 : fs}px;${h.small2 ? 'font-weight:500;letter-spacing:-.02em;color:var(--muted);margin-top:.5em;line-height:1.25' : ''}">${h.l2}</div></div>` : '');
+  el.style.width = (h.center ? W - 120 : L.head.w) + 'px';
+  if (h.center) el.style.textAlign = 'center';
+  $('heads').appendChild(el);
+  return { ...h, el, lines: [...el.querySelectorAll('.in')] };
+});
+
+// search
+size($('search'), L.search.w, L.search.h); $('search').style.fontSize = L.search.fs + 'px';
+$('search').querySelector('svg').setAttribute('width', L.search.fs * 1.1);
+$('search').querySelector('svg').setAttribute('height', L.search.fs * 1.1);
+$('qcaret').style.height = (L.search.fs * 1.1) + 'px';
+size($('results'), L.results.w, L.results.h);
+$('results').querySelector('.nr').style.fontSize = (L.search.fs * 1.15) + 'px';
+$('results').querySelector('.ns').style.fontSize = (L.search.fs * 0.72) + 'px';
+const QUERY = 'your business near me';
+
+// notebook
+size($('book'), L.book.w, L.book.h);
+const ENTRIES = ['Order – 3 bags (paid?)', 'Stock: 20… or 18?', 'Deliver Tuesday?? or Wed', 'Call back customer ←', 'Who took the blue one?'];
+const strikes = [];
+ENTRIES.forEach((txt, i) => {
+  const e = document.createElement('div');
+  e.className = 'entry'; e.textContent = txt;
+  e.style.fontSize = L.entryFs + 'px';
+  e.style.top = (70 + i * 130 - L.entryFs * 0.05) + 'px';
+  e.style.transform = `rotate(${(i % 2 ? -1 : 1) * 0.8}deg)`;
+  $('book').appendChild(e);
+  const s = document.createElement('div');
+  s.className = 'strike';
+  s.style.left = '110px'; s.style.top = (70 + i * 130 + L.entryFs * 0.62) + 'px';
+  $('book').appendChild(s);
+  strikes.push({ e, s, i });
+});
+const qm = document.createElement('div'); qm.className = 'qm'; qm.textContent = '?!';
+qm.style.fontSize = (L.entryFs * 2.4) + 'px'; qm.style.right = '50px'; qm.style.top = '40px';
+$('book').appendChild(qm);
+
+// DMs
+size($('dms'), L.dms.w, L.dms.h);
+const MSGS = ['Is this still available?', 'Hello??', 'How much?', 'Are you open today?', 'Can I book for Saturday?', 'Please reply', 'Hello…', 'Do you deliver?', '??'];
+const dms = MSGS.map((m, i) => {
+  const d = document.createElement('div');
+  d.className = 'dm';
+  d.innerHTML = `<div class="av" style="width:${L.dms.fs * 1.5}px;height:${L.dms.fs * 1.5}px;background:hsl(${(i * 47) % 360},6%,${78 - (i % 3) * 6}%)"></div><div class="bb" style="font-size:${L.dms.fs}px">${m}</div>`;
+  $('dms').appendChild(d);
+  return d;
+});
+$('badge').style.fontSize = (V ? 58 : 50) + 'px';
+size($('badge'), V ? 170 : 150, V ? 96 : 84);
+$('badge-label').style.fontSize = (V ? 32 : 28) + 'px';
+
+// windows
+function sizeWin(id, w, h) { size($(id), w, h); $(id).querySelector('.view').style.height = (h - 40) + 'px'; }
+['w1', 'w3'].forEach(id => sizeWin(id, L.win.w, L.win.h));
+const W2H = Math.round(L.win.w * 699 / 1200) + 40;
+sizeWin('w2', L.win.w, W2H);
+$('i1').style.width = L.win.w + 'px';
+$('i2').style.width = L.win.w + 'px';
+$('i3').style.width = L.win.w + 'px';
+['c1', 'c2', 'c3'].forEach(id => $(id).style.fontSize = L.cap.fs + 'px');
+
+// end card
+const logoW = V ? 600 : 520;
+$('e-logo').style.width = logoW + 'px';
+$('e-head').style.fontSize = (V ? 128 : 112) + 'px';
+$('e-num').style.fontSize = (V ? 96 : 84) + 'px';
+['e-call', 'e-text'].forEach(id => {
+  $(id).style.fontSize = (V ? 42 : 36) + 'px';
+  size($(id), V ? 420 : 360, V ? 112 : 96);
+  $(id).querySelector('svg').setAttribute('width', V ? 44 : 38);
+  $(id).querySelector('svg').setAttribute('height', V ? 44 : 38);
+});
+$('e-url').style.fontSize = (V ? 30 : 26) + 'px';
+
+// ---------------- sound events (same clock as picture) ----------------
+const EVENTS = [];
+for (let k = 0; k < QUERY.length; k += 2) EVENTS.push({ t: 0.35 + (k / QUERY.length) * 0.75, k: 'key' });
+EVENTS.push({ t: 1.25, k: 'thump' });
+EVENTS.push({ t: T.p2, k: 'whoosh' });
+ENTRIES.forEach((_, i) => EVENTS.push({ t: T.p2 + 0.55 + i * 0.22, k: 'scratch' }));
+EVENTS.push({ t: T.p3, k: 'whoosh' });
+MSGS.forEach((_, i) => EVENTS.push({ t: T.p3 + 0.2 + i * 0.2, k: 'blip' }));
+EVENTS.push({ t: T.turn, k: 'thump' });
+EVENTS.push({ t: T.f1 - 0.45, k: 'riser_end' });
+EVENTS.push({ t: T.f1, k: 'slam' });
+[T.f2, T.f3].forEach(t => { EVENTS.push({ t: t - 0.12, k: 'whoosh' }); EVENTS.push({ t: t + 0.05, k: 'slam' }); });
+EVENTS.push({ t: T.look, k: 'whoosh' });
+EVENTS.push({ t: T.end - 0.15, k: 'riser_end' }, { t: T.end + 0.2, k: 'chord' }, { t: T.end + 0.95, k: 'tick' }, { t: T.end + 1.25, k: 'tick' });
+
+// ---------------- seek ----------------
+function seek(t) {
+  // headlines (masked slide up, out by slide up)
+  heads.forEach(h => {
+    const vis = t >= h.t0 - 0.01 && t < h.t1 + 0.01;
+    h.el.style.opacity = vis ? 1 : 0;
+    if (!vis) return;
+    const out = easeIn((t - h.t1 + 0.22) / 0.22);
+    const x = h.center ? 60 : L.head.x;
+    const y = h.center ? (H / 2 - (V ? 160 : 90)) : L.head.y;
+    set(h.el, { x, y, o: 1 });
+    h.lines.forEach((ln, j) => {
+      const start = h.t0 + (j === 0 ? 0 : h.l2t);
+      const k = TYPE(t - start);
+      const hgt = ln.offsetHeight;
+      ln.style.transform = `translateY(${((1 - k) - out) * hgt * 1.05}px)`;
+      ln.style.opacity = t >= start ? 1 : 0;
+    });
+  });
+
+  const vx = w => L.vis.cx - w / 2;
+  // pain 1: search + no results
+  {
+    const k = HEAVY(t - 0.1), out = easeIn((t - T.p2 + 0.3) / 0.3);
+    const sy = L.vis.top + (V ? 160 : 120);
+    set($('search'), { x: vx(L.search.w), y: sy + (1 - k) * 80 - out * 60, o: k > 0 ? (1 - out) : 0 });
+    const n = Math.floor(clamp((t - 0.35) / 0.75) * QUERY.length);
+    $('qtext').textContent = QUERY.slice(0, n);
+    $('qcaret').style.opacity = (Math.floor(t * 3) % 2 === 0 || (t > 0.35 && t < 1.1)) ? 1 : 0;
+    const rk = POP(t - 1.25);
+    set($('results'), { x: vx(L.results.w), y: sy + L.search.h + 30 + (1 - rk) * 40 - out * 60, s: 1, o: clamp((t - 1.25) / .15) * (1 - out) });
+  }
+  // pain 2: notebook with entries being crossed out
+  {
+    const k = HEAVY(t - (T.p2 + 0.05)), out = easeIn((t - T.p3 + 0.3) / 0.3);
+    set($('book'), { x: vx(L.book.w), y: L.vis.top + (V ? 120 : 30) + (1 - k) * 700 - out * 60, r: -1.5 * k, o: t > T.p2 - 0.05 ? (1 - out) : 0 });
+    strikes.forEach(({ e, s, i }) => {
+      const st = T.p2 + 0.55 + i * 0.22;
+      const w = e.offsetWidth + 20;
+      s.style.width = w + 'px';
+      s.style.transform = `rotate(${(i % 2 ? 1.2 : -1)}deg) scaleX(${easeOut((t - st) / 0.2)})`;
+      e.style.opacity = t > T.p2 + 0.15 + i * 0.08 ? 1 : 0;
+    });
+    const qk = POP(t - (T.p2 + 1.6));
+    qm.style.transform = `scale(${qk}) rotate(${-8 * qk}deg)`;
+    qm.style.opacity = t > T.p2 + 1.6 ? 1 : 0;
+  }
+  // pain 3: DMs pile up, badge counts up
+  {
+    const out = easeIn((t - T.turn + 0.3) / 0.3);
+    set($('dms'), { x: vx(L.dms.w), y: L.vis.top + (V ? 110 : 90) - out * 60, o: t > T.p3 ? 1 - out : 0 });
+    const rowH = L.dms.fs * 2.05;
+    const shown = dms.filter((_, i) => t >= T.p3 + 0.2 + i * 0.2).length;
+    dms.forEach((d, i) => {
+      const ti = T.p3 + 0.2 + i * 0.2;
+      const k = POP(t - ti);
+      // newest sits at the bottom; older ones pushed up
+      const slot = (shown - 1 - i);
+      const yy = L.dms.h - rowH * (1 + slot) - 40;
+      const xx = (i % 3) * (V ? 36 : 30);
+      d.style.transform = `translate(${xx}px,${yy + (1 - k) * 20}px) scale(${lerp(0.75, 1, k)})`;
+      d.style.transformOrigin = '0 100%';
+      d.style.opacity = t >= ti ? clamp(1 - (slot - 6) * 0.35) : 0;
+    });
+    const cnt = Math.round(lerp(0, 47, easeOut((t - (T.p3 + 0.2)) / 1.9)));
+    $('badge').textContent = cnt;
+    const bk = POP(t - (T.p3 + 0.2));
+    const bw = parseFloat($('badge').style.width);
+    set($('badge'), { x: vx(L.dms.w) + L.dms.w - bw, y: L.vis.top + (V ? 10 : -10), s: lerp(.6, 1, bk), o: t > T.p3 + 0.2 ? 1 - out : 0 });
+    const lw = $('badge-label').offsetWidth;
+    set($('badge-label'), { x: vx(L.dms.w) + L.dms.w - bw - lw - 20, y: L.vis.top + (V ? 38 : 14), o: t > T.p3 + 0.2 ? 1 - out : 0 });
+  }
+
+  // fixes
+  const FIX = [
+    { w: 'w1', c: 'c1', t0: T.f1, t1: T.f2 },
+    { w: 'w2', c: 'c2', t0: T.f2, t1: T.f3 },
+    { w: 'w3', c: 'c3', t0: T.f3, t1: T.look },
+  ];
+  FIX.forEach((f, i) => {
+    const k = HEAVY(t - f.t0), out = easeIn((t - f.t1 + 0.32) / 0.32);
+    const wy = L.vis.top + (V ? 0 : -10);
+    set($(f.w), { x: vx(L.win.w) + (1 - k) * (i === 0 ? 0 : W) - out * W, y: wy + (i === 1 ? (L.win.h - W2H) / 2 : 0) + (i === 0 ? (1 - k) * 800 : 0), o: t > f.t0 - 0.02 ? 1 : 0 });
+    const ck = TYPE(t - (f.t0 + 0.45));
+    const wh = i === 1 ? W2H : L.win.h, woff = i === 1 ? (L.win.h - W2H) / 2 : 0;
+    set($(f.c), { x: vx(L.win.w), y: wy + woff + wh + (V ? 40 : 30) + (1 - ck) * 24, o: clamp((t - (f.t0 + 0.45)) / .2) * (1 - out) });
+  });
+  const viewH = L.win.h - 40;
+  { // Solani: scroll the real page
+    const p = easeInOut((t - (T.f1 + 0.4)) / 1.9);
+    const imgH = L.win.w * (2250 / 900);
+    $('i1').style.transform = `translateY(${-p * (imgH - viewH) * 0.55}px)`;
+  }
+  { // Clems: push in on the system description
+    const p = easeInOut((t - (T.f2 + 0.3)) / 2.0);
+    const z = lerp(1, 1.45, p);
+    $('i2').style.transformOrigin = '30% 52%';
+    $('i2').style.transform = `scale(${z})`;
+  }
+  { // Persis: push in on the real "Book appointment" button and ring it
+    const p = easeInOut((t - (T.f3 + 0.3)) / 1.6);
+    const z = lerp(1, 1.6, p);
+    const sc = L.win.w / 900;
+    const bx = 367 * sc, by = 416 * sc;
+    $('i3').style.transformOrigin = `${bx}px ${by}px`;
+    $('i3').style.transform = `translate(${(L.win.w / 2 - bx) * p}px, ${(viewH / 2 - by) * p}px) scale(${z})`;
+    const rk = POP(t - (T.f3 + 1.8));
+    const rw = 158 * sc * z + 24, rh = 32 * sc * z + 24;
+    const rx = L.win.w / 2 - rw / 2, ry = viewH / 2 - rh / 2;
+    size($('ring'), rw, rh);
+    set($('ring'), { x: rx, y: ry, o: t > T.f3 + 1.8 ? clamp((t - (T.f3 + 1.8)) / .12) : 0, s: 1 });
+    $('ring').style.transformOrigin = '50% 50%';
+    $('ring').style.transform = `translate(${rx}px,${ry}px) scale(${lerp(1.25, 1, rk)})`;
+  }
+
+  // end card
+  const E = T.end;
+  const cy = V ? 500 : 110;
+  const lk = POP(t - (E + 0.1));
+  const lh = logoW * (340 / 1090);
+  set($('e-logo'), { x: (W - logoW) / 2, y: cy + (1 - lk) * 30, o: clamp((t - (E + 0.1)) / .2) });
+  const hd = $('e-head'), hw = hd.offsetWidth;
+  const hk = POP(t - (E + 0.35));
+  set(hd, { x: (W - hw) / 2, y: cy + lh + (V ? 70 : 44) + (1 - hk) * 30, o: clamp((t - (E + 0.35)) / .2) });
+  const nm = $('e-num'), nw = nm.offsetWidth;
+  const nk = POP(t - (E + 0.7));
+  set(nm, { x: (W - nw) / 2, y: cy + lh + (V ? 250 : 196) + (1 - nk) * 30, o: clamp((t - (E + 0.7)) / .2) });
+  const pw = parseFloat($('e-call').style.width), ph = parseFloat($('e-call').style.height);
+  const gap = V ? 30 : 28;
+  const py = cy + lh + (V ? 410 : 340);
+  const c1 = POP(t - (E + 0.95)), c2 = POP(t - (E + 1.25));
+  if (V) {
+    set($('e-call'), { x: (W - pw) / 2, y: py + (1 - c1) * 30, o: clamp((t - (E + 0.95)) / .15) });
+    set($('e-text'), { x: (W - pw) / 2, y: py + ph + gap + (1 - c2) * 30, o: clamp((t - (E + 1.25)) / .15) });
+  } else {
+    set($('e-call'), { x: W / 2 - pw - gap / 2, y: py + (1 - c1) * 30, o: clamp((t - (E + 0.95)) / .15) });
+    set($('e-text'), { x: W / 2 + gap / 2, y: py + (1 - c2) * 30, o: clamp((t - (E + 1.25)) / .15) });
+  }
+  const uw = $('e-url').offsetWidth;
+  set($('e-url'), { x: (W - uw) / 2, y: py + (V ? 2 * ph + gap + 70 : ph + 60), o: clamp((t - (E + 1.6)) / .25) });
+  // gentle pulse on the call button after it lands (draws the eye)
+  if (t > E + 2.0) {
+    const p = 1 + 0.035 * Math.max(0, Math.sin((t - (E + 2.0)) * Math.PI * 1.6));
+    const base = V ? (W - pw) / 2 : W / 2 - pw - gap / 2;
+    $('e-call').style.transform = `translate(${base - pw * (p - 1) / 2}px,${py - ph * (p - 1) / 2}px) scale(${p})`;
+  }
+}
+
+window.__duration = T.out;
+window.__events = EVENTS;
+window.__seek = seek;
+Promise.all([document.fonts.load('700 40px Inter'), document.fonts.load('italic 500 20px Inter')])
+  .then(() => document.fonts.ready)
+  .then(() => Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; }))))
+  .then(() => { seek(0); window.__ready = true; });
+</script>
+</body>
+</html>
