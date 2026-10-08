@@ -279,6 +279,59 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: 'what-makes-a-good-ngo-nonprofit-website',
+    title: 'What a Good NGO or Foundation Website Actually Needs',
+    excerpt:
+      'Nonprofits have a different website job than a business: build trust with a stranger fast enough that they donate, volunteer, or share. Here\'s what that takes.',
+    date: '2026-10-08',
+    category: 'Nonprofit',
+    readTime: '5 min read',
+    author: 'Ecstasy Technologies',
+    body: [
+      {
+        paragraphs: [
+          'We\'ve built websites for several NGOs and foundations - including Gusty Women Foundation, Mankind Foundation Ghana, Thrive Edu, and community platforms like Obuasi Links and the Bia East District site. The brief is always different, but the job the website has to do is the same: turn a stranger\'s attention into trust, fast, because most visitors won\'t stay long enough to be persuaded slowly.',
+        ],
+      },
+      {
+        heading: 'Lead with mission, not mission statement',
+        paragraphs: [
+          'Every one of these sites puts the mission and vision near the top, in plain language, before any history or structure. A visitor deciding whether to donate or volunteer is asking "what does this organisation actually do," not "when was it founded." Answer that question in the first screen.',
+        ],
+      },
+      {
+        heading: 'Programs need to be concrete, not aspirational',
+        paragraphs: [
+          'A generic "we empower communities" page doesn\'t build trust. Showing specific programs and initiatives - what they are, who they\'re for - gives a visitor something real to evaluate. This is one of the most-used sections on both Gusty Women Foundation\'s and Mankind Foundation Ghana\'s sites.',
+        ],
+      },
+      {
+        heading: 'Impact stories do more work than statistics alone',
+        paragraphs: [
+          'Numbers matter, but a named story - one person, one program, one outcome - is what visitors actually remember and share. We build dedicated impact-story sections for exactly this reason, separate from the general programs page.',
+        ],
+      },
+      {
+        heading: 'Make the ask obvious and frictionless',
+        paragraphs: [
+          'Donation and volunteer sign-up need to be one click from anywhere on the site, not buried three menus deep. If someone has read enough to be convinced, the next step should already be in front of them.',
+        ],
+      },
+      {
+        heading: 'Community and district platforms have a different job: being useful',
+        paragraphs: [
+          'Not every mission-driven site is asking for a donation. Obuasi Links and the Bia East District platform exist to serve their communities directly - resource directories, service listings, and in the district\'s case, geographic mapping data. The design bar there is usefulness and findability, not persuasion.',
+        ],
+      },
+      {
+        heading: 'Keep it current',
+        paragraphs: [
+          'A programs page or impact section that hasn\'t changed in a year quietly signals that the organisation has gone quiet too, even if the work hasn\'t stopped. News and events updates are a small section but one of the easiest places to lose a visitor\'s trust if left stale.',
+        ],
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
