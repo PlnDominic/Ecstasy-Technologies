@@ -332,6 +332,59 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: 'what-makes-a-good-school-management-system',
+    title: 'What Makes a Good School Management System',
+    excerpt:
+      'Fees, attendance, exam results, and parent communication all have to work together without extra admin. Here\'s what we\'ve learned building school systems.',
+    date: '2026-10-09',
+    category: 'Education',
+    readTime: '5 min read',
+    author: 'Ecstasy Technologies',
+    body: [
+      {
+        paragraphs: [
+          'A school website and a school management system solve two completely different problems, and it\'s worth separating them. Bubbly Kids Academy\'s site is about admissions and first impressions - programs, methodology, a gallery, a way to enquire. The MoldGold School Management System we built is about what happens after a student is already enrolled: the daily operational load a school carries every term.',
+        ],
+      },
+      {
+        heading: 'Records need one home, not three',
+        paragraphs: [
+          'Student records, staff records, and academic history are often spread across admissions forms, a separate staff file, and whatever the previous system left behind. MoldGold\'s system brings all of it into one place, so a teacher or administrator isn\'t cross-referencing three sources to answer a simple question about a student.',
+        ],
+      },
+      {
+        heading: 'Fee collection has to match how parents actually pay',
+        paragraphs: [
+          'A fee and payment module that doesn\'t reflect the school\'s actual billing terms - termly fees, part-payments, different rates per grade - creates more manual reconciliation than it saves. This is one of the modules worth scoping carefully before any code is written, not after.',
+        ],
+      },
+      {
+        heading: 'Exam results shouldn\'t be a spreadsheet exercise every term',
+        paragraphs: [
+          'Compiling results by hand across classes and subjects is exactly the kind of repetitive, error-prone work software should remove. An exam and results module that staff trust enough to stop keeping a parallel spreadsheet "just in case" is the real measure of success here.',
+        ],
+      },
+      {
+        heading: 'Parents want visibility, not a portal to learn',
+        paragraphs: [
+          'A parent and teacher communication portal only gets used if it\'s simpler than a phone call or a WhatsApp message - attendance, results, and announcements that a parent can check in seconds, not a system that needs training to navigate.',
+        ],
+      },
+      {
+        heading: 'Attendance tracking feeds everything else',
+        paragraphs: [
+          'Daily attendance sounds like a small feature, but it quietly underpins reporting, fee policies tied to attendance, and early flags for students who need support. It\'s worth getting right early rather than retrofitting later.',
+        ],
+      },
+      {
+        heading: 'The dashboard is for the person who has five minutes',
+        paragraphs: [
+          'Head teachers and administrators don\'t have time to dig through modules to understand how the term is going. A reports and analytics dashboard that surfaces enrollment, fee collection, and attendance trends at a glance is what turns a system from a record-keeper into a management tool.',
+        ],
+      },
+    ],
+  },
 ];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
