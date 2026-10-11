@@ -80,12 +80,12 @@ html, body { overflow:hidden; background:#fff; }
   <div class="abs" id="badge-label">unread messages</div>
 
   <!-- fixes -->
-  <div class="abs win" id="w1"><div class="bar"><i></i><i></i><i></i><div class="url">solaniconstruction.com</div></div><div class="view"><img id="i1" src="assets/s3-solani.jpg"></div></div>
+  <div class="abs win" id="w1"><div class="bar"><i></i><i></i><i></i><div class="url">obuasilinks.com</div></div><div class="view"><img id="i1" src="assets/s3-obuasi.jpg"></div></div>
   <div class="abs win" id="w2"><div class="bar"><i></i><i></i><i></i><div class="url">clems-akinaabi.vercel.app</div></div><div class="view"><img id="i2" src="assets/s3-clems.jpg"></div></div>
-  <div class="abs win" id="w3"><div class="bar"><i></i><i></i><i></i><div class="url">persisluxury.com</div></div><div class="view"><img id="i3" src="assets/s3-persis.jpg"><div class="abs" id="ring"></div></div></div>
-  <div class="abs cap" id="c1"><div class="pip"></div>Solani Construction &amp; Engineering <span>· website</span></div>
+  <div class="abs win" id="w3"><div class="bar"><i></i><i></i><i></i><div class="url">kingstowers-hotel.com</div></div><div class="view"><img id="i3" src="assets/s3-kings.jpg"><div class="abs" id="ring"></div></div></div>
+  <div class="abs cap" id="c1"><div class="pip"></div>Obuasi Links <span>· NGO website</span></div>
   <div class="abs cap" id="c2"><div class="pip"></div>Clems Akinaabi <span>· inventory &amp; order system</span></div>
-  <div class="abs cap" id="c3"><div class="pip"></div>Persis Luxury Beauty World <span>· online appointments</span></div>
+  <div class="abs cap" id="c3"><div class="pip"></div>Kings Towers Hotel <span>· online bookings</span></div>
 
   <div id="heads"></div>
 
@@ -136,7 +136,7 @@ const HEADS = [
   { t0: T.turn + 0.55, t1: T.f1, l1: 'We fix that<span class="dot">.</span>', l2: '', l2t: 0, center: true },
   { t0: T.f1 + 0.05, t1: T.f2, l1: 'Get found<span class="dot">.</span>', l2: 'A website customers can actually find.', l2t: 0.35, small2: true },
   { t0: T.f2 + 0.05, t1: T.f3, l1: 'Get organised<span class="dot">.</span>', l2: 'Orders and stock in one system.', l2t: 0.35, small2: true },
-  { t0: T.f3 + 0.05, t1: T.look, l1: 'Get booked<span class="dot">.</span>', l2: 'Appointments, without the back-and-forth.', l2t: 0.35, small2: true },
+  { t0: T.f3 + 0.05, t1: T.look, l1: 'Get booked<span class="dot">.</span>', l2: 'Bookings, without the back-and-forth.', l2t: 0.35, small2: true },
   { t0: T.look + 0.05, t1: T.end, l1: 'Your customers', l2: 'are already looking.', l2t: 0.25, center: true },
 ];
 
@@ -345,7 +345,7 @@ function seek(t) {
     set($(f.c), { x: vx(L.win.w), y: wy + woff + wh + (V ? 40 : 30) + (1 - ck) * 24, o: clamp((t - (f.t0 + 0.45)) / .2) * (1 - out) });
   });
   const viewH = L.win.h - 40;
-  { // Solani: scroll the real page
+  { // Obuasi: scroll the real page
     const p = easeInOut((t - (T.f1 + 0.4)) / 1.9);
     const imgH = L.win.w * (2250 / 900);
     $('i1').style.transform = `translateY(${-p * (imgH - viewH) * 0.55}px)`;
@@ -356,16 +356,19 @@ function seek(t) {
     $('i2').style.transformOrigin = '30% 52%';
     $('i2').style.transform = `scale(${z})`;
   }
-  { // Persis: push in on the real "Book appointment" button and ring it
+  { // Kings: push in on the real "Check Availability" button and ring it
     const p = easeInOut((t - (T.f3 + 0.3)) / 1.6);
     const z = lerp(1, 1.6, p);
     const sc = L.win.w / 900;
-    const bx = 367 * sc, by = 416 * sc;
+    const bx = 767 * sc, by = 1168 * sc;
+    const imgW = L.win.w, imgHh = imgW * (2100 / 900);
+    const tx = Math.min(Math.max((L.win.w / 2 - bx) * p, -(imgW - bx) * (z - 1)), bx * (z - 1));
+    const ty = Math.min(Math.max((viewH / 2 - by) * p, viewH - by - (imgHh - by) * z), by * (z - 1));
     $('i3').style.transformOrigin = `${bx}px ${by}px`;
-    $('i3').style.transform = `translate(${(L.win.w / 2 - bx) * p}px, ${(viewH / 2 - by) * p}px) scale(${z})`;
+    $('i3').style.transform = `translate(${tx}px, ${ty}px) scale(${z})`;
     const rk = POP(t - (T.f3 + 1.8));
-    const rw = 158 * sc * z + 24, rh = 32 * sc * z + 24;
-    const rx = L.win.w / 2 - rw / 2, ry = viewH / 2 - rh / 2;
+    const rw = 162 * sc * z + 24, rh = 52 * sc * z + 24;
+    const rx = bx + tx - rw / 2, ry = by + ty - rh / 2;
     size($('ring'), rw, rh);
     set($('ring'), { x: rx, y: ry, o: t > T.f3 + 1.8 ? clamp((t - (T.f3 + 1.8)) / .12) : 0, s: 1 });
     $('ring').style.transformOrigin = '50% 50%';

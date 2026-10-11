@@ -40,6 +40,19 @@ h1 em { font-style:normal; color:var(--warm); }
 <div id="s"><canvas id="stars"></canvas></div>
 <script>
 const Q = new URLSearchParams(location.search);
+const C = ({
+  persis: { name: 'Persis Luxury Beauty World', domain: 'persisluxury.com', accent: '#B8901E', hero: 'assets/p-hero.jpg', desk: 'assets/p-desktop.jpg',
+    s: [['First impression.', 'assets/p-hero.jpg', 'Booking button front and centre'], ['Services, clear<br>at a glance.', 'assets/p-services.jpg', 'Hair · Makeup · Nails'], ['The work<br>speaks.', 'assets/p-gallery.jpg', 'A gallery of real results']] },
+  becca: { name: "Becca's Luxe", domain: 'becca-s-luxe.vercel.app', accent: '#C2557A', hero: 'assets/becca-hero.jpg', desk: 'assets/becca-desktop.jpg',
+    s: [['First impression.', 'assets/becca-hero.jpg', 'Custom souvenirs, with a search bar up top'], ['Packages for<br>every ceremony.', 'assets/becca-s2.jpg', 'Weddings · Christenings · Funerals'], ['Shop the<br>collection.', 'assets/becca-s3.jpg', 'Products with prices and Order Now']] },
+  michelle: { name: 'Michelle Mayers Skincare & Spa', domain: 'michelle-mayyers-skincare-spa.vercel.app', accent: '#E0197D', hero: 'assets/michelle-hero.jpg', desk: 'assets/michelle-desktop.jpg',
+    s: [['First impression.', 'assets/michelle-hero.jpg', 'A bold hero with one clear button'], ['A signature<br>package.', 'assets/michelle-s2.jpg', "What's included, spelled out"], ['Spa services,<br>bookable.', 'assets/michelle-s3.jpg', 'Prices and a Book Now button']] },
+  mankind: { name: 'Mankind Foundation Ghana', domain: 'mankindfoundationgh.org', accent: '#0A9BC4', hero: 'assets/mankind-hero.jpg', desk: 'assets/mankind-desktop.jpg',
+    s: [['First impression.', 'assets/mankind-hero.jpg', 'Mission up front, Get Involved in reach'], ['Latest news,<br>front and centre.', 'assets/mankind-s2.jpg', 'Interventions and partnerships'], ['Say what<br>you stand for.', 'assets/mankind-s3.jpg', 'Their commitment, in plain words']] },
+  gusty: { name: 'Gusty Women Foundation', domain: 'gustywomenfoundation.org', accent: '#6B2FA0', hero: 'assets/gusty-hero.jpg', desk: 'assets/gusty-desktop.jpg',
+    s: [['First impression.', 'assets/gusty-hero.jpg', 'A clear call to action: Explore Programs'], ['Programmes<br>made easy to find.', 'assets/gusty-s2.jpg', 'Programme dates, venue and details'], ['Focus areas,<br>clearly laid out.', 'assets/gusty-s3.jpg', 'Mentorship · Advocacy · Research']] },
+})[Q.get('c') || 'persis'];
+document.documentElement.style.setProperty('--warm', C.accent);
 const FMT = Q.get('fmt') || 'tt';
 const N = +(Q.get('n') || 1);
 const W = 1080, H = FMT === 'tt' ? 1920 : 1350, TT = FMT === 'tt';
@@ -72,28 +85,24 @@ if (N === 1) {
   const chips = [['7', 700, 600, 0], ['9', 860, 760, 0], ['10', 760, 920, 0]];
   if (TT) chips.forEach(([t, x, y]) => el(t, { left: x + 'px', top: y + 'px', width: '140px', height: '140px', fontSize: '64px' }, 'chip'));
   // phone peeking from bottom, slightly tilted
-  if (TT) phone('assets/p-hero.jpg', 250, 1000, 600, 1130, -6);
-  else phone('assets/p-hero.jpg', 560, 380, 430, 810, -6);
+  if (TT) phone(C.hero, 250, 1000, 600, 1130, -6);
+  else phone(C.hero, 560, 380, 430, 810, -6);
   el(`<div class="swipe">Swipe to judge →</div>`, TT ? { left: '70px', top: '760px' } : { left: '70px', top: '560px' });
-  el(`<div class="sub" style="font-size:${TT ? 34 : 30}px;color:var(--muted)">Persis Luxury Beauty World</div>`, TT ? { left: '70px', top: '830px' } : { left: '70px', top: '620px' });
+  el(`<div class="sub" style="font-size:${TT ? 34 : 30}px;color:var(--muted)">${C.name}</div>`, TT ? { left: '70px', top: '830px' } : { left: '70px', top: '620px' });
 } else if (N >= 2 && N <= 4) {
-  const D = {
-    2: ['First impression.', 'assets/p-hero.jpg', 'Booking button front and centre'],
-    3: ['Services, clear<br>at a glance.', 'assets/p-services.jpg', 'Hair · Makeup · Nails'],
-    4: ['The work<br>speaks.', 'assets/p-gallery.jpg', 'A gallery of real results'],
-  }[N];
+  const D = C.s[N - 2];
   el(`<h1 style="font-size:${TT ? 92 : 74}px">${D[0]}</h1>`, { left: '70px', top: (TT ? 190 : 130) + 'px', width: '940px' });
   if (TT) {
     phone(D[1], 220, N === 2 ? 440 : 520, 640, 1210);
     el(`<div class="cap">${D[2]}</div>`, { left: '70px', top: (N === 2 ? 1690 : 1770) + 'px' });
   } else {
     phone(D[1], 70, 330, 470, 890);
-    el(`<div class="cap" style="font-size:36px;line-height:1.2">${D[2]}</div><div class="sub" style="margin-top:22px;font-size:28px;color:var(--muted)">Persis Luxury Beauty World</div>`, { left: '600px', top: '900px', width: '420px' });
+    el(`<div class="cap" style="font-size:36px;line-height:1.2">${D[2]}</div><div class="sub" style="margin-top:22px;font-size:28px;color:var(--muted)">${C.name}</div>`, { left: '600px', top: '900px', width: '420px' });
   }
 } else if (N === 5) {
   el(`<h1 style="font-size:${TT ? 92 : 74}px">And on<br><span class="m">desktop.</span></h1>`, { left: '70px', top: (TT ? 190 : 130) + 'px', width: '940px' });
   const ww = 940, wh = 46 + Math.round(940 * 900 / 1440);
-  el(`<div class="bar"><i></i><i></i><i></i><div class="url">persisluxury.com</div></div><img src="assets/p-desktop.jpg">`, { left: '70px', top: (TT ? 640 : 420) + 'px', width: ww + 'px', height: wh + 'px' }, 'win');
+  el(`<div class="bar"><i></i><i></i><i></i><div class="url">${C.domain}</div></div><img src="${C.desk}">`, { left: '70px', top: (TT ? 640 : 420) + 'px', width: ww + 'px', height: wh + 'px' }, 'win');
   el(`<div class="cap">Same brand, every screen size.</div>`, { left: '70px', top: ((TT ? 640 : 420) + wh + 50) + 'px' });
   if (TT) el(`<div class="sub" style="font-size:30px;color:var(--muted)">Responsive design: phone, tablet, laptop</div>`, { left: '70px', top: (640 + wh + 110) + 'px' });
 } else {
