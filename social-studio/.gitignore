@@ -1,0 +1,9 @@
+# render intermediates
+video/*frames-*/
+video/*sheet-*/
+video/*contact-sheet*.png
+video/s?-cs.png
+video/s3-k*.png
+video/*.wav
+video/events*.json
+carousel/out/
