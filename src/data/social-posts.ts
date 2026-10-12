@@ -162,10 +162,6 @@ export const socialPosts: SocialPost[] = [
     instagramUnsafeAspectRatio: true,
   },
   {
-    id: 'cta-contact-4',
-    text: "If your business idea is still just an idea, that is fine. Bring us where you are and we will help map out what building it actually looks like. → ecstasytechnologies.com/contact",
-  },
-  {
     id: 'project-54-kings-towers-hotel',
     text: 'Kings Towers Hotel sits in Ahinsan, Kumasi, with a serene, scenic setting for guests. We built the website to match that. #WebDevelopment',
     image: '/project-images/tagett-1793000000101.webp',
@@ -175,22 +171,6 @@ export const socialPosts: SocialPost[] = [
     id: 'project-51-thrive-edu',
     text: 'Thrive EDU is an international education NGO helping schools and communities build the systems that make quality learning stick. We built their web application.',
     image: '/project-images/tagett-1793000000102.webp',
-  },
-  {
-    id: 'dev-tip-6',
-    text: 'A form with twelve fields will get fewer submissions than one with four. If you are not using the data, do not ask for it. #UIUX',
-  },
-  {
-    id: 'service-business-2',
-    text: 'Manual processes do not scale, they just get more painful. If your team is duct-taping workflows together, custom software is usually cheaper than the workaround. #BusinessSoftware',
-  },
-  {
-    id: 'why-us-5',
-    text: 'A lot of software agencies disappear after launch. We do not. Ongoing support is part of how we build, not an add-on you have to negotiate for.',
-  },
-  {
-    id: 'social-proof-2',
-    text: 'Hotels, schools, NGOs, pharmacies, construction firms. The businesses we build for do not look alike, but the software we deliver all shares one thing: it gets used.',
   },
   {
     id: 'project-6-emson-hotel',
@@ -209,14 +189,6 @@ export const socialPosts: SocialPost[] = [
     text: 'For Persis Luxury Beauty World we built a high-end site to match the brand: a full product catalog, collections and lookbooks, and an online shopping experience.',
     image: '/Persis Luxury Beauty World.png',
     instagramUnsafeAspectRatio: true,
-  },
-  {
-    id: 'dev-tip-7',
-    text: 'Every extra step in a checkout or signup flow loses you people. Count the steps in yours, then ask which ones you can cut. #UIUX',
-  },
-  {
-    id: 'service-web-3',
-    text: 'A website that only works well on desktop is only half a website now. We build mobile-first, not mobile-fixed-later. #WebDevelopment',
   },
   {
     id: 'why-us-6',
@@ -293,6 +265,42 @@ export const socialPosts: SocialPost[] = [
   {
     id: 'cta-contact-6',
     text: "Not sure where to start? Tell us what your business does and what is slow about it right now. We will take it from there. → ecstasytechnologies.com/contact",
+  },
+  {
+    id: 'web-basics-opening-hours',
+    text: 'If customers have to message you just to find your opening hours or prices, your website is not doing its job. Put the basics where people can see them. #WebDesign',
+  },
+  {
+    id: 'project-2-dynamic-shipping',
+    text: 'Dynamic Shipping & Logistics needed one system for shipment tracking, inventory, delivery scheduling, and customer notifications. We built a logistics management platform that brings it together. #BusinessSoftware',
+    image: '/Dynamic Shipping and Logistics.png',
+    instagramUnsafeAspectRatio: true,
+  },
+  {
+    id: 'mobile-not-small-website',
+    text: 'A mobile app is not a smaller website. Design it around the one thing your users do every day, and cut the rest. #MobileApps',
+  },
+  {
+    id: 'project-3-obotan-credit-union',
+    text: 'A secure mobile banking app for Obotan Credit Union members: account management, fund transfers, bill payments, and transaction history, all from the phone. #MobileApps',
+    image: '/Obotan Coorperative Credit  Union Banking App.jpg',
+    instagramUnsafeAspectRatio: true,
+  },
+  {
+    id: 'project-16-nhyiraba-hotel',
+    text: 'Nhyiraba Hotel guests can check real-time room availability, book online, and pay with MTN Mobile Money. A hotel booking app built for how guests in Ghana actually pay. #WebApp',
+    image: '/Nhyiraba Hotel.png',
+    instagramUnsafeAspectRatio: true,
+  },
+  {
+    id: 'build-for-monday-morning',
+    text: 'Before building a feature, ask who will use it on a Monday morning and what they are trying to finish. That one question saves more time than any framework.',
+  },
+  {
+    id: 'project-19-michelle-mayers-spa',
+    text: 'An elegant, luxury website for Michelle Mayers Skincare & Spa, with treatments, a product catalog, online appointment booking, and a before and after gallery. #WebDesign',
+    image: '/Michelle Mayers Skincare Spa.png',
+    instagramUnsafeAspectRatio: true,
   },
 ];
 
