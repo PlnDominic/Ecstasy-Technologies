@@ -145,7 +145,7 @@ export default function About() {
               <span style={{ color: 'var(--accent)' }}>ARE.</span>
             </h1>
             <p className="ip-body" style={{ marginTop: '1.5rem' }}>
-              A software studio founded in Bibiani, Ghana in 2018. We build digital products that work,
+              A software studio founded in Bibiani, Ghana in 2023. We build digital products that work,
               for hotels, logistics companies, schools, banks, and anyone who takes their software seriously.
             </p>
           </div>
@@ -167,7 +167,7 @@ export default function About() {
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <p className="ip-body">
-                  Founded in 2018, Ecstasy Technologies began with a simple mission: create software that genuinely moves
+                  Founded in 2023, Ecstasy Technologies began with a simple mission: create software that genuinely moves
                   the needle for African businesses.
                 </p>
                 <p className="ip-body">

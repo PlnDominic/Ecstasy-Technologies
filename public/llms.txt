@@ -1,6 +1,6 @@
 # Ecstasy Technologies
 
-Ecstasy Technologies is a software development company founded in 2018 and
+Ecstasy Technologies is a software development company founded in 2023 and
 based in Bibiani, Ghana. We design and build custom web applications, mobile
 apps, hotel management systems, e-commerce platforms, GIS solutions, and
 enterprise software for businesses across Ghana and Africa.
@@ -24,7 +24,7 @@ and internationally. We have delivered 32+ projects since founding.
 
 ## Facts
 
-- Founded: 2018
+- Founded: 2023
 - Location: Bibiani Anhwiaso Bekwai Municipal Assembly, P.O. Box 49, Bibiani, Ghana
 - Team size: 5-10
 - Website: https://www.ecstasytechnologies.com

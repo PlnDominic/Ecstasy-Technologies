@@ -18,7 +18,7 @@ const SEARCH_INDEX: SearchResult[] = [
   { type: 'page', title: 'Services', description: 'Web design, web apps, mobile apps, business software, UI/UX design.', href: '/services', category: 'Page' },
   { type: 'page', title: 'Projects', description: 'A focused selection of websites, applications, and enterprise systems.', href: '/projects', category: 'Page' },
   { type: 'page', title: 'Blog / Insights', description: 'Practical notes on custom software, hospitality systems, and running projects in Ghana.', href: '/blog', category: 'Page' },
-  { type: 'page', title: 'About Us', description: 'Who we are — a software studio founded in Bibiani, Ghana in 2018.', href: '/about', category: 'Page' },
+  { type: 'page', title: 'About Us', description: 'Who we are — a software studio founded in Bibiani, Ghana in 2023.', href: '/about', category: 'Page' },
   { type: 'page', title: 'Contact', description: 'Start a project — fill in the form or reach us directly. We reply within 24 hours.', href: '/contact', category: 'Page' },
   // Services
   { type: 'service', title: 'Web Design & Development', description: 'Bespoke websites built for performance, clarity, and conversion — from marketing sites to e-commerce.', href: '/services/web-design-development', category: 'Services' },
