@@ -4,5 +4,6 @@
       "path": "/api/cron/post-x",
       "schedule": "0 15 * * *"
     }
-  ]
+  ],
+  "ignoreCommand": "exit 0"
 }
