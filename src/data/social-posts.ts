@@ -191,14 +191,6 @@ export const socialPosts: SocialPost[] = [
     instagramUnsafeAspectRatio: true,
   },
   {
-    id: 'why-us-6',
-    text: 'We ask more questions before we write code than most agencies ask the whole project. It is why fewer things need to be rebuilt later.',
-  },
-  {
-    id: 'cta-contact-5',
-    text: "Have a rough idea but no technical plan yet? That is normal. We help turn rough ideas into something buildable. → ecstasytechnologies.com/contact",
-  },
-  {
     id: 'project-8-hotel-management-system',
     text: 'A comprehensive hotel management system we built: reservations, room allocation, housekeeping, billing, and staff management, all in one platform. #BusinessSoftware',
     image: '/Hotel Management System Software Web App.png',
@@ -215,18 +207,6 @@ export const socialPosts: SocialPost[] = [
     text: 'Royal Home Comfort needed a site that covers both property listings and their home comfort services. We built one with a client inquiry system built in.',
     image: '/Royal Home Comfort.png',
     instagramUnsafeAspectRatio: true,
-  },
-  {
-    id: 'dev-tip-8',
-    text: 'If your team keeps asking "what does this button do," the button is the bug, not the users. #UIUX',
-  },
-  {
-    id: 'service-mobile-4',
-    text: 'A mobile app is not just a smaller website. It has its own patterns, its own constraints, and its own expectations. We design for the platform, not around it. #MobileApps',
-  },
-  {
-    id: 'why-us-7',
-    text: 'We keep a small client list on purpose. Fewer projects at once means each one gets more attention, not less.',
   },
   {
     id: 'seasonal-year-end-review',
@@ -300,6 +280,34 @@ export const socialPosts: SocialPost[] = [
     id: 'project-19-michelle-mayers-spa',
     text: 'An elegant, luxury website for Michelle Mayers Skincare & Spa, with treatments, a product catalog, online appointment booking, and a before and after gallery. #WebDesign',
     image: '/Michelle Mayers Skincare Spa.png',
+    instagramUnsafeAspectRatio: true,
+  },
+  {
+    id: 'whatsapp-orders-to-system',
+    text: "Taking orders on WhatsApp works until it doesn't. When messages get buried, orders get missed. A simple order system keeps every request in one place, with a status your whole team can see. #BusinessSoftware",
+  },
+  {
+    id: 'website-on-mobile-data',
+    text: 'Most of your customers will open your website on mobile data, not office Wi-Fi. If it takes ages to load, they leave before they see what you offer. Test it on your own phone today. #WebDesign',
+  },
+  {
+    id: 'ui-one-main-action',
+    text: 'Every screen should have one main thing you want people to do. If everything is bold, nothing stands out.',
+  },
+  {
+    id: 'q4-plan-for-january',
+    text: "Planning next year's budget? If a website, app or system is on your list for January, scope it now so you start the year building, not planning. → ecstasytechnologies.com/contact",
+  },
+  {
+    id: 'project-12-amor-de-dios-drilling',
+    text: 'We built the website for Amor De Dios Drilling & Construction, showing their drilling and civil construction services, project portfolio and company profile, with service request forms built in. #WebDevelopment',
+    image: '/Amor De Dios Drilling and Civil Construction.png',
+    instagramUnsafeAspectRatio: true,
+  },
+  {
+    id: 'project-23-aspee-product-catalog',
+    text: 'Another look at our work for Aspee Pharmaceuticals: a professional site with their product catalog, healthcare solutions, a research and development section, and a route for distribution inquiries. #WebDesign',
+    image: '/Aspee.jpg',
     instagramUnsafeAspectRatio: true,
   },
 ];
