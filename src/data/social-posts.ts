@@ -209,10 +209,6 @@ export const socialPosts: SocialPost[] = [
     instagramUnsafeAspectRatio: true,
   },
   {
-    id: 'seasonal-year-end-review',
-    text: 'End of year is a good time to look at what slowed your team down in the past twelve months. If the answer involves your software, let us know what needs fixing.',
-  },
-  {
     id: 'project-9-aaron-freeman-portfolio',
     text: 'For Aaron Freeman, an urban and environmental planner, we built a portfolio to showcase his sustainable city planning projects and community leadership work.',
     image: '/Aaron Freeman.png',
@@ -229,22 +225,6 @@ export const socialPosts: SocialPost[] = [
     text: 'Mankind Foundation Ghana needed a site that communicates their mission clearly: programs, impact stories, and a real way for people to donate or volunteer.',
     image: '/Mankind Foundation Ghana.png',
     instagramUnsafeAspectRatio: true,
-  },
-  {
-    id: 'dev-tip-9',
-    text: 'A dropdown with forty options is not a feature, it is a search bar you forgot to build. #UIUX',
-  },
-  {
-    id: 'why-us-8',
-    text: 'We do not disappear after the invoice. If something breaks six months in, you can still reach the person who built it.',
-  },
-  {
-    id: 'service-business-3',
-    text: 'If your team has three different spreadsheets for one process, that is not a workflow, that is a warning sign. #BusinessSoftware',
-  },
-  {
-    id: 'cta-contact-6',
-    text: "Not sure where to start? Tell us what your business does and what is slow about it right now. We will take it from there. → ecstasytechnologies.com/contact",
   },
   {
     id: 'web-basics-opening-hours',
@@ -309,6 +289,26 @@ export const socialPosts: SocialPost[] = [
     text: 'Another look at our work for Aspee Pharmaceuticals: a professional site with their product catalog, healthcare solutions, a research and development section, and a route for distribution inquiries. #WebDesign',
     image: '/Aspee.jpg',
     instagramUnsafeAspectRatio: true,
+  },
+  {
+    id: 'booking-form-not-dm',
+    text: "If customers have to DM you to book, some of them won't. A simple booking form on your website lets them pick a time while they still want to. #WebDesign",
+  },
+  {
+    id: 'year-end-repeat-tasks',
+    text: 'Before the year ends, list the three tasks your team repeats every week by hand. Those are usually the first things worth automating in January. #BusinessSoftware',
+  },
+  {
+    id: 'dashboard-one-question',
+    text: 'A good dashboard answers one question at a glance: what needs my attention today? If staff have to click through five pages to find out, it is a report, not a dashboard. #UIUX',
+  },
+  {
+    id: 'launch-is-not-the-finish',
+    text: 'Launch day is not the finish line. Updates, fixes and small changes after launch are part of how we work, so your site keeps up with your business.',
+  },
+  {
+    id: 'whatsapp-us-your-idea',
+    text: 'Have a website that looks dated or an idea for an app? WhatsApp us on +233 54 285 5399 and tell us what you need. → ecstasytechnologies.com/contact',
   },
 ];
 
