@@ -227,18 +227,10 @@ export const socialPosts: SocialPost[] = [
     instagramUnsafeAspectRatio: true,
   },
   {
-    id: 'web-basics-opening-hours',
-    text: 'If customers have to message you just to find your opening hours or prices, your website is not doing its job. Put the basics where people can see them. #WebDesign',
-  },
-  {
     id: 'project-2-dynamic-shipping',
     text: 'Dynamic Shipping & Logistics needed one system for shipment tracking, inventory, delivery scheduling, and customer notifications. We built a logistics management platform that brings it together. #BusinessSoftware',
     image: '/Dynamic Shipping and Logistics.png',
     instagramUnsafeAspectRatio: true,
-  },
-  {
-    id: 'mobile-not-small-website',
-    text: 'A mobile app is not a smaller website. Design it around the one thing your users do every day, and cut the rest. #MobileApps',
   },
   {
     id: 'project-3-obotan-credit-union',
@@ -253,22 +245,10 @@ export const socialPosts: SocialPost[] = [
     instagramUnsafeAspectRatio: true,
   },
   {
-    id: 'build-for-monday-morning',
-    text: 'Before building a feature, ask who will use it on a Monday morning and what they are trying to finish. That one question saves more time than any framework.',
-  },
-  {
     id: 'project-19-michelle-mayers-spa',
     text: 'An elegant, luxury website for Michelle Mayers Skincare & Spa, with treatments, a product catalog, online appointment booking, and a before and after gallery. #WebDesign',
     image: '/Michelle Mayers Skincare Spa.png',
     instagramUnsafeAspectRatio: true,
-  },
-  {
-    id: 'whatsapp-orders-to-system',
-    text: "Taking orders on WhatsApp works until it doesn't. When messages get buried, orders get missed. A simple order system keeps every request in one place, with a status your whole team can see. #BusinessSoftware",
-  },
-  {
-    id: 'website-on-mobile-data',
-    text: 'Most of your customers will open your website on mobile data, not office Wi-Fi. If it takes ages to load, they leave before they see what you offer. Test it on your own phone today. #WebDesign',
   },
   {
     id: 'ui-one-main-action',
@@ -309,6 +289,26 @@ export const socialPosts: SocialPost[] = [
   {
     id: 'whatsapp-us-your-idea',
     text: 'Have a website that looks dated or an idea for an app? WhatsApp us on +233 54 285 5399 and tell us what you need. → ecstasytechnologies.com/contact',
+  },
+  {
+    id: 'december-rush-ready',
+    text: 'December is busy for hotels, shops and event businesses. If customers can check prices and book online before the rush, your phone rings less and your team serves more. #AccraBusiness',
+  },
+  {
+    id: 'forms-ask-less',
+    text: 'Every extra field on a form is another reason to quit. Ask only for what you need now, and collect the rest later. #UIUX',
+  },
+  {
+    id: 'own-your-domain',
+    text: "Make sure your website's domain and hosting are registered in your business name, not only your developer's. If you ever change teams, you keep what is yours.",
+  },
+  {
+    id: 'system-before-next-hire',
+    text: 'Before hiring another person for paperwork, check if the work repeats every week. Sometimes the better hire is a simple system that helps the team you already have. #BusinessSoftware',
+  },
+  {
+    id: 'built-for-ghana-customers',
+    text: 'We build for how customers in Ghana actually behave: on their phones, on mobile data, and on WhatsApp. Tell us what you want to build. → ecstasytechnologies.com/contact',
   },
 ];
 
