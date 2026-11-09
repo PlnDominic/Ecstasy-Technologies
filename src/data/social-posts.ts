@@ -251,14 +251,6 @@ export const socialPosts: SocialPost[] = [
     instagramUnsafeAspectRatio: true,
   },
   {
-    id: 'ui-one-main-action',
-    text: 'Every screen should have one main thing you want people to do. If everything is bold, nothing stands out.',
-  },
-  {
-    id: 'q4-plan-for-january',
-    text: "Planning next year's budget? If a website, app or system is on your list for January, scope it now so you start the year building, not planning. → ecstasytechnologies.com/contact",
-  },
-  {
     id: 'project-12-amor-de-dios-drilling',
     text: 'We built the website for Amor De Dios Drilling & Construction, showing their drilling and civil construction services, project portfolio and company profile, with service request forms built in. #WebDevelopment',
     image: '/Amor De Dios Drilling and Civil Construction.png',
@@ -269,18 +261,6 @@ export const socialPosts: SocialPost[] = [
     text: 'Another look at our work for Aspee Pharmaceuticals: a professional site with their product catalog, healthcare solutions, a research and development section, and a route for distribution inquiries. #WebDesign',
     image: '/Aspee.jpg',
     instagramUnsafeAspectRatio: true,
-  },
-  {
-    id: 'booking-form-not-dm',
-    text: "If customers have to DM you to book, some of them won't. A simple booking form on your website lets them pick a time while they still want to. #WebDesign",
-  },
-  {
-    id: 'year-end-repeat-tasks',
-    text: 'Before the year ends, list the three tasks your team repeats every week by hand. Those are usually the first things worth automating in January. #BusinessSoftware',
-  },
-  {
-    id: 'dashboard-one-question',
-    text: 'A good dashboard answers one question at a glance: what needs my attention today? If staff have to click through five pages to find out, it is a report, not a dashboard. #UIUX',
   },
   {
     id: 'launch-is-not-the-finish',
@@ -309,6 +289,26 @@ export const socialPosts: SocialPost[] = [
   {
     id: 'built-for-ghana-customers',
     text: 'We build for how customers in Ghana actually behave: on their phones, on mobile data, and on WhatsApp. Tell us what you want to build. → ecstasytechnologies.com/contact',
+  },
+  {
+    id: 'search-your-business-name',
+    text: 'Search your business name on Google right now. If the first result is not you, customers are finding someone else first. A proper website with your name, location and services fixes that. #WebDesign',
+  },
+  {
+    id: 'app-or-website-first',
+    text: 'Not sure if you need an app or a website first? If customers find you once and buy, start with a website. If they come back every week, an app starts to make sense. #MobileApps',
+  },
+  {
+    id: 'one-place-for-the-numbers',
+    text: "When sales are in one notebook, stock in another and payments in someone's phone, nobody has the full picture. Business software puts it all in one place your whole team can trust.",
+  },
+  {
+    id: 'holiday-hours-online',
+    text: 'Changing your opening hours for Christmas and New Year? Update your website and Google listing before customers have to ask. Small detail, fewer wasted trips.',
+  },
+  {
+    id: 'small-first-version',
+    text: 'Your first version does not need every feature. Launch the part customers need most, learn from how they use it, then build the next piece. → ecstasytechnologies.com/contact',
   },
 ];
 
