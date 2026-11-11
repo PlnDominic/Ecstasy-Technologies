@@ -7,7 +7,8 @@ This is the operating manual for the scheduled social-media Routines. Read it in
 - **Instagram:** @ecstasytechnologies, via Social GPT `publish_post(platform="instagram")`.
 
 ## Schedule (Africa/Accra, GMT)
-- **Sunday 17:00:** the weekly batch Routine generates 7 posts for Mon–Sun and asks Dominic to approve them.
+- **Sunday 17:00:** the weekly batch Routine generates 7 fresh posts for Mon–Sun and pushes them unapproved.
+- **Monday 08:12:** a scheduled task in Dominic's main session shows him the week and records his approval.
 - **Daily 19:00:** the posting Routine publishes that day's **approved** item.
 - Mix: **even split** between photo carousels and videos (4 of one, 3 of the other, alternating week to week).
 
@@ -42,11 +43,17 @@ Vary the featured client every post. Real clients with good live sites include K
 ## Weekly batch (Sunday 17:00)
 1. `git fetch origin main claude/social-media-posting-routines-5ss432`; work on the branch; read `data/projects.json` from `origin/main`.
 2. Pull the last week's performance with Social GPT (`list_videos sort=recent`, `get_growth_summary`) and note what worked.
-3. Plan 7 posts (Mon–Sun) with an even carousel/video mix and a different client each day. Write captions: hook line, 1–2 lines of honest detail, a question CTA, WhatsApp + website, and 4–5 targeted hashtags (#GhanaTech #WebDesignGhana #AccraBusiness #KumasiBusiness #EcstasyTechnologies, etc.).
-4. Render everything, review the contact sheets, and fix anything off.
-5. Commit the media + `queue/<YYYY>-W<ww>.json` (format below) with every item `approved: false`; push.
-6. Send Dominic the previews (SendUserFile) and a short list (day, format, client, caption hook). Ask him to reply e.g. "approve all" or "approve 1,3,5; change 2: …".
-7. On his reply, apply changes, set `approved: true` on the approved items (record `privacy_level` if he states one, else `PUBLIC_TO_EVERYONE` as his standing choice), commit and push.
+3. **Fresh content only.** List every `slug` and `social-media/` folder used in all existing `queue/*.json` files and every client featured in the last 3 weeks' queue files. Never reuse an earlier slug or media folder, and never re-queue an old item. Pick clients not featured in the last 3 weeks (cycle through all real clients in `data/projects.json` with a live site before repeating one), and vary the format and hook too. Slugs and folders use this week's prefix (`w<ww>-<day>-<format>-<client>`).
+4. Plan 7 posts (Mon–Sun) with an even carousel/video mix and a different client each day. Write captions: hook line, 1–2 lines of honest detail, a question CTA, WhatsApp + website, and 4–5 targeted hashtags (#GhanaTech #WebDesignGhana #AccraBusiness #KumasiBusiness #EcstasyTechnologies, etc.).
+5. Take fresh captures, render everything new, review the contact sheets, and fix anything off. This takes real time; do not skip it. If an item can't be rendered (site down, capture fails), pick a different client or leave that day empty. Never fall back to old media.
+6. Commit the new media + `queue/<YYYY>-W<ww>.json` (format below) with every item `approved: false`; push.
+7. Send Dominic the previews (SendUserFile) and a short numbered list (day, format, client, caption hook) for reference. **Do not wait for his reply in the batch session.** Approval happens in Dominic's main Claude session every Monday morning, where a scheduled task shows him the week and records his answer. End the batch session once pushed.
+
+## Monday approval (in Dominic's main session, 08:12)
+1. Fetch the branch and open the current ISO week's queue file.
+2. Send Dominic one contact-sheet image of the week (first slide or a frame of each item) and a numbered list: day, format, client, caption hook.
+3. Ask him to reply "approve all" or e.g. "approve 1,3,5; change 2: ...". Never treat silence or a scheduled message as approval.
+4. On his reply, apply changes, set `approved: true` on the approved items (`privacy_level` as he states, else `PUBLIC_TO_EVERYONE`, his standing choice), commit and push.
 
 ## Daily post (19:00)
 1. Fetch the branch; open the current week's queue file; find today's item.
