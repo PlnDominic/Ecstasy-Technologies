@@ -603,21 +603,6 @@
     "image": "",
     "features": [],
     "technologies": [
-      "TypeScript"
-    ],
-    "status": "completed",
-    "title": "Dog Ai",
-    "category": "Website",
-    "description": "Dog",
-    "link": "https://dog-ai-ecru.vercel.app",
-    "year": 2025,
-    "id": 88,
-    "updatedAt": "2026-11-11T10:47:56.760Z"
-  },
-  {
-    "image": "",
-    "features": [],
-    "technologies": [
       "JavaScript"
     ],
     "status": "completed",
