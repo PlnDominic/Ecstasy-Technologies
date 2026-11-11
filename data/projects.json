@@ -15,19 +15,6 @@
   {
     "image": "",
     "features": [],
-    "technologies": [],
-    "status": "completed",
-    "title": "Practice",
-    "category": "Website",
-    "description": "Practice, built by Ecstasy Technologies.",
-    "link": "https://github.com/PlnDominic/Practice",
-    "year": 2023,
-    "id": 125,
-    "updatedAt": "2026-11-11T10:47:56.760Z"
-  },
-  {
-    "image": "",
-    "features": [],
     "technologies": [
       "C"
     ],
