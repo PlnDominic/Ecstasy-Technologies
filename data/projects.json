@@ -16,21 +16,6 @@
     "image": "",
     "features": [],
     "technologies": [
-      "CSS3"
-    ],
-    "status": "completed",
-    "title": "Kingstowershotel",
-    "category": "Website",
-    "description": "Kingstowershotel, built by Ecstasy Technologies.",
-    "link": "https://github.com/PlnDominic/kingstowershotel",
-    "year": 2024,
-    "id": 112,
-    "updatedAt": "2026-11-11T10:47:56.760Z"
-  },
-  {
-    "image": "",
-    "features": [],
-    "technologies": [
       "TypeScript"
     ],
     "status": "completed",
