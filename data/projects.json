@@ -2,19 +2,6 @@
   {
     "image": "",
     "features": [],
-    "technologies": [],
-    "status": "completed",
-    "title": "Bibiani Spatial Planning",
-    "category": "GIS",
-    "description": "Bibiani Spatial Planning, built by Ecstasy Technologies.",
-    "link": "https://github.com/PlnDominic/bibiani-spatial-planning",
-    "year": 2024,
-    "id": 115,
-    "updatedAt": "2026-11-11T10:47:56.760Z"
-  },
-  {
-    "image": "",
-    "features": [],
     "technologies": [
       "Python"
     ],
