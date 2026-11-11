@@ -544,21 +544,6 @@
   {
     "image": "",
     "features": [],
-    "technologies": [
-      "JavaScript"
-    ],
-    "status": "completed",
-    "title": "HMS1",
-    "category": "Website",
-    "description": "HMS1, built by Ecstasy Technologies.",
-    "link": "https://github.com/PlnDominic/HMS1",
-    "year": 2025,
-    "id": 92,
-    "updatedAt": "2026-11-11T10:47:56.760Z"
-  },
-  {
-    "image": "",
-    "features": [],
     "technologies": [],
     "status": "completed",
     "title": "Remedi",
