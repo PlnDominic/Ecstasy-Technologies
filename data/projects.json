@@ -30,21 +30,6 @@
   {
     "image": "",
     "features": [],
-    "technologies": [
-      "C"
-    ],
-    "status": "completed",
-    "title": "Alx Low Level Programming",
-    "category": "Website",
-    "description": "alx-low_level_programming",
-    "link": "https://github.com/PlnDominic/alx-low_level_programming",
-    "year": 2023,
-    "id": 121,
-    "updatedAt": "2026-11-11T10:47:56.760Z"
-  },
-  {
-    "image": "",
-    "features": [],
     "technologies": [],
     "status": "completed",
     "title": "BABMA",
