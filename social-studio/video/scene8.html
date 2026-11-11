@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+:root { --ink:#1D1D1F; --muted:#86868B; --soft:#AEAEB2; --blue:#0071E3; --grey:#E9E9EB; --hair:#E5E5EA; --green:#34C759; --red:#FF3B30; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { overflow:hidden; background:#fff; }
+#stage { position:relative; overflow:hidden; background:#fff; font-family:'Inter',sans-serif; color:var(--ink); }
+.abs { position:absolute; left:0; top:0; transform-origin:0 0; }
+.big { font-weight:700; letter-spacing:-.045em; line-height:1.02; white-space:nowrap; }
+.big .g { color:var(--soft); } .big .b { color:var(--blue); }
+.win { border-radius:16px; overflow:hidden; background:#fff; box-shadow:0 40px 90px -30px rgba(0,0,0,.28), 0 0 0 1px rgba(0,0,0,.06); }
+.win .bar { height:40px; background:#F2F2F4; display:flex; align-items:center; gap:8px; padding:0 16px; position:relative; }
+.win .bar i { width:12px; height:12px; border-radius:50%; background:#D9D9DE; display:block; }
+.win .bar .url { position:absolute; left:50%; transform:translateX(-50%); background:#E8E8ED; border-radius:8px; padding:5px 18px; font-size:15px; color:var(--muted); font-weight:500; white-space:nowrap; }
+.win .view { position:relative; overflow:hidden; }
+.win .view img { position:absolute; left:0; top:0; display:block; }
+.cap { display:flex; align-items:center; gap:12px; font-weight:600; letter-spacing:-.015em; white-space:nowrap; font-size:36px; }
+.cap .pip { width:10px; height:10px; border-radius:50%; background:var(--blue); } .cap span { color:var(--muted); font-weight:500; }
+
+.badge { width:150px; height:150px; border-radius:50%; background:var(--blue); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:92px; letter-spacing:-.03em; }
+.mtxt { font-weight:700; letter-spacing:-.04em; line-height:1.08; font-size:96px; }
+.pill2 { display:inline-flex; align-items:center; gap:.45em; border-radius:999px; font-weight:700; letter-spacing:-.01em; padding:.35em .9em; font-size:50px; white-space:nowrap; }
+.no { background:#FFE5E3; color:var(--red); } .yes { background:#DFF6E5; color:#1B9E3E; }
+.ftxt { font-weight:700; letter-spacing:-.035em; line-height:1.1; font-size:88px; color:var(--ink); }
+
+#e-logo { mix-blend-mode:multiply; }
+#e-head { font-weight:700; letter-spacing:-.045em; white-space:nowrap; text-align:center; line-height:1; }
+#e-head em { font-style:normal; color:var(--blue); }
+#e-num { font-weight:700; letter-spacing:-.03em; white-space:nowrap; font-variant-numeric:tabular-nums; }
+.pill { border-radius:999px; display:flex; align-items:center; justify-content:center; gap:.45em; font-weight:600; letter-spacing:-.01em; white-space:nowrap; color:#fff; }
+.pill svg { fill:#fff; }
+#e-call { background:var(--green); }
+#e-text { background:var(--blue); }
+#e-url { color:var(--muted); font-weight:500; white-space:nowrap; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="abs big" id="hook" style="font-size:100px"><div>3 mistakes that</div><div>make customers</div><div class="g">skip your website<span class="b">.</span></div></div>
+  <div class="abs badge" id="b0">1</div>
+  <div class="abs pill2 no" id="n0">✗ Mistake</div>
+  <div class="abs mtxt" id="m0">Hiding your prices<br>and opening hours.</div>
+  <div class="abs pill2 yes" id="y0">✓ Fix</div>
+  <div class="abs ftxt" id="f0">Put them on the<br>first screen.</div>
+  <div class="abs badge" id="b1">2</div>
+  <div class="abs pill2 no" id="n1">✗ Mistake</div>
+  <div class="abs mtxt" id="m1">A site that only works<br>on a computer.</div>
+  <div class="abs pill2 yes" id="y1">✓ Fix</div>
+  <div class="abs ftxt" id="f1">Design for phones<br>first.</div>
+  <div class="abs badge" id="b2">3</div>
+  <div class="abs pill2 no" id="n2">✗ Mistake</div>
+  <div class="abs mtxt" id="m2">No quick way to book<br>or contact you.</div>
+  <div class="abs pill2 yes" id="y2">✓ Fix</div>
+  <div class="abs ftxt" id="f2">One clear button:<br>Book or WhatsApp.</div>
+  <div class="abs big" id="outro" style="font-size:100px"><div>We build sites</div><div class="g">that avoid all three<span class="b">.</span></div></div>
+
+<!-- end card -->
+  <img class="abs" id="e-logo" src="assets/logo.png">
+  <div class="abs" id="e-head">Let's fix that<em>.</em></div>
+  <div class="abs" id="e-num">+233 54 285 5399</div>
+  <div class="abs pill" id="e-call"><svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>Call us</div>
+  <div class="abs pill" id="e-text"><svg viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/></svg>Message us</div>
+  <div class="abs" id="e-url">ecstasytechnologies.com</div>
+</div>
+
+<script>
+const FMT = new URLSearchParams(location.search).get('fmt') || 'v';
+const V = FMT === 'v';
+const W = V ? 1080 : 1920, H = V ? 1920 : 1080;
+const $ = id => document.getElementById(id);
+$('stage').style.width = W + 'px'; $('stage').style.height = H + 'px';
+document.body.style.width = W + 'px'; document.body.style.height = H + 'px';
+
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, k) => a + (b - a) * k;
+function spring(t, w = 16, z = 0.55) {
+  if (t <= 0) return 0;
+  if (z >= 1) return 1 - Math.exp(-w * t) * (1 + w * t);
+  const wd = w * Math.sqrt(1 - z * z);
+  return 1 - Math.exp(-z * w * t) * (Math.cos(wd * t) + (z * w / wd) * Math.sin(wd * t));
+}
+const TYPE = t => spring(t, 18, 0.62);
+const POP = t => spring(t, 20, 0.6);
+const HEAVY = t => spring(t, 9, 1);
+const easeIn = t => { t = clamp(t); return t * t * t; };
+const easeOut = t => { t = clamp(t); return 1 - Math.pow(1 - t, 3); };
+const easeInOut = t => { t = clamp(t); return t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2; };
+function set(el, { x = 0, y = 0, s = 1, r = 0, o = 1 }) {
+  el.style.transform = `translate(${x}px,${y}px) rotate(${r}deg) scale(${s})`;
+  el.style.opacity = o;
+}
+function size(el, w, h) { el.style.width = w + 'px'; if (h != null) el.style.height = h + 'px'; }
+
+
+const T = { c0: 2.2, c1: 5.4, c2: 8.6, outro: 11.2, end: 12.8, dur: 15.0 };
+const CT = [T.c0, T.c1, T.c2, T.outro];
+const EVENTS = [{ t: 0.1, k: 'thump' }];
+CT.slice(0, 3).forEach((c, i) => { EVENTS.push({ t: c - 0.12, k: 'whoosh' }, { t: c + 0.05, k: 'slam' }, { t: c + 0.45, k: 'buzz' }, { t: c + 1.5, k: 'chime' }); });
+EVENTS.push({ t: T.outro - 0.12, k: 'whoosh' }, { t: T.outro + 0.05, k: 'thump' });
+EVENTS.push({ t: T.end - 0.15, k: 'riser_end' }, { t: T.end + 0.2, k: 'chord' }, { t: T.end + 0.95, k: 'tick' }, { t: T.end + 1.25, k: 'tick' });
+function placeIn(el, t, t0, t1, x, y, delay = 0, center = false) {
+  const w = el.offsetWidth, s = t0 + delay;
+  const k = TYPE(t - s), out = easeIn((t - t1 + 0.22) / 0.22);
+  const vis = t >= s - 0.01 && t < t1 + 0.01;
+  set(el, { x: center ? (W - w) / 2 : x, y: y + (1 - k) * 60 - out * 50, o: vis ? clamp((t - s) / 0.15) * (1 - out) : 0 });
+}
+// end card
+const logoW = V ? 600 : 520;
+$('e-logo').style.width = logoW + 'px';
+$('e-head').style.fontSize = (V ? 128 : 112) + 'px';
+$('e-num').style.fontSize = (V ? 96 : 84) + 'px';
+['e-call', 'e-text'].forEach(id => {
+  $(id).style.fontSize = (V ? 42 : 36) + 'px';
+  size($(id), V ? 420 : 360, V ? 112 : 96);
+  $(id).querySelector('svg').setAttribute('width', V ? 44 : 38);
+  $(id).querySelector('svg').setAttribute('height', V ? 44 : 38);
+});
+$('e-url').style.fontSize = (V ? 30 : 26) + 'px';
+
+
+function seek(t) {
+  placeIn($('hook'), t, 0.15, T.c0, 80, 640, 0, false);
+  for (let i = 0; i < 3; i++) {
+    const t0 = CT[i], t1 = CT[i + 1];
+    const k = POP(t - t0), out = easeIn((t - t1 + 0.22) / 0.22);
+    set($('b' + i), { x: 80, y: 330 + (1 - k) * 60 - out * 50, s: lerp(0.5, 1, k), o: t >= t0 && t < t1 + 0.01 ? clamp((t - t0) / .12) * (1 - out) : 0 });
+    placeIn($('n' + i), t, t0, t1, 270, 380, 0.15);
+    placeIn($('m' + i), t, t0, t1, 80, 600, 0.3);
+    placeIn($('y' + i), t, t0, t1, 80, 1010, 1.5);
+    placeIn($('f' + i), t, t0, t1, 80, 1150, 1.65);
+  }
+  placeIn($('outro'), t, T.outro, T.end, 80, 760, 0);
+
+
+  // end card
+  const E = T.end;
+  const cy = V ? 500 : 110;
+  const lk = POP(t - (E + 0.1));
+  const lh = logoW * (340 / 1090);
+  set($('e-logo'), { x: (W - logoW) / 2, y: cy + (1 - lk) * 30, o: clamp((t - (E + 0.1)) / .2) });
+  const hd = $('e-head'), hw = hd.offsetWidth;
+  const hk = POP(t - (E + 0.35));
+  set(hd, { x: (W - hw) / 2, y: cy + lh + (V ? 70 : 44) + (1 - hk) * 30, o: clamp((t - (E + 0.35)) / .2) });
+  const nm = $('e-num'), nw = nm.offsetWidth;
+  const nk = POP(t - (E + 0.7));
+  set(nm, { x: (W - nw) / 2, y: cy + lh + (V ? 250 : 196) + (1 - nk) * 30, o: clamp((t - (E + 0.7)) / .2) });
+  const pw = parseFloat($('e-call').style.width), ph = parseFloat($('e-call').style.height);
+  const gap = V ? 30 : 28;
+  const py = cy + lh + (V ? 410 : 340);
+  const c1 = POP(t - (E + 0.95)), c2 = POP(t - (E + 1.25));
+  if (V) {
+    set($('e-call'), { x: (W - pw) / 2, y: py + (1 - c1) * 30, o: clamp((t - (E + 0.95)) / .15) });
+    set($('e-text'), { x: (W - pw) / 2, y: py + ph + gap + (1 - c2) * 30, o: clamp((t - (E + 1.25)) / .15) });
+  } else {
+    set($('e-call'), { x: W / 2 - pw - gap / 2, y: py + (1 - c1) * 30, o: clamp((t - (E + 0.95)) / .15) });
+    set($('e-text'), { x: W / 2 + gap / 2, y: py + (1 - c2) * 30, o: clamp((t - (E + 1.25)) / .15) });
+  }
+  const uw = $('e-url').offsetWidth;
+  set($('e-url'), { x: (W - uw) / 2, y: py + (V ? 2 * ph + gap + 70 : ph + 60), o: clamp((t - (E + 1.6)) / .25) });
+  // gentle pulse on the call button after it lands (draws the eye)
+  if (t > E + 2.0) {
+    const p = 1 + 0.035 * Math.max(0, Math.sin((t - (E + 2.0)) * Math.PI * 1.6));
+    const base = V ? (W - pw) / 2 : W / 2 - pw - gap / 2;
+    $('e-call').style.transform = `translate(${base - pw * (p - 1) / 2}px,${py - ph * (p - 1) / 2}px) scale(${p})`;
+  }
+}
+
+window.__duration = T.dur;
+window.__events = EVENTS;
+window.__seek = seek;
+Promise.all([document.fonts.load('700 40px Inter'), document.fonts.load('500 20px Inter')])
+  .then(() => document.fonts.ready)
+  .then(() => Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; }))))
+  .then(() => { seek(0); window.__ready = true; });
+</script>
+</body>
+</html>
