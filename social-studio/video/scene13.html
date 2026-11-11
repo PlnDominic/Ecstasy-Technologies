@@ -1,34 +1,36 @@
-<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts/local.css"><style>@font-face{font-family:'Syne';font-weight:800;src:url('fonts/Syne-800.woff2') format('woff2');}
-@font-face{font-family:'Syne';font-weight:700;src:url('fonts/Syne-700.woff2') format('woff2');}
-@font-face{font-family:'Figtree';font-weight:700;src:url('fonts/Figtree-700.woff2') format('woff2');}
-@font-face{font-family:'Figtree';font-weight:500;src:url('fonts/Figtree-500.woff2') format('woff2');}
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts/local.css"><style>@font-face{font-family:'Jakarta';font-weight:400;src:url('fonts/plus-jakarta-sans-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Jakarta';font-weight:500 700;src:url('fonts/plus-jakarta-sans-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Jakarta';font-weight:800;src:url('fonts/plus-jakarta-sans-latin-800-normal.woff2') format('woff2');}
+@font-face{font-family:'Play';font-weight:400 500;font-style:normal;src:url('fonts/playfair-display-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Play';font-weight:600 800;font-style:normal;src:url('fonts/playfair-display-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'Play';font-weight:400 800;font-style:italic;src:url('fonts/playfair-display-latin-600-italic.woff2') format('woff2');}
 * { margin:0; padding:0; box-sizing:border-box; } html, body { overflow:hidden; }
 #stage { position:relative; overflow:hidden; } .abs { position:absolute; left:0; top:0; transform-origin:0 0; }
 
 body, #stage { background:#fff; }
 
-.serif { font-family:'Liberation Serif', 'DejaVu Serif', serif; }
-.sans { font-family:'Figtree', sans-serif; }
+.serif { font-family:'Play', serif; }
+.sans { font-family:'Jakarta', sans-serif; }
 #top { width:1080px; height:960px; background:#F4EEE4; }
 #bot { width:1080px; height:960px; background:#FFFFFF; }
 #hookA, #hookB { width:1080px; height:960px; background:#111; overflow:hidden; }
 #h1 { color:#F4EEE4; font-size:150px; font-style:italic; white-space:nowrap; }
 #h2 { color:#fff; font-size:70px; font-weight:700; letter-spacing:-.02em; white-space:nowrap; }
-.kick { font-family:'Figtree'; font-weight:700; font-size:26px; letter-spacing:.32em; white-space:nowrap; }
+.kick { font-family:'Jakarta'; font-weight:700; font-size:26px; letter-spacing:.32em; white-space:nowrap; }
 .ph { width:330px; height:690px; border-radius:44px; overflow:hidden; background:#fff; box-shadow:0 0 0 9px #111, 0 30px 70px -25px rgba(0,0,0,.45); }
 .ph img { position:absolute; left:0; top:0; width:330px; }
 #mt { font-size:96px; line-height:.98; color:#2B2420; white-space:nowrap; }
 #mt em { color:#A8834B; }
 #tag { background:#fff; border-radius:999px; padding:18px 30px; font-size:32px; color:#2B2420; box-shadow:0 10px 30px -12px rgba(0,0,0,.25); white-space:nowrap; }
 #st { font-size:84px; font-weight:700; line-height:.98; letter-spacing:-.035em; color:#0F1E3D; white-space:nowrap; }
-.chip { border-radius:16px; padding:16px 24px; font-family:'Figtree'; font-weight:700; font-size:32px; background:#E7F2EF; color:#0E6B5E; white-space:nowrap; }
+.chip { border-radius:16px; padding:16px 24px; font-family:'Jakarta'; font-weight:700; font-size:32px; background:#E7F2EF; color:#0E6B5E; white-space:nowrap; }
 #band { width:1080px; height:240px; background:#111; }
 .bw { white-space:nowrap; color:#fff; }
 #eLogo { width:520px; mix-blend-mode:multiply; }
 #eQ { font-size:100px; font-style:italic; color:#2B2420; white-space:nowrap; }
 #eS { font-size:66px; font-weight:700; letter-spacing:-.03em; color:#0F1E3D; white-space:nowrap; }
-#eP { background:#111; color:#fff; border-radius:999px; padding:28px 48px; font-family:'Figtree'; font-weight:700; font-size:46px; white-space:nowrap; }
-#eU { font-family:'Figtree'; font-weight:500; font-size:36px; color:#6B6B6B; white-space:nowrap; }
+#eP { background:#111; color:#fff; border-radius:999px; padding:28px 48px; font-family:'Jakarta'; font-weight:700; font-size:46px; white-space:nowrap; }
+#eU { font-family:'Jakarta'; font-weight:500; font-size:36px; color:#6B6B6B; white-space:nowrap; }
 </style></head><body><div id="stage">
 <div class="abs" id="top"></div><div class="abs" id="bot"></div>
 <div class="abs kick" id="mk" style="color:#A8834B">MAVE COLLECTION</div>
@@ -129,7 +131,7 @@ function seek(t) {
 window.__duration = 15;
 window.__events = EVENTS;
 window.__seek = seek;
-Promise.all(['700 40px Figtree', '500 40px Figtree', 'italic 40px "Liberation Serif"', '40px "Liberation Serif"'].map(f => document.fonts.load(f)))
+Promise.all(['700 40px Jakarta', '500 40px Jakarta', 'italic 40px Play', '40px Play'].map(f => document.fonts.load(f)))
   .then(() => document.fonts.ready)
   .then(() => Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; }))))
   .then(() => { if (typeof prep === 'function') prep(); seek(0); window.__ready = true; });

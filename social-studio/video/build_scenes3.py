@@ -5,23 +5,23 @@ exec(src[:src.index("# ---------------- scene11")])   # FONTS, HELPERS, page()
 
 # ---------------- scene14: Mave editorial 15s ----------------
 CSS14 = """
-.serif { font-family:'Liberation Serif', 'DejaVu Serif', serif; } .sans { font-family:'Figtree', sans-serif; }
+.serif { font-family:'Play', serif; } .sans { font-family:'Jakarta', sans-serif; }
 #mast { font-size:210px; letter-spacing:.18em; color:#2B2420; white-space:nowrap; }
 #coll { font-size:96px; font-style:italic; color:#A8834B; white-space:nowrap; }
-.kick { font-family:'Figtree'; font-weight:700; font-size:26px; letter-spacing:.34em; color:#2B2420; white-space:nowrap; }
+.kick { font-family:'Jakarta'; font-weight:700; font-size:26px; letter-spacing:.34em; color:#2B2420; white-space:nowrap; }
 #gown { width:620px; height:1080px; overflow:hidden; background:#F4EEE4; }
 #gown img { position:absolute; left:-24px; top:-100px; width:668px; mix-blend-mode:multiply; }
 .spec { white-space:nowrap; }
-.spec .l { font-family:'Figtree'; font-weight:700; font-size:22px; letter-spacing:.3em; color:#A8834B; }
-.spec .v { font-family:'Liberation Serif', serif; font-size:40px; color:#2B2420; margin-top:6px; }
+.spec .l { font-family:'Jakarta'; font-weight:700; font-size:22px; letter-spacing:.3em; color:#A8834B; }
+.spec .v { font-family:'Play', serif; font-size:40px; color:#2B2420; margin-top:6px; }
 .lead { height:2px; background:#A8834B; transform-origin:0 50%; }
 #proc { width:1080px; height:1920px; background:#F4EEE4; }
 .step { font-size:84px; color:#2B2420; white-space:nowrap; } .step em { color:#A8834B; font-style:italic; }
-#url { background:#1F3D2E; color:#F4EEE4; border-radius:999px; padding:24px 46px; font-family:'Figtree'; font-weight:700; font-size:42px; white-space:nowrap; letter-spacing:.02em; }
+#url { background:#1F3D2E; color:#F4EEE4; border-radius:999px; padding:24px 46px; font-family:'Jakarta'; font-weight:700; font-size:42px; white-space:nowrap; letter-spacing:.02em; }
 #eH { font-size:104px; line-height:1.0; font-style:italic; color:#2B2420; white-space:nowrap; text-align:center; }
-#eB { font-family:'Figtree'; font-weight:700; font-size:30px; letter-spacing:.3em; color:#A8834B; white-space:nowrap; }
-#eW { font-family:'Figtree'; font-weight:700; font-size:50px; color:#2B2420; white-space:nowrap; }
-#eU { font-family:'Figtree'; font-weight:500; font-size:34px; color:#6B6258; white-space:nowrap; }
+#eB { font-family:'Jakarta'; font-weight:700; font-size:30px; letter-spacing:.3em; color:#A8834B; white-space:nowrap; }
+#eW { font-family:'Jakarta'; font-weight:700; font-size:50px; color:#2B2420; white-space:nowrap; }
+#eU { font-family:'Jakarta'; font-weight:500; font-size:34px; color:#6B6258; white-space:nowrap; }
 .rule { height:2px; background:#2B2420; }
 .fr4 { background:#2B2420; z-index:5; }
 """
@@ -82,48 +82,48 @@ function seek(t) {{
   inout($('eU'), t, T.end + 1.4, 99, cx($('eU')), 1470);
 }}
 """
-open('scene14.html', 'w').write(page('#F4EEE4', CSS14, BODY14, JS14, 15, "'700 40px Figtree', '500 40px Figtree', 'italic 40px \"Liberation Serif\"', '40px \"Liberation Serif\"'"))
+open('scene14.html', 'w').write(page('#F4EEE4', CSS14, BODY14, JS14, 15, "'700 40px Jakarta', '500 40px Jakarta', 'italic 40px Play', '40px Play'"))
 
 # ---------------- scene15: Sleek Connect "add to bag" 15s ----------------
 PRODS = [('polo', 'Polo T-Shirt', 180), ('omaya', 'Omaya backpack', 310), ('medicube', 'Medicube Zero Pad', 360), ('suave', 'Suave Intense', 200), ('eos', 'Eos shea butter lotion', 220), ('tee', 'Round Neck Top', 180)]
 CSS15 = """
-.syne { font-family:'Syne'; font-weight:800; letter-spacing:-.035em; } .sans { font-family:'Figtree'; }
-#hk1 { font-size:46px; font-family:'Figtree'; font-weight:700; color:#0E6B5E; letter-spacing:.2em; white-space:nowrap; }
+.syne { font-family:'Jakarta'; font-weight:800; letter-spacing:-.035em; } .sans { font-family:'Jakarta'; }
+#hk1 { font-size:46px; font-family:'Jakarta'; font-weight:700; color:#0E6B5E; letter-spacing:.2em; white-space:nowrap; }
 #hk2 { font-size:150px; color:#0F1E3D; line-height:.92; white-space:nowrap; }
 #bag { width:150px; height:150px; border-radius:40px; background:#0F1E3D; display:flex; align-items:center; justify-content:center; box-shadow:0 20px 40px -18px rgba(15,30,61,.6); }
-#badge { width:76px; height:76px; border-radius:50%; background:#17A589; color:#fff; font-family:'Figtree'; font-weight:700; font-size:40px; display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 6px #fff; }
+#badge { width:76px; height:76px; border-radius:50%; background:#17A589; color:#fff; font-family:'Jakarta'; font-weight:700; font-size:40px; display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 6px #fff; }
 .card { width:620px; border-radius:36px; background:#fff; box-shadow:0 40px 90px -30px rgba(15,30,61,.35), 0 0 0 1px rgba(15,30,61,.06); padding:30px; }
 .card img { width:560px; height:580px; object-fit:cover; border-radius:24px; display:block; }
-.card .n { font-family:'Figtree'; font-weight:700; font-size:44px; color:#0F1E3D; margin-top:24px; white-space:nowrap; }
-.card .p { font-family:'Figtree'; font-weight:700; font-size:40px; color:#0E6B5E; margin-top:6px; }
-.card .b { margin-top:22px; border-radius:18px; background:#0F1E3D; color:#fff; font-family:'Figtree'; font-weight:700; font-size:38px; text-align:center; padding:22px 0; }
+.card .n { font-family:'Jakarta'; font-weight:700; font-size:44px; color:#0F1E3D; margin-top:24px; white-space:nowrap; }
+.card .p { font-family:'Jakarta'; font-weight:700; font-size:40px; color:#0E6B5E; margin-top:6px; }
+.card .b { margin-top:22px; border-radius:18px; background:#0F1E3D; color:#fff; font-family:'Jakarta'; font-weight:700; font-size:38px; text-align:center; padding:22px 0; }
 #sheet { width:1080px; height:1240px; border-radius:56px 56px 0 0; background:#0F1E3D; }
-.row { font-family:'Figtree'; font-weight:700; font-size:44px; color:#fff; white-space:nowrap; display:flex; justify-content:space-between; width:900px; }
+.row { font-family:'Jakarta'; font-weight:700; font-size:44px; color:#fff; white-space:nowrap; display:flex; justify-content:space-between; width:900px; }
 .row span { color:#8FB8C9; font-weight:500; }
-.ok { font-family:'Figtree'; font-weight:700; font-size:38px; color:#7EE2C8; white-space:nowrap; }
-.pay { border-radius:20px; border:3px solid #2B4A7A; color:#fff; font-family:'Figtree'; font-weight:700; font-size:40px; padding:20px 40px; }
-#place { width:900px; border-radius:24px; background:#17A589; color:#fff; font-family:'Figtree'; font-weight:700; font-size:48px; text-align:center; padding:30px 0; }
-#done { width:900px; border-radius:24px; background:#fff; color:#0F1E3D; font-family:'Figtree'; font-weight:700; font-size:48px; text-align:center; padding:30px 0; }
+.ok { font-family:'Jakarta'; font-weight:700; font-size:38px; color:#7EE2C8; white-space:nowrap; }
+.pay { border-radius:20px; border:3px solid #2B4A7A; color:#fff; font-family:'Jakarta'; font-weight:700; font-size:40px; padding:20px 40px; }
+#place { width:900px; border-radius:24px; background:#17A589; color:#fff; font-family:'Jakarta'; font-weight:700; font-size:48px; text-align:center; padding:30px 0; }
+#done { width:900px; border-radius:24px; background:#fff; color:#0F1E3D; font-family:'Jakarta'; font-weight:700; font-size:48px; text-align:center; padding:30px 0; }
 #ph { width:520px; height:1060px; border-radius:72px; overflow:hidden; box-shadow:0 0 0 10px #0B1222, 0 0 0 12px #3A4560; background:#fff; }
 #isl3 { width:150px; height:44px; border-radius:22px; background:#0B1222; left:185px; top:22px; }
 #ph img { position:absolute; left:0; top:62px; width:520px; }
-#purl { font-family:'Figtree'; font-weight:700; font-size:42px; color:#0F1E3D; white-space:nowrap; }
+#purl { font-family:'Jakarta'; font-weight:700; font-size:42px; color:#0F1E3D; white-space:nowrap; }
 #endbg { width:1080px; height:1920px; background:#0F1E3D; }
 #eH { font-size:120px; color:#fff; line-height:.95; white-space:nowrap; }
 #eH em { font-style:normal; color:#17A589; }
-#eW { border-radius:999px; background:#17A589; color:#fff; font-family:'Figtree'; font-weight:700; font-size:48px; padding:28px 50px; white-space:nowrap; }
-#eU { font-family:'Figtree'; font-weight:500; font-size:38px; color:#8FB8C9; white-space:nowrap; }
-#eB { font-family:'Figtree'; font-weight:700; font-size:30px; letter-spacing:.3em; color:#8FB8C9; white-space:nowrap; }
+#eW { border-radius:999px; background:#17A589; color:#fff; font-family:'Jakarta'; font-weight:700; font-size:48px; padding:28px 50px; white-space:nowrap; }
+#eU { font-family:'Jakarta'; font-weight:500; font-size:38px; color:#8FB8C9; white-space:nowrap; }
+#eB { font-family:'Jakarta'; font-weight:700; font-size:30px; letter-spacing:.3em; color:#8FB8C9; white-space:nowrap; }
 """
 BAGSVG = '<svg width="74" height="74" viewBox="0 0 24 24"><path fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 8h14l-1 12H6L5 8zM9 8V6a3 3 0 0 1 6 0v2"/></svg>'
-BODY15 = f"""<div class="abs" id="hk1">POV</div><div class="abs syne" id="hk2">Your shop<br>never closes.</div>
+BODY15 = f"""<div class="abs" id="hk1">THE PROBLEM</div><div class="abs syne" id="hk2">Make buying<br>easy.</div>
 """ + ''.join(f'<div class="abs card" id="cd{k}"><img src="assets/p-{f}.jpg"><div class="n">{n}</div><div class="p">GH₵ {p}</div><div class="b" id="qb{k}">Quick Add</div></div>' for k, (f, n, p) in enumerate(PRODS)) + f"""
 <div class="abs" id="sheet"></div>
 <div class="abs syne" id="ck" style="font-size:96px;color:#fff">Checkout</div>
 <div class="abs row" id="r0">{len(PRODS)} items<span>GH₵ {sum(p for _, _, p in PRODS):,}</span></div>
 <div class="abs pay" id="pm">MoMo</div><div class="abs pay" id="pc">Card</div>
-<div class="abs ok" id="o1">✓ Free delivery in Accra over GH₵ 15</div>
-<div class="abs ok" id="o2">✓ 100% authentic, batch-checked</div>
+<div class="abs ok" id="o1">✓ Secure checkout</div>
+<div class="abs ok" id="o2">✓ Works on any phone</div>
 <div class="abs" id="place">Place order</div><div class="abs" id="done">✓ Order placed</div>
 <div class="abs" id="ph"><img id="pimg" src="assets/st-sleek-m.jpg"><div class="abs" id="isl3"></div></div>
 <div class="abs" id="purl">sleekconnectstore.com</div>
@@ -137,7 +137,7 @@ BODY15 = f"""<div class="abs" id="hk1">POV</div><div class="abs syne" id="hk2">Y
 JS15 = f"""
 const NP = {len(PRODS)};
 function prep() {{ fit($('hk2'), 940); fit($('eH'), 940); }}
-const T = {{ hook: 0.1, p0: 1.6, pd: 1.05, sheet: 8.0, place: 9.6, done: 10.0, phone: 10.6, end: 12.4, dur: 15.0 }};
+const T = {{ hook: 0.1, p0: 1.6, pd: 1.05, sheet: 8.0, place: 9.6, done: 10.0, phone: 10.6, end: 12.4, dur: 16.5 }};
 const EVENTS = [{{ t: 0.1, k: 'thump' }}];
 for (let k = 0; k < NP; k++) {{ const a = T.p0 + k * T.pd; EVENTS.push({{ t: a, k: 'whoosh' }}, {{ t: a + 0.45, k: 'click' }}, {{ t: a + 0.85, k: 'blip' }}); }}
 EVENTS.push({{ t: T.sheet, k: 'whoosh' }}, {{ t: T.sheet + 0.6, k: 'tick' }}, {{ t: T.sheet + 0.9, k: 'tick' }}, {{ t: T.place, k: 'click' }}, {{ t: T.done, k: 'chime' }}, {{ t: T.phone, k: 'whoosh' }}, {{ t: T.end, k: 'slam' }}, {{ t: T.end + 0.8, k: 'chord' }});
@@ -186,5 +186,5 @@ function seek(t) {{
   inout($('eB'), t, T.end + 1.4, 99, 74, 1500);
 }}
 """
-open('scene15.html', 'w').write(page('#F3F6F8', CSS15, BODY15, JS15, 15, "'800 40px Syne', '700 40px Figtree', '500 40px Figtree'"))
+open('scene15.html', 'w').write(page('#F3F6F8', CSS15, BODY15, JS15, 16.5, "'800 40px Jakarta', '700 40px Jakarta', '500 40px Jakarta'"))
 print('built 14,15')

@@ -3,12 +3,12 @@ import json, math, random, wave, struct
 SR = 48000
 import os
 CFG = os.environ.get('CFG', '1')
-DUR = {'1': 15.0, '2': 18.0, '3': 20.0, '4': 22.0}[CFG]
+DUR = float(os.environ['DUR']) if 'DUR' in os.environ else {'1': 15.0, '2': 18.0, '3': 20.0, '4': 22.0}[CFG]
 N = int(SR * DUR)
 L = [0.0] * N
 R = [0.0] * N
 random.seed(7)
-ev = json.load(open({'1': 'events.json', '2': 'events2.json', '3': 'events3.json', '4': 'events4.json'}[CFG]))
+ev = json.load(open(os.environ.get('EV') or {'1': 'events.json', '2': 'events2.json', '3': 'events3.json', '4': 'events4.json'}[CFG]))
 
 
 def add(t0, samples, gain=1.0, pan=0.0):
@@ -175,7 +175,7 @@ for e in ev:
 # fade out tail + soft limiter
 peak = max(max(abs(x) for x in L), max(abs(x) for x in R))
 norm = 0.89 / peak if peak > 0.89 else 1.0
-with wave.open({'1': 'sfx.wav', '2': 'sfx2.wav', '3': 'sfx3.wav', '4': 'sfx4.wav'}[CFG], 'wb') as w:
+with wave.open(os.environ.get('OUT') or {'1': 'sfx.wav', '2': 'sfx2.wav', '3': 'sfx3.wav', '4': 'sfx4.wav'}[CFG], 'wb') as w:
     w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR)
     fr = bytearray()
     for k in range(N):

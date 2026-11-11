@@ -2,10 +2,12 @@
 s3 = open('scene3.html').read()
 i = s3.index("const FMT"); j = s3.index("// ---------------- timeline", i)
 HELPERS = s3[i:j]
-FONTS = """@font-face{font-family:'Syne';font-weight:800;src:url('fonts/Syne-800.woff2') format('woff2');}
-@font-face{font-family:'Syne';font-weight:700;src:url('fonts/Syne-700.woff2') format('woff2');}
-@font-face{font-family:'Figtree';font-weight:700;src:url('fonts/Figtree-700.woff2') format('woff2');}
-@font-face{font-family:'Figtree';font-weight:500;src:url('fonts/Figtree-500.woff2') format('woff2');}
+FONTS = """@font-face{font-family:'Jakarta';font-weight:400;src:url('fonts/plus-jakarta-sans-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Jakarta';font-weight:500 700;src:url('fonts/plus-jakarta-sans-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Jakarta';font-weight:800;src:url('fonts/plus-jakarta-sans-latin-800-normal.woff2') format('woff2');}
+@font-face{font-family:'Play';font-weight:400 500;font-style:normal;src:url('fonts/playfair-display-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Play';font-weight:600 800;font-style:normal;src:url('fonts/playfair-display-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'Play';font-weight:400 800;font-style:italic;src:url('fonts/playfair-display-latin-600-italic.woff2') format('woff2');}
 * { margin:0; padding:0; box-sizing:border-box; } html, body { overflow:hidden; }
 #stage { position:relative; overflow:hidden; } .abs { position:absolute; left:0; top:0; transform-origin:0 0; }
 """
@@ -33,11 +35,11 @@ Promise.all([{fontload}].map(f => document.fonts.load(f)))
 # ---------------- scene11: code editor -> live site (dark, mono, neon) 18s ----------------
 CODE = [
  ('<span class=c>&lt;!-- sleekconnectstore.com --&gt;</span>'),
- ('<span class=t>&lt;div</span> <span class=a>class</span>=<span class=s>"promo"</span><span class=t>&gt;</span>Free delivery in Accra<span class=t>&lt;/div&gt;</span>'),
+ ('<span class=c>&lt;!-- built by Ecstasy Technologies --&gt;</span>'),
  ('<span class=t>&lt;header&gt;</span>Sleek Connect Store<span class=t>&lt;/header&gt;</span>'),
  ('<span class=t>&lt;input</span> <span class=a>placeholder</span>=<span class=s>"Search products"</span><span class=t>&gt;</span>'),
  (''),
- ('<span class=t>&lt;nav&gt;</span>Beauty · Baby &amp; Kids · Electronics<span class=t>&lt;/nav&gt;</span>'),
+ ('<span class=t>&lt;categories</span> <span class=a>count</span>=<span class=s>"15"</span><span class=t>/&gt;</span>'),
  (''),
  ('<span class=t>&lt;section</span> <span class=a>id</span>=<span class=s>"new-arrivals"</span><span class=t>&gt;</span>'),
  ('  <span class=t>&lt;card</span> <span class=a>item</span>=<span class=s>"Polo T-Shirt"</span> <span class=a>price</span>=<span class=s>"GH₵ 180"</span><span class=t>/&gt;</span>'),
@@ -46,10 +48,10 @@ CODE = [
  ('<span class=t>&lt;/section&gt;</span>'),
  (''),
  ('<span class=t>&lt;checkout</span> <span class=a>pay</span>=<span class=s>"MoMo, card"</span><span class=t>/&gt;</span>'),
- ('<span class=k>@media</span> (max-width: <span class=n>600px</span>) { <span class=c>/* phones first */</span> }'),
+ ('<span class=k>@media</span> (max-width: <span class=n>600px</span>) { <span class=c>/* any phone */</span> }'),
 ]
 CSS11 = """
-#hook { font-family:'Figtree'; font-weight:700; color:#E6EDF3; font-size:84px; line-height:1.05; letter-spacing:-.03em; }
+#hook { font-family:'Jakarta'; font-weight:800; color:#E6EDF3; font-size:84px; line-height:1.05; letter-spacing:-.03em; }
 #hook em { font-style:normal; color:#7EE787; }
 #ed { width:960px; height:1050px; border-radius:22px; background:#11151B; box-shadow:0 0 0 1px #262C35; overflow:hidden; }
 #ed .tabs { height:70px; background:#0D1117; display:flex; align-items:flex-end; padding-left:24px; gap:8px; border-bottom:1px solid #30363D; }
@@ -68,13 +70,13 @@ CSS11 = """
 #live i { width:18px; height:18px; border-radius:50%; background:#3FB950; box-shadow:0 0 18px #3FB950; display:block; }
 #endt { font:500 42px/1.8 'JetBrains Mono', monospace; color:#E6EDF3; white-space:pre; }
 #endt .p { color:#7EE787; } #endt .s { color:#A5D6FF; } #endt .c { color:#8B949E; }
-#brand { font-family:'Syne'; font-weight:800; font-size:64px; color:#E6EDF3; letter-spacing:-.02em; }
+#brand { font-family:'Jakarta'; font-weight:800; font-size:64px; color:#E6EDF3; letter-spacing:-.02em; }
 #brand em { font-style:normal; color:#7EE787; }
 """
 lines_html = ''.join(f'<div class="cl" id="cl{k}"><span class="ln">{k+1}</span><span class="tx"></span></div>' for k in range(len(CODE)))
-BODY11 = f"""<div class="abs" id="hook">POV: your website<br>being built <em>line by line</em></div>
+BODY11 = f"""<div class="abs" id="hook"><em>Ecstasy Technologies</em><br>builds an online<br>store, line by line</div>
 <div class="abs" id="ed"><div class="tabs"><div class="tab on">index.html</div><div class="tab">style.css</div></div><div id="code">{lines_html}</div></div>
-<div class="abs" id="term"><div id="t1"><span class="dim">$</span> npm run build</div><div id="t2" class="ok">✓ compiled for every screen size</div><div id="t3" class="ok">✓ live on sleekconnectstore.com</div></div>
+<div class="abs" id="term"><div id="t1"><span class="dim">$</span> npm run build</div><div id="t2" class="ok">✓ search, categories, quick add</div><div id="t3" class="ok">✓ MoMo and card checkout</div></div>
 <div class="abs" id="phone"><img id="pimg" src="assets/st-sleek-m.jpg"><div class="abs" id="isl"></div></div>
 <div class="abs" id="live"><i></i>LIVE · Sleek Connect Store</div>
 <div class="abs" id="brand">Ecstasy <em>Technologies</em></div>
@@ -83,12 +85,12 @@ BODY11 = f"""<div class="abs" id="hook">POV: your website<br>being built <em>lin
 import json
 JS11 = f"""
 const CODE = {json.dumps(CODE)};
-function prep() {{ $('brand').style.letterSpacing = '-.02em'; fit($('brand'), 900); }}
-const T = {{ type0: 0.9, type1: 7.2, build: 7.4, flash: 9.1, phone: 9.2, scroll0: 10.0, scroll1: 14.0, end: 14.4, dur: 18.0 }};
+function prep() {{ $('brand').style.letterSpacing = '-.02em'; fit($('brand'), 900); fit($('hook'), 920); }}
+const T = {{ type0: 0.9, type1: 7.2, build: 7.4, flash: 9.1, phone: 9.2, scroll0: 10.0, scroll1: 14.0, end: 14.4, dur: 19.0 }};
 // plain-text lengths for typing
 const plain = CODE.map(h => {{ const d = document.createElement('div'); d.innerHTML = h; return d.textContent; }});
 const total = plain.reduce((a, s) => a + Math.max(1, s.length), 0);
-const ENDL = [['<span class=p>&gt;</span> need_a_website<span class=c>()</span>', 0.25], ['<span class=p>&gt;</span> whatsapp(<span class=s>"+233 54 285 5399"</span>)', 1.0], ['<span class=p>&gt;</span> open(<span class=s>"ecstasytechnologies.com"</span>)', 1.9], ['<span class=c>// websites · apps · software</span>', 2.8]];
+const ENDL = [['<span class=p>&gt;</span> need_a_store<span class=c>()</span>', 0.25], ['<span class=p>&gt;</span> whatsapp(<span class=s>"+233 54 285 5399"</span>)', 1.0], ['<span class=p>&gt;</span> open(<span class=s>"ecstasytechnologies.com"</span>)', 1.9], ['<span class=c>// built by Ecstasy Technologies</span>', 2.8]];
 const EVENTS = [{{ t: 0.1, k: 'thump' }}];
 for (let tt = T.type0; tt < T.type1; tt += 0.16) EVENTS.push({{ t: tt, k: 'key' }});
 EVENTS.push({{ t: T.build, k: 'click' }}, {{ t: T.build + 0.6, k: 'blip' }}, {{ t: T.build + 1.2, k: 'chime' }}, {{ t: T.flash - 0.4, k: 'riser_end' }}, {{ t: T.flash, k: 'slam' }}, {{ t: T.end, k: 'whoosh' }});
@@ -134,30 +136,30 @@ function seek(t) {{
     set($('endt'), {{ x: 80, y: 700, o: t >= T.end ? 1 : 0 }}); }}
 }}
 """
-open('scene11.html', 'w').write(page('#0A0C10', CSS11, BODY11, JS11, 18, "'700 40px Figtree', '800 40px Syne', '500 30px \"JetBrains Mono\"'"))
+open('scene11.html', 'w').write(page('#0A0C10', CSS11, BODY11, JS11, 19, "'700 40px Jakarta', '800 40px Jakarta', '500 30px \"JetBrains Mono\"'"))
 
 # ---------------- scene12: paper sketch -> real site (warm paper, pencil) 22s ----------------
 CSS12 = """
 #paper { width:1080px; height:1920px; background:#F3EEE3; }
-#hook { font-family:'Syne'; font-weight:800; color:#2A2A2A; font-size:92px; line-height:1.02; letter-spacing:-.03em; }
+#hook { font-family:'Jakarta'; font-weight:800; color:#2A2A2A; font-size:92px; line-height:1.02; letter-spacing:-.03em; }
 #hlw { background-image:linear-gradient(#FFE45C,#FFE45C); background-repeat:no-repeat; background-position:0 70%; background-size:0% 60%; }
 svg { overflow:visible; }
 .ink { fill:none; stroke:#2A2A2A; stroke-width:6; stroke-linecap:round; stroke-linejoin:round; }
 .blue { fill:none; stroke:#2F6DB5; stroke-width:5; stroke-linecap:round; }
-.note { font-family:'Syne'; font-weight:700; color:#2F6DB5; font-size:42px; white-space:nowrap; transform-origin:0 50%; }
+.note { font-family:'Jakarta'; font-weight:700; color:#2F6DB5; font-size:42px; white-space:nowrap; transform-origin:0 50%; }
 #real { width:560px; height:1100px; border-radius:64px; overflow:hidden; box-shadow:0 0 0 9px #111, 0 0 0 11px #3A3F47; background:#fff; }
 #isl2 { width:150px; height:42px; border-radius:21px; background:#111; }
 #real img { position:absolute; left:0; top:60px; width:560px; height:1212px; object-fit:cover; object-position:top; }
 #wipe { width:16px; height:1140px; background:#2A2A2A; border-radius:8px; }
-#then { font-family:'Syne'; font-weight:800; color:#2A2A2A; font-size:110px; letter-spacing:-.03em; white-space:nowrap; }
-#cap { font-family:'Figtree'; font-weight:700; color:#2A2A2A; font-size:40px; white-space:nowrap; }
+#then { font-family:'Jakarta'; font-weight:800; color:#2A2A2A; font-size:110px; letter-spacing:-.03em; white-space:nowrap; }
+#cap { font-family:'Jakarta'; font-weight:700; color:#2A2A2A; font-size:40px; white-space:nowrap; }
 #cap span { color:#6B6B6B; font-weight:500; }
 #sticky { width:780px; height:620px; background:#FFE45C; box-shadow:0 30px 60px -25px rgba(0,0,0,.35); padding:70px 64px; transform-origin:50% 50%; }
-#sticky .a { font-family:'Syne'; font-weight:800; font-size:84px; line-height:1.02; color:#2A2A2A; letter-spacing:-.03em; }
-#sticky .b { font-family:'Figtree'; font-weight:700; font-size:50px; white-space:nowrap; color:#2A2A2A; margin-top:46px; }
-#sticky .c { font-family:'Figtree'; font-weight:500; font-size:40px; color:#4A4A4A; margin-top:18px; }
+#sticky .a { font-family:'Jakarta'; font-weight:800; font-size:84px; line-height:1.02; color:#2A2A2A; letter-spacing:-.03em; }
+#sticky .b { font-family:'Jakarta'; font-weight:700; font-size:50px; white-space:nowrap; color:#2A2A2A; margin-top:46px; }
+#sticky .c { font-family:'Jakarta'; font-weight:500; font-size:40px; color:#4A4A4A; margin-top:18px; }
 .tape { width:220px; height:64px; background:rgba(255,255,255,.55); box-shadow:0 2px 6px rgba(0,0,0,.08); }
-#sig { font-family:'Syne'; font-weight:700; font-size:44px; color:#2F6DB5; white-space:nowrap; }
+#sig { font-family:'Jakarta'; font-weight:700; font-size:44px; color:#2F6DB5; white-space:nowrap; }
 """
 # wireframe of a phone page (local coords: 560x1100), drawn with slightly wobbly paths
 WF = [
@@ -226,7 +228,7 @@ function seek(t) {{
     set($('sig'), {{ x: sx + 300, y: sy + 700 + (1 - gk) * 20, r: -3, o: t >= T.end + 1.6 ? clamp((t - T.end - 1.6) / .3) : 0 }}); }}
 }}
 """
-open('scene12.html', 'w').write(page('#F3EEE3', CSS12, BODY12, JS12, 22, "'800 40px Syne', '700 40px Syne', '700 40px Figtree', '500 40px Figtree'"))
+open('scene12.html', 'w').write(page('#F3EEE3', CSS12, BODY12, JS12, 22, "'800 40px Jakarta', '700 40px Jakarta', '700 40px Jakarta', '500 40px Jakarta'"))
 
 exec(open('scene13_split.py').read())
 print('built 11,12,13')

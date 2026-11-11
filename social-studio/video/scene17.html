@@ -1,13 +1,15 @@
-<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts/local.css"><style>@font-face{font-family:'Syne';font-weight:800;src:url('fonts/Syne-800.woff2') format('woff2');}
-@font-face{font-family:'Syne';font-weight:700;src:url('fonts/Syne-700.woff2') format('woff2');}
-@font-face{font-family:'Figtree';font-weight:700;src:url('fonts/Figtree-700.woff2') format('woff2');}
-@font-face{font-family:'Figtree';font-weight:500;src:url('fonts/Figtree-500.woff2') format('woff2');}
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts/local.css"><style>@font-face{font-family:'Jakarta';font-weight:400;src:url('fonts/plus-jakarta-sans-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Jakarta';font-weight:500 700;src:url('fonts/plus-jakarta-sans-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Jakarta';font-weight:800;src:url('fonts/plus-jakarta-sans-latin-800-normal.woff2') format('woff2');}
+@font-face{font-family:'Play';font-weight:400 500;font-style:normal;src:url('fonts/playfair-display-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Play';font-weight:600 800;font-style:normal;src:url('fonts/playfair-display-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'Play';font-weight:400 800;font-style:italic;src:url('fonts/playfair-display-latin-600-italic.woff2') format('woff2');}
 * { margin:0; padding:0; box-sizing:border-box; } html, body { overflow:hidden; }
 #stage { position:relative; overflow:hidden; } .abs { position:absolute; left:0; top:0; transform-origin:0 0; }
 
 body, #stage { background:#0B0B0B; }
 
-.serif { font-family:'Liberation Serif','DejaVu Serif',serif; } .fg { font-family:'Figtree'; font-weight:700; }
+.serif { font-family:'Play', serif; } .fg { font-family:'Jakarta'; font-weight:700; }
 .arch { width:300px; height:1000px; border-radius:150px 150px 0 0; background:#F2EBDD; box-shadow:0 0 0 2px #C9A86A; overflow:hidden; }
 .arch img { position:absolute; left:-30px; top:110px; width:360px; mix-blend-mode:multiply; }
 .big { width:620px; height:1000px; border-radius:310px 310px 0 0; background:#F2EBDD; box-shadow:0 0 0 2px #C9A86A; overflow:hidden; }
@@ -16,22 +18,22 @@ body, #stage { background:#0B0B0B; }
 #k { font-size:30px; letter-spacing:.4em; color:#C9A86A; white-space:nowrap; }
 #t1 { font-size:132px; font-style:italic; color:#F2EBDD; line-height:1.0; white-space:nowrap; }
 #t1 em { color:#C9A86A; }
-.step { font-size:72px; font-style:italic; color:#F2EBDD; white-space:nowrap; line-height:1.0; } .step em { color:#C9A86A; font-style:normal; font-family:'Figtree'; font-weight:700; font-size:30px; letter-spacing:.3em; display:inline-block; width:110px; vertical-align:middle; }
+.step { font-size:72px; font-style:italic; color:#F2EBDD; white-space:nowrap; line-height:1.0; } .step em { color:#C9A86A; font-style:normal; font-family:'Jakarta'; font-weight:700; font-size:30px; letter-spacing:.3em; display:inline-block; width:110px; vertical-align:middle; }
 .line { background:#C9A86A; height:2px; }
 #eB { font-size:30px; letter-spacing:.34em; color:#C9A86A; white-space:nowrap; }
-#eH { font-size:104px; font-style:italic; color:#F2EBDD; line-height:1.04; white-space:nowrap; text-align:center; }
+#eH { font-size:130px; font-style:italic; color:#F2EBDD; line-height:1.04; white-space:nowrap; text-align:center; }
 #eW { font-size:50px; color:#F2EBDD; white-space:nowrap; }
-#eU { font-size:34px; font-weight:500; color:#9A8F7C; white-space:nowrap; font-family:'Figtree'; }
-#eLogo { width:210px; border-radius:50%; background:#F2EBDD; padding:8px; }
+#eU { font-size:34px; font-weight:500; color:#9A8F7C; white-space:nowrap; font-family:'Jakarta'; }
+#eLogo { width:520px; background:#F2EBDD; border-radius:24px; padding:16px; }
 </style></head><body><div id="stage">
-<div class="abs fg" id="k">MAVE COLLECTION</div><div class="abs serif" id="t1">Sewn<br>for <em>your</em><br>body.</div>
-<div class="abs arch" id="a0"><img src="assets/mave/ruby-kente-mermaid.png"></div><div class="abs fg nm" id="an0">Ruby</div><div class="abs arch" id="a1"><img src="assets/mave/cocoa-kente-gown.png"></div><div class="abs fg nm" id="an1">Cocoa</div><div class="abs arch" id="a2"><img src="assets/mave/ivory-ombre-drape.png"></div><div class="abs fg nm" id="an2">Ivory</div>
+<div class="abs fg" id="k">ECSTASY TECHNOLOGIES  ×  MAVE</div><div class="abs serif" id="t1">Made to<br>measure,<br>made <em>simple.</em></div>
+<div class="abs arch" id="a0"><img src="assets/mave/ruby-kente-mermaid.png"></div><div class="abs fg nm" id="an0">Browse</div><div class="abs arch" id="a1"><img src="assets/mave/cocoa-kente-gown.png"></div><div class="abs fg nm" id="an1">Turn</div><div class="abs arch" id="a2"><img src="assets/mave/ivory-ombre-drape.png"></div><div class="abs fg nm" id="an2">Order</div>
 <div class="abs big" id="big"><img class="bf" src="assets/mave/hf0001.png"><img class="bf" src="assets/mave/hf0010.png"><img class="bf" src="assets/mave/hf0020.png"><img class="bf" src="assets/mave/hf0030.png"><img class="bf" src="assets/mave/hf0040.png"><img class="bf" src="assets/mave/hf0050.png"><img class="bf" src="assets/mave/hf0060.png"></div>
 <div class="abs line" id="ln"></div>
 <div class="abs serif step" id="s0"><em>01</em>Pick a design.</div><div class="abs serif step" id="s1"><em>02</em>Send your measurements.</div><div class="abs serif step" id="s2"><em>03</em>We stitch it to fit.</div>
-<img class="abs" id="eLogo" src="assets/mave/logo.png">
-<div class="abs fg" id="eB">MAVE COLLECTION</div><div class="abs serif" id="eH">Your brand,<br>beautifully online.</div>
-<div class="abs fg" id="eW">Website by Ecstasy Technologies</div><div class="abs fg" id="eU">WhatsApp +233 54 285 5399  ·  www.ecstasytechnologies.com</div>
+<img class="abs" id="eLogo" src="assets/logo.png">
+<div class="abs fg" id="eB">WEBSITE BUILT BY</div><div class="abs serif" id="eH">Ecstasy<br>Technologies.</div>
+<div class="abs fg" id="eW">WhatsApp +233 54 285 5399</div><div class="abs fg" id="eU">www.ecstasytechnologies.com</div>
 </div><script>
 const FMT = new URLSearchParams(location.search).get('fmt') || 'v';
 const V = FMT === 'v';
@@ -67,8 +69,8 @@ function reveal(el, t, t0, t1, x, y, d = 0.7) { const k = 1 - Math.pow(1 - clamp
 const EXPO = t => t <= 0 ? 0 : t >= 1 ? 1 : 1 - Math.pow(2, -10 * t);
 function fit(el, maxW) { const fs = parseFloat(getComputedStyle(el).fontSize), w = el.scrollWidth; if (w > maxW) el.style.fontSize = (fs * maxW / w) + 'px'; }
 
-function prep() { fit($('t1'), 940); ['s0','s1','s2','eH'].forEach(id => fit($(id), 940)); fit($('eU'), 980); fit($('eW'), 940); }
-const T = { t1: 0.2, arch: 2.9, big: 8.2, steps: 8.9, end: 12.6, dur: 16.0 };
+function prep() { fit($('t1'), 940); ['s0','s1','s2','eH'].forEach(id => fit($(id), 940)); fit($('eU'), 980); fit($('eW'), 940); fit($('k'), 940); }
+const T = { t1: 0.2, arch: 2.9, big: 8.2, steps: 8.9, end: 12.6, dur: 16.6 };
 const EVENTS = [{ t: 0.2, k: 'chord' }, { t: 0.5, k: 'swell' }];
 [0, 1, 2].forEach(i => EVENTS.push({ t: T.arch + i * 0.45, k: 'pluck' }));
 EVENTS.push({ t: T.big - 0.1, k: 'whoosh' }); [0, 1, 2].forEach(i => EVENTS.push({ t: T.steps + i * 0.9, k: 'chime' }));
@@ -88,14 +90,14 @@ function seek(t) {
   { const lk = easeOut((t - T.steps) / 0.7); $('ln').style.width = (200 * lk) + 'px'; set($('ln'), { x: 70, y: 1330, o: vis(t, T.steps, T.end) ? 1 : 0 }); }
   [0, 1, 2].forEach(i => reveal($('s' + i), t, T.steps + 0.1 + i * 0.9, T.end, 70, 1380 + i * 125, 0.9));
   // end
-  reveal($('eLogo'), t, T.end, 99, cx($('eLogo')), 380, 0.9); reveal($('eB'), t, T.end + 0.3, 99, cx($('eB')), 650, 0.8); reveal($('eH'), t, T.end + 0.5, 99, cx($('eH')), 740, 1.0);
-  reveal($('eW'), t, T.end + 1.3, 99, cx($('eW')), 1160, 0.8); reveal($('eU'), t, T.end + 1.6, 99, cx($('eU')), 1270, 0.8);
+  reveal($('eLogo'), t, T.end, 99, cx($('eLogo')), 270, 0.9); reveal($('eB'), t, T.end + 0.3, 99, cx($('eB')), 650, 0.8); reveal($('eH'), t, T.end + 0.5, 99, cx($('eH')), 740, 1.0);
+  reveal($('eW'), t, T.end + 1.3, 99, cx($('eW')), 1230, 0.8); reveal($('eU'), t, T.end + 1.6, 99, cx($('eU')), 1330, 0.8);
 }
 
-window.__duration = 16;
+window.__duration = 16.6;
 window.__events = EVENTS;
 window.__seek = seek;
-Promise.all(['700 40px Figtree', 'italic 40px "Liberation Serif"', '40px "Liberation Serif"'].map(f => document.fonts.load(f)))
+Promise.all(['700 40px Jakarta', 'italic 40px Play', '40px Play'].map(f => document.fonts.load(f)))
   .then(() => document.fonts.ready)
   .then(() => Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; }))))
   .then(() => { if (typeof prep === 'function') prep(); seek(0); window.__ready = true; });

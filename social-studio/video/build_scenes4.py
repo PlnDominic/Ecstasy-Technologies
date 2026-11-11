@@ -5,12 +5,12 @@ exec(src[:src.index("# ---------------- scene11")])
 
 M = 'assets/mave/'
 # ---------------- scene16 : 20s ----------------
-GOWNS = [('RUBY', 'The Ruby Kente Mermaid', 'GHS 4,000', M + 'ruby-kente-mermaid.png', '#8E1B2B'),
-         ('COCOA', 'The Cocoa Kente Gown', 'GHS 4,500', M + 'cocoa-kente-gown.png', '#3E2A1F'),
-         ('IVORY', 'The Ivory Ombré Drape', 'GHS 3,000', M + 'ivory-ombre-drape.png', '#B08D57')]
+GOWNS = [('PICK', 'Browse and turn every design', 'STEP 01', M + 'ruby-kente-mermaid.png', '#0B0B0B'),
+         ('SEND', 'Send measurements and photos', 'STEP 02', M + 'cocoa-kente-gown.png', '#B08D57'),
+         ('BOOK', 'Book a fitting', 'STEP 03', M + 'ivory-ombre-drape.png', '#0B0B0B')]
 CSS16 = """
-.syne { font-family:'Syne'; font-weight:800; letter-spacing:-.04em; text-transform:uppercase; line-height:.86; white-space:nowrap; }
-.serif { font-family:'Liberation Serif','DejaVu Serif',serif; } .fg { font-family:'Figtree'; font-weight:700; }
+.syne { font-family:'Jakarta'; font-weight:800; letter-spacing:-.04em; text-transform:uppercase; line-height:.86; white-space:nowrap; }
+.serif { font-family:'Play', serif; } .fg { font-family:'Jakarta'; font-weight:700; }
 .gimg { height:1260px; display:block; mix-blend-mode:multiply; }
 #hook { color:#0B0B0B; }
 .cap1 { font-size:62px; font-style:italic; color:#0B0B0B; white-space:nowrap; }
@@ -21,19 +21,19 @@ CSS16 = """
 #own2 { font-size:50px; color:#0B0B0B; line-height:1.25; white-space:nowrap; }
 #own2 b { color:#B08D57; font-weight:700; }
 #eB { font-size:30px; letter-spacing:.32em; color:#B08D57; white-space:nowrap; }
-#eH { font-size:96px; font-style:italic; color:#0B0B0B; white-space:nowrap; text-align:center; line-height:1.05; }
+#eH { font-size:130px; font-style:italic; color:#0B0B0B; white-space:nowrap; text-align:center; line-height:1.05; }
 #eW { font-size:52px; color:#0B0B0B; white-space:nowrap; }
-#eU { font-size:36px; font-weight:500; color:#6B6B6B; white-space:nowrap; font-family:'Figtree'; }
-#eLogo { width:240px; }
+#eU { font-size:36px; font-weight:500; color:#6B6B6B; white-space:nowrap; font-family:'Jakarta'; }
+#eLogo { width:520px; mix-blend-mode:multiply; }
 """
-BODY16 = """<div class="abs syne" id="h1" style="font-size:230px">Sewn</div><div class="abs syne" id="h2" style="font-size:150px">for your</div><div class="abs syne" id="h3" style="font-size:230px">body.</div>
+BODY16 = """<div class="abs syne" id="h1" style="font-size:200px">Made to</div><div class="abs syne" id="h2" style="font-size:200px">measure.</div><div class="abs syne" id="h3" style="font-size:150px">Sold online?</div>
 <div class="abs gimg" id="hg0"><img class="gimg" src="assets/mave/hf0030.png" style="height:1180px"></div>
 """ + ''.join(f'<div class="abs syne" id="gt{k}" style="color:{c};font-size:360px">{w}</div><div class="abs gimg" id="gg{k}"><img class="gimg" src="{p}"></div><div class="abs serif cap1" id="gn{k}">{n}</div><div class="abs fg cap2" id="gp{k}">{pr}</div>' for k, (w, n, pr, p, c) in enumerate(GOWNS)) + """
 <div class="abs fg" id="count">01 / 04</div><div class="abs rule" id="cr"></div>
-<div class="abs serif" id="own1">Your own<br>design?</div><div class="abs fg" id="own2">Send us a <b>photo</b> of the style<br>you have in mind.</div>
-<img class="abs" id="eLogo" src="assets/mave/logo.png">
-<div class="abs fg" id="eB">MAVE COLLECTION</div><div class="abs serif" id="eH">Made to measure,<br>beautifully online.</div>
-<div class="abs fg" id="eW">Website by Ecstasy Technologies</div><div class="abs fg" id="eU">WhatsApp +233 54 285 5399  ·  www.ecstasytechnologies.com</div>
+<div class="abs serif" id="own1">Your own<br>design?</div><div class="abs fg" id="own2">Send a <b>photo</b>.<br>Get a quote.</div>
+<img class="abs" id="eLogo" src="assets/logo.png">
+<div class="abs fg" id="eB">WEBSITE BUILT BY</div><div class="abs serif" id="eH">Ecstasy<br>Technologies.</div>
+<div class="abs fg" id="eW">WhatsApp +233 54 285 5399</div><div class="abs fg" id="eU">www.ecstasytechnologies.com</div>
 """
 JS16 = f"""
 const G = {json.dumps([[g[0], g[1], g[2]] for g in GOWNS])};
@@ -55,7 +55,7 @@ function seek(t) {{
     const a = BT[k], b = BT[k + 1], on = vis(t, a, b + 0.7), kin = EXPO((t - a) / 1.1), out = easeInOut((t - b + 0.1) / 0.6);
     const gt = $('gt' + k), gg = $('gg' + k), w = gg.offsetWidth || 780;
     const drift = lerp(90, -120, clamp((t - a) / (b - a)));
-    gt.style.transform = `translate(${{(W - gt.offsetWidth) / 2 + drift}}px,${{430 + (1 - kin) * 60}}px)`; gt.style.opacity = on ? clamp((t - a) / 0.4) * (1 - out) : 0;
+    gt.style.transform = `translate(${{(W - gt.offsetWidth) / 2 + drift}}px,${{300 + (1 - kin) * 60}}px)`; gt.style.opacity = on ? clamp((t - a) / 0.4) * (1 - out) : 0;
     const z = 1 + 0.05 * clamp((t - a) / (b - a));
     gg.style.transform = `translate(${{(W - 781) / 2}}px,${{300 + (1 - kin) * 200 - out * 200}}px) scale(${{z * lerp(1.1, 1, kin)}})`; gg.style.transformOrigin = '50% 100%';
     gg.style.clipPath = `inset(${{(1 - kin) * 100}}% 0 ${{out * 100}}% 0)`; gg.style.opacity = on ? 1 : 0;
@@ -66,17 +66,17 @@ function seek(t) {{
   // your own design
   reveal($('own1'), t, T.own, T.end, 70, 420, 1.0); reveal($('own2'), t, T.own + 0.55, T.end, 76, 880, 0.9);
   // end
-  reveal($('eLogo'), t, T.end, 99, cx($('eLogo')), 330, 0.9);
+  reveal($('eLogo'), t, T.end, 99, cx($('eLogo')), 250, 0.9);
   reveal($('eB'), t, T.end + 0.3, 99, cx($('eB')), 640, 0.8); reveal($('eH'), t, T.end + 0.5, 99, cx($('eH')), 720, 1.0);
-  reveal($('eW'), t, T.end + 1.3, 99, cx($('eW')), 1180, 0.8); reveal($('eU'), t, T.end + 1.6, 99, cx($('eU')), 1290, 0.8);
+  reveal($('eW'), t, T.end + 1.3, 99, cx($('eW')), 1220, 0.8); reveal($('eU'), t, T.end + 1.6, 99, cx($('eU')), 1320, 0.8);
 }}
 """
 JS16 = JS16.replace("  GOWNS_N = 3;\n", "")
-open('scene16.html', 'w').write(page('#FFFFFF', CSS16, BODY16, JS16, 20, "'800 40px Syne', '700 40px Figtree', 'italic 40px \"Liberation Serif\"'"))
+open('scene16.html', 'w').write(page('#FFFFFF', CSS16, BODY16, JS16, 20, "'800 40px Jakarta', '700 40px Jakarta', 'italic 40px Play'"))
 
 # ---------------- scene17 : black + gold arch gallery, 16s ----------------
 CSS17 = """
-.serif { font-family:'Liberation Serif','DejaVu Serif',serif; } .fg { font-family:'Figtree'; font-weight:700; }
+.serif { font-family:'Play', serif; } .fg { font-family:'Jakarta'; font-weight:700; }
 .arch { width:300px; height:1000px; border-radius:150px 150px 0 0; background:#F2EBDD; box-shadow:0 0 0 2px #C9A86A; overflow:hidden; }
 .arch img { position:absolute; left:-30px; top:110px; width:360px; mix-blend-mode:multiply; }
 .big { width:620px; height:1000px; border-radius:310px 310px 0 0; background:#F2EBDD; box-shadow:0 0 0 2px #C9A86A; overflow:hidden; }
@@ -85,27 +85,27 @@ CSS17 = """
 #k { font-size:30px; letter-spacing:.4em; color:#C9A86A; white-space:nowrap; }
 #t1 { font-size:132px; font-style:italic; color:#F2EBDD; line-height:1.0; white-space:nowrap; }
 #t1 em { color:#C9A86A; }
-.step { font-size:72px; font-style:italic; color:#F2EBDD; white-space:nowrap; line-height:1.0; } .step em { color:#C9A86A; font-style:normal; font-family:'Figtree'; font-weight:700; font-size:30px; letter-spacing:.3em; display:inline-block; width:110px; vertical-align:middle; }
+.step { font-size:72px; font-style:italic; color:#F2EBDD; white-space:nowrap; line-height:1.0; } .step em { color:#C9A86A; font-style:normal; font-family:'Jakarta'; font-weight:700; font-size:30px; letter-spacing:.3em; display:inline-block; width:110px; vertical-align:middle; }
 .line { background:#C9A86A; height:2px; }
 #eB { font-size:30px; letter-spacing:.34em; color:#C9A86A; white-space:nowrap; }
-#eH { font-size:104px; font-style:italic; color:#F2EBDD; line-height:1.04; white-space:nowrap; text-align:center; }
+#eH { font-size:130px; font-style:italic; color:#F2EBDD; line-height:1.04; white-space:nowrap; text-align:center; }
 #eW { font-size:50px; color:#F2EBDD; white-space:nowrap; }
-#eU { font-size:34px; font-weight:500; color:#9A8F7C; white-space:nowrap; font-family:'Figtree'; }
-#eLogo { width:210px; border-radius:50%; background:#F2EBDD; padding:8px; }
+#eU { font-size:34px; font-weight:500; color:#9A8F7C; white-space:nowrap; font-family:'Jakarta'; }
+#eLogo { width:520px; background:#F2EBDD; border-radius:24px; padding:16px; }
 """
-ARCH = [(M + 'ruby-kente-mermaid.png', 'Ruby'), (M + 'cocoa-kente-gown.png', 'Cocoa'), (M + 'ivory-ombre-drape.png', 'Ivory')]
-BODY17 = """<div class="abs fg" id="k">MAVE COLLECTION</div><div class="abs serif" id="t1">Sewn<br>for <em>your</em><br>body.</div>
+ARCH = [(M + 'ruby-kente-mermaid.png', 'Browse'), (M + 'cocoa-kente-gown.png', 'Turn'), (M + 'ivory-ombre-drape.png', 'Order')]
+BODY17 = """<div class="abs fg" id="k">ECSTASY TECHNOLOGIES  ×  MAVE</div><div class="abs serif" id="t1">Made to<br>measure,<br>made <em>simple.</em></div>
 """ + ''.join(f'<div class="abs arch" id="a{k}"><img src="{p}"></div><div class="abs fg nm" id="an{k}">{n}</div>' for k, (p, n) in enumerate(ARCH)) + """
 <div class="abs big" id="big">""" + ''.join(f'<img class="bf" src="assets/mave/hf{n}.png">' for n in ('0001', '0010', '0020', '0030', '0040', '0050', '0060')) + """</div>
 <div class="abs line" id="ln"></div>
 <div class="abs serif step" id="s0"><em>01</em>Pick a design.</div><div class="abs serif step" id="s1"><em>02</em>Send your measurements.</div><div class="abs serif step" id="s2"><em>03</em>We stitch it to fit.</div>
-<img class="abs" id="eLogo" src="assets/mave/logo.png">
-<div class="abs fg" id="eB">MAVE COLLECTION</div><div class="abs serif" id="eH">Your brand,<br>beautifully online.</div>
-<div class="abs fg" id="eW">Website by Ecstasy Technologies</div><div class="abs fg" id="eU">WhatsApp +233 54 285 5399  ·  www.ecstasytechnologies.com</div>
+<img class="abs" id="eLogo" src="assets/logo.png">
+<div class="abs fg" id="eB">WEBSITE BUILT BY</div><div class="abs serif" id="eH">Ecstasy<br>Technologies.</div>
+<div class="abs fg" id="eW">WhatsApp +233 54 285 5399</div><div class="abs fg" id="eU">www.ecstasytechnologies.com</div>
 """
 JS17 = f"""
-function prep() {{ fit($('t1'), 940); ['s0','s1','s2','eH'].forEach(id => fit($(id), 940)); fit($('eU'), 980); fit($('eW'), 940); }}
-const T = {{ t1: 0.2, arch: 2.9, big: 8.2, steps: 8.9, end: 12.6, dur: 16.0 }};
+function prep() {{ fit($('t1'), 940); ['s0','s1','s2','eH'].forEach(id => fit($(id), 940)); fit($('eU'), 980); fit($('eW'), 940); fit($('k'), 940); }}
+const T = {{ t1: 0.2, arch: 2.9, big: 8.2, steps: 8.9, end: 12.6, dur: 16.6 }};
 const EVENTS = [{{ t: 0.2, k: 'chord' }}, {{ t: 0.5, k: 'swell' }}];
 [0, 1, 2].forEach(i => EVENTS.push({{ t: T.arch + i * 0.45, k: 'pluck' }}));
 EVENTS.push({{ t: T.big - 0.1, k: 'whoosh' }}); [0, 1, 2].forEach(i => EVENTS.push({{ t: T.steps + i * 0.9, k: 'chime' }}));
@@ -125,9 +125,9 @@ function seek(t) {{
   {{ const lk = easeOut((t - T.steps) / 0.7); $('ln').style.width = (200 * lk) + 'px'; set($('ln'), {{ x: 70, y: 1330, o: vis(t, T.steps, T.end) ? 1 : 0 }}); }}
   [0, 1, 2].forEach(i => reveal($('s' + i), t, T.steps + 0.1 + i * 0.9, T.end, 70, 1380 + i * 125, 0.9));
   // end
-  reveal($('eLogo'), t, T.end, 99, cx($('eLogo')), 380, 0.9); reveal($('eB'), t, T.end + 0.3, 99, cx($('eB')), 650, 0.8); reveal($('eH'), t, T.end + 0.5, 99, cx($('eH')), 740, 1.0);
-  reveal($('eW'), t, T.end + 1.3, 99, cx($('eW')), 1160, 0.8); reveal($('eU'), t, T.end + 1.6, 99, cx($('eU')), 1270, 0.8);
+  reveal($('eLogo'), t, T.end, 99, cx($('eLogo')), 270, 0.9); reveal($('eB'), t, T.end + 0.3, 99, cx($('eB')), 650, 0.8); reveal($('eH'), t, T.end + 0.5, 99, cx($('eH')), 740, 1.0);
+  reveal($('eW'), t, T.end + 1.3, 99, cx($('eW')), 1230, 0.8); reveal($('eU'), t, T.end + 1.6, 99, cx($('eU')), 1330, 0.8);
 }}
 """
-open('scene17.html', 'w').write(page('#0B0B0B', CSS17, BODY17, JS17, 16, "'700 40px Figtree', 'italic 40px \"Liberation Serif\"', '40px \"Liberation Serif\"'"))
+open('scene17.html', 'w').write(page('#0B0B0B', CSS17, BODY17, JS17, 16.6, "'700 40px Jakarta', 'italic 40px Play', '40px Play'"))
 print('built 16,17')

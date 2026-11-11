@@ -1,29 +1,31 @@
-<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts/local.css"><style>@font-face{font-family:'Syne';font-weight:800;src:url('fonts/Syne-800.woff2') format('woff2');}
-@font-face{font-family:'Syne';font-weight:700;src:url('fonts/Syne-700.woff2') format('woff2');}
-@font-face{font-family:'Figtree';font-weight:700;src:url('fonts/Figtree-700.woff2') format('woff2');}
-@font-face{font-family:'Figtree';font-weight:500;src:url('fonts/Figtree-500.woff2') format('woff2');}
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts/local.css"><style>@font-face{font-family:'Jakarta';font-weight:400;src:url('fonts/plus-jakarta-sans-latin-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Jakarta';font-weight:500 700;src:url('fonts/plus-jakarta-sans-latin-600-normal.woff2') format('woff2');}
+@font-face{font-family:'Jakarta';font-weight:800;src:url('fonts/plus-jakarta-sans-latin-800-normal.woff2') format('woff2');}
+@font-face{font-family:'Play';font-weight:400 500;font-style:normal;src:url('fonts/playfair-display-latin-500-normal.woff2') format('woff2');}
+@font-face{font-family:'Play';font-weight:600 800;font-style:normal;src:url('fonts/playfair-display-latin-700-normal.woff2') format('woff2');}
+@font-face{font-family:'Play';font-weight:400 800;font-style:italic;src:url('fonts/playfair-display-latin-600-italic.woff2') format('woff2');}
 * { margin:0; padding:0; box-sizing:border-box; } html, body { overflow:hidden; }
 #stage { position:relative; overflow:hidden; } .abs { position:absolute; left:0; top:0; transform-origin:0 0; }
 
 body, #stage { background:#F4EEE4; }
 
-.serif { font-family:'Liberation Serif', 'DejaVu Serif', serif; } .sans { font-family:'Figtree', sans-serif; }
+.serif { font-family:'Play', serif; } .sans { font-family:'Jakarta', sans-serif; }
 #mast { font-size:210px; letter-spacing:.18em; color:#2B2420; white-space:nowrap; }
 #coll { font-size:96px; font-style:italic; color:#A8834B; white-space:nowrap; }
-.kick { font-family:'Figtree'; font-weight:700; font-size:26px; letter-spacing:.34em; color:#2B2420; white-space:nowrap; }
+.kick { font-family:'Jakarta'; font-weight:700; font-size:26px; letter-spacing:.34em; color:#2B2420; white-space:nowrap; }
 #gown { width:620px; height:1080px; overflow:hidden; background:#F4EEE4; }
 #gown img { position:absolute; left:-24px; top:-100px; width:668px; mix-blend-mode:multiply; }
 .spec { white-space:nowrap; }
-.spec .l { font-family:'Figtree'; font-weight:700; font-size:22px; letter-spacing:.3em; color:#A8834B; }
-.spec .v { font-family:'Liberation Serif', serif; font-size:40px; color:#2B2420; margin-top:6px; }
+.spec .l { font-family:'Jakarta'; font-weight:700; font-size:22px; letter-spacing:.3em; color:#A8834B; }
+.spec .v { font-family:'Play', serif; font-size:40px; color:#2B2420; margin-top:6px; }
 .lead { height:2px; background:#A8834B; transform-origin:0 50%; }
 #proc { width:1080px; height:1920px; background:#F4EEE4; }
 .step { font-size:84px; color:#2B2420; white-space:nowrap; } .step em { color:#A8834B; font-style:italic; }
-#url { background:#1F3D2E; color:#F4EEE4; border-radius:999px; padding:24px 46px; font-family:'Figtree'; font-weight:700; font-size:42px; white-space:nowrap; letter-spacing:.02em; }
+#url { background:#1F3D2E; color:#F4EEE4; border-radius:999px; padding:24px 46px; font-family:'Jakarta'; font-weight:700; font-size:42px; white-space:nowrap; letter-spacing:.02em; }
 #eH { font-size:104px; line-height:1.0; font-style:italic; color:#2B2420; white-space:nowrap; text-align:center; }
-#eB { font-family:'Figtree'; font-weight:700; font-size:30px; letter-spacing:.3em; color:#A8834B; white-space:nowrap; }
-#eW { font-family:'Figtree'; font-weight:700; font-size:50px; color:#2B2420; white-space:nowrap; }
-#eU { font-family:'Figtree'; font-weight:500; font-size:34px; color:#6B6258; white-space:nowrap; }
+#eB { font-family:'Jakarta'; font-weight:700; font-size:30px; letter-spacing:.3em; color:#A8834B; white-space:nowrap; }
+#eW { font-family:'Jakarta'; font-weight:700; font-size:50px; color:#2B2420; white-space:nowrap; }
+#eU { font-family:'Jakarta'; font-weight:500; font-size:34px; color:#6B6258; white-space:nowrap; }
 .rule { height:2px; background:#2B2420; }
 .fr4 { background:#2B2420; z-index:5; }
 </style></head><body><div id="stage">
@@ -119,7 +121,7 @@ function seek(t) {
 window.__duration = 15;
 window.__events = EVENTS;
 window.__seek = seek;
-Promise.all(['700 40px Figtree', '500 40px Figtree', 'italic 40px "Liberation Serif"', '40px "Liberation Serif"'].map(f => document.fonts.load(f)))
+Promise.all(['700 40px Jakarta', '500 40px Jakarta', 'italic 40px Play', '40px Play'].map(f => document.fonts.load(f)))
   .then(() => document.fonts.ready)
   .then(() => Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; }))))
   .then(() => { if (typeof prep === 'function') prep(); seek(0); window.__ready = true; });
