@@ -16,6 +16,6 @@ for fr, out, dur, music, sfx, mvol, lines in JOBS:
     fc.append(f'{labels}amix=inputs={len(lines)}:duration=longest:normalize=0[vo]')
     fc.append(f'[1:a]volume={mvol},afade=t=out:st={dur-1.5}:d=1.5[m]')
     fc.append('[2:a]volume=0.5[s]')
-    fc.append(f'[m][s][vo]amix=inputs=3:duration=longest:normalize=0,alimiter=limit=0.89,atrim=0:{dur}[a]')
+    fc.append(f'[m][s][vo]amix=inputs=3:duration=longest:normalize=0,alimiter=limit=0.89,volume=0.88,atrim=0:{dur}[a]')
     cmd += ['-filter_complex', ';'.join(fc), '-map', '0:v', '-map', '[a]', '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '17', '-preset', 'slow', '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', '-t', str(dur), f'{out}/video.mp4']
     r = subprocess.run(cmd, capture_output=True, text=True); print(out, 'ok' if r.returncode == 0 else r.stderr[-400:])
