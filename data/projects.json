@@ -116,21 +116,6 @@
   {
     "image": "",
     "features": [],
-    "technologies": [
-      "HTML5"
-    ],
-    "status": "completed",
-    "title": "Dominickudom",
-    "category": "Website",
-    "description": "Dominickudom, built by Ecstasy Technologies.",
-    "link": "https://github.com/PlnDominic/dominickudom",
-    "year": 2025,
-    "id": 106,
-    "updatedAt": "2026-11-11T10:47:56.760Z"
-  },
-  {
-    "image": "",
-    "features": [],
     "technologies": [],
     "status": "completed",
     "title": "QGIS MCP Server",
