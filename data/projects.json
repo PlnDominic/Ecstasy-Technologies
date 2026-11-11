@@ -19,21 +19,6 @@
       "C"
     ],
     "status": "completed",
-    "title": "Printf",
-    "category": "Website",
-    "description": "Printf, built by Ecstasy Technologies.",
-    "link": "https://github.com/PlnDominic/printf",
-    "year": 2023,
-    "id": 124,
-    "updatedAt": "2026-11-11T10:47:56.760Z"
-  },
-  {
-    "image": "",
-    "features": [],
-    "technologies": [
-      "C"
-    ],
-    "status": "completed",
     "title": "Simple Shell",
     "category": "Website",
     "description": "simple_shell project",
