@@ -2,21 +2,6 @@
   {
     "image": "",
     "features": [],
-    "technologies": [
-      "C"
-    ],
-    "status": "completed",
-    "title": "Simple Shell",
-    "category": "Website",
-    "description": "simple_shell project",
-    "link": "https://github.com/PlnDominic/simple_shell",
-    "year": 2023,
-    "id": 123,
-    "updatedAt": "2026-11-11T10:47:56.760Z"
-  },
-  {
-    "image": "",
-    "features": [],
     "technologies": [],
     "status": "completed",
     "title": "BABMA",
