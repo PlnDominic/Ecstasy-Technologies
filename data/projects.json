@@ -3,21 +3,6 @@
     "image": "",
     "features": [],
     "technologies": [
-      "Python"
-    ],
-    "status": "completed",
-    "title": "Lavimac Hotel",
-    "category": "Web Application",
-    "description": "Lavimac Hotel, built by Ecstasy Technologies.",
-    "link": "https://github.com/PlnDominic/Lavimac_Hotel",
-    "year": 2025,
-    "id": 108,
-    "updatedAt": "2026-11-11T10:47:56.760Z"
-  },
-  {
-    "image": "",
-    "features": [],
-    "technologies": [
       "TypeScript"
     ],
     "status": "completed",
