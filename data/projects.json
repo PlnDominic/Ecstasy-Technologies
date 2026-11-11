@@ -1486,27 +1486,6 @@
     "link": "https://www.royalhomecomforthotel.com/"
   },
   {
-    "id": 23,
-    "title": "Aspee Pharmaceuticals",
-    "category": "Web Application",
-    "description": "A professional pharmaceutical company website showcasing product range, healthcare solutions, company profile, and contact information.",
-    "image": "/Aspee.jpg",
-    "features": [
-      "Product catalog and portfolio",
-      "Healthcare solutions showcase",
-      "Company profile and certifications",
-      "Research and development section",
-      "Contact and distribution inquiries",
-      "Responsive professional design"
-    ],
-    "technologies": [
-      "Next.js",
-      "Tailwind CSS",
-      "TypeScript",
-      "Vercel"
-    ]
-  },
-  {
     "id": 24,
     "title": "MoldGold School Management System",
     "category": "Web Application",
