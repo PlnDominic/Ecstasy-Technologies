@@ -1,0 +1,126 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts/local.css"><style>@font-face{font-family:'Syne';font-weight:800;src:url('fonts/Syne-800.woff2') format('woff2');}
+@font-face{font-family:'Syne';font-weight:700;src:url('fonts/Syne-700.woff2') format('woff2');}
+@font-face{font-family:'Figtree';font-weight:700;src:url('fonts/Figtree-700.woff2') format('woff2');}
+@font-face{font-family:'Figtree';font-weight:500;src:url('fonts/Figtree-500.woff2') format('woff2');}
+* { margin:0; padding:0; box-sizing:border-box; } html, body { overflow:hidden; }
+#stage { position:relative; overflow:hidden; } .abs { position:absolute; left:0; top:0; transform-origin:0 0; }
+
+body, #stage { background:#F3EEE3; }
+
+#paper { width:1080px; height:1920px; background:#F3EEE3; }
+#hook { font-family:'Syne'; font-weight:800; color:#2A2A2A; font-size:92px; line-height:1.02; letter-spacing:-.03em; }
+#hlw { background-image:linear-gradient(#FFE45C,#FFE45C); background-repeat:no-repeat; background-position:0 70%; background-size:0% 60%; }
+svg { overflow:visible; }
+.ink { fill:none; stroke:#2A2A2A; stroke-width:6; stroke-linecap:round; stroke-linejoin:round; }
+.blue { fill:none; stroke:#2F6DB5; stroke-width:5; stroke-linecap:round; }
+.note { font-family:'Syne'; font-weight:700; color:#2F6DB5; font-size:42px; white-space:nowrap; transform-origin:0 50%; }
+#real { width:560px; height:1100px; border-radius:64px; overflow:hidden; box-shadow:0 0 0 9px #111, 0 0 0 11px #3A3F47; background:#fff; }
+#isl2 { width:150px; height:42px; border-radius:21px; background:#111; }
+#real img { position:absolute; left:0; top:60px; width:560px; height:1212px; object-fit:cover; object-position:top; }
+#wipe { width:16px; height:1140px; background:#2A2A2A; border-radius:8px; }
+#then { font-family:'Syne'; font-weight:800; color:#2A2A2A; font-size:110px; letter-spacing:-.03em; white-space:nowrap; }
+#cap { font-family:'Figtree'; font-weight:700; color:#2A2A2A; font-size:40px; white-space:nowrap; }
+#cap span { color:#6B6B6B; font-weight:500; }
+#sticky { width:780px; height:620px; background:#FFE45C; box-shadow:0 30px 60px -25px rgba(0,0,0,.35); padding:70px 64px; transform-origin:50% 50%; }
+#sticky .a { font-family:'Syne'; font-weight:800; font-size:84px; line-height:1.02; color:#2A2A2A; letter-spacing:-.03em; }
+#sticky .b { font-family:'Figtree'; font-weight:700; font-size:50px; white-space:nowrap; color:#2A2A2A; margin-top:46px; }
+#sticky .c { font-family:'Figtree'; font-weight:500; font-size:40px; color:#4A4A4A; margin-top:18px; }
+.tape { width:220px; height:64px; background:rgba(255,255,255,.55); box-shadow:0 2px 6px rgba(0,0,0,.08); }
+#sig { font-family:'Syne'; font-weight:700; font-size:44px; color:#2F6DB5; white-space:nowrap; }
+</style></head><body><div id="stage">
+<div class="abs" id="paper"></div>
+<div class="abs" id="hook">It started as<br><span id="hlw">a sketch</span> on paper.</div>
+<svg class="abs" id="wf" width="560" height="1100"><path class="ink" id="wf0" d="M8,10 Q280,2 552,12 Q558,550 548,1092 Q280,1098 12,1090 Q4,550 8,10"/><path class="ink" id="wf1" d="M40,70 L180,72"/><path class="ink" id="wf2" d="M470,62 L520,62 M470,78 L520,78 M470,94 L520,94"/><path class="ink" id="wf3" d="M40,140 Q280,136 520,142 L518,520 Q280,524 42,518 Z"/><path class="ink" id="wf4" d="M42,142 L518,518 M518,142 L42,518"/><path class="ink" id="wf5" d="M60,580 L420,584"/><path class="ink" id="wf6" d="M60,630 L330,632"/><path class="ink" id="wf7" d="M60,690 Q170,682 290,690 Q300,740 290,760 Q170,768 60,760 Q50,725 60,690"/><path class="ink" id="wf8" d="M40,820 L170,822 L168,1000 L42,998 Z"/><path class="ink" id="wf9" d="M210,820 L350,822 L348,1000 L212,998 Z"/><path class="ink" id="wf10" d="M390,820 L520,822 L518,1000 L392,998 Z"/></svg>
+<div class="abs note" id="n0">logo + bag</div><svg class="abs" id="na0" width="10" height="10"><path class="blue" d="M-20,10 Q-60,-20 -120,-60"/></svg><div class="abs note" id="n1">the gown, BIG</div><svg class="abs" id="na1" width="10" height="10"><path class="blue" d="M-20,10 Q-80,10 -150,30"/></svg><div class="abs note" id="n2">Get it tailored</div><svg class="abs" id="na2" width="10" height="10"><path class="blue" d="M-20,10 Q-120,20 -200,10"/></svg><div class="abs note" id="n3">shop the designs</div><svg class="abs" id="na3" width="10" height="10"><path class="blue" d="M-20,10 Q-70,30 -120,60"/></svg>
+<div class="abs" id="real"><img class="fr" src="assets/mv-00.jpg"><img class="fr" src="assets/mv-01.jpg"><img class="fr" src="assets/mv-02.jpg"><img class="fr" src="assets/mv-03.jpg"><img class="fr" src="assets/mv-04.jpg"><img class="fr" src="assets/mv-05.jpg"><img class="fr" src="assets/mv-06.jpg"><img class="fr" src="assets/mv-07.jpg"><img class="fr" src="assets/mv-08.jpg"><img class="fr" src="assets/mv-09.jpg"><div class="abs" id="isl2" style="left:205px;top:20px"></div></div>
+<div class="abs" id="wipe"></div>
+<div class="abs" id="then">Then we built it.</div>
+<div class="abs" id="cap">Mave Collection <span>· made-to-measure fashion</span></div>
+<div class="abs" id="sticky"><div class="a">Got an idea<br>on paper?</div><div class="b">WhatsApp +233 54 285 5399</div><div class="c">www.ecstasytechnologies.com</div></div>
+<div class="abs tape" id="tp1"></div><div class="abs tape" id="tp2"></div>
+<div class="abs" id="sig">— Ecstasy Technologies</div>
+</div><script>
+const FMT = new URLSearchParams(location.search).get('fmt') || 'v';
+const V = FMT === 'v';
+const W = V ? 1080 : 1920, H = V ? 1920 : 1080;
+const $ = id => document.getElementById(id);
+$('stage').style.width = W + 'px'; $('stage').style.height = H + 'px';
+document.body.style.width = W + 'px'; document.body.style.height = H + 'px';
+
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, k) => a + (b - a) * k;
+function spring(t, w = 16, z = 0.55) {
+  if (t <= 0) return 0;
+  if (z >= 1) return 1 - Math.exp(-w * t) * (1 + w * t);
+  const wd = w * Math.sqrt(1 - z * z);
+  return 1 - Math.exp(-z * w * t) * (Math.cos(wd * t) + (z * w / wd) * Math.sin(wd * t));
+}
+const TYPE = t => spring(t, 18, 0.62);
+const POP = t => spring(t, 20, 0.6);
+const HEAVY = t => spring(t, 9, 1);
+const easeIn = t => { t = clamp(t); return t * t * t; };
+const easeOut = t => { t = clamp(t); return 1 - Math.pow(1 - t, 3); };
+const easeInOut = t => { t = clamp(t); return t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2; };
+function set(el, { x = 0, y = 0, s = 1, r = 0, o = 1 }) {
+  el.style.transform = `translate(${x}px,${y}px) rotate(${r}deg) scale(${s})`;
+  el.style.opacity = o;
+}
+function size(el, w, h) { el.style.width = w + 'px'; if (h != null) el.style.height = h + 'px'; }
+
+
+function vis(t, a, b) { return t >= a - 0.001 && t < b; }
+function reveal(el, t, t0, t1, x, y, d = 0.7) { const k = 1 - Math.pow(1 - clamp((t - t0) / d), 4), out = easeIn((t - t1 + 0.35) / 0.35), on = vis(t, t0, t1 + 0.01);
+  el.style.transform = `translate(${x}px,${y + (1 - k) * 70 - out * 40}px)`; el.style.clipPath = `inset(${out * 100}% 0 ${(1 - k) * 100}% 0)`; el.style.opacity = on ? 1 : 0; }
+const EXPO = t => t <= 0 ? 0 : t >= 1 ? 1 : 1 - Math.pow(2, -10 * t);
+function fit(el, maxW) { const fs = parseFloat(getComputedStyle(el).fontSize), w = el.scrollWidth; if (w > maxW) el.style.fontSize = (fs * maxW / w) + 'px'; }
+
+const NOTES = [[640, 380, 3.9], [640, 640, 5.0], [600, 1040, 6.2], [640, 1260, 7.2]];
+function prep() { fit($('then'), 940); fit($('hook'), 920); }
+const T = { hook: 0.2, draw0: 2.2, draw1: 8.4, then: 9.0, wipe0: 10.0, wipe1: 11.4, scroll0: 11.8, scroll1: 16.4, end: 16.9, dur: 22.0 };
+const WX = 260, WY = 380;
+const wf = [...document.querySelectorAll('#wf path')]; const lens = wf.map(p => p.getTotalLength());
+wf.forEach((p, k) => { p.style.strokeDasharray = lens[k]; });
+const EVENTS = [{ t: 0.2, k: 'pluck' }, { t: 1.0, k: 'scratch' }];
+wf.forEach((_, k) => EVENTS.push({ t: T.draw0 + k * (T.draw1 - T.draw0) / wf.length, k: 'scratch' }));
+NOTES.forEach(n => EVENTS.push({ t: n[2], k: 'pluck' }));
+EVENTS.push({ t: T.then, k: 'thump' }, { t: T.wipe0, k: 'whoosh' }, { t: T.wipe1, k: 'chime' }, ...[1,2,3,4,5,6,7,8,9].map(k => ({ t: T.scroll0 + k * (T.scroll1 - T.scroll0) / 10, k: 'tick' })), { t: T.end - 0.1, k: 'whoosh' }, { t: T.end + 0.2, k: 'thunk' }, { t: T.end + 0.9, k: 'pluck' }, { t: T.end + 1.6, k: 'chord' });
+function seek(t) {
+  const hookOut = easeIn((t - T.draw0 + 0.3) / 0.3);
+  reveal($('hook'), t, T.hook, T.draw0, 80, 150, 0.9);
+  $('hlw').style.backgroundSize = (100 * easeOut((t - 1.0) / 0.45)) + '% 60%';
+  // wireframe drawing
+  const sketchOut = clamp((t - T.wipe0) / (T.wipe1 - T.wipe0));
+  set($('wf'), { x: WX, y: WY, o: t >= T.draw0 - 0.01 ? 1 - easeIn((t - T.wipe1) / 0.4) : 0 });
+  wf.forEach((p, k) => { const a = T.draw0 + k * (T.draw1 - T.draw0) / wf.length, d = (T.draw1 - T.draw0) / wf.length * 1.1; p.style.strokeDashoffset = lens[k] * (1 - easeInOut((t - a) / d)); });
+  NOTES.forEach(([x, y, t0], k) => { const kk = POP(t - t0), out = easeIn((t - T.then + 0.2) / 0.2);
+    set($('n' + k), { x: x + 30, y: y - 30, r: -4, s: lerp(0.7, 1, kk), o: vis(t, t0, T.then) ? clamp((t - t0) / .12) * (1 - out) : 0 });
+    set($('na' + k), { x: x + 10, y: y, o: vis(t, t0, T.then) ? clamp((t - t0) / .12) * (1 - out) : 0 }); });
+  // "then we built it"
+  { const k = POP(t - T.then), out = easeIn((t - T.end + 0.3) / 0.3);
+    set($('then'), { x: (W - $('then').offsetWidth) / 2, y: 170 + (1 - k) * 40, r: -2 * (1 - k), o: vis(t, T.then, T.end) ? clamp((t - T.then) / .12) * (1 - out) : 0 }); }
+  // real site revealed by a pencil wipe, left to right
+  { const out = easeIn((t - T.end + 0.3) / 0.3);
+    set($('real'), { x: WX, y: WY, o: t >= T.wipe0 && t < T.end ? 1 - out : 0 });
+    $('real').style.clipPath = `inset(0 ${(1 - sketchOut) * 100}% 0 0 round 46px)`;
+    set($('wipe'), { x: WX + 560 * sketchOut - 8, y: WY - 20, o: t >= T.wipe0 && t < T.wipe1 + 0.15 ? 1 : 0 });
+    const fi = Math.min(9, Math.floor(clamp((t - T.scroll0) / (T.scroll1 - T.scroll0)) * 10));
+    document.querySelectorAll('#real .fr').forEach((im, k) => im.style.opacity = k === fi ? 1 : 0);
+    const ck = TYPE(t - (T.wipe1 + 0.2));
+    set($('cap'), { x: (W - $('cap').offsetWidth) / 2, y: 1560 + (1 - ck) * 30, o: vis(t, T.wipe1 + 0.2, T.end) ? clamp((t - T.wipe1 - 0.2) / .2) * (1 - out) : 0 }); }
+  // end: sticky note slapped onto the paper
+  { const k = POP(t - (T.end + 0.2)), sx = (W - 780) / 2, sy = 560;
+    $('sticky').style.transform = `translate(${sx}px,${sy + (1 - k) * -500}px) rotate(${lerp(-12, -3, k)}deg)`; $('sticky').style.opacity = t >= T.end + 0.2 ? 1 : 0;
+    const tk = POP(t - (T.end + 0.9));
+    set($('tp1'), { x: sx + 80, y: sy - 34, r: -8, s: tk, o: t >= T.end + 0.9 ? 1 : 0 }); set($('tp2'), { x: sx + 500, y: sy - 20, r: 6, s: tk, o: t >= T.end + 0.9 ? 1 : 0 });
+    const gk = TYPE(t - (T.end + 1.6));
+    set($('sig'), { x: sx + 300, y: sy + 700 + (1 - gk) * 20, r: -3, o: t >= T.end + 1.6 ? clamp((t - T.end - 1.6) / .3) : 0 }); }
+}
+
+window.__duration = 22;
+window.__events = EVENTS;
+window.__seek = seek;
+Promise.all(['800 40px Syne', '700 40px Syne', '700 40px Figtree', '500 40px Figtree'].map(f => document.fonts.load(f)))
+  .then(() => document.fonts.ready)
+  .then(() => Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; }))))
+  .then(() => { if (typeof prep === 'function') prep(); seek(0); window.__ready = true; });
+</script></body></html>

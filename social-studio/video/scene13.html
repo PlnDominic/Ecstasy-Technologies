@@ -1,0 +1,136 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="fonts/local.css"><style>@font-face{font-family:'Syne';font-weight:800;src:url('fonts/Syne-800.woff2') format('woff2');}
+@font-face{font-family:'Syne';font-weight:700;src:url('fonts/Syne-700.woff2') format('woff2');}
+@font-face{font-family:'Figtree';font-weight:700;src:url('fonts/Figtree-700.woff2') format('woff2');}
+@font-face{font-family:'Figtree';font-weight:500;src:url('fonts/Figtree-500.woff2') format('woff2');}
+* { margin:0; padding:0; box-sizing:border-box; } html, body { overflow:hidden; }
+#stage { position:relative; overflow:hidden; } .abs { position:absolute; left:0; top:0; transform-origin:0 0; }
+
+body, #stage { background:#fff; }
+
+.serif { font-family:'Liberation Serif', 'DejaVu Serif', serif; }
+.sans { font-family:'Figtree', sans-serif; }
+#top { width:1080px; height:960px; background:#F4EEE4; }
+#bot { width:1080px; height:960px; background:#FFFFFF; }
+#hookA, #hookB { width:1080px; height:960px; background:#111; overflow:hidden; }
+#h1 { color:#F4EEE4; font-size:150px; font-style:italic; white-space:nowrap; }
+#h2 { color:#fff; font-size:70px; font-weight:700; letter-spacing:-.02em; white-space:nowrap; }
+.kick { font-family:'Figtree'; font-weight:700; font-size:26px; letter-spacing:.32em; white-space:nowrap; }
+.ph { width:330px; height:690px; border-radius:44px; overflow:hidden; background:#fff; box-shadow:0 0 0 9px #111, 0 30px 70px -25px rgba(0,0,0,.45); }
+.ph img { position:absolute; left:0; top:0; width:330px; }
+#mt { font-size:96px; line-height:.98; color:#2B2420; white-space:nowrap; }
+#mt em { color:#A8834B; }
+#tag { background:#fff; border-radius:999px; padding:18px 30px; font-size:32px; color:#2B2420; box-shadow:0 10px 30px -12px rgba(0,0,0,.25); white-space:nowrap; }
+#st { font-size:84px; font-weight:700; line-height:.98; letter-spacing:-.035em; color:#0F1E3D; white-space:nowrap; }
+.chip { border-radius:16px; padding:16px 24px; font-family:'Figtree'; font-weight:700; font-size:32px; background:#E7F2EF; color:#0E6B5E; white-space:nowrap; }
+#band { width:1080px; height:240px; background:#111; }
+.bw { white-space:nowrap; color:#fff; }
+#eLogo { width:520px; mix-blend-mode:multiply; }
+#eQ { font-size:100px; font-style:italic; color:#2B2420; white-space:nowrap; }
+#eS { font-size:66px; font-weight:700; letter-spacing:-.03em; color:#0F1E3D; white-space:nowrap; }
+#eP { background:#111; color:#fff; border-radius:999px; padding:28px 48px; font-family:'Figtree'; font-weight:700; font-size:46px; white-space:nowrap; }
+#eU { font-family:'Figtree'; font-weight:500; font-size:36px; color:#6B6B6B; white-space:nowrap; }
+</style></head><body><div id="stage">
+<div class="abs" id="top"></div><div class="abs" id="bot"></div>
+<div class="abs kick" id="mk" style="color:#A8834B">MAVE COLLECTION</div>
+<div class="abs serif" id="mt">Sewn for<br><em>your body.</em></div>
+<div class="abs serif" id="tag">The Sunset Kente Mermaid · GHS 4,800</div>
+<div class="abs ph" id="mph"><img class="fr" id="m0" src="assets/mv-00.jpg"><img class="fr" id="m1" src="assets/mv-01.jpg"><img class="fr" id="m2" src="assets/mv-02.jpg"><img class="fr" id="m3" src="assets/mv-03.jpg"><img class="fr" id="m4" src="assets/mv-04.jpg"><img class="fr" id="m5" src="assets/mv-05.jpg"><img class="fr" id="m6" src="assets/mv-06.jpg"><img class="fr" id="m7" src="assets/mv-07.jpg"><img class="fr" id="m8" src="assets/mv-08.jpg"><img class="fr" id="m9" src="assets/mv-09.jpg"></div>
+<div class="abs kick" id="sk" style="color:#0E6B5E">SLEEK CONNECT STORE</div>
+<div class="abs sans" id="st">Everyday<br>essentials.</div>
+<div class="abs chip" id="c0">Free delivery in Accra</div><div class="abs chip" id="c1">MoMo &amp; card checkout</div><div class="abs chip" id="c2">100% authentic</div>
+<div class="abs ph" id="sph"><img id="simg" src="assets/st-sleek-m.jpg"></div>
+<div class="abs" id="band"></div>
+<div class="abs bw serif" id="b0" style="font-size:96px;font-style:italic">Different products.</div>
+<div class="abs bw sans" id="b1" style="font-size:92px;font-weight:700;letter-spacing:-.03em">Different design.</div>
+<div class="abs bw sans" id="b2" style="font-size:104px;font-weight:700;letter-spacing:-.03em">Same studio.</div>
+<div class="abs" id="hookA"><div class="abs serif" id="h1">Two shops.</div></div>
+<div class="abs" id="hookB"><div class="abs sans" id="h2">built for what they sell.</div></div>
+<img class="abs" id="eLogo" src="assets/logo.png">
+<div class="abs serif" id="eQ">What are you selling?</div>
+<div class="abs sans" id="eS">Let's build your store.</div>
+<div class="abs" id="eP">WhatsApp +233 54 285 5399</div>
+<div class="abs" id="eU">www.ecstasytechnologies.com</div>
+</div><script>
+const FMT = new URLSearchParams(location.search).get('fmt') || 'v';
+const V = FMT === 'v';
+const W = V ? 1080 : 1920, H = V ? 1920 : 1080;
+const $ = id => document.getElementById(id);
+$('stage').style.width = W + 'px'; $('stage').style.height = H + 'px';
+document.body.style.width = W + 'px'; document.body.style.height = H + 'px';
+
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const lerp = (a, b, k) => a + (b - a) * k;
+function spring(t, w = 16, z = 0.55) {
+  if (t <= 0) return 0;
+  if (z >= 1) return 1 - Math.exp(-w * t) * (1 + w * t);
+  const wd = w * Math.sqrt(1 - z * z);
+  return 1 - Math.exp(-z * w * t) * (Math.cos(wd * t) + (z * w / wd) * Math.sin(wd * t));
+}
+const TYPE = t => spring(t, 18, 0.62);
+const POP = t => spring(t, 20, 0.6);
+const HEAVY = t => spring(t, 9, 1);
+const easeIn = t => { t = clamp(t); return t * t * t; };
+const easeOut = t => { t = clamp(t); return 1 - Math.pow(1 - t, 3); };
+const easeInOut = t => { t = clamp(t); return t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2; };
+function set(el, { x = 0, y = 0, s = 1, r = 0, o = 1 }) {
+  el.style.transform = `translate(${x}px,${y}px) rotate(${r}deg) scale(${s})`;
+  el.style.opacity = o;
+}
+function size(el, w, h) { el.style.width = w + 'px'; if (h != null) el.style.height = h + 'px'; }
+
+
+function vis(t, a, b) { return t >= a - 0.001 && t < b; }
+function reveal(el, t, t0, t1, x, y, d = 0.7) { const k = 1 - Math.pow(1 - clamp((t - t0) / d), 4), out = easeIn((t - t1 + 0.35) / 0.35), on = vis(t, t0, t1 + 0.01);
+  el.style.transform = `translate(${x}px,${y + (1 - k) * 70 - out * 40}px)`; el.style.clipPath = `inset(${out * 100}% 0 ${(1 - k) * 100}% 0)`; el.style.opacity = on ? 1 : 0; }
+const EXPO = t => t <= 0 ? 0 : t >= 1 ? 1 : 1 - Math.pow(2, -10 * t);
+function fit(el, maxW) { const fs = parseFloat(getComputedStyle(el).fontSize), w = el.scrollWidth; if (w > maxW) el.style.fontSize = (fs * maxW / w) + 'px'; }
+
+function prep() { ['h1', 'h2', 'mt', 'st', 'eQ', 'eS', 'b0', 'b1', 'b2'].forEach(id => fit($(id), 960)); fit($('tag'), 960); }
+const T = { hook: 0.1, split: 1.7, sleek: 2.1, band: 8.0, b1: 8.8, b2: 9.6, end: 10.6, dur: 15.0 };
+const EVENTS = [{ t: 0.1, k: 'thump' }, { t: 0.6, k: 'pluck' }, { t: T.split - 0.1, k: 'whoosh' }, { t: T.split + 0.6, k: 'chime' }, { t: T.split + 1.6, k: 'pluck' }];
+[0, 1, 2].forEach(i => EVENTS.push({ t: T.sleek + 1.0 + i * 0.35, k: 'tick' }));
+[T.band, T.b1, T.b2].forEach(t => EVENTS.push({ t, k: 'slam' }));
+EVENTS.push({ t: T.end - 0.1, k: 'whoosh' }, { t: T.end + 0.3, k: 'chord' }, { t: T.end + 1.4, k: 'tick' });
+function inout(el, t, t0, t1, x, y, pop) { const k = pop ? POP(t - t0) : TYPE(t - t0), out = easeIn((t - t1 + 0.25) / 0.25);
+  set(el, { x, y: y + (1 - k) * 40 - out * 30, o: vis(t, t0, t1 + 0.01) ? clamp((t - t0) / .15) * (1 - out) : 0 }); }
+function cx(el) { return (W - el.offsetWidth) / 2; }
+function seek(t) {
+  // hook: two black halves with text, then they split apart (top up, bottom down)
+  const sp = easeInOut((t - T.split) / 0.6);
+  set($('hookA'), { x: 0, y: -sp * 960, o: t < T.split + 0.7 ? 1 : 0 }); set($('hookB'), { x: 0, y: 960 + sp * 960, o: t < T.split + 0.7 ? 1 : 0 });
+  { const k = TYPE(t - T.hook); set($('h1'), { x: cx($('h1')), y: 700 + (1 - k) * 60, o: clamp((t - T.hook) / .2) }); }
+  { const k = TYPE(t - 0.6); set($('h2'), { x: cx($('h2')), y: 40 + (1 - k) * 40, o: clamp((t - 0.6) / .2) }); }
+  set($('top'), { x: 0, y: 0 }); set($('bot'), { x: 0, y: 960 });
+  // Mave half (top)
+  const midOut = T.band;
+  inout($('mk'), t, T.split + 0.3, midOut, 70, 150);
+  inout($('mt'), t, T.split + 0.45, midOut, 70, 220);
+  inout($('tag'), t, T.split + 1.6, midOut, 70, 520, true);
+  inout($('mph'), t, T.split + 0.3, midOut, 690, 140);
+  { const fi = Math.floor(clamp((t - T.split - 0.6) / 5.4) * 10) % 10; document.querySelectorAll('#mph .fr').forEach((im, k) => im.style.opacity = k === Math.min(9, fi) ? 1 : 0); }
+  // Sleek half (bottom)
+  inout($('sph'), t, T.sleek, midOut, 60, 1110);
+  inout($('sk'), t, T.sleek + 0.2, midOut, 450, 1170);
+  inout($('st'), t, T.sleek + 0.35, midOut, 450, 1240);
+  ['c0', 'c1', 'c2'].forEach((c, i) => inout($(c), t, T.sleek + 1.0 + i * 0.35, midOut, 450, 1500 + i * 100, true));
+  $('simg').style.transform = `translateY(${-easeInOut((t - T.sleek - 0.5) / 5.0) * 1400}px)`;
+  // middle band with three statements
+  { const k = easeOut((t - T.band) / 0.35), out = easeIn((t - T.end + 0.3) / 0.3); set($('band'), { x: 0, y: 840, s: 1, o: vis(t, T.band, T.end) ? 1 - out : 0 }); $('band').style.transform = `translate(0,840px) scaleY(${k})`; $('band').style.transformOrigin = '50% 50%'; }
+  [['b0', T.band, T.b1], ['b1', T.b1, T.b2], ['b2', T.b2, T.end]].forEach(([id, a, b]) => inout($(id), t, a + 0.1, b, cx($(id)), 900, true));
+  // end card on the split background
+  const E = T.end;
+  inout($('eLogo'), t, E + 0.1, 99, cx($('eLogo')), 470, true);
+  inout($('eQ'), t, E + 0.35, 99, cx($('eQ')), 760);
+  inout($('eS'), t, E + 0.7, 99, cx($('eS')), 1010);
+  inout($('eP'), t, E + 1.1, 99, cx($('eP')), 1170, true);
+  inout($('eU'), t, E + 1.5, 99, cx($('eU')), 1330);
+}
+
+window.__duration = 15;
+window.__events = EVENTS;
+window.__seek = seek;
+Promise.all(['700 40px Figtree', '500 40px Figtree', 'italic 40px "Liberation Serif"', '40px "Liberation Serif"'].map(f => document.fonts.load(f)))
+  .then(() => document.fonts.ready)
+  .then(() => Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; }))))
+  .then(() => { if (typeof prep === 'function') prep(); seek(0); window.__ready = true; });
+</script></body></html>
