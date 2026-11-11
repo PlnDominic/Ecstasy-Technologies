@@ -93,21 +93,6 @@
     "image": "",
     "features": [],
     "technologies": [
-      "TypeScript"
-    ],
-    "status": "completed",
-    "title": "Bia East",
-    "category": "Website",
-    "description": "Bia East, built by Ecstasy Technologies.",
-    "link": "https://github.com/PlnDominic/Bia-East",
-    "year": 2025,
-    "id": 93,
-    "updatedAt": "2026-11-11T10:47:56.760Z"
-  },
-  {
-    "image": "",
-    "features": [],
-    "technologies": [
       "JavaScript"
     ],
     "status": "completed",
