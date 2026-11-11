@@ -1,7 +1,7 @@
 import wave, re, json
 from piper import PiperVoice, SynthesisConfig
 LINES = {
- 'ryan': [
+ 'jenny': [
   ('sc1','This is how {Ecstasy Technologies} built an online store.'),
   ('sc2','Customers search, browse fifteen categories, and tap quick add.'),
   ('sc3','Then they pay with MoMo or card, on any phone.'),
@@ -10,9 +10,7 @@ LINES = {
   ('sb2','Here, {Ecstasy Technologies} built a store where customers find, add, and pay.'),
   ('sb3','Pay with MoMo or card.'),
   ('sb4','Sleek Connect Store, built by {Ecstasy Technologies}.'),
-  ('sb5','Need a store? Message us on WhatsApp.'),
- ],
- 'jenny': [
+  ('sb5','Message us on WhatsApp.'),
   ('m1a','How do you sell a gown made to measure, online?'),
   ('m1b','Customers browse and turn every design.'),
   ('m1c','They send measurements and photos.'),
@@ -24,7 +22,7 @@ LINES = {
   ('m2c','Pick a design. Send your measurements. They stitch it to fit.'),
   ('m2d','Built by {Ecstasy Technologies}, in Ghana.'),
  ]}
-MODEL = {'ryan': ('en_US-ryan-high.onnx', 1.04, 1.28), 'jenny': ('en_GB-jenny_dioco-medium.onnx', 1.10, 1.22)}
+MODEL = {'ryan': ('en_US-ryan-high.onnx', 1.04, 1.28), 'jenny': ('en_GB-jenny_dioco-medium.onnx', 1.10, 1.14)}
 def seg(v, text, scale, path):
     with wave.open(path, 'wb') as w: v.synthesize_wav(text, w, syn_config=SynthesisConfig(length_scale=scale))
     with wave.open(path) as w: return w.getparams(), w.readframes(w.getnframes())
