@@ -129,19 +129,6 @@
   {
     "image": "",
     "features": [],
-    "technologies": [],
-    "status": "completed",
-    "title": "Freeman Aaron",
-    "category": "Website",
-    "description": "Freeman Aaron, built by Ecstasy Technologies.",
-    "link": "https://github.com/PlnDominic/freeman-aaron",
-    "year": 2025,
-    "id": 104,
-    "updatedAt": "2026-11-11T10:47:56.760Z"
-  },
-  {
-    "image": "",
-    "features": [],
     "technologies": [
       "TypeScript"
     ],
