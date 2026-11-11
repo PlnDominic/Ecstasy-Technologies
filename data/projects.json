@@ -597,29 +597,6 @@
   {
     "image": "",
     "features": [
-      "Interactive map layers",
-      "Spatial data visualization",
-      "Location display",
-      "Custom data directory",
-      "No-framework deployment"
-    ],
-    "technologies": [
-      "JavaScript",
-      "HTML5",
-      "CSS3"
-    ],
-    "status": "completed",
-    "title": "Interactive GIS Web Map",
-    "category": "GIS",
-    "description": "Web-based interactive mapping application for spatial data visualization, built entirely with vanilla JavaScript and HTML5 for lightweight deployment.",
-    "link": "https://github.com/PlnDominic/InteractiveMap",
-    "year": 2023,
-    "id": 60,
-    "updatedAt": "2026-11-11T10:30:51.568Z"
-  },
-  {
-    "image": "",
-    "features": [
       "School information pages",
       "Responsive design",
       "SEO optimization",
