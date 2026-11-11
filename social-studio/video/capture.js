@@ -47,7 +47,7 @@ async function shoot(browser, name, url, viewport, dpr) {
 
 (async () => {
   const browser = await chromium.launch({
-    executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome',
+    executablePath: '/opt/pw-browsers/chromium-1243/chrome-linux64/chrome',
     args: ['--no-sandbox', '--ignore-certificate-errors'],
   });
   await Promise.all(DESKTOP.map(([n, u]) => shoot(browser, n, u, { width: 1440, height: 900 }, 1)));
