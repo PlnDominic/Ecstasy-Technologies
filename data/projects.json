@@ -1,6 +1,891 @@
 [
   {
     "image": "",
+    "features": [],
+    "technologies": [],
+    "status": "completed",
+    "title": "Alx Pre Course",
+    "category": "Website",
+    "description": "I’m now a ALX Student, this is my first repository as a full-stack engineer",
+    "link": "https://github.com/PlnDominic/Alx-pre_course",
+    "year": 2023,
+    "id": 130,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [],
+    "status": "completed",
+    "title": "Alx Zero Day",
+    "category": "Website",
+    "description": "I'm now a ALX Student, this is my first repository as a full-stack engineer",
+    "link": "https://github.com/PlnDominic/alx-zero_day",
+    "year": 2023,
+    "id": 129,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [],
+    "status": "completed",
+    "title": "Zero Day",
+    "category": "Website",
+    "description": "This is my first repository as a full-stack engineer",
+    "link": "https://github.com/PlnDominic/zero_day",
+    "year": 2023,
+    "id": 128,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [],
+    "status": "completed",
+    "title": "Dominic Geodeveloper",
+    "category": "Website",
+    "description": "Geospatial Developer",
+    "link": "https://github.com/PlnDominic/Dominic_geodeveloper",
+    "year": 2023,
+    "id": 127,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "Shell"
+    ],
+    "status": "completed",
+    "title": "Alx System Engineering Devops",
+    "category": "Website",
+    "description": "alx-system_engineering-devops taks",
+    "link": "https://github.com/PlnDominic/alx-system_engineering-devops",
+    "year": 2023,
+    "id": 126,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [],
+    "status": "completed",
+    "title": "Practice",
+    "category": "Website",
+    "description": "Practice, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/Practice",
+    "year": 2023,
+    "id": 125,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "C"
+    ],
+    "status": "completed",
+    "title": "Printf",
+    "category": "Website",
+    "description": "Printf, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/printf",
+    "year": 2023,
+    "id": 124,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "C"
+    ],
+    "status": "completed",
+    "title": "Simple Shell",
+    "category": "Website",
+    "description": "simple_shell project",
+    "link": "https://github.com/PlnDominic/simple_shell",
+    "year": 2023,
+    "id": 123,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [],
+    "status": "completed",
+    "title": "My Own",
+    "category": "Website",
+    "description": "My Own, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/My-own",
+    "year": 2023,
+    "id": 122,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "C"
+    ],
+    "status": "completed",
+    "title": "Alx Low Level Programming",
+    "category": "Website",
+    "description": "alx-low_level_programming",
+    "link": "https://github.com/PlnDominic/alx-low_level_programming",
+    "year": 2023,
+    "id": 121,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [],
+    "status": "completed",
+    "title": "BABMA",
+    "category": "Website",
+    "description": "BABMA, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/BABMA",
+    "year": 2024,
+    "id": 120,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [],
+    "status": "completed",
+    "title": "WebMapBABMA",
+    "category": "Website",
+    "description": "WebMapBABMA, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/WebMapBABMA",
+    "year": 2024,
+    "id": 119,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [],
+    "status": "completed",
+    "title": "BABMAWeb1",
+    "category": "Website",
+    "description": "BABMAWeb1, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/BABMAWeb1",
+    "year": 2024,
+    "id": 118,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "JavaScript"
+    ],
+    "status": "completed",
+    "title": "BABMA1",
+    "category": "Website",
+    "description": "BABMA_WEB",
+    "link": "https://github.com/PlnDominic/BABMA1",
+    "year": 2024,
+    "id": 117,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [],
+    "status": "completed",
+    "title": "KML Host",
+    "category": "Website",
+    "description": "KML Host, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/KML_Host",
+    "year": 2024,
+    "id": 116,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [],
+    "status": "completed",
+    "title": "Bibiani Spatial Planning",
+    "category": "GIS",
+    "description": "Bibiani Spatial Planning, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/bibiani-spatial-planning",
+    "year": 2024,
+    "id": 115,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "HTML5"
+    ],
+    "status": "completed",
+    "title": "Ntc",
+    "category": "Website",
+    "description": "Ntc, built by Ecstasy Technologies.",
+    "link": "https://ntc-zeta.vercel.app",
+    "year": 2024,
+    "id": 114,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "HTML5"
+    ],
+    "status": "completed",
+    "title": "Bethel Educational Website",
+    "category": "Website",
+    "description": "Bethel Educational Website, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/bethel-educational-website",
+    "year": 2024,
+    "id": 113,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "CSS3"
+    ],
+    "status": "completed",
+    "title": "Kingstowershotel",
+    "category": "Website",
+    "description": "Kingstowershotel, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/kingstowershotel",
+    "year": 2024,
+    "id": 112,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "Wells Fargo Dashboard",
+    "category": "Business Software",
+    "description": "Wells Fargo Dashboard, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/wells-fargo-dashboard",
+    "year": 2025,
+    "id": 111,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "CSS3"
+    ],
+    "status": "completed",
+    "title": "Wells Fargo Responsive Page",
+    "category": "Website",
+    "description": "Wells Fargo Responsive Page, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/wells-fargo-responsive-page",
+    "year": 2025,
+    "id": 110,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "Python"
+    ],
+    "status": "completed",
+    "title": "Lavimac Royal Hotel",
+    "category": "Web Application",
+    "description": "Lavimac Royal Hotel, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/Lavimac-Royal-Hotel",
+    "year": 2025,
+    "id": 109,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "Python"
+    ],
+    "status": "completed",
+    "title": "Lavimac Hotel",
+    "category": "Web Application",
+    "description": "Lavimac Hotel, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/Lavimac_Hotel",
+    "year": 2025,
+    "id": 108,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "HTML5"
+    ],
+    "status": "completed",
+    "title": "Dominicportfolio",
+    "category": "Website",
+    "description": "Dominicportfolio, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/dominicportfolio",
+    "year": 2024,
+    "id": 107,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "HTML5"
+    ],
+    "status": "completed",
+    "title": "Dominickudom",
+    "category": "Website",
+    "description": "Dominickudom, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/dominickudom",
+    "year": 2025,
+    "id": 106,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [],
+    "status": "completed",
+    "title": "QGIS MCP Server",
+    "category": "GIS",
+    "description": "QGIS MCP Server, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/QGIS-MCP-Server",
+    "year": 2025,
+    "id": 105,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [],
+    "status": "completed",
+    "title": "Freeman Aaron",
+    "category": "Website",
+    "description": "Freeman Aaron, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/freeman-aaron",
+    "year": 2025,
+    "id": 104,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "Amor De Dios Drilling And Construction Limited",
+    "category": "Website",
+    "description": "Amor De Dios Drilling And Construction Limited, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/Amor-De-Dios-Drilling-and-Construction-Limited",
+    "year": 2025,
+    "id": 103,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [],
+    "status": "completed",
+    "title": "Hotel Management",
+    "category": "Website",
+    "description": "Hotel Management, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/Hotel_management",
+    "year": 2025,
+    "id": 102,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "Nhyirabahotel",
+    "category": "Website",
+    "description": "Nhyirabahotel, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/Nhyirabahotel",
+    "year": 2025,
+    "id": 101,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "Mankind Foundation Health Screening System",
+    "category": "Business Software",
+    "description": "Mankind Foundation Health Screening System, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/Mankind-Foundation-Health-Screening-System-",
+    "year": 2025,
+    "id": 100,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "Building Complaince App",
+    "category": "Web Application",
+    "description": "Building Complaince App, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/Building-Complaince-App",
+    "year": 2025,
+    "id": 99,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "Dynamic Shipping And Logistics",
+    "category": "Website",
+    "description": "Dynamic Shipping And Logistics, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/Dynamic-Shipping-and-Logistics",
+    "year": 2025,
+    "id": 98,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "Peravic Hotel",
+    "category": "Website",
+    "description": "Peravic Hotel, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/Peravic-Hotel",
+    "year": 2025,
+    "id": 97,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "Amor De Dios",
+    "category": "Website",
+    "description": "Amor De Dios, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/Amor-De-Dios",
+    "year": 2025,
+    "id": 96,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "Avenu 15",
+    "category": "Website",
+    "description": "Avenu 15, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/Avenu-15",
+    "year": 2025,
+    "id": 95,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "Clems Akinaabi",
+    "category": "Website",
+    "description": "Clems Akinaabi, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/Clems-Akinaabi",
+    "year": 2025,
+    "id": 94,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "Bia East",
+    "category": "Website",
+    "description": "Bia East, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/Bia-East",
+    "year": 2025,
+    "id": 93,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "JavaScript"
+    ],
+    "status": "completed",
+    "title": "HMS1",
+    "category": "Website",
+    "description": "HMS1, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/HMS1",
+    "year": 2025,
+    "id": 92,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "JavaScript"
+    ],
+    "status": "completed",
+    "title": "HMS2",
+    "category": "Website",
+    "description": "HMS2, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/HMS2",
+    "year": 2025,
+    "id": 91,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [],
+    "status": "completed",
+    "title": "Remedi",
+    "category": "Website",
+    "description": "Remedi, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/Remedi",
+    "year": 2025,
+    "id": 90,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "PLpgSQL"
+    ],
+    "status": "completed",
+    "title": "School Management",
+    "category": "Business Software",
+    "description": "School Management, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/School-management",
+    "year": 2025,
+    "id": 89,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "Dog Ai",
+    "category": "Website",
+    "description": "Dog",
+    "link": "https://dog-ai-ecru.vercel.app",
+    "year": 2025,
+    "id": 88,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "JavaScript"
+    ],
+    "status": "completed",
+    "title": "Quick Start Driving School",
+    "category": "Website",
+    "description": "Quick Start Driving School, built by Ecstasy Technologies.",
+    "link": "https://quick-start-driving-school.vercel.app",
+    "year": 2026,
+    "id": 87,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "The Verified Plug",
+    "category": "Website",
+    "description": "The Verified Plug, built by Ecstasy Technologies.",
+    "link": "https://the-verified-plug.vercel.app",
+    "year": 2026,
+    "id": 86,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "CSS3"
+    ],
+    "status": "completed",
+    "title": "Global Institute Of Mines And Safety",
+    "category": "Website",
+    "description": "Global Institute Of Mines And Safety, built by Ecstasy Technologies.",
+    "link": "https://global-institute-of-mines-and-safet.vercel.app",
+    "year": 2026,
+    "id": 85,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "Amboss Hotel",
+    "category": "Website",
+    "description": "Amboss Hotel, built by Ecstasy Technologies.",
+    "link": "https://amboss-hotel.vercel.app",
+    "year": 2026,
+    "id": 84,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "Nas J Coujture",
+    "category": "Website",
+    "description": "Nas J Coujture, built by Ecstasy Technologies.",
+    "link": "https://nas-j-coujture.vercel.app",
+    "year": 2026,
+    "id": 83,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "Aaron Freeman",
+    "category": "Website",
+    "description": "Aaron Freeman, built by Ecstasy Technologies.",
+    "link": "https://aaron-freeman.vercel.app",
+    "year": 2025,
+    "id": 82,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "Thrive Edu",
+    "category": "Website",
+    "description": "Thrive Edu, built by Ecstasy Technologies.",
+    "link": "https://thrive-edu.vercel.app",
+    "year": 2026,
+    "id": 81,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "Dotted Point Limited",
+    "category": "Website",
+    "description": "Dotted Point Limited, built by Ecstasy Technologies.",
+    "link": "https://dotted-point-limited.vercel.app",
+    "year": 2026,
+    "id": 80,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "Python"
+    ],
+    "status": "completed",
+    "title": "Emson Hotel",
+    "category": "Web Application",
+    "description": "Emson Hotel, built by Ecstasy Technologies.",
+    "link": "https://emson-hotel.vercel.app",
+    "year": 2025,
+    "id": 79,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "Solani Construction And Engineering",
+    "category": "Website",
+    "description": "Solani Construction And Engineering, built by Ecstasy Technologies.",
+    "link": "https://solani-construction-engineering.vercel.app",
+    "year": 2025,
+    "id": 78,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "Cassvo",
+    "category": "Website",
+    "description": "Cassvo, built by Ecstasy Technologies.",
+    "link": "https://cassvo.vercel.app",
+    "year": 2026,
+    "id": 77,
+    "updatedAt": "2026-11-11T10:47:56.760Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "Brainy Kings And Queens",
+    "category": "Website",
+    "description": "Brainy Kings And Queens, built by Ecstasy Technologies.",
+    "link": "https://brainy-kings-and-queens.vercel.app",
+    "year": 2026,
+    "id": 76,
+    "updatedAt": "2026-11-11T10:47:56.759Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "Glow White",
+    "category": "Website",
+    "description": "Glow White, built by Ecstasy Technologies.",
+    "link": "https://glowwhite.vercel.app",
+    "year": 2026,
+    "id": 75,
+    "updatedAt": "2026-11-11T10:47:56.759Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "Septer M",
+    "category": "Website",
+    "description": "Septer M, built by Ecstasy Technologies.",
+    "link": "https://web-14i8.vercel.app",
+    "year": 2026,
+    "id": 74,
+    "updatedAt": "2026-11-11T10:47:56.759Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "JavaScript"
+    ],
+    "status": "completed",
+    "title": "Raph Fashion Store",
+    "category": "Website",
+    "description": "Raph Fashion Store, built by Ecstasy Technologies.",
+    "link": "https://github.com/PlnDominic/Raph-Fashion-Store",
+    "year": 2026,
+    "id": 73,
+    "updatedAt": "2026-11-11T10:47:56.759Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "Solid Connect",
+    "category": "Website",
+    "description": "Solid Connect, built by Ecstasy Technologies.",
+    "link": "https://solid-connect.vercel.app",
+    "year": 2026,
+    "id": 72,
+    "updatedAt": "2026-11-11T10:47:56.759Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "PLpgSQL"
+    ],
+    "status": "completed",
+    "title": "Sleek Connect",
+    "category": "Website",
+    "description": "Sleek Connect, built by Ecstasy Technologies.",
+    "link": "https://sleek-connect.vercel.app",
+    "year": 2026,
+    "id": 71,
+    "updatedAt": "2026-11-11T10:47:56.759Z"
+  },
+  {
+    "image": "",
+    "features": [],
+    "technologies": [
+      "TypeScript"
+    ],
+    "status": "completed",
+    "title": "Read Well Assessment App",
+    "category": "Web Application",
+    "description": "Read Well Assessment App, built by Ecstasy Technologies.",
+    "link": "https://read-well-assessment-app.vercel.app",
+    "year": 2026,
+    "id": 70,
+    "updatedAt": "2026-11-11T10:47:56.759Z"
+  },
+  {
+    "image": "",
     "features": [
       "Performance-first architecture",
       "TypeScript codebase",
