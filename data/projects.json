@@ -45,19 +45,6 @@
   {
     "image": "",
     "features": [],
-    "technologies": [],
-    "status": "completed",
-    "title": "QGIS MCP Server",
-    "category": "GIS",
-    "description": "QGIS MCP Server, built by Ecstasy Technologies.",
-    "link": "https://github.com/PlnDominic/QGIS-MCP-Server",
-    "year": 2025,
-    "id": 105,
-    "updatedAt": "2026-11-11T10:47:56.760Z"
-  },
-  {
-    "image": "",
-    "features": [],
     "technologies": [
       "TypeScript"
     ],
