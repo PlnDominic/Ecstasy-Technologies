@@ -21,6 +21,29 @@ This is the operating manual for the scheduled social-media Routines. Read it in
 6. **Carousels are separate photos, never a slideshow video.**
 7. Dominic is camera-shy: no talking-head content. Photos of him are fine (see `carousel/assets/dom-*.jpg`); new photos only if he sends them.
 
+## Content strategy (research, Nov 2026)
+Learned from the top posts of web-design and tech creators (@thesethhoffman, @tiffintech, @cowebsitedesigner, @buildingwithmikayla, @notionhq, @flux.academy) and from our own best posts.
+
+**What worked for them:**
+- **Bold "you won't like this" claim, then a fix in steps.** Seth's Squarespace SEO tutorial got 37K views and 198 shares. Show the steps on screen.
+- **Relatable fail or funny moment.** Seth's 22-second "AI fail" got 32K views and 627 shares (8.9% engagement). Funny and relatable clips get shared the most.
+- **Huge-contrast fact hook plus "share this with someone".** Tiff in Tech's quantum video got 671K views. Only use facts that have a source.
+- **A series with a comment keyword.** For example "Day 3 of redesigning…" plus "Comment REDESIGN". These get the most comments, but the views were small for that creator.
+- **Customer story in two parts.** Notion's coffee-roaster feature got about 30K views per part.
+
+**What worked for us:**
+- The biggest reach (5.9K views) came from a real person talking in **Twi** with a local creator tag (Kwaku September).
+- The highest engagement (16–21%) came from **personal posts and photos of Dominic**.
+- Our animated showcase videos have had low engagement (about 1%).
+
+**Rules from now on:**
+1. Rotate formats every week and never use the same one twice in a row. The formats are: tutorial-in-steps (`scene9`), relatable humour or chat (`scene10`), Rate-this-website (`scene7`), mistakes list (`scene8`), client story or showcase (`scene3`/5/6), and a personal or behind-the-scenes photo carousel of Dominic.
+2. The hook is in the first second, as text on screen. No logo intro. Open with a bold claim, a question, or something people relate to.
+3. One CTA per post, and rotate it: "Comment WEBSITE", "Tag someone who needs this", "Save this", or "WhatsApp +233 54 285 5399".
+4. Every week, at least one post has a human in it: photos of Dominic, or the influencer partner. When possible, add a Twi version or Twi captions for local reach (Dominic writes or approves any Twi; never machine-translate).
+5. Keep captions short, put the hook in the first line, and use 3–5 hashtags.
+6. No made-up stats. Any number needs a real source.
+
 ## Content formats
 | Format | Type | How |
 |---|---|---|
