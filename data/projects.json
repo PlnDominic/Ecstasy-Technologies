@@ -16,21 +16,6 @@
     "image": "",
     "features": [],
     "technologies": [
-      "TypeScript"
-    ],
-    "status": "completed",
-    "title": "Wells Fargo Dashboard",
-    "category": "Business Software",
-    "description": "Wells Fargo Dashboard, built by Ecstasy Technologies.",
-    "link": "https://github.com/PlnDominic/wells-fargo-dashboard",
-    "year": 2025,
-    "id": 111,
-    "updatedAt": "2026-11-11T10:47:56.760Z"
-  },
-  {
-    "image": "",
-    "features": [],
-    "technologies": [
       "Python"
     ],
     "status": "completed",
