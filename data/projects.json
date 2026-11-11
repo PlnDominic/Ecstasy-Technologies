@@ -2,19 +2,6 @@
   {
     "image": "",
     "features": [],
-    "technologies": [],
-    "status": "completed",
-    "title": "Dominic Geodeveloper",
-    "category": "Website",
-    "description": "Geospatial Developer",
-    "link": "https://github.com/PlnDominic/Dominic_geodeveloper",
-    "year": 2023,
-    "id": 127,
-    "updatedAt": "2026-11-11T10:47:56.760Z"
-  },
-  {
-    "image": "",
-    "features": [],
     "technologies": [
       "C"
     ],
