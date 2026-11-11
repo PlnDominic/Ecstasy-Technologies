@@ -180,19 +180,6 @@
   {
     "image": "",
     "features": [],
-    "technologies": [],
-    "status": "completed",
-    "title": "Remedi",
-    "category": "Website",
-    "description": "Remedi, built by Ecstasy Technologies.",
-    "link": "https://github.com/PlnDominic/Remedi",
-    "year": 2025,
-    "id": 90,
-    "updatedAt": "2026-11-11T10:47:56.760Z"
-  },
-  {
-    "image": "",
-    "features": [],
     "technologies": [
       "JavaScript"
     ],
