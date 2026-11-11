@@ -198,21 +198,6 @@
     "image": "",
     "features": [],
     "technologies": [
-      "Python"
-    ],
-    "status": "completed",
-    "title": "Emson Hotel",
-    "category": "Web Application",
-    "description": "Emson Hotel, built by Ecstasy Technologies.",
-    "link": "https://emson-hotel.vercel.app",
-    "year": 2025,
-    "id": 79,
-    "updatedAt": "2026-11-11T10:47:56.760Z"
-  },
-  {
-    "image": "",
-    "features": [],
-    "technologies": [
       "TypeScript"
     ],
     "status": "completed",
