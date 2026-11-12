@@ -44,6 +44,25 @@ Learned from the top posts of web-design and tech creators (@thesethhoffman, @ti
 5. Keep captions short, put the hook in the first line, and use 3–5 hashtags.
 6. No made-up stats. Any number needs a real source.
 
+## Buying psychology (standing rule, Dominic, Nov 2026)
+Every video and post must use what motivates people to buy. Plan each piece against this list before building it. All of it must stay honest: no invented stats, quotes, scarcity or results.
+
+1. **Pattern interrupt + open loop (0 to 2s).** Open with a question or a frustration the viewer feels ("Still taking orders in DMs?", "Hard to buy? You lose the sale."). Close the loop at the end (Zeigarnik effect).
+2. **Loss aversion.** Show what a business loses when it has no site or a hard-to-use one (a lost order, a customer who leaves). Frame it as a question or a scenario, never a made-up number.
+3. **Problem, then solution, then outcome.** Name the problem first, show the real fix on a real live site, end on the benefit for the customer ("customers find, add and pay"), not a feature list.
+4. **Specific and concrete.** Real features, real names, real prices shown on the client's own site. Specific beats vague.
+5. **Authority and proof.** Show real client sites we built and say "built by Ecstasy Technologies". Use real social proof only (real clients, real live links). Never invent testimonials, counts or ratings.
+6. **Ease and low friction.** One call to action only, and make it feel easy: "One message is all it takes." The action is WhatsApp +233 54 285 5399.
+7. **Contrast.** Before and after, hard versus easy, DMs versus a website.
+8. **Rule of three.** Three steps, three benefits (find, add, pay; browse, turn, order).
+9. **"You" language and benefits.** Talk to the business owner ("your customers", "your orders"), and turn features into benefits.
+10. **Peak and end.** Make the strongest moment the last one: brand name spoken clearly, contact on screen, one CTA.
+11. **Distinctiveness (Von Restorff).** One bold colour or element per video that stands out.
+12. **Scarcity, urgency, discounts and prices of our own services:** only if Dominic confirms they are real. Ask him first. Never fabricate.
+13. **Reciprocity.** Give a useful tip in the video (what to put on a site), not just a pitch.
+
+Checklist before sending previews: hook is a question or frustration, one loss or contrast moment, a real proof visual, one CTA that feels easy, the brand name spoken slowly and clearly, nothing invented.
+
 ## Content formats
 | Format | Type | How |
 |---|---|---|
