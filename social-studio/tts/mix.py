@@ -1,11 +1,11 @@
 import subprocess, os
 V = 'social-studio/video'; VO = '../tts/vo'
 JOBS = [
- ('s11', 'social-media/w47-sleek-code', 19, 'lofi19.wav', 'sfx_n11.wav', 0.30, [('sc1',0.5),('sc2',5.2),('sc3',9.6),('sc4',14.9)]),
+ ('s11', 'social-media/w47-sleek-code', 20, 'lofi23.wav', 'sfx_n11.wav', 0.30, [('sc1',0.4),('sc2',6.2),('sc3',10.4),('sc4',14.6)]),
  ('s15', 'social-media/w47-sleek-addtobag', 16.5, 'afro17.wav', 'sfx_n15.wav', 0.26, [('sb1',0.2),('sb2',1.9),('sb3',8.2),('sb4',10.3),('sb5',14.7)]),
- ('s16', 'social-media/w47-mave-type', 20, 'afro20.wav', 'sfx_n16.wav', 0.26, [('m1a',0.4),('m1b',3.9),('m1c',7.5),('m1d',11.1),('m1e',14.3),('m1f',16.6)]),
+ ('s16', 'social-media/w47-mave-type', 21.5, 'afro22.wav', 'sfx_n16.wav', 0.26, [('m1a',0.4),('m1b',3.9),('m1c',7.5),('m1d',11.1),('m1e',14.2),('m1f',16.7)]),
  ('s18', 'social-media/w48-michelle-spa', 22.6, 'lofi23.wav', 'sfx_n18.wav', 0.30, [('mm1',0.4),('mm2',3.4),('mm3',9.2),('mm4',11.3),('mm5',14.9),('mm6',19.8)]),
- ('s17', 'social-media/w47-mave-arches', 16.6, 'music4.wav', 'sfx_n17.wav', 0.34, [('m2a',0.5),('m2b',3.2),('m2c',8.7),('m2d',12.9)]),
+ ('s17', 'social-media/w47-mave-arches', 17.2, 'music4.wav', 'sfx_n17.wav', 0.34, [('m2a',0.6),('m2b',4.0),('m2c',8.9),('m2d',12.9)]),
 ]
 ONLY = os.environ.get('ONLY', '').split(',')
 for fr, out, dur, music, sfx, mvol, lines in JOBS:

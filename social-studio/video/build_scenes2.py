@@ -74,7 +74,7 @@ CSS11 = """
 #brand em { font-style:normal; color:#7EE787; }
 """
 lines_html = ''.join(f'<div class="cl" id="cl{k}"><span class="ln">{k+1}</span><span class="tx"></span></div>' for k in range(len(CODE)))
-BODY11 = f"""<div class="abs" id="hook"><em>Ecstasy Technologies</em><br>builds an online<br>store, line by line</div>
+BODY11 = f"""<div class="abs" id="hook">Hard to buy?<br>You <em>lose the sale.</em></div>
 <div class="abs" id="ed"><div class="tabs"><div class="tab on">index.html</div><div class="tab">style.css</div></div><div id="code">{lines_html}</div></div>
 <div class="abs" id="term"><div id="t1"><span class="dim">$</span> npm run build</div><div id="t2" class="ok">✓ search, categories, quick add</div><div id="t3" class="ok">✓ MoMo and card checkout</div></div>
 <div class="abs" id="phone"><img id="pimg" src="assets/st-sleek-m.jpg"><div class="abs" id="isl"></div></div>
@@ -86,11 +86,11 @@ import json
 JS11 = f"""
 const CODE = {json.dumps(CODE)};
 function prep() {{ $('brand').style.letterSpacing = '-.02em'; fit($('brand'), 900); fit($('hook'), 920); }}
-const T = {{ type0: 0.9, type1: 7.2, build: 7.4, flash: 9.1, phone: 9.2, scroll0: 10.0, scroll1: 14.0, end: 14.4, dur: 19.0 }};
+const T = {{ type0: 0.9, type1: 7.2, build: 7.4, flash: 9.1, phone: 9.2, scroll0: 10.0, scroll1: 14.0, end: 14.4, dur: 20.0 }};
 // plain-text lengths for typing
 const plain = CODE.map(h => {{ const d = document.createElement('div'); d.innerHTML = h; return d.textContent; }});
 const total = plain.reduce((a, s) => a + Math.max(1, s.length), 0);
-const ENDL = [['<span class=p>&gt;</span> need_a_store<span class=c>()</span>', 0.25], ['<span class=p>&gt;</span> whatsapp(<span class=s>"+233 54 285 5399"</span>)', 1.0], ['<span class=p>&gt;</span> open(<span class=s>"ecstasytechnologies.com"</span>)', 1.9], ['<span class=c>// built by Ecstasy Technologies</span>', 2.8]];
+const ENDL = [['<span class=p>&gt;</span> need_a_store<span class=c>()</span>', 0.25], ['<span class=p>&gt;</span> whatsapp(<span class=s>"+233 54 285 5399"</span>)', 1.0], ['<span class=p>&gt;</span> open(<span class=s>"ecstasytechnologies.com"</span>)', 1.9], ['<span class=c>// one message is all it takes</span>', 2.8]];
 const EVENTS = [{{ t: 0.1, k: 'thump' }}];
 for (let tt = T.type0; tt < T.type1; tt += 0.16) EVENTS.push({{ t: tt, k: 'key' }});
 EVENTS.push({{ t: T.build, k: 'click' }}, {{ t: T.build + 0.6, k: 'blip' }}, {{ t: T.build + 1.2, k: 'chime' }}, {{ t: T.flash - 0.4, k: 'riser_end' }}, {{ t: T.flash, k: 'slam' }}, {{ t: T.end, k: 'whoosh' }});
@@ -136,7 +136,7 @@ function seek(t) {{
     set($('endt'), {{ x: 80, y: 700, o: t >= T.end ? 1 : 0 }}); }}
 }}
 """
-open('scene11.html', 'w').write(page('#0A0C10', CSS11, BODY11, JS11, 19, "'700 40px Jakarta', '800 40px Jakarta', '500 30px \"JetBrains Mono\"'"))
+open('scene11.html', 'w').write(page('#0A0C10', CSS11, BODY11, JS11, 20, "'700 40px Jakarta', '800 40px Jakarta', '500 30px \"JetBrains Mono\"'"))
 
 # ---------------- scene12: paper sketch -> real site (warm paper, pencil) 22s ----------------
 CSS12 = """

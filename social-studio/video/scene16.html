@@ -32,7 +32,7 @@ body, #stage { background:#FFFFFF; }
 <div class="abs fg" id="count">01 / 04</div><div class="abs rule" id="cr"></div>
 <div class="abs serif" id="own1">Your own<br>design?</div><div class="abs fg" id="own2">Send a <b>photo</b>.<br>Get a quote.</div>
 <img class="abs" id="eLogo" src="assets/logo.png">
-<div class="abs fg" id="eB">WEBSITE BUILT BY</div><div class="abs serif" id="eH">Ecstasy<br>Technologies.</div>
+<div class="abs fg" id="eB">STILL TAKING ORDERS IN DMs?</div><div class="abs serif" id="eH">Ecstasy<br>Technologies.</div>
 <div class="abs fg" id="eW">WhatsApp +233 54 285 5399</div><div class="abs fg" id="eU">www.ecstasytechnologies.com</div>
 </div><script>
 const FMT = new URLSearchParams(location.search).get('fmt') || 'v';
@@ -71,7 +71,7 @@ function fit(el, maxW) { const fs = parseFloat(getComputedStyle(el).fontSize), w
 
 const G = [["PICK", "Browse and turn every design", "STEP 01"], ["SEND", "Send measurements and photos", "STEP 02"], ["BOOK", "Book a fitting", "STEP 03"]];
 function prep() { ['gt0','gt1','gt2'].forEach(id => fit($(id), 1010)); fit($('h2'), 1000); fit($('h1'), 1000); fit($('h3'), 1000); fit($('own1'), 940); fit($('own2'), 940); fit($('eH'), 940); fit($('eU'), 980); fit($('eW'), 940); }
-const T = { hook: 0.2, b: [3.4, 7.0, 10.6], bl: 3.6, own: 14.2, end: 16.4, dur: 20.0 };
+const T = { hook: 0.2, b: [3.4, 7.0, 10.6], bl: 3.6, own: 14.2, end: 16.4, dur: 21.5 };
 const BT = [T.b[0], T.b[1], T.b[2], T.own];
 const EVENTS = [{ t: 0.2, k: 'swell' }, { t: 1.0, k: 'chord' }];
 BT.slice(0, 3).forEach(t => EVENTS.push({ t: t - 0.1, k: 'whoosh' }, { t: t + 0.4, k: 'pluck' }));
@@ -103,7 +103,7 @@ function seek(t) {
   reveal($('eW'), t, T.end + 1.3, 99, cx($('eW')), 1220, 0.8); reveal($('eU'), t, T.end + 1.6, 99, cx($('eU')), 1320, 0.8);
 }
 
-window.__duration = 20;
+window.__duration = 21.5;
 window.__events = EVENTS;
 window.__seek = seek;
 Promise.all(['800 40px Jakarta', '700 40px Jakarta', 'italic 40px Play'].map(f => document.fonts.load(f)))

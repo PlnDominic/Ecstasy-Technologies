@@ -32,13 +32,13 @@ BODY16 = """<div class="abs syne" id="h1" style="font-size:200px">Made to</div><
 <div class="abs fg" id="count">01 / 04</div><div class="abs rule" id="cr"></div>
 <div class="abs serif" id="own1">Your own<br>design?</div><div class="abs fg" id="own2">Send a <b>photo</b>.<br>Get a quote.</div>
 <img class="abs" id="eLogo" src="assets/logo.png">
-<div class="abs fg" id="eB">WEBSITE BUILT BY</div><div class="abs serif" id="eH">Ecstasy<br>Technologies.</div>
+<div class="abs fg" id="eB">STILL TAKING ORDERS IN DMs?</div><div class="abs serif" id="eH">Ecstasy<br>Technologies.</div>
 <div class="abs fg" id="eW">WhatsApp +233 54 285 5399</div><div class="abs fg" id="eU">www.ecstasytechnologies.com</div>
 """
 JS16 = f"""
 const G = {json.dumps([[g[0], g[1], g[2]] for g in GOWNS])};
 function prep() {{ ['gt0','gt1','gt2'].forEach(id => fit($(id), 1010)); fit($('h2'), 1000); fit($('h1'), 1000); fit($('h3'), 1000); fit($('own1'), 940); fit($('own2'), 940); fit($('eH'), 940); fit($('eU'), 980); fit($('eW'), 940); }}
-const T = {{ hook: 0.2, b: [3.4, 7.0, 10.6], bl: 3.6, own: 14.2, end: 16.4, dur: 20.0 }};
+const T = {{ hook: 0.2, b: [3.4, 7.0, 10.6], bl: 3.6, own: 14.2, end: 16.4, dur: 21.5 }};
 const BT = [T.b[0], T.b[1], T.b[2], T.own];
 const EVENTS = [{{ t: 0.2, k: 'swell' }}, {{ t: 1.0, k: 'chord' }}];
 BT.slice(0, 3).forEach(t => EVENTS.push({{ t: t - 0.1, k: 'whoosh' }}, {{ t: t + 0.4, k: 'pluck' }}));
@@ -72,7 +72,7 @@ function seek(t) {{
 }}
 """
 JS16 = JS16.replace("  GOWNS_N = 3;\n", "")
-open('scene16.html', 'w').write(page('#FFFFFF', CSS16, BODY16, JS16, 20, "'800 40px Jakarta', '700 40px Jakarta', 'italic 40px Play'"))
+open('scene16.html', 'w').write(page('#FFFFFF', CSS16, BODY16, JS16, 21.5, "'800 40px Jakarta', '700 40px Jakarta', 'italic 40px Play'"))
 
 # ---------------- scene17 : black + gold arch gallery, 16s ----------------
 CSS17 = """
@@ -94,7 +94,7 @@ CSS17 = """
 #eLogo { width:520px; background:#F2EBDD; border-radius:24px; padding:16px; }
 """
 ARCH = [(M + 'ruby-kente-mermaid.png', 'Browse'), (M + 'cocoa-kente-gown.png', 'Turn'), (M + 'ivory-ombre-drape.png', 'Order')]
-BODY17 = """<div class="abs fg" id="k">ECSTASY TECHNOLOGIES  ×  MAVE</div><div class="abs serif" id="t1">Made to<br>measure,<br>made <em>simple.</em></div>
+BODY17 = """<div class="abs fg" id="k">ECSTASY TECHNOLOGIES  ×  MAVE</div><div class="abs serif" id="t1">Still taking<br>orders<br><em>in DMs?</em></div>
 """ + ''.join(f'<div class="abs arch" id="a{k}"><img src="{p}"></div><div class="abs fg nm" id="an{k}">{n}</div>' for k, (p, n) in enumerate(ARCH)) + """
 <div class="abs big" id="big">""" + ''.join(f'<img class="bf" src="assets/mave/hf{n}.png">' for n in ('0001', '0010', '0020', '0030', '0040', '0050', '0060')) + """</div>
 <div class="abs line" id="ln"></div>
@@ -105,7 +105,7 @@ BODY17 = """<div class="abs fg" id="k">ECSTASY TECHNOLOGIES  ×  MAVE</div><div 
 """
 JS17 = f"""
 function prep() {{ fit($('t1'), 940); ['s0','s1','s2','eH'].forEach(id => fit($(id), 940)); fit($('eU'), 980); fit($('eW'), 940); fit($('k'), 940); }}
-const T = {{ t1: 0.2, arch: 2.9, big: 8.2, steps: 8.9, end: 12.6, dur: 16.6 }};
+const T = {{ t1: 0.2, arch: 2.9, big: 8.2, steps: 8.9, end: 12.6, dur: 17.2 }};
 const EVENTS = [{{ t: 0.2, k: 'chord' }}, {{ t: 0.5, k: 'swell' }}];
 [0, 1, 2].forEach(i => EVENTS.push({{ t: T.arch + i * 0.45, k: 'pluck' }}));
 EVENTS.push({{ t: T.big - 0.1, k: 'whoosh' }}); [0, 1, 2].forEach(i => EVENTS.push({{ t: T.steps + i * 0.9, k: 'chime' }}));
@@ -129,5 +129,5 @@ function seek(t) {{
   reveal($('eW'), t, T.end + 1.3, 99, cx($('eW')), 1230, 0.8); reveal($('eU'), t, T.end + 1.6, 99, cx($('eU')), 1330, 0.8);
 }}
 """
-open('scene17.html', 'w').write(page('#0B0B0B', CSS17, BODY17, JS17, 16.6, "'700 40px Jakarta', 'italic 40px Play', '40px Play'"))
+open('scene17.html', 'w').write(page('#0B0B0B', CSS17, BODY17, JS17, 17.2, "'700 40px Jakarta', 'italic 40px Play', '40px Play'"))
 print('built 16,17')
