@@ -2,6 +2,12 @@ import wave, re, json
 from piper import PiperVoice, SynthesisConfig
 LINES = {
  'jenny': [
+  ('mm1','How does a spa get clients to book online?'),
+  ('mm2','Here, {Ecstasy Technologies} built a site that shows every treatment and its price.'),
+  ('mm3','With a Book Now button on every one.'),
+  ('mm4','Plus a signature package, and a luxury look on every phone.'),
+  ('mm5','Michelle Mayers Skincare and Spa, built by {Ecstasy Technologies}.'),
+  ('mm6','Need a website? Message us on WhatsApp.'),
   ('sc1','This is how {Ecstasy Technologies} built an online store.'),
   ('sc2','Customers search, browse fifteen categories, and tap quick add.'),
   ('sc3','Then they pay with MoMo or card, on any phone.'),
