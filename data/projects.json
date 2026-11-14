@@ -135,7 +135,7 @@
     "updatedAt": "2026-11-11T10:47:56.760Z"
   },
   {
-    "image": "",
+    "image": "/project-images/tagett-1794673984151.webp",
     "features": [],
     "technologies": [
       "TypeScript"
@@ -144,10 +144,11 @@
     "title": "Cassvo",
     "category": "Website",
     "description": "Cassvo, built by Ecstasy Technologies.",
-    "link": "https://cassvo.vercel.app",
+    "link": "https://admin.cassvo.com/",
     "year": 2026,
     "id": 77,
-    "updatedAt": "2026-11-11T10:47:56.760Z"
+    "updatedAt": "2026-11-14T16:31:18.040Z",
+    "featured": false
   },
   {
     "image": "",
