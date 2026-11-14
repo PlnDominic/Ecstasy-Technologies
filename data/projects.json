@@ -285,7 +285,7 @@
     "updatedAt": "2026-11-11T10:47:56.759Z"
   },
   {
-    "image": "",
+    "image": "/project-images/tagett-1794672983284.webp",
     "features": [],
     "technologies": [
       "PLpgSQL"
@@ -294,10 +294,11 @@
     "title": "Sleek Connect",
     "category": "Website",
     "description": "Sleek Connect, built by Ecstasy Technologies.",
-    "link": "https://sleek-connect.vercel.app",
+    "link": "https://www.sleekconnectstore.com/",
     "year": 2026,
     "id": 71,
-    "updatedAt": "2026-11-11T10:47:56.759Z"
+    "updatedAt": "2026-11-14T16:14:41.096Z",
+    "featured": false
   },
   {
     "image": "/project-images/tagett-1794672066220.webp",
