@@ -30,7 +30,7 @@
     "updatedAt": "2026-11-11T10:47:56.760Z"
   },
   {
-    "image": "",
+    "image": "/project-images/tagett-1794674606038.webp",
     "features": [],
     "technologies": [
       "CSS3"
@@ -39,10 +39,11 @@
     "title": "Global Institute Of Mines And Safety",
     "category": "Website",
     "description": "Global Institute Of Mines And Safety, built by Ecstasy Technologies.",
-    "link": "https://global-institute-of-mines-and-safet.vercel.app",
+    "link": "https://global-institute-of-mines-and-safet.vercel.app/",
     "year": 2026,
     "id": 85,
-    "updatedAt": "2026-11-11T10:47:56.760Z"
+    "updatedAt": "2026-11-14T16:41:38.975Z",
+    "featured": false
   },
   {
     "image": "",
