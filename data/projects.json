@@ -63,21 +63,6 @@
     "image": "",
     "features": [],
     "technologies": [
-      "JavaScript"
-    ],
-    "status": "completed",
-    "title": "Quick Start Driving School",
-    "category": "Website",
-    "description": "Quick Start Driving School, built by Ecstasy Technologies.",
-    "link": "https://quick-start-driving-school.vercel.app",
-    "year": 2026,
-    "id": 87,
-    "updatedAt": "2026-11-11T10:47:56.760Z"
-  },
-  {
-    "image": "",
-    "features": [],
-    "technologies": [
       "TypeScript"
     ],
     "status": "completed",
