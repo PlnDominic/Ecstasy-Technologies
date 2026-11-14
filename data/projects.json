@@ -152,7 +152,7 @@
     "featured": false
   },
   {
-    "image": "",
+    "image": "/project-images/tagett-1794674259280.webp",
     "features": [],
     "technologies": [
       "TypeScript"
@@ -161,10 +161,11 @@
     "title": "Glow White",
     "category": "Website",
     "description": "Glow White, built by Ecstasy Technologies.",
-    "link": "https://glowwhite.vercel.app",
+    "link": "https://www.glowhitedental.com/",
     "year": 2026,
     "id": 75,
-    "updatedAt": "2026-11-11T10:47:56.759Z"
+    "updatedAt": "2026-11-14T16:35:49.970Z",
+    "featured": false
   },
   {
     "image": "",
