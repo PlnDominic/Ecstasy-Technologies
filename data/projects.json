@@ -62,7 +62,7 @@
     "featured": false
   },
   {
-    "image": "",
+    "image": "/project-images/tagett-1794685298485.webp",
     "features": [],
     "technologies": [
       "TypeScript"
@@ -74,7 +74,8 @@
     "link": "https://nas-j-coujture.vercel.app",
     "year": 2026,
     "id": 83,
-    "updatedAt": "2026-11-11T10:47:56.760Z"
+    "updatedAt": "2026-11-14T19:39:50.572Z",
+    "featured": false
   },
   {
     "image": "/project-images/tagett-1794675216401.webp",
