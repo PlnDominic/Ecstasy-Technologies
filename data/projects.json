@@ -388,33 +388,6 @@
   {
     "image": "",
     "features": [
-      "Building compliance tracking",
-      "Geospatial map views",
-      "Shapefile & GeoJSON support",
-      "File upload system",
-      "Database migrations",
-      "Test suite"
-    ],
-    "technologies": [
-      "Python",
-      "Flask",
-      "JavaScript",
-      "HTML5",
-      "CSS3",
-      "GeoJSON"
-    ],
-    "status": "completed",
-    "title": "Building Compliance Tracking App",
-    "category": "GIS",
-    "description": "Web application for tracking and assessing building compliance with geospatial mapping support, shapefile and GeoJSON data handling, and a migration-backed database.",
-    "link": "https://github.com/PlnDominic/building-compliance-app",
-    "year": 2023,
-    "id": 61,
-    "updatedAt": "2026-11-11T10:30:51.568Z"
-  },
-  {
-    "image": "",
-    "features": [
       "School information pages",
       "Responsive design",
       "SEO optimization",
