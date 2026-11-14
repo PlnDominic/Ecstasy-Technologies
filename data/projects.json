@@ -154,19 +154,21 @@
     "updatedAt": "2026-11-11T10:47:56.759Z"
   },
   {
-    "image": "",
+    "image": "/project-images/tagett-1794674748179.webp",
     "features": [],
     "technologies": [
       "JavaScript"
     ],
     "status": "completed",
-    "title": "Raph Fashion Store",
+    "title": "Mave Collection",
     "category": "Website",
     "description": "Raph Fashion Store, built by Ecstasy Technologies.",
-    "link": "https://github.com/PlnDominic/Raph-Fashion-Store",
+    "link": "https://www.mavecollections.com/",
     "year": 2026,
     "id": 73,
-    "updatedAt": "2026-11-11T10:47:56.759Z"
+    "updatedAt": "2026-11-14T16:44:00.511Z",
+    "client": "Mave Collection",
+    "featured": false
   },
   {
     "image": "",
