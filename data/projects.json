@@ -46,19 +46,20 @@
     "featured": false
   },
   {
-    "image": "",
+    "image": "/project-images/tagett-1794675461134.webp",
     "features": [],
     "technologies": [
       "TypeScript"
     ],
     "status": "completed",
-    "title": "Amboss Hotel",
+    "title": "Anboss Hotel",
     "category": "Website",
-    "description": "Amboss Hotel, built by Ecstasy Technologies.",
-    "link": "https://amboss-hotel.vercel.app",
+    "description": "Anboss Hotel, built by Ecstasy Technologies.",
+    "link": "https://www.anbosshotel.com/",
     "year": 2026,
     "id": 84,
-    "updatedAt": "2026-11-11T10:47:56.760Z"
+    "updatedAt": "2026-11-14T16:55:52.729Z",
+    "featured": false
   },
   {
     "image": "",
