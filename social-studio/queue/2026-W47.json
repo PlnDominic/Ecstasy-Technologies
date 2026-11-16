@@ -27,8 +27,10 @@
       "caption": "Rate this hotel website, 1 to 10. ⭐\n\nAnboss Hotel in Santasi Apire, Kumasi: Call Us and Book Your Stay on the first screen, rooms with prices shown, and a gallery that sells the stay.\n\nWhat's your rating? Drop it in the comments 👇\n💬 WhatsApp: +233 54 285 5399\n🌐 www.ecstasytechnologies.com\n\n#GhanaTech #WebDesignGhana #KumasiBusiness #HotelGhana #EcstasyTechnologies",
       "approved": true,
       "privacy_level": "PUBLIC_TO_EVERYONE",
-      "status": "pending",
-      "posted": {}
+      "status": "notified",
+      "posted": {
+        "notified": "2026-11-16"
+      }
     },
     {
       "day": "2026-11-17",
