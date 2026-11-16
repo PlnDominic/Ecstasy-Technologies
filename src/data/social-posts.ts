@@ -263,34 +263,6 @@ export const socialPosts: SocialPost[] = [
     instagramUnsafeAspectRatio: true,
   },
   {
-    id: 'launch-is-not-the-finish',
-    text: 'Launch day is not the finish line. Updates, fixes and small changes after launch are part of how we work, so your site keeps up with your business.',
-  },
-  {
-    id: 'whatsapp-us-your-idea',
-    text: 'Have a website that looks dated or an idea for an app? WhatsApp us on +233 54 285 5399 and tell us what you need. → ecstasytechnologies.com/contact',
-  },
-  {
-    id: 'december-rush-ready',
-    text: 'December is busy for hotels, shops and event businesses. If customers can check prices and book online before the rush, your phone rings less and your team serves more. #AccraBusiness',
-  },
-  {
-    id: 'forms-ask-less',
-    text: 'Every extra field on a form is another reason to quit. Ask only for what you need now, and collect the rest later. #UIUX',
-  },
-  {
-    id: 'own-your-domain',
-    text: "Make sure your website's domain and hosting are registered in your business name, not only your developer's. If you ever change teams, you keep what is yours.",
-  },
-  {
-    id: 'system-before-next-hire',
-    text: 'Before hiring another person for paperwork, check if the work repeats every week. Sometimes the better hire is a simple system that helps the team you already have. #BusinessSoftware',
-  },
-  {
-    id: 'built-for-ghana-customers',
-    text: 'We build for how customers in Ghana actually behave: on their phones, on mobile data, and on WhatsApp. Tell us what you want to build. → ecstasytechnologies.com/contact',
-  },
-  {
     id: 'search-your-business-name',
     text: 'Search your business name on Google right now. If the first result is not you, customers are finding someone else first. A proper website with your name, location and services fixes that. #WebDesign',
   },
@@ -309,6 +281,38 @@ export const socialPosts: SocialPost[] = [
   {
     id: 'small-first-version',
     text: 'Your first version does not need every feature. Launch the part customers need most, learn from how they use it, then build the next piece. → ecstasytechnologies.com/contact',
+  },
+  {
+    id: 'hard-to-buy-lose-the-sale',
+    text: 'Hard to buy? You lose the sale. If customers cannot find a price, a button or a way to pay in a few seconds, they leave. Make buying easy. #WebDesign',
+  },
+  {
+    id: 'orders-in-dms-one-place',
+    text: 'Still taking orders in DMs? A website with clear services, prices and one booking button keeps every order in one place. → ecstasytechnologies.com/contact',
+  },
+  {
+    id: 'one-message-to-start',
+    text: 'One message is all it takes to start. Tell us what your business does and what slows it down, and we will suggest what to build first. WhatsApp +233 54 285 5399',
+  },
+  {
+    id: 'project-85-global-institute-mines-safety',
+    text: 'New on our portfolio: the website for Global Institute Of Mines And Safety, built by Ecstasy Technologies. #WebDevelopment',
+    image: '/project-images/tagett-1794674606038.webp',
+  },
+  {
+    id: 'project-84-anboss-hotel',
+    text: 'The Anboss Hotel website is live, built by Ecstasy Technologies. #WebDesign',
+    image: '/project-images/tagett-1794675461134.webp',
+  },
+  {
+    id: 'project-80-dotted-point-limited',
+    text: 'Dotted Point Limited now has a website built by Ecstasy Technologies. Have a look at the work. #WebDevelopment',
+    image: '/project-images/tagett-1794675216401.webp',
+  },
+  {
+    id: 'project-70-read-well-assessment-app',
+    text: 'Read Well Assessment App: a web application built by Ecstasy Technologies. #WebDevelopment',
+    image: '/project-images/tagett-1794672066220.webp',
   },
 ];
 
