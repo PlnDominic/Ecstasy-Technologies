@@ -48,8 +48,18 @@
       "caption": "Can patients book your clinic in one tap? 🦷\n\nGloWhite Dental Clinic's website lays out every service, with a button on each one. Built by Ecstasy Technologies.\n\nTag a clinic owner who needs this.\n💬 WhatsApp: +233 54 285 5399\n🌐 www.ecstasytechnologies.com\n\n#GhanaTech #WebDesignGhana #AccraBusiness #DentalClinic #EcstasyTechnologies",
       "approved": true,
       "privacy_level": "PUBLIC_TO_EVERYONE",
-      "status": "pending",
-      "posted": {}
+      "status": "posted-partial",
+      "posted": {
+        "tiktok": {
+          "job_id": "78f0a359-3f88-4568-98e3-b05a5602596d",
+          "status": "published",
+          "platform_post_id": "v_pub_url~v2-1.7709215145528068117"
+        },
+        "instagram": {
+          "job_id": "4e15d407-3a8d-4166-a133-bb041ec8aa5b",
+          "status": "uploading (stuck at 30% after ~6 min when recorded)"
+        }
+      }
     },
     {
       "day": "2026-11-18",
