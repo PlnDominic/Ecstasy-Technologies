@@ -106,8 +106,18 @@
       "caption": "Hotel prices hidden? Guests scroll away. 🏨\n\nRoyalhome Comfort Hotel's website shows every room with its price, plus a photo gallery of the hotel. Built by Ecstasy Technologies.\n\nDoes your website show your prices?\n💬 WhatsApp: +233 54 285 5399\n🌐 www.ecstasytechnologies.com\n\n#GhanaTech #WebDesignGhana #HotelGhana #KumasiBusiness #EcstasyTechnologies",
       "approved": true,
       "privacy_level": "PUBLIC_TO_EVERYONE",
-      "status": "pending",
-      "posted": {}
+      "status": "posted-partial",
+      "posted": {
+        "tiktok": {
+          "status": "published",
+          "job_id": "8b28b216-c846-413c-9f9a-0726805f9350",
+          "platform_post_id": "v_pub_url~v2-1.7709957373460449300"
+        },
+        "instagram": {
+          "status": "uploading (stuck at 30% after ~5 min; not re-published to avoid duplicate)",
+          "job_id": "f8ec3f89-c4f1-489d-b9f6-15555cbe0499"
+        }
+      }
     },
     {
       "day": "2026-11-20",
