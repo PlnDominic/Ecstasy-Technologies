@@ -143,8 +143,10 @@
       "caption": "3 things your business website needs, from me, Dominic. 👋\n\n1. Your WhatsApp number first. 2. Say what you offer and how to order. 3. Test it on your phone.\n\nTag someone who needs this.\n💬 WhatsApp: +233 54 285 5399\n🌐 www.ecstasytechnologies.com\n\n#GhanaTech #WebDesignGhana #AccraBusiness #KumasiBusiness #EcstasyTechnologies",
       "approved": true,
       "privacy_level": "PUBLIC_TO_EVERYONE",
-      "status": "pending",
-      "posted": {}
+      "status": "notified",
+      "posted": {
+        "result": "notified"
+      }
     },
     {
       "day": "2026-11-21",
