@@ -164,8 +164,20 @@
       "caption": "Selling fashion? Give shoppers somewhere to browse. 👗\n\nNasji Culture's store is sorted by category, with new arrivals one tap away and big photos that sell the look. Built by Ecstasy Technologies.\n\nWhat would your online shop sell first?\n💬 WhatsApp: +233 54 285 5399\n🌐 www.ecstasytechnologies.com\n\n#GhanaTech #WebDesignGhana #AccraBusiness #FashionGhana #EcstasyTechnologies",
       "approved": true,
       "privacy_level": "PUBLIC_TO_EVERYONE",
-      "status": "pending",
-      "posted": {}
+      "status": "posted",
+      "posted": {
+        "tiktok": {
+          "job_id": "a531b8ec-10fa-4609-a6d8-45b42e02e223",
+          "status": "published",
+          "platform_post_id": "v_pub_url~v2-1.7710699428310681621"
+        },
+        "instagram": {
+          "job_id": "87d1bf25-afe8-44a9-bdef-4ff2260cee0b",
+          "status": "published",
+          "platform_post_id": "18171403909487209",
+          "url": "https://www.instagram.com/reel/DgA66WRDdts/"
+        }
+      }
     },
     {
       "day": "2026-11-22",
