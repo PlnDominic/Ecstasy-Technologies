@@ -47,6 +47,18 @@ const DECKS = {
   {t:'step', n:2, h:'Show every<br>stage.', img:'assets/brainy-s2.jpg', cap:'Pre-School, Primary and Junior High, side by side'},
   {t:'step', n:3, h:'Make applying<br>one tap.', img:'assets/brainy-s3.jpg', cap:'Admissions open, with an Apply Now button'},
   {t:'cta', h:'Save this<br>for later<em>.</em>', sub:'Want a school website like this?'} ]},
+ auto: { accent:'#C8102E', name:'Oriental Auto &amp; Maintenance', total:5, slides:[
+  {t:'cover', h:'Selling cars<br>online<em>?</em>', sub:'3 steps every showroom website needs', foot:'Seen on Autosphere Imports, Oriental Auto &amp; Maintenance', img:'assets/w48-auto-hero.jpg'},
+  {t:'step', n:1, h:'Show the car,<br>big and clear.', img:'assets/w48-auto-hero.jpg', cap:'Model, year and engine, front and centre'},
+  {t:'step', n:2, h:'Make enquiring<br>one tap.', img:'assets/w48-auto-s2.jpg', cap:'Book Test Drive, Request a Quote, Contact Sales'},
+  {t:'step', n:3, h:'List every<br>vehicle.', img:'assets/w48-auto-s3.jpg', cap:'Available vehicles with engine, fuel and seats'},
+  {t:'cta', h:'Save this<br>for later<em>.</em>', sub:'Selling vehicles? Let us build your site.'} ]},
+ proc: { accent:'#0071E3', total:5, slides:[
+  {t:'photo', h:'3 steps from<br>message to<br>live website<em>.</em>', sub:'Dominic Kudom · Founder, Ecstasy Technologies', img:'assets/dom-bw.jpg'},
+  {t:'tip', n:1, h:'Message us<br>on WhatsApp.', body:'Tell us about your business and what you want. One message is all it takes.'},
+  {t:'tip', n:2, h:'We plan and<br>build it.', body:'We design a site around how your customers find you, choose, and get in touch.'},
+  {t:'tip', n:3, h:'Your site<br>goes live.', body:'Customers can find you online. Need a change later? You know where to find us.'},
+  {t:'cta', h:'Ready to<br>start<em>?</em>', sub:'Message me on WhatsApp.', img:'assets/dom-office.jpg'} ]},
  dom: { accent:'#0071E3', total:5, slides:[
   {t:'photo', h:'3 things your<br>business website<br>needs<em>.</em>', sub:'Dominic Kudom · Founder, Ecstasy Technologies', img:'assets/dom-office.jpg'},
   {t:'tip', n:1, h:'Your WhatsApp<br>number, first.', body:'People should not hunt for how to reach you. Put WhatsApp and Call buttons where they see them first.'},
@@ -86,7 +98,7 @@ if (d.t === 'cover') {
   el(`<div style="font-weight:800;font-size:${TT ? 40 : 34}px;color:var(--warm);letter-spacing:.04em">STEP ${d.n} OF 3</div>`, { left: '70px', top: (TT ? 170 : 120) + 'px' });
   el(`<h1 style="font-size:${TT ? 92 : 74}px">${d.h}</h1>`, { left: '70px', top: (TT ? 240 : 175) + 'px', width: '940px' });
   if (TT) { phone(d.img, 220, 520, 640, 1210); el(`<div class="cap">${d.cap}</div>`, { left: '70px', top: '1790px', width: '940px' }); }
-  else { phone(d.img, 70, 340, 470, 880); el(`<div class="cap" style="font-size:36px;line-height:1.2">${d.cap}</div><div class="sub" style="margin-top:22px;font-size:28px;color:var(--muted)">Brainy Kings &amp; Queens Montessori</div>`, { left: '600px', top: '860px', width: '420px' }); }
+  else { phone(d.img, 70, 340, 470, 880); el(`<div class="cap" style="font-size:36px;line-height:1.2">${d.cap}</div><div class="sub" style="margin-top:22px;font-size:28px;color:var(--muted)">${D.name||'Brainy Kings &amp; Queens Montessori'}</div>`, { left: '600px', top: '860px', width: '420px' }); }
 } else if (d.t === 'tip') {
   el(`<div style="font-weight:800;font-size:${TT ? 420 : 300}px;letter-spacing:-.06em;color:var(--warm);line-height:1">${d.n}</div>`, { left: '70px', top: (TT ? 190 : 120) + 'px' });
   el(`<h1 style="font-size:${TT ? 112 : 88}px">${d.h}</h1>`, { left: '70px', top: (TT ? 700 : 450) + 'px', width: '940px' });
