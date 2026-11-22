@@ -195,8 +195,18 @@
       "caption": "Do customers see your prices before they ask? 🧴\n\nGlow Healthy's skincare store shows a full catalogue, sale prices with the old price crossed out, and ready-made bundles. Built by Ecstasy Technologies.\n\nStill answering 'how much?' in DMs? Comment WEBSITE.\n💬 WhatsApp: +233 54 285 5399\n🌐 www.ecstasytechnologies.com\n\n#GhanaTech #WebDesignGhana #AccraBusiness #SkincareGhana #EcstasyTechnologies",
       "approved": true,
       "privacy_level": "PUBLIC_TO_EVERYONE",
-      "status": "pending",
-      "posted": {}
+      "status": "posted",
+      "posted": {
+        "tiktok": {
+          "job_id": "6888f798-8209-427c-981f-3a4b54140f81",
+          "platform_post_id": "v_pub_url~v2-1.7711070151675889685",
+          "url": null
+        },
+        "instagram": {
+          "job_id": "21387d26-06dc-4148-a541-780a8007b1f4",
+          "url": "https://www.instagram.com/reel/DgDfoq_gdB0/"
+        }
+      }
     }
   ]
 }
