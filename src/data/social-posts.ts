@@ -263,26 +263,6 @@ export const socialPosts: SocialPost[] = [
     instagramUnsafeAspectRatio: true,
   },
   {
-    id: 'search-your-business-name',
-    text: 'Search your business name on Google right now. If the first result is not you, customers are finding someone else first. A proper website with your name, location and services fixes that. #WebDesign',
-  },
-  {
-    id: 'app-or-website-first',
-    text: 'Not sure if you need an app or a website first? If customers find you once and buy, start with a website. If they come back every week, an app starts to make sense. #MobileApps',
-  },
-  {
-    id: 'one-place-for-the-numbers',
-    text: "When sales are in one notebook, stock in another and payments in someone's phone, nobody has the full picture. Business software puts it all in one place your whole team can trust.",
-  },
-  {
-    id: 'holiday-hours-online',
-    text: 'Changing your opening hours for Christmas and New Year? Update your website and Google listing before customers have to ask. Small detail, fewer wasted trips.',
-  },
-  {
-    id: 'small-first-version',
-    text: 'Your first version does not need every feature. Launch the part customers need most, learn from how they use it, then build the next piece. → ecstasytechnologies.com/contact',
-  },
-  {
     id: 'hard-to-buy-lose-the-sale',
     text: 'Hard to buy? You lose the sale. If customers cannot find a price, a button or a way to pay in a few seconds, they leave. Make buying easy. #WebDesign',
   },
@@ -313,6 +293,40 @@ export const socialPosts: SocialPost[] = [
     id: 'project-70-read-well-assessment-app',
     text: 'Read Well Assessment App: a web application built by Ecstasy Technologies. #WebDevelopment',
     image: '/project-images/tagett-1794672066220.webp',
+  },
+  {
+    id: 'prices-where-people-see-them',
+    text: 'Prices hidden? Shoppers, guests and patients scroll away. Put your price, or a starting price, where people can see it. Clear beats clever. #WebDesign',
+  },
+  {
+    id: 'homepage-rule-of-three',
+    text: 'A rule of three for your homepage: what you do, who it is for, and one button for the next step. Everything else can wait.',
+  },
+  {
+    id: 'works-at-2am',
+    text: 'Your website works at 2 AM while you sleep. Is it ready to take an order, a booking or a message when you are not there?',
+  },
+  {
+    id: 'project-83-nas-j-coujture',
+    text: 'Nas J Coujture has a website built by Ecstasy Technologies. #WebDesign',
+    image: '/project-images/tagett-1794685298485.webp',
+  },
+  {
+    id: 'project-76-brainy-kings-queens-montessori',
+    text: 'The Brainy Kings And Queens Montessori School website, built by Ecstasy Technologies. #WebDevelopment',
+    image: '/project-images/tagett-1794674977909.webp',
+  },
+  {
+    id: 'project-75-glow-white',
+    text: 'Glow White: a new website from the Ecstasy Technologies portfolio. #WebDesign',
+    image: '/project-images/tagett-1794674259280.webp',
+    instagramUnsafeAspectRatio: true,
+  },
+  {
+    id: 'project-71-sleek-connect',
+    text: 'Sleek Connect is live, a website built by Ecstasy Technologies. #WebDevelopment',
+    image: '/project-images/tagett-1794672983284.webp',
+    instagramUnsafeAspectRatio: true,
   },
 ];
 
