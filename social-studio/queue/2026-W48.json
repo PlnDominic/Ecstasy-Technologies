@@ -96,8 +96,10 @@
       "caption": "Selling skincare online? Make it easy to add. 🧴\n\nSepter-M's store has shop-by-category, best sellers with prices, and Quick add on every product. Built by Ecstasy Technologies.\n\nTag a skincare brand that needs this.\n💬 WhatsApp: +233 54 285 5399\n🌐 www.ecstasytechnologies.com\n\n#GhanaTech #WebDesignGhana #Skincare #OnlineStore #EcstasyTechnologies",
       "approved": false,
       "privacy_level": "PUBLIC_TO_EVERYONE",
-      "status": "pending",
-      "posted": {}
+      "status": "skipped-not-approved",
+      "posted": {
+        "note": "not approved; nothing published; Dominic notified"
+      }
     },
     {
       "day": "2026-11-27",
